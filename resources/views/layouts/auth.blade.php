@@ -26,7 +26,9 @@
     <link rel="stylesheet" href="/css/separate/pages/login.min.css">
     <link rel="stylesheet" href="/css/lib/font-awesome/font-awesome.min.css">
     <link rel="stylesheet" href="/css/lib/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="https://www.amcharts.com/lib/3/plugins/export/export.css" type="text/css" media="all" />
     <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
 @yield('content')
@@ -37,6 +39,14 @@
 <script src="/js/lib/bootstrap/bootstrap.min.js"></script>
 <script src="/js/plugins.js"></script>
 <script type="text/javascript" src="/js/lib/match-height/jquery.matchHeight.min.js"></script>
+<script src="https://www.amcharts.com/lib/3/amcharts.js"></script>
+<script src="https://www.amcharts.com/lib/3/serial.js"></script>
+<script src="https://www.amcharts.com/lib/3/plugins/export/export.min.js"></script>
+<script src="https://www.amcharts.com/lib/3/themes/none.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/amcharts/3.21.12/plugins/dataloader/dataloader.min.js"></script>
+<script src="https://www.amcharts.com/lib/3/themes/light.js"></script>
+<script src="https://www.amcharts.com/lib/3/pie.js"></script>
+<script src="js/main-chart.js"></script>
 <script>
     $(function() {
         $('.page-center').matchHeight({
