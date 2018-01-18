@@ -403,53 +403,13 @@
         </div><!--.container-fluid-->
     </header><!--.site-header-->
     <div class="mobile-menu-left-overlay"></div>
-    <ul class="main-nav nav nav-inline">
-        <li class="nav-item">
-            <a class="nav-link" href="#">Contact</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="#">Prperties</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link active" href="#">Documents</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="#">Sales</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="#">Projects</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="#">Contact</a>
-        </li>
-        <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Dropdown</a>
-            <div class="dropdown-menu">
-                <a class="dropdown-item" href="#">Action</a>
-                <a class="dropdown-item" href="#">Another action</a>
-                <a class="dropdown-item" href="#">Something else here</a>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="#">Separated link</a>
-            </div>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="#">Prperties</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="#">Documents</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="#">Sales</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="#">Projects</a>
-        </li>
-    </ul>
+
 
     
     <div class="page-content">
         <div class="container-fluid">
             <div class="row">
+<<<<<<< HEAD
                 <div class="col-xl-6">
                     <div class="chart-statistic-box">
                         <div class="chart-txt">
@@ -897,6 +857,17 @@
                         </div><!--.box-typical-body-->
                     </section><!--.box-typical-dashboard-->
                 </div><!--.col-->
+=======
+               <div class="col-md-12">
+                   <div class="gridster">
+                       <ul>
+                           @foreach($settings as $setting)
+                                <li data-row="{{$setting->row}}" data-col="{{$setting->col}}" data-sizex="{{$setting->sizex}}" data-sizey="{{$setting->sizey}}"></li>
+                           @endforeach
+                       </ul>
+                   </div>
+               </div>
+>>>>>>> 793f801a5531cb4c23cee4584284d88e5c525aad
             </div>
         </div><!--.container-fluid-->
     </div><!--.page-content-->

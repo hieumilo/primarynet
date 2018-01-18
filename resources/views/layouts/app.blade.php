@@ -32,6 +32,8 @@
     <link rel="stylesheet" href="/css/lib/font-awesome/font-awesome.min.css">
     <link rel="stylesheet" href="/css/lib/bootstrap/bootstrap.min.css">
     <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/dsmorse-gridster@0.7.0/dist/jquery.gridster.css">
 </head>
 <body>
     @yield('content')
@@ -45,6 +47,19 @@
     <script type="text/javascript" src="/js/lib/jqueryui/jquery-ui.min.js"></script>
     <script type="text/javascript" src="/js/lib/lobipanel/lobipanel.min.js"></script>
     <script type="text/javascript" src="/js/lib/match-height/jquery.matchHeight.min.js"></script>
+<<<<<<< HEAD
+=======
+    {{--<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>--}}
+    <script>
+        $(document).ready(function(){
+            try {
+                $('.panel').lobiPanel({
+                    sortable: true
+                }).on('dragged.lobiPanel', function(ev, lobiPanel){
+                    $('.dahsboard-column').matchHeight();
+                });
+            } catch (err) {}
+>>>>>>> 793f801a5531cb4c23cee4584284d88e5c525aad
 
     <script src="js/lib/bootstrap-table/bootstrap-table.js"></script>
 	<script src="js/lib/bootstrap-table/bootstrap-table-export.min.js"></script>
@@ -53,5 +68,9 @@
 
 
     <script src="/js/app.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/dsmorse-gridster@0.7.0/dist/jquery.gridster.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/dsmorse-gridster@0.7.0/dist/jquery.gridster.with-extras.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/dsmorse-gridster@0.7.0/dist/jquery.gridster.with-extras.js"></script>
+    <script src="/js/main.js"></script>
 </body>
 </html>
