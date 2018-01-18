@@ -47,8 +47,8 @@
     <script type="text/javascript" src="/js/lib/jqueryui/jquery-ui.min.js"></script>
     <script type="text/javascript" src="/js/lib/lobipanel/lobipanel.min.js"></script>
     <script type="text/javascript" src="/js/lib/match-height/jquery.matchHeight.min.js"></script>
-<<<<<<< HEAD
-=======
+
+
     {{--<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>--}}
     <script>
         $(document).ready(function(){
@@ -59,7 +59,8 @@
                     $('.dahsboard-column').matchHeight();
                 });
             } catch (err) {}
->>>>>>> 793f801a5531cb4c23cee4584284d88e5c525aad
+        });
+    </script>
 
     <script src="js/lib/bootstrap-table/bootstrap-table.js"></script>
 	<script src="js/lib/bootstrap-table/bootstrap-table-export.min.js"></script>
