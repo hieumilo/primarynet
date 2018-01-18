@@ -408,8 +408,7 @@
     
     <div class="page-content">
         <div class="container-fluid">
-            <div class="row">
-<<<<<<< HEAD
+            <div class="row"
                 <div class="col-xl-6">
                     <div class="chart-statistic-box">
                         <div class="chart-txt">
@@ -857,7 +856,6 @@
                         </div><!--.box-typical-body-->
                     </section><!--.box-typical-dashboard-->
                 </div><!--.col-->
-=======
                <div class="col-md-12">
                    <div class="gridster">
                        <ul>
@@ -867,7 +865,6 @@
                        </ul>
                    </div>
                </div>
->>>>>>> 793f801a5531cb4c23cee4584284d88e5c525aad
             </div>
         </div><!--.container-fluid-->
     </div><!--.page-content-->
