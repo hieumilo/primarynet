@@ -3,7 +3,11 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+<<<<<<< HEAD
+use App\Evtlist;
+=======
 use Illuminate\Support\Facades\DB;
+>>>>>>> 793f801a5531cb4c23cee4584284d88e5c525aad
 
 class HomeController extends Controller
 {
@@ -24,6 +28,11 @@ class HomeController extends Controller
      */
     public function index()
     {
+<<<<<<< HEAD
+        $evtlists = Evtlist::all(); 
+        return view('home', compact('evtlists'));
+        
+=======
         //get all setting
         $settings = DB::table('users')
             ->join('settings', 'users.id', '=', 'settings.user_id')
@@ -50,5 +59,6 @@ class HomeController extends Controller
         }
 
         return response()->json("success");
+>>>>>>> 793f801a5531cb4c23cee4584284d88e5c525aad
     }
 }
