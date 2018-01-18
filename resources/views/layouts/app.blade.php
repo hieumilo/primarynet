@@ -32,6 +32,8 @@
     <link rel="stylesheet" href="/css/lib/font-awesome/font-awesome.min.css">
     <link rel="stylesheet" href="/css/lib/bootstrap/bootstrap.min.css">
     <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/dsmorse-gridster@0.7.0/dist/jquery.gridster.css">
 </head>
 <body>
     @yield('content')
@@ -45,7 +47,7 @@
     <script type="text/javascript" src="/js/lib/jqueryui/jquery-ui.min.js"></script>
     <script type="text/javascript" src="/js/lib/lobipanel/lobipanel.min.js"></script>
     <script type="text/javascript" src="/js/lib/match-height/jquery.matchHeight.min.js"></script>
-    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    {{--<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>--}}
     <script>
         $(document).ready(function(){
             try {
@@ -146,5 +148,9 @@
 
 
     <script src="/js/app.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/dsmorse-gridster@0.7.0/dist/jquery.gridster.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/dsmorse-gridster@0.7.0/dist/jquery.gridster.with-extras.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/dsmorse-gridster@0.7.0/dist/jquery.gridster.with-extras.js"></script>
+    <script src="/js/main.js"></script>
 </body>
 </html>
