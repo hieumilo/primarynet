@@ -1,3 +1,5 @@
+
+
 @extends('layouts.app')
 
 @section('content')
@@ -224,7 +226,8 @@
                             <div class="dropdown dropdown-typical">
                                 <a class="dropdown-toggle" id="dd-header-marketing" data-target="#" href="http://example.com/" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     <span class="font-icon font-icon-cogwheel"></span>
-                                    <span class="lbl">Marketing automation</span>
+                                    <span class="lbl">Marketing automation                  
+                                    </span>
                                 </a>
 
                                 <div class="dropdown-menu" aria-labelledby="dd-header-marketing">
@@ -443,7 +446,7 @@
         </li>
     </ul>
 
-
+    
     <div class="page-content">
         <div class="container-fluid">
             <div class="row">
@@ -728,52 +731,33 @@
                     </section>
                 </div><!--.col-->
                 <div class="col-xl-6 dahsboard-column">
-                    <section class="box-typical box-typical-dashboard panel panel-default scrollable">
-                        <header class="box-typical-header panel-heading">
-                            <h3 class="panel-title">Recent tickets</h3>
-                        </header>
-                        <div class="box-typical-body panel-body">
-                            <table class="tbl-typical">
-                                <tr>
-                                    <th><div>Status</div></th>
-                                    <th><div>Subject</div></th>
-                                    <th align="center"><div>Department</div></th>
-                                    <th align="center"><div>Date</div></th>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <span class="label label-success">Open</span>
-                                    </td>
-                                    <td>Website down for one week</td>
-                                    <td align="center">Support</td>
-                                    <td nowrap align="center"><span class="semibold">Today</span> 8:30</td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <span class="label label-success">Open</span>
-                                    </td>
-                                    <td>Restoring default settings</td>
-                                    <td align="center">Support</td>
-                                    <td nowrap align="center"><span class="semibold">Today</span> 16:30</td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <span class="label label-warning">Progress</span>
-                                    </td>
-                                    <td>Loosing control on server</td>
-                                    <td align="center">Support</td>
-                                    <td nowrap align="center"><span class="semibold">Yesterday</span></td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <span class="label label-danger">Closed</span>
-                                    </td>
-                                    <td>Authorizations keys</td>
-                                    <td align="center">Support</td>
-                                    <td nowrap align="center">23th May</td>
-                                </tr>
+                    <section class="box-typical">
+                        <div id="toolbar">
+                            <div class="bootstrap-table-header">Table header</div>
+                            <button id="remove" class="btn btn-danger remove" disabled>
+                                <i class="font-icon font-icon-close-2"></i> Delete
+                            </button>
+                        </div>
+                        <div class="table-responsive">
+                            <table id="table"
+                                   class="table table-striped"
+                                   data-toolbar="#toolbar"
+                                   data-search="true"
+                                   data-show-refresh="true"
+                                   data-show-toggle="true"
+                                   data-show-columns="true"
+                                   data-show-export="true"
+                                   data-detail-view="true"
+                                   data-detail-formatter="detailFormatter"
+                                   data-minimum-count-columns="2"
+                                   data-show-pagination-switch="true"
+                                   data-pagination="true"
+                                   data-id-field="id"
+                                   data-page-list="[10, 25, 50, 100, ALL]"
+                                   data-show-footer="false"
+                                   data-response-handler="responseHandler">
                             </table>
-                        </div><!--.box-typical-body-->
+                        </div>
                     </section><!--.box-typical-dashboard-->
                     <section class="box-typical box-typical-dashboard panel panel-default scrollable">
                         <header class="box-typical-header panel-heading">

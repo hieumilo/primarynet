@@ -85,184 +85,93 @@ $(document).ready(function(){
 		});
 	}
 
-	var data = [
-		{
-			"id": 0,
-			"name": "Draft",
-			"price": "$0"
-		},
-		{
-			"id": 1,
-			"name": "Pending",
-			"price": "$20"
-		},
-		{
-			"id": 2,
-			"name": "Moderation",
-			"price": "$55"
-		},
-		{
-			"id": 3,
-			"name": "Published",
-			"price": "$120"
-		},
-		{
-			"id": 4,
-			"name": "Pending",
-			"price": "$63"
-		},
-		{
-			"id": 4,
-			"name": "Pending",
-			"price": "$63"
-		},
-		{
-			"id": 4,
-			"name": "Pending",
-			"price": "$63"
-		},
-		{
-			"id": 4,
-			"name": "Pending",
-			"price": "$63"
-		},
-		{
-			"id": 4,
-			"name": "Pending",
-			"price": "$63"
-		},
-		{
-			"id": 4,
-			"name": "Pending",
-			"price": "$63"
-		},
-		{
-			"id": 4,
-			"name": "Pending",
-			"price": "$63"
-		},
-		{
-			"id": 4,
-			"name": "Pending",
-			"price": "$63"
-		},
-		{
-			"id": 4,
-			"name": "Pending",
-			"price": "$63"
-		},
-		{
-			"id": 4,
-			"name": "Pending",
-			"price": "$63"
-		},
-		{
-			"id": 4,
-			"name": "Pending",
-			"price": "$63"
-		},
-		{
-			"id": 4,
-			"name": "Pending",
-			"price": "$63"
-		},
-		{
-			"id": 4,
-			"name": "Pending",
-			"price": "$63"
-		},
-		{
-			"id": 4,
-			"name": "Pending",
-			"price": "$63"
-		},
-		{
-			"id": 4,
-			"name": "Pending",
-			"price": "$63"
-		},
-		{
-			"id": 4,
-			"name": "Pending",
-			"price": "$63"
-		},
-		{
-			"id": 4,
-			"name": "Pending",
-			"price": "$63"
-		},
-		{
-			"id": 4,
-			"name": "Pending",
-			"price": "$63"
-		}
-	];
-	$table.bootstrapTable({
-		iconsPrefix: 'font-icon',
-		icons: {
-			paginationSwitchDown:'font-icon-arrow-square-down',
-			paginationSwitchUp: 'font-icon-arrow-square-down up',
-			refresh: 'font-icon-refresh',
-			toggle: 'font-icon-list-square',
-			columns: 'font-icon-list-rotate',
-			export: 'font-icon-download',
-			detailOpen: 'font-icon-plus',
-			detailClose: 'font-icon-minus-1'
-		},
-		paginationPreText: '<i class="font-icon font-icon-arrow-left"></i>',
-		paginationNextText: '<i class="font-icon font-icon-arrow-right"></i>',
-		data: data,
-		columns: [
-			[
-				{
-					field: 'state',
-					checkbox: true,
-					rowspan: 2,
-					align: 'center',
-					valign: 'middle'
-				},
-				{
-					title: 'Item ID',
-					field: 'id',
-					rowspan: 2,
-					align: 'center',
-					valign: 'middle',
-					sortable: true,
-					footerFormatter: totalTextFormatter
-				},
-				{
-					title: 'Item Detail',
-					colspan: 3,
-					align: 'center'
-				}
-			],
-			[
-				{
-					field: 'name',
-					title: 'Status',
-					sortable: true,
-					editable: true,
-					formatter: statusFormatter,
-					footerFormatter: totalNameFormatter,
-					align: 'center'
-				},
-				{
-					field: 'price',
-					title: 'Item Price',
-					sortable: true,
-					align: 'center',
-					footerFormatter: totalPriceFormatter
-				},
-				{
-					field: 'operate',
-					title: 'Item Operate',
-					align: 'center',
-					events: operateEvents,
-					formatter: operateFormatter
-				}
+	$.getJSON('/evt', function (data) {
+		$table.bootstrapTable({
+			iconsPrefix: 'font-icon',
+			icons: {
+				paginationSwitchDown:'font-icon-arrow-square-down',
+				paginationSwitchUp: 'font-icon-arrow-square-down up',
+				refresh: 'font-icon-refresh',
+				toggle: 'font-icon-list-square',
+				columns: 'font-icon-list-rotate',
+				export: 'font-icon-download',
+				detailOpen: 'font-icon-plus',
+				detailClose: 'font-icon-minus-1'
+			},
+			paginationPreText: '<i class="font-icon font-icon-arrow-left"></i>',
+			paginationNextText: '<i class="font-icon font-icon-arrow-right"></i>',
+			data: data,
+			columns: [
+				[
+					{
+						field: 'state',
+						checkbox: true,
+						rowspan: 1,
+						align: 'center',
+						valign: 'middle'
+					},
+					{
+						title: 'Node ID',
+						field: 'NODEID',
+						rowspan: 1,
+						align: 'center',
+						valign: 'middle',
+						sortable: true,
+					},
+					{
+						title: 'Node IP',
+						field: 'NODEIP',
+						rowspan: 1,
+						align: 'center',
+						valign: 'middle',
+						sortable: true,
+					},
+					{
+						title: 'Node Name',
+						field: 'NODENAME',
+						rowspan: 1,
+						align: 'center',
+						valign: 'middle',
+						sortable: true,
+					},
+					{
+						title: 'EVTSTART',
+						field: 'EVTSTART',
+						rowspan: 1,
+						align: 'center',
+						valign: 'middle',
+						sortable: true,
+					},
+					{
+						title: 'EVTEND',
+						field: 'EVTEND',
+						rowspan: 1,
+						align: 'center',
+						valign: 'middle',
+						sortable: true,
+					},
+					{
+						title: 'EVTGROUP',
+						field: 'EVTGROUP',
+						rowspan: 1,
+						align: 'center',
+						valign: 'middle',
+						sortable: true,
+					},
+					{
+						title: 'EVTITEM',
+						field: 'EVTITEM',
+						rowspan: 1,
+						align: 'center',
+						valign: 'middle',
+						sortable: true,
+					},
+				],
 			]
-		]
-	});
+		});
+	})
+
+	
 
 	$table.on('check.bs.table uncheck.bs.table ' +
 		'check-all.bs.table uncheck-all.bs.table', function () {
