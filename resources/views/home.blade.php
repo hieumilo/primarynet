@@ -1,3 +1,5 @@
+
+
 @extends('layouts.app')
 
 @section('content')
@@ -224,7 +226,8 @@
                             <div class="dropdown dropdown-typical">
                                 <a class="dropdown-toggle" id="dd-header-marketing" data-target="#" href="http://example.com/" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     <span class="font-icon font-icon-cogwheel"></span>
-                                    <span class="lbl">Marketing automation</span>
+                                    <span class="lbl">Marketing automation                  
+                                    </span>
                                 </a>
 
                                 <div class="dropdown-menu" aria-labelledby="dd-header-marketing">
@@ -400,53 +403,13 @@
         </div><!--.container-fluid-->
     </header><!--.site-header-->
     <div class="mobile-menu-left-overlay"></div>
-    <ul class="main-nav nav nav-inline">
-        <li class="nav-item">
-            <a class="nav-link" href="#">Contact</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="#">Prperties</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link active" href="#">Documents</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="#">Sales</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="#">Projects</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="#">Contact</a>
-        </li>
-        <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Dropdown</a>
-            <div class="dropdown-menu">
-                <a class="dropdown-item" href="#">Action</a>
-                <a class="dropdown-item" href="#">Another action</a>
-                <a class="dropdown-item" href="#">Something else here</a>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="#">Separated link</a>
-            </div>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="#">Prperties</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="#">Documents</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="#">Sales</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="#">Projects</a>
-        </li>
-    </ul>
 
 
+    
     <div class="page-content">
         <div class="container-fluid">
             <div class="row">
+
                 <div class="col-xl-6">
                     <div class="chart-statistic-box">
                         <div class="chart-txt">
@@ -636,6 +599,7 @@
                     </section><!--.box-typical-dashboard-->
                 </div>
                 <div class="col-xl-6 dahsboard-column">
+
                     <section class="box-typical box-typical-dashboard panel panel-default scrollable">
                         <header class="box-typical-header panel-heading">
                             <h3 class="panel-title">Recent tickets</h3>
@@ -643,6 +607,35 @@
                         <div class="box-typical-body panel-body">
 
                         </div><!--.box-typical-body-->
+
+                    <section class="box-typical">
+                        <div id="toolbar">
+                            <div class="bootstrap-table-header">Table header</div>
+                            <button id="remove" class="btn btn-danger remove" disabled>
+                                <i class="font-icon font-icon-close-2"></i> Delete
+                            </button>
+                        </div>
+                        <div class="table-responsive">
+                            <table id="table"
+                                   class="table table-striped"
+                                   data-toolbar="#toolbar"
+                                   data-search="true"
+                                   data-show-refresh="true"
+                                   data-show-toggle="true"
+                                   data-show-columns="true"
+                                   data-show-export="true"
+                                   data-detail-view="true"
+                                   data-detail-formatter="detailFormatter"
+                                   data-minimum-count-columns="2"
+                                   data-show-pagination-switch="true"
+                                   data-pagination="true"
+                                   data-id-field="id"
+                                   data-page-list="[10, 25, 50, 100, ALL]"
+                                   data-show-footer="false"
+                                   data-response-handler="responseHandler">
+                            </table>
+                        </div>
+
                     </section><!--.box-typical-dashboard-->
                 </div>
                 <div class="col-xl-3 dahsboard-column">
@@ -656,7 +649,24 @@
                             </iframe>
                         </div><!--.box-typical-body-->
                     </section><!--.box-typical-dashboard-->
+
                 </div>
+
+                </div><!--.col-->
+
+               <div class="col-md-12">
+                   <div class="gridster">
+                       <ul>
+                           @if(isset($settings))
+                           @foreach($settings as $setting)
+                                <li data-row="{{$setting->row}}" data-col="{{$setting->col}}" data-sizex="{{$setting->sizex}}" data-sizey="{{$setting->sizey}}"></li>
+                           @endforeach
+                           @endif
+                       </ul>
+                   </div>
+               </div>
+
+
             </div>
 
         </div><!--.container-fluid-->
