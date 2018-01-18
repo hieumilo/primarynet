@@ -859,9 +859,11 @@
                <div class="col-md-12">
                    <div class="gridster">
                        <ul>
+                           @if(isset($settings))
                            @foreach($settings as $setting)
                                 <li data-row="{{$setting->row}}" data-col="{{$setting->col}}" data-sizex="{{$setting->sizex}}" data-sizey="{{$setting->sizey}}"></li>
                            @endforeach
+                           @endif
                        </ul>
                    </div>
                </div>
