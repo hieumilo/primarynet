@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 18, 2018 at 05:48 AM
+-- Generation Time: Jan 18, 2018 at 11:36 AM
 -- Server version: 10.1.28-MariaDB
 -- PHP Version: 5.6.32
 
@@ -152,6 +152,31 @@ INSERT INTO `id_dash_infoitem` (`ITEM_ID`, `ITEM_NAME`, `ITEM_TYPE`, `ITEM_FILE`
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `items`
+--
+
+CREATE TABLE `items` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `name` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `items`
+--
+
+INSERT INTO `items` (`id`, `name`, `created_at`, `updated_at`) VALUES
+(1, 'char1', NULL, NULL),
+(2, 'char2', NULL, NULL),
+(3, 'char3', NULL, NULL),
+(4, 'char4', NULL, NULL),
+(5, 'char5', NULL, NULL),
+(6, 'datatable', NULL, NULL);
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `migrations`
 --
 
@@ -167,7 +192,9 @@ CREATE TABLE `migrations` (
 
 INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (1, '2014_10_12_000000_create_users_table', 1),
-(2, '2014_10_12_100000_create_password_resets_table', 1);
+(2, '2014_10_12_100000_create_password_resets_table', 1),
+(3, '2018_01_18_072920_create_settings_table', 2),
+(4, '2018_01_18_073257_create_items_table', 2);
 
 -- --------------------------------------------------------
 
@@ -180,6 +207,36 @@ CREATE TABLE `password_resets` (
   `token` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `settings`
+--
+
+CREATE TABLE `settings` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `user_id` int(10) UNSIGNED NOT NULL,
+  `item_id` int(10) UNSIGNED NOT NULL,
+  `row` int(11) NOT NULL,
+  `col` int(11) NOT NULL,
+  `sizex` int(11) NOT NULL,
+  `sizey` int(11) NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `settings`
+--
+
+INSERT INTO `settings` (`id`, `user_id`, `item_id`, `row`, `col`, `sizex`, `sizey`, `created_at`, `updated_at`) VALUES
+(1, 1, 1, 1, 1, 2, 2, NULL, NULL),
+(2, 1, 2, 1, 5, 2, 5, NULL, NULL),
+(3, 1, 3, 3, 4, 1, 1, NULL, NULL),
+(4, 1, 4, 3, 1, 3, 4, NULL, NULL),
+(5, 1, 5, 1, 4, 1, 1, NULL, NULL),
+(6, 1, 6, 2, 4, 1, 1, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -227,6 +284,12 @@ ALTER TABLE `id_dash_infoitem`
   ADD PRIMARY KEY (`ITEM_ID`);
 
 --
+-- Indexes for table `items`
+--
+ALTER TABLE `items`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `migrations`
 --
 ALTER TABLE `migrations`
@@ -238,6 +301,12 @@ ALTER TABLE `migrations`
 ALTER TABLE `password_resets`
   ADD KEY `password_resets_email_index` (`email`),
   ADD KEY `password_resets_token_index` (`token`);
+
+--
+-- Indexes for table `settings`
+--
+ALTER TABLE `settings`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `users`
@@ -257,10 +326,22 @@ ALTER TABLE `id_dash_infoitem`
   MODIFY `ITEM_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
+-- AUTO_INCREMENT for table `items`
+--
+ALTER TABLE `items`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- AUTO_INCREMENT for table `settings`
+--
+ALTER TABLE `settings`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `users`
