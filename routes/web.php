@@ -50,4 +50,11 @@ Route::get('/evt', function(){
 });
 
 Route::post('/config', 'HomeController@save');
+Route::resource('post', 'PostsController');
+Route::get('post/create', function (){
+    return view('post.create');
+});
 
+Route::get('welcome', function (){
+   return view('welcome');
+});
