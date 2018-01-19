@@ -47,7 +47,7 @@ use Illuminate\Database\Eloquent\Model;
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Evtlist whereWChk($value)
  * @mixin \Eloquent
  */
-class Evtlist extends Model
+class Jstree extends Model
 {
-    protected $table = "Evtlist";
+    protected $table = "treviews";
 }

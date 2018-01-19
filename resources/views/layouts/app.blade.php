@@ -32,6 +32,7 @@
     <link rel="stylesheet" href="/css/lib/font-awesome/font-awesome.min.css">
     <link rel="stylesheet" href="/css/lib/bootstrap/bootstrap.min.css">
     <link rel="stylesheet" href="https://www.amcharts.com/lib/3/plugins/export/export.css" type="text/css" media="all" />
+    <link rel="stylesheet" href="/css/lib/jstree/jstree.css">
     <link rel="stylesheet" href="/css/main.css">
 
     <link rel="stylesheet" href="/css/style.css">
@@ -62,25 +63,27 @@
     <script src="https://www.amcharts.com/lib/3/themes/light.js"></script>
     <script src="https://www.amcharts.com/lib/3/pie.js"></script>
     <script src="js/main-chart.js"></script>
-
+    <script src="js/lib/jstree/jstree.min.js"></script>
 
 
     {{--<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>--}}
     <script>
-        $(document).ready(function(){
-            try {
-                $('.panel').lobiPanel({
-                    sortable: true
-                }).on('dragged.lobiPanel', function(ev, lobiPanel){
-                    $('.dahsboard-column').matchHeight();
-                });
-            } catch (err) {}
+        /*$(document).ready(function() {
+                try {
+                    $('.panel').lobiPanel({
+                        sortable: true
+                    }).on('dragged.lobiPanel', function (ev, lobiPanel) {
+                        $('.dahsboard-column').matchHeight();
+                    });
+                } catch (err) {
+                }
+            });*/
+        </script>
 
-
-    <script src="js/lib/bootstrap-table/bootstrap-table.js"></script>
+    <!--<script src="js/lib/bootstrap-table/bootstrap-table.js"></script>
 	<script src="js/lib/bootstrap-table/bootstrap-table-export.min.js"></script>
 	<script src="js/lib/bootstrap-table/tableExport.min.js"></script>
-	<script src="js/lib/bootstrap-table/bootstrap-table-init.js"></script>
+	<script src="js/lib/bootstrap-table/bootstrap-table-init.js"></script>-->
 
 
 
@@ -89,5 +92,29 @@
     <script src="https://cdn.jsdelivr.net/npm/dsmorse-gridster@0.7.0/dist/jquery.gridster.with-extras.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/dsmorse-gridster@0.7.0/dist/jquery.gridster.with-extras.js"></script>
     <script src="/js/main.js"></script>
+    <script>
+        $(document).ready(function () {
+            /*var alterIframe = function(src){
+                $('#iframe2').attr("src",src);
+            };
+
+            $.ajax(
+                {
+                    url: "http://localhost:8000/ifram2",
+                    dataType: "json",
+                    data: "{'data':{'data1':'data1'}}",
+                    type: "post",
+                    contentType: "application/json; charset=utf-8",
+                    complete: function(data, stat) {
+                        if (stat == "success" ) {
+                            data = $.parseJSON(data);
+                            setTimeout('alterIframe("' + data.src + '")',300);
+                        }
+                    }
+                }
+            );*/
+
+        });
+    </script>
 </body>
 </html>

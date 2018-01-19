@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Jstree;
 use Illuminate\Http\Request;
 
 use App\Evtlist;
@@ -59,6 +60,38 @@ class HomeController extends Controller
 
         return response()->json("success");
 
+    }
+    public function showjstree()
+    {
+        $treeviews = DB::table('treeviews')
+            ->select('treeviews.id as id', 'treeviews.NAME as name', 'treeviews.TEXT as text', 'treeviews.PARENT_ID as parent_id')
+            ->get();
+
+        $childs = array();
+
+        foreach($treeviews as  $treeview)
+            $childs[$treeview->parent_id][] = $treeview;
+            $childs[$treeview->name][] = $treeview;
+            unset($treeview);
+        foreach($treeviews as $treeview)
+            if (isset($childs[$treeview->id]))
+            $treeview->children = $childs[$treeview->id];
+
+        return $childs[0];
+
+
+    }
+    public function loadjstree() {
+        $treeviews = DB::table('treeviews')->get();
+        //$this->showjstree();
+        $tree = $this->showjstree();
+
+        //dd($tree);
+        return response()->json($tree);
+    }
+    public function controljstree()
+    {
+        return view('jstree/treeview');
     }
     public function chart1()
     {

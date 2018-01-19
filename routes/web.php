@@ -42,6 +42,8 @@ Route::get('/ifram7', function(){
 Route::get('/ifram8', function(){
     return view('iframeChart/iframeChart8');
 });
+Route::get('/jstree', 'HomeController@loadjstree');
+Route::get('/jstreeload', 'HomeController@controljstree');
 
 Route::get('/evt', function(){
     $evtlists = DB::table('evtlist')->get()->toJson();
