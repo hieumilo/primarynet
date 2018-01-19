@@ -14,7 +14,7 @@ class CreateEvtlistsTable extends Migration
     public function up()
     {
         Schema::create('evtlists', function (Blueprint $table) {
-            $table->increments('id');
+            $table->increments('ID');
             $table->integer('GID');
             $table->integer('NODEID');
             $table->string('NODEIP');
@@ -29,11 +29,11 @@ class CreateEvtlistsTable extends Migration
             $table->string('EVTCOMMENT');
             $table->integer('EVTID');
             $table->boolean('EVTIGNORE');
-            $table->boolean('EvtNotify');
-            $table->boolean('CLSNotify');
-            $table->boolean('wChk');
-            $table->boolean('CurWeight');
-            $table->dateTime('ChkDate');
+            $table->boolean('EVTNOTIFY');
+            $table->boolean('CLSNOTIFY');
+            $table->boolean('WCK');
+            $table->boolean('CURWEIGHT');
+            $table->dateTime('CHKDATE');
             $table->timestamps();
         });
     }

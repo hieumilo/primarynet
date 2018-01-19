@@ -67,15 +67,17 @@
 
     {{--<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>--}}
     <script>
-        $(document).ready(function(){
-            try {
-                $('.panel').lobiPanel({
-                    sortable: true
-                }).on('dragged.lobiPanel', function(ev, lobiPanel){
-                    $('.dahsboard-column').matchHeight();
-                });
-            } catch (err) {}
-
+        $(document).ready(function() {
+                try {
+                    $('.panel').lobiPanel({
+                        sortable: true
+                    }).on('dragged.lobiPanel', function (ev, lobiPanel) {
+                        $('.dahsboard-column').matchHeight();
+                    });
+                } catch (err) {
+                }
+            });
+    </script>
 
     <script src="js/lib/bootstrap-table/bootstrap-table.js"></script>
 	<script src="js/lib/bootstrap-table/bootstrap-table-export.min.js"></script>

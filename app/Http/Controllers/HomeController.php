@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Evtlist;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 
 
@@ -27,19 +28,42 @@ class HomeController extends Controller
      */
     public function index()
     {
-
-        $evtlists = Evtlist::all(); 
-        return view('home', compact('evtlists'));
-        
+        //get all Evtlist
+        $evtlists = Evtlist::all();
 
         //get all setting
         $settings = DB::table('users')
             ->join('settings', 'users.id', '=', 'settings.user_id')
             ->join('items', 'settings.item_id', '=', 'items.id')
+            ->where('user_id',Auth::id())
             ->select('settings.*', 'items.name')
             ->get();
 
-        return view('home', compact('settings'));
+
+        //check exist setting
+        if ($settings->isEmpty()){
+            //get all items
+            $itemSettings = DB::table('items')->get();
+
+            //insert default to database
+            foreach ($itemSettings as $itemSetting){
+                DB::table('settings')->insert([
+                    ['user_id'=>Auth::id(), 'item_id'=>$itemSetting->id, 'row' => 1,'col' => 1,'sizex' => 1, 'sizey' => 1]
+                ]);
+            }
+
+            $settings = DB::table('users')
+                ->join('settings', 'users.id', '=', 'settings.user_id')
+                ->join('items', 'settings.item_id', '=', 'items.id')
+                ->where('user_id',Auth::id())
+                ->select('settings.*', 'items.name')
+                ->get();
+        }
+
+        //get all element dashboard
+
+
+        return view('home', compact('settings','evtlists','itemSetting'));
     }
 
     public function save(Request $request)
@@ -48,7 +72,7 @@ class HomeController extends Controller
         //get all setting
         foreach ($settings as $key => $setting) {
             DB::table('settings')
-                ->where('id', $key + 1)
+                ->where('id', $setting['id'])
                 ->update([
                             'row' => $setting['row'],
                             'col' => $setting['col'],
