@@ -6,9 +6,19 @@ $(document).ready(function () {
         min_cols: 1,
         max_cols: 6,
         widget_margins: [5, 5],
+        serialize_params: function($w, wgd) {
+            return {
+                id: $w.attr('data-id'),
+                col: wgd.col,
+                row: wgd.row,
+                size_x: wgd.size_x,
+                size_y: wgd.size_y
+            };
+        },
         resize: {
             enabled: true,
             stop: function (e, ui, $widget) {
+                console.log(gridster.serialize());
                 $.ajaxSetup({
                     headers: {
                         'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')

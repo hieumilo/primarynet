@@ -13,14 +13,14 @@ class CreateSettingsTable extends Migration
      */
     public function up()
     {
-        Schema::create('settings', function (Blueprint $table) {
-            $table->increments('id');
-            $table->integer('user_id')->unsigned();
-            $table->integer('item_id')->unsigned();
-            $table->integer('row');
-            $table->integer('col');
-            $table->integer('sizex');
-            $table->integer('sizey');
+        Schema::create('SETTINGS', function (Blueprint $table) {
+            $table->increments('ID');
+            $table->integer('USER_ID')->unsigned();
+            $table->integer('ITEM_ID')->unsigned();
+            $table->integer('ROW');
+            $table->integer('COL');
+            $table->integer('SIZEX');
+            $table->integer('SIZEY');
             $table->timestamps();
         });
     }
