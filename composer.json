@@ -7,14 +7,7 @@
     "require": {
         "php": ">=5.6.4",
         "barryvdh/laravel-ide-helper": "^2.4",
-<<<<<<< HEAD
-        "doctrine/dbal": "^2.5",
-=======
-        "doctrine/dbal": "^2.6",
         "barryvdh/laravel-debugbar": "^2.4",
-        "barryvdh/laravel-ide-helper": "^2.4",
-
->>>>>>> 103b02edea96989ee9512507d733e540318ea222
         "laravel/framework": "5.4.*",
         "laravel/tinker": "~1.0",
         "laravelcollective/html": "^5.4.0",
@@ -47,10 +40,6 @@
         ],
         "post-update-cmd": [
             "Illuminate\\Foundation\\ComposerScripts::postUpdate",
-<<<<<<< HEAD
-            "php artisan optimize",
-=======
->>>>>>> 103b02edea96989ee9512507d733e540318ea222
             "php artisan clear-compiled",
             "php artisan ide-helper:generate",
             "php artisan optimize"

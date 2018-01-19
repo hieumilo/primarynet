@@ -36,6 +36,7 @@
     <link rel="stylesheet" href="/css/main.css">
 
     <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/styles.css">
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/dsmorse-gridster@0.7.0/dist/jquery.gridster.css">
 
@@ -249,13 +250,10 @@
                             <img src="img/avatar-2-64.png" alt="">
                         </button>
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dd-user-menu">
-                            <a class="dropdown-item" href="#"><span
-                                        class="font-icon glyphicon glyphicon-user"></span>Profile</a>
-                            <a class="dropdown-item" href="#"><span
-                                        class="font-icon glyphicon glyphicon-cog"></span>Settings</a>
-                            <a class="dropdown-item" href="#"><span
-                                        class="font-icon glyphicon glyphicon-question-sign">Help</a>
-                            <div class="dropdown-divider"></div>
+
+                            <div class="dropdown-divider">
+
+                            </div>
                             <a class="dropdown-item" href="{{ route('logout') }}"
                                onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
@@ -500,6 +498,7 @@
     </div><!--.container-fluid-->
 </header><!--.site-header-->
 
+
 @yield('content')
 <!-- Scripts -->
 <script src="/js/lib/jquery/jquery-3.2.1.min.js"></script>
@@ -531,5 +530,6 @@
 <script src="https://cdn.jsdelivr.net/npm/dsmorse-gridster@0.7.0/dist/jquery.gridster.with-extras.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/dsmorse-gridster@0.7.0/dist/jquery.gridster.with-extras.js"></script>
 <script src="/js/main.js"></script>
+
 </body>
 </html>

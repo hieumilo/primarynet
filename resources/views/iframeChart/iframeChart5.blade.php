@@ -1,3 +1,2 @@
-@extends('layouts.app')
-<div class="" id="chartdiv5">
+@extends('layouts.master')<div class="" id="chartdiv5">
 </div>

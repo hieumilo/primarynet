@@ -41,10 +41,6 @@ class HomeController extends Controller
             ->select('settings.*', 'items.name')
             ->get();
 
-
-        return view('home', compact('settings', 'evtlists'));
-
-
         //check exist setting
         if ($settings->isEmpty()){
             //get all items
@@ -65,10 +61,7 @@ class HomeController extends Controller
                 ->get();
         }
 
-        //get all element dashboard
-
-
-        return view('home', compact('settings','evtlists','itemSetting'));
+        return view('home', compact('settings','evtlists'));
     }
 
     public function save(Request $request)
