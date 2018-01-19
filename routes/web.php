@@ -44,11 +44,10 @@ Route::get('/ifram8', function(){
 });
 
 Route::get('/evt', function(){
-    $evtlists = DB::table('evtlist')->get()->toJson();
+    $evtlists = DB::table('evtlists')->get()->toJson();
     $evtlist = json_decode($evtlists);
     return response()->json($evtlist);
 });
 
-Route::get('/dashboard', 'HomeController@index');
 Route::post('/config', 'HomeController@save');
 
