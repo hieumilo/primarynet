@@ -28,12 +28,16 @@
     <link rel="stylesheet" href="/css/separate/vendor/lobipanel.min.css">
     <link rel="stylesheet" href="/css/lib/jqueryui/jquery-ui.min.css">
     <link rel="stylesheet" href="/css/separate/pages/widgets.min.css">
-
+    <link rel="stylesheet" href="css/lib/bootstrap-table/bootstrap-table.min.css">
     <link rel="stylesheet" href="/css/lib/font-awesome/font-awesome.min.css">
     <link rel="stylesheet" href="/css/lib/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="https://www.amcharts.com/lib/3/plugins/export/export.css" type="text/css" media="all" />
     <link rel="stylesheet" href="/css/main.css">
-    <link rel="stylesheet" href="/css/styles.css">
+
+    <link rel="stylesheet" href="/css/style.css">
+
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/dsmorse-gridster@0.7.0/dist/jquery.gridster.css">
+
 </head>
 <body>
     @yield('content')
@@ -47,6 +51,21 @@
     <script type="text/javascript" src="/js/lib/jqueryui/jquery-ui.min.js"></script>
     <script type="text/javascript" src="/js/lib/lobipanel/lobipanel.min.js"></script>
     <script type="text/javascript" src="/js/lib/match-height/jquery.matchHeight.min.js"></script>
+    <script src="https://www.amcharts.com/lib/3/amcharts.js"></script>
+    <script src="https://www.amcharts.com/lib/3/gauge.js"></script>
+    <script src="https://www.amcharts.com/lib/3/serial.js"></script>
+    <script src="https://www.amcharts.com/lib/3/plugins/export/export.min.js"></script>
+    <script src="https://www.amcharts.com/lib/3/themes/none.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/amcharts/3.21.12/plugins/dataloader/dataloader.min.js"></script>
+    <script src="https://www.amcharts.com/lib/3/themes/light.js"></script>
+    <script src="https://www.amcharts.com/lib/3/pie.js"></script>
+    <script src="js/main-chart.js"></script>
+
+    {{--DataTable JS --}}
+    <script src="js/lib/bootstrap-table/bootstrap-table.js"></script>
+    <script src="js/lib/bootstrap-table/bootstrap-table-export.min.js"></script>
+    <script src="js/lib/bootstrap-table/tableExport.min.js"></script>
+    <script src="js/lib/bootstrap-table/bootstrap-table-init-evtlist.js"></script>
 
 
     {{--<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>--}}
@@ -59,13 +78,12 @@
                     $('.dahsboard-column').matchHeight();
                 });
             } catch (err) {}
+
         });
     </script>
 
-    <script src="js/lib/bootstrap-table/bootstrap-table.js"></script>
-	<script src="js/lib/bootstrap-table/bootstrap-table-export.min.js"></script>
-	<script src="js/lib/bootstrap-table/tableExport.min.js"></script>
-	<script src="js/lib/bootstrap-table/bootstrap-table-init.js"></script>
+
+
 
 
     <script src="/js/app.js"></script>
