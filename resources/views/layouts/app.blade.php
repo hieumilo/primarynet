@@ -35,6 +35,7 @@
     <link rel="stylesheet" href="/css/main.css">
 
     <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/styles.css">
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/dsmorse-gridster@0.7.0/dist/jquery.gridster.css">
 
@@ -520,39 +521,7 @@
     <script src="js/lib/bootstrap-table/tableExport.min.js"></script>
     <script src="js/lib/bootstrap-table/bootstrap-table-init-evtlist.js"></script>
 
-
-    {{--<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>--}}
-    <script>
-
-        $(document).ready(function(){
-            try {
-                $('.panel').lobiPanel({
-                    sortable: true
-                }).on('dragged.lobiPanel', function(ev, lobiPanel){
-                    $('.dahsboard-column').matchHeight();
-                });
-            } catch (err) {}
-
-        });
-    </script>
-    <script>
-        $(document).ready(function() {
-                try {
-                    $('.panel').lobiPanel({
-                        sortable: true
-                    }).on('dragged.lobiPanel', function (ev, lobiPanel) {
-                        $('.dahsboard-column').matchHeight();
-                    });
-                } catch (err) {
-                }
-            });
-    </script>
-
-
-
-
-
-    <script src="/js/app.js"></script>
+    {{--<script src="/js/app.js"></script>--}}
     <script src="/js/app-theme.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/dsmorse-gridster@0.7.0/dist/jquery.gridster.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/dsmorse-gridster@0.7.0/dist/jquery.gridster.with-extras.js"></script>
