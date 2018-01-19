@@ -10,7 +10,6 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-use App\Evtlist;
 Route::get('/', function () {
     return view('welcome');
 });
@@ -43,11 +42,18 @@ Route::get('/ifram8', function(){
     return view('iframeChart/iframeChart8');
 });
 
+
+
+Route::get('/evt', 'HomeController@Evtlist');
+Route::post('/removeEvt', 'HomeController@Remove');
+
+
 Route::get('/evt', function(){
     $evtlists = DB::table('evtlists')->get()->toJson();
     $evtlist = json_decode($evtlists);
     return response()->json($evtlist);
 });
+
 
 Route::post('/config', 'HomeController@save');
 Route::resource('post', 'PostsController');
@@ -58,3 +64,4 @@ Route::get('post/create', function (){
 Route::get('welcome', function (){
    return view('welcome');
 });
+

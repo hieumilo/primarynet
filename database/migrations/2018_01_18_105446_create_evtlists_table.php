@@ -31,7 +31,7 @@ class CreateEvtlistsTable extends Migration
             $table->boolean('EVTIGNORE');
             $table->boolean('EVTNOTIFY');
             $table->boolean('CLSNOTIFY');
-            $table->boolean('WCK');
+            $table->boolean('WCHK');
             $table->boolean('CURWEIGHT');
             $table->dateTime('CHKDATE');
             $table->timestamps();

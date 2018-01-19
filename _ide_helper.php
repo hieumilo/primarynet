@@ -1898,9 +1898,35 @@ namespace Illuminate\Support\Facades {
         /**
          * Determine if the current user is authenticated.
          *
+<<<<<<< HEAD
+         * @return \App\User 
+         * @throws \Illuminate\Auth\AuthenticationException
+         * @static 
+         */ 
+        public static function authenticate()
+        {
+            return \Illuminate\Auth\SessionGuard::authenticate();
+        }
+        
+        /**
+         * Determine if the current user is authenticated.
+=======
          * @return bool 
          * @static 
          */ 
+        public static function check()
+        {
+            return \Illuminate\Auth\SessionGuard::check();
+        }
+        
+        /**
+         * Determine if the current user is a guest.
+>>>>>>> 51f59240953e8771d38f57031679f09408b3a3d6
+         *
+         * @return bool 
+         * @static 
+         */ 
+<<<<<<< HEAD
         public static function check()
         {
             return \Illuminate\Auth\SessionGuard::check();
@@ -1912,6 +1938,10 @@ namespace Illuminate\Support\Facades {
          * @return bool 
          * @static 
          */ 
+        public static function guest()
+        {
+            return \Illuminate\Auth\SessionGuard::guest();
+=======
         public static function guest()
         {
             return \Illuminate\Auth\SessionGuard::guest();
@@ -1927,6 +1957,7 @@ namespace Illuminate\Support\Facades {
         public static function authenticate()
         {
             return \Illuminate\Auth\SessionGuard::authenticate();
+>>>>>>> 51f59240953e8771d38f57031679f09408b3a3d6
         }
         
         /**
@@ -11209,6 +11240,8 @@ namespace Illuminate\Support\Facades {
         }
         
         /**
+<<<<<<< HEAD
+=======
          * Register a view composer event.
          *
          * @param array|string $views
@@ -11235,6 +11268,7 @@ namespace Illuminate\Support\Facades {
         }
         
         /**
+>>>>>>> 51f59240953e8771d38f57031679f09408b3a3d6
          * Start a component rendering process.
          *
          * @param string $name
@@ -11283,6 +11317,22 @@ namespace Illuminate\Support\Facades {
         }
         
         /**
+<<<<<<< HEAD
+         * Register a view creator event.
+         *
+         * @param array|string $views
+         * @param \Closure|string $callback
+         * @return array 
+         * @static 
+         */ 
+        public static function creator($views, $callback)
+        {
+            return \Illuminate\View\Factory::creator($views, $callback);
+        }
+        
+        /**
+=======
+>>>>>>> 51f59240953e8771d38f57031679f09408b3a3d6
          * Register multiple view composers via an array.
          *
          * @param array $composers
@@ -11295,6 +11345,22 @@ namespace Illuminate\Support\Facades {
         }
         
         /**
+<<<<<<< HEAD
+         * Register a view composer event.
+         *
+         * @param array|string $views
+         * @param \Closure|string $callback
+         * @return array 
+         * @static 
+         */ 
+        public static function composer($views, $callback)
+        {
+            return \Illuminate\View\Factory::composer($views, $callback);
+        }
+        
+        /**
+=======
+>>>>>>> 51f59240953e8771d38f57031679f09408b3a3d6
          * Call the composer for a given view.
          *
          * @param \Illuminate\Contracts\View\View $view
