@@ -70,6 +70,7 @@
 
     {{--<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>--}}
     <script>
+
         $(document).ready(function(){
             try {
                 $('.panel').lobiPanel({
@@ -80,6 +81,18 @@
             } catch (err) {}
 
         });
+    </script>
+    <script>
+        $(document).ready(function() {
+                try {
+                    $('.panel').lobiPanel({
+                        sortable: true
+                    }).on('dragged.lobiPanel', function (ev, lobiPanel) {
+                        $('.dahsboard-column').matchHeight();
+                    });
+                } catch (err) {
+                }
+            });
     </script>
 
 

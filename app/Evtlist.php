@@ -6,5 +6,5 @@ use Illuminate\Database\Eloquent\Model;
 
 class Evtlist extends Model
 {
-    protected $table = "Evtlist";
+    protected $table = "Evtlists";
 }

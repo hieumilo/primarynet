@@ -43,9 +43,16 @@ Route::get('/ifram8', function(){
 });
 
 
+
 Route::get('/evt', 'HomeController@Evtlist');
 Route::post('/removeEvt', 'HomeController@Remove');
 
 
-Route::get('/dashboard', 'HomeController@index');
+Route::get('/evt', function(){
+    $evtlists = DB::table('evtlists')->get()->toJson();
+    $evtlist = json_decode($evtlists);
+    return response()->json($evtlist);
+});
+
+
 Route::post('/config', 'HomeController@save');
