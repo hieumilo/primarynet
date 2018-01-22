@@ -66,9 +66,9 @@
         </div>
         <div class="col-md-4">
             <select name="cars" id="lang" name="lang">
-                <option value="en" {{\Illuminate\Support\Facades\Request::input('lang')=='en'?  'checked' : '' }}>English</option>
-                <option value="vi" {{\Illuminate\Support\Facades\Request::input('lang')=='vi'?  'checked' : '' }}>Vietnamese</option>
-                <option value="ko" {{\Illuminate\Support\Facades\Request::input('lang')=='ko'?  'checked' : '' }}>Korean</option>
+                <option value="en" {{config('app.locale')=='en'?  'selected' : '' }}>English</option>
+                <option value="vi" {{config('app.locale')=='vi'?  'selected' : '' }}>Vietnamese</option>
+                <option value="ko" {{config('app.locale')=='ko'?  'selected' : '' }}>Korean</option>
             </select>
 
         </div>
