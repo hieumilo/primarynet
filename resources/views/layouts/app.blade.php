@@ -520,10 +520,13 @@
 <script src="js/main-chart.js"></script>
 <script src="js/lib/jstree/jstree.min.js"></script>
 {{--DataTable JS --}}
+
 <script src="js/lib/bootstrap-table/bootstrap-table.js"></script>
 <script src="js/lib/bootstrap-table/bootstrap-table-export.min.js"></script>
 <script src="js/lib/bootstrap-table/tableExport.min.js"></script>
 <script src="js/lib/bootstrap-table/bootstrap-table-init-evtlist.js"></script>
+<script src="js/lib/bootstrap-table/table.js"></script>
+
 
 <script src="/js/app-theme.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/dsmorse-gridster@0.7.0/dist/jquery.gridster.min.js"></script>

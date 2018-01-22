@@ -41,7 +41,6 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/dsmorse-gridster@0.7.0/dist/jquery.gridster.css">
 
 </head>
-<body>
 @yield('content')
 <!-- Scripts -->
 <script src="/js/lib/jquery/jquery-3.2.1.min.js"></script>
@@ -62,11 +61,13 @@
 <script src="https://www.amcharts.com/lib/3/pie.js"></script>
 <script src="js/main-chart.js"></script>
 <script src="js/lib/jstree/jstree.min.js"></script>
-{{--DataTable JS --}}
+
+
 <script src="js/lib/bootstrap-table/bootstrap-table.js"></script>
 <script src="js/lib/bootstrap-table/bootstrap-table-export.min.js"></script>
 <script src="js/lib/bootstrap-table/tableExport.min.js"></script>
 <script src="js/lib/bootstrap-table/bootstrap-table-init-evtlist.js"></script>
+
 
 <script src="/js/app-theme.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/dsmorse-gridster@0.7.0/dist/jquery.gridster.min.js"></script>
