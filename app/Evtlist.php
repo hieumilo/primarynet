@@ -49,5 +49,7 @@ use Illuminate\Database\Eloquent\Model;
  */
 class Evtlist extends Model
 {
-    protected $table = "Evtlists";
+
+    protected $guarded = [];
+
 }

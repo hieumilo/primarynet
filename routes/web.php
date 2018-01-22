@@ -46,16 +46,12 @@ Route::get('/jstreeload', 'HomeController@controljstree');
 
 
 
-Route::get('/evt', 'HomeController@Evtlist');
+//Route::post('/removeEvt', 'HomeController@Remove');
+
+//Route EvtControler
+Route::get('/evt', 'EvtlistController@Evtlist');
 Route::post('/removeEvt', 'HomeController@Remove');
-
-
-Route::get('/evt', function(){
-    $evtlists = DB::table('evtlists')->get()->toJson();
-    $evtlist = json_decode($evtlists);
-    return response()->json($evtlist);
-});
-
+Route::resource('evtitems', 'EvtlistController');
 
 Route::post('/config', 'HomeController@save');
 Route::resource('post', 'PostsController');
