@@ -233,5 +233,6 @@ return [
         'View' => Illuminate\Support\Facades\View::class,
 
     ],
-
+    'locales' => ['en' => 'English', 'vi' => 'vietnamese', 'ko' => 'korea'],
+    'skip_locales' => ['admin','auth','etc'],
 ];

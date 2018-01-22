@@ -68,11 +68,16 @@ Route::get('welcome', function (){
 });
 
 //vue route
-Route::get('/{vue?}', function(){
+Route::get('vue/{vue?}', function(){
     return view('app');
 })->where('vue', '^(?!.*api).*$[\/\w\.-]*');
 
-Route::get('/admin/{vue?}', function(){
+Route::get('vue/admin/{vue?}', function(){
     return view('admin');
 })->where('vue', '^(?!.*api).*$[\/\w\.-]*');
+
+//lang setting
+Route::get('/{lang?}/','LanguageController@index');
+Route::get('/{lang?}/login','LanguageController@login');
+
 
