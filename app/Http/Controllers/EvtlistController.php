@@ -72,10 +72,6 @@ class EvtlistController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //print_r(Evtlist::find($id));die();
-    //        $edit = new Evtlist;
-    //        $edit = $request->all();
-    //        $edit->save();
         $edit = DB::table('evtlists')
             ->where('id', $id)
             ->update([
