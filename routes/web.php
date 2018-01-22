@@ -67,3 +67,6 @@ Route::get('welcome', function (){
    return view('welcome');
 });
 
+Route::get('/{lang?}/','LanguageController@index');
+Route::get('/{lang?}/login','LanguageController@login');
+

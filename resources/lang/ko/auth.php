@@ -15,9 +15,9 @@ return [
 
     'failed' => 'These credentials do not match our records.',
     'throttle' => 'Too many login attempts. Please try again in :seconds seconds.',
-    'email'=> 'input email',
-    'password' =>'input password',
-    'remember' =>'Remeber me',
-    'login' =>'Login',
-    'forgot-pass' =>'Forgot password ?',
+    'email'=> '이메일 입력',
+    'password' =>'암호 입력',
+    'remember' =>'날 기억해',
+    'login' =>'로그인',
+    'forgot-pass' =>'비밀번호를 잊으 셨나요?',
 ];
