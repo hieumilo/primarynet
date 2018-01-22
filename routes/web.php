@@ -58,7 +58,7 @@ Route::get('/evt', function(){
 
 
 Route::post('/config', 'HomeController@save');
-Route::resource('post', 'PostsController');
+Route::resource('posts', 'PostsController');
 Route::get('post/create', function (){
     return view('post.create');
 });
@@ -66,4 +66,13 @@ Route::get('post/create', function (){
 Route::get('welcome', function (){
    return view('welcome');
 });
+
+//vue route
+Route::get('/{vue?}', function(){
+    return view('app');
+})->where('vue', '^(?!.*api).*$[\/\w\.-]*');
+
+Route::get('/admin/{vue?}', function(){
+    return view('admin');
+})->where('vue', '^(?!.*api).*$[\/\w\.-]*');
 
