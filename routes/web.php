@@ -10,9 +10,6 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/', function () {
-    return view('welcome');
-});
 
 Auth::routes();
 
@@ -74,7 +71,7 @@ Route::get('vue/admin/{vue?}', function(){
 })->where('vue', '^(?!.*api).*$[\/\w\.-]*');
 
 //lang setting
-Route::get('/{lang?}/','LanguageController@index');
+Route::get('/{lang?}','LanguageController@index');
 Route::get('/{lang?}/login','LanguageController@login');
 
 
