@@ -121,3 +121,7 @@ li {
 #lang {
     margin: 30px 0;
 }
+
+.bootstrap-table .fixed-table-toolbar .columns .dropdown-menu {
+    min-width: 130px !important;
+}
