@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Requests;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Input;
 use App;
@@ -15,7 +16,10 @@ class LanguageController extends Controller
         if($request->lang <> ''){
             app()->setLocale($request->lang);
         }
-        return view('welcome');
+        if (Auth::check())
+            return redirect(config('app.locale').'/dashboard/new');
+        else
+            return redirect(config('app.locale').'/login');
     }
     public function login(Request $request){
         if($request->lang <> ''){
