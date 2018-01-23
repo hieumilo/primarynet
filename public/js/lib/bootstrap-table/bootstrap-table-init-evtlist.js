@@ -217,7 +217,7 @@ $(document).ready(function(){
     });
 
     $('#edit').click(function () {
-        var ids = getIdSelections();
+        var ids = getIdEdit();
         $.ajaxSetup({
             headers: {
                 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
@@ -299,7 +299,7 @@ $(document).ready(function(){
             }
         }).done(function () {
             $(".modal").modal('hide');
-            //location.reload();
+            location.reload();
         })
     });
 
