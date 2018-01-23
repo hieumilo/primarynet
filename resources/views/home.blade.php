@@ -177,9 +177,10 @@
                                 <i class="font-icon font-icon-close-2"></i> Delete
                             </button>
 
-                            <button id="edit" class="btn btn-default remove">
+                            <button id="edit" class="btn btn-default remove" data-toggle="modal" data-target="#edit-item">
                                 Edit
                             </button>
+
 
                             <div class="modal fade" id="edit-item" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
                                 <div class="modal-dialog" role="document">

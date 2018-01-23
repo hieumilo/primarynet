@@ -124,7 +124,14 @@ li {
 
 .bootstrap-table .fixed-table-toolbar .columns .dropdown-menu {
     min-width: 130px !important;
+}
 
+.modal-backdrop{
+    z-index: auto ;
+}
+.modal-content {
+    margin-top: 150px;
+}
 .card {
     margin-bottom: 0;
 }

@@ -162,7 +162,7 @@
                                                     <i class="font-icon font-icon-close-2"></i> Delete
                                                 </button>
 
-                                                <button id="edit" class="btn btn-default remove">
+                                                <button id="edit" class="btn btn-default remove" disabled data-toggle="modal" data-target="#edit-item" >
                                                     Edit
                                                 </button>
 
