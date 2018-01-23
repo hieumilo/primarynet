@@ -17,3 +17,4 @@ composer update
 php artisan db:seed
 4 Run serve
 php artisan serve
+laravel start on: http://localhost:8000
