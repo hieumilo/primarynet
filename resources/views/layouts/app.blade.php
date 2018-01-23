@@ -274,10 +274,10 @@
                             </div>
                         </div>
                         <div class="dropdown dropdown-typical">
-                            <a class="dropdown-toggle no-arr"
+                            <a class="dropdown-toggle no-arr red" style="color: red"
                                href="/{{config('app.locale')}}/dashboard"
                                >
-                                <span class="font-icon font-icon-cogwheel"></span>
+                                <span class="font-icon font-icon-cogwheel" style="color: red"></span>
                                 <span class="lbl">Dashboard Old
                                     </span>
                             </a>
@@ -290,61 +290,6 @@
                                 <span class="lbl">Dashboard New
                                     </span>
                             </a>
-                        </div>
-                        <div class="dropdown dropdown-typical">
-                            <a class="dropdown-toggle" id="dd-header-marketing" data-target="#"
-                               href="http://example.com/" data-toggle="dropdown" aria-haspopup="true"
-                               aria-expanded="false">
-                                <span class="font-icon font-icon-cogwheel"></span>
-                                <span class="lbl">Marketing automation
-                                    </span>
-                            </a>
-
-                            <div class="dropdown-menu" aria-labelledby="dd-header-marketing">
-                                <a class="dropdown-item" href="#">Current Search</a>
-                                <a class="dropdown-item" href="#">Search for Issues</a>
-                                <div class="dropdown-divider"></div>
-                                <div class="dropdown-header">Recent issues</div>
-                                <a class="dropdown-item" href="#"><span class="font-icon font-icon-home"></span>Quant
-                                    and Verbal</a>
-                                <a class="dropdown-item" href="#"><span class="font-icon font-icon-cart"></span>Real
-                                    Gmat Test</a>
-                                <a class="dropdown-item" href="#"><span class="font-icon font-icon-speed"></span>Prep
-                                    Official App</a>
-                                <a class="dropdown-item" href="#"><span class="font-icon font-icon-users"></span>CATprer
-                                    Test</a>
-                                <a class="dropdown-item" href="#"><span class="font-icon font-icon-comments"></span>Third
-                                    Party Test</a>
-                                <div class="dropdown-more">
-                                    <div class="dropdown-more-caption padding">more...</div>
-                                    <div class="dropdown-more-sub">
-                                        <div class="dropdown-more-sub-in">
-                                            <a class="dropdown-item" href="#"><span
-                                                        class="font-icon font-icon-home"></span>Quant and Verbal</a>
-                                            <a class="dropdown-item" href="#"><span
-                                                        class="font-icon font-icon-cart"></span>Real Gmat Test</a>
-                                            <a class="dropdown-item" href="#"><span
-                                                        class="font-icon font-icon-speed"></span>Prep Official
-                                                App</a>
-                                            <a class="dropdown-item" href="#"><span
-                                                        class="font-icon font-icon-users"></span>CATprer Test</a>
-                                            <a class="dropdown-item" href="#"><span
-                                                        class="font-icon font-icon-comments"></span>Third Party Test</a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#">Import Issues from CSV</a>
-                                <div class="dropdown-divider"></div>
-                                <div class="dropdown-header">Filters</div>
-                                <a class="dropdown-item" href="#">My Open Issues</a>
-                                <a class="dropdown-item" href="#">Reported by Me</a>
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#">Manage filters</a>
-                                <div class="dropdown-divider"></div>
-                                <div class="dropdown-header">Timesheet</div>
-                                <a class="dropdown-item" href="#">Subscribtions</a>
-                            </div>
                         </div>
                         <div class="dropdown dropdown-typical">
                             <a class="dropdown-toggle" id="dd-header-social" data-target="#"

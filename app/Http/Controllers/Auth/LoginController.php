@@ -25,7 +25,10 @@ class LoginController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = "/dashboard/new";
+    protected function redirectTo()
+    {
+        return config('app.locale').'/dashboard/new';
+    }
 
     /**
      * Create a new controller instance.
