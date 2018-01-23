@@ -217,7 +217,7 @@ $(document).ready(function(){
     });
 
     $('#edit').click(function () {
-        var ids = getIdEdit();
+        var ids = getIdSelections();
         $.ajaxSetup({
             headers: {
                 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
