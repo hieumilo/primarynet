@@ -52,7 +52,6 @@ class HomeController extends Controller
                     ['user_id'=>Auth::id(), 'item_id'=>$itemSetting->id, 'row' => 1,'col' => 1,'sizex' => 1, 'sizey' => 1]
                 ]);
             }
-
             $settings = DB::table('users')
                 ->join('settings', 'users.id', '=', 'settings.user_id')
                 ->join('items', 'settings.item_id', '=', 'items.id')
@@ -62,6 +61,44 @@ class HomeController extends Controller
         }
 
         return view('home', compact('settings','evtlists'));
+
+    }
+
+    public function newDashboard()
+    {
+        //get all Evtlist
+        $evtlists = Evtlist::all();
+
+        //get all setting
+
+        $settings = DB::table('users')
+            ->join('settings', 'users.id', '=', 'settings.user_id')
+            ->join('items', 'settings.item_id', '=', 'items.id')
+            ->where('user_id',Auth::id())
+            ->select('settings.*', 'items.name')
+            ->get();
+
+        //check exist setting
+        if ($settings->isEmpty()){
+            //get all items
+            $itemSettings = DB::table('items')->get();
+
+            //insert default to database
+            foreach ($itemSettings as $itemSetting){
+                DB::table('settings')->insert([
+                    ['user_id'=>Auth::id(), 'item_id'=>$itemSetting->id, 'row' => 1,'col' => 1,'sizex' => 1, 'sizey' => 1]
+                ]);
+            }
+            $settings = DB::table('users')
+                ->join('settings', 'users.id', '=', 'settings.user_id')
+                ->join('items', 'settings.item_id', '=', 'items.id')
+                ->where('user_id',Auth::id())
+                ->select('settings.*', 'items.name')
+                ->get();
+        }
+
+        return view('new', compact('settings','evtlists'));
+
     }
 
     public function save(Request $request)

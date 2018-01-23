@@ -7,73 +7,73 @@
         <div class="container-fluid">
 
 
-            {{--<div class="row">--}}
-                {{--<div class="col-xl-6 dahsboard-column">--}}
-                    {{--<section class="box-typical box-typical-dashboard panel panel-default scrollable">--}}
-                        {{--<header class="box-typical-header panel-heading">--}}
-                            {{--<h3 class="panel-title">Recent orders</h3>--}}
-                        {{--</header>--}}
-                        {{--<div class="box-typical-body panel-body">--}}
-                            {{--<iframe class="iframe" src="http://localhost:8000/ifram8" style="">--}}
-                                {{--<p>test</p>--}}
-                            {{--</iframe>--}}
-                        {{--</div><!--.box-typical-body-->--}}
-                    {{--</section><!--.box-typical-dashboard-->--}}
-                {{--</div><!--.col-->--}}
-                {{--<div class="col-xl-6 dahsboard-column">--}}
-                    {{--<section class="box-typical box-typical-dashboard panel panel-default scrollable">--}}
-                        {{--<header class="box-typical-header panel-heading">--}}
-                            {{--<h3 class="panel-title">Recent tickets</h3>--}}
-                        {{--</header>--}}
-                        {{--<div class="box-typical-body panel-body">--}}
-                            {{--<iframe class="iframe" src="http://localhost:8000/ifram7" style="">--}}
-                                {{--<p>test</p>--}}
-                            {{--</iframe>--}}
-                        {{--</div><!--.box-typical-body-->--}}
-                    {{--</section><!--.box-typical-dashboard-->--}}
-                {{--</div><!--.col-->--}}
-            {{--</div>--}}
-            {{--<div class="row">--}}
-                {{--<div class="col-xl-4 dahsboard-column">--}}
-                    {{--<section class="box-typical box-typical-dashboard panel panel-default scrollable">--}}
-                        {{--<header class="box-typical-header panel-heading">--}}
-                            {{--<h3 class="panel-title">Recent tickets</h3>--}}
-                        {{--</header>--}}
-                        {{--<div class="box-typical-body panel-body">--}}
-                            {{--<iframe class="iframe" src="http://localhost:8000/ifram5" style="">--}}
-                                {{--<p>test</p>--}}
-                            {{--</iframe>--}}
-                        {{--</div><!--.box-typical-body-->--}}
-                    {{--</section><!--.box-typical-dashboard-->--}}
-                {{--</div>--}}
-                {{--<div class="col-xl-4 dahsboard-column">--}}
-                    {{--<section class="box-typical box-typical-dashboard panel panel-default scrollable">--}}
-                        {{--<header class="box-typical-header panel-heading">--}}
-                            {{--<h3 class="panel-title">Recent tickets</h3>--}}
-                        {{--</header>--}}
-                        {{--<div class="box-typical-body panel-body">--}}
-                            {{--<iframe class="iframe" src="http://localhost:8000/ifram6" style="">--}}
-                                {{--<p>test</p>--}}
-                            {{--</iframe>--}}
-                        {{--</div><!--.box-typical-body-->--}}
-                    {{--</section><!--.box-typical-dashboard-->--}}
-                {{--</div>--}}
-                {{--<div class="col-xl-4 dahsboard-column">--}}
+            <div class="row">
+                <div class="col-xl-6 dahsboard-column">
+                    <section class="box-typical box-typical-dashboard panel panel-default scrollable">
+                        <header class="box-typical-header panel-heading">
+                            <h3 class="panel-title">Recent orders</h3>
+                        </header>
+                        <div class="box-typical-body panel-body">
+                            <iframe class="iframe" src="http://localhost:8000/ifram8" style="">
+                                <p>test</p>
+                            </iframe>
+                        </div><!--.box-typical-body-->
+                    </section><!--.box-typical-dashboard-->
+                </div><!--.col-->
+                <div class="col-xl-6 dahsboard-column">
+                    <section class="box-typical box-typical-dashboard panel panel-default scrollable">
+                        <header class="box-typical-header panel-heading">
+                            <h3 class="panel-title">Recent tickets</h3>
+                        </header>
+                        <div class="box-typical-body panel-body">
+                            <iframe class="iframe" src="http://localhost:8000/ifram7" style="">
+                                <p>test</p>
+                            </iframe>
+                        </div><!--.box-typical-body-->
+                    </section><!--.box-typical-dashboard-->
+                </div><!--.col-->
+            </div>
+            <div class="row">
+                <div class="col-xl-4 dahsboard-column">
+                    <section class="box-typical box-typical-dashboard panel panel-default scrollable">
+                        <header class="box-typical-header panel-heading">
+                            <h3 class="panel-title">Recent tickets</h3>
+                        </header>
+                        <div class="box-typical-body panel-body">
+                            <iframe class="iframe" src="http://localhost:8000/ifram5" style="">
+                                <p>test</p>
+                            </iframe>
+                        </div><!--.box-typical-body-->
+                    </section><!--.box-typical-dashboard-->
+                </div>
+                <div class="col-xl-4 dahsboard-column">
+                    <section class="box-typical box-typical-dashboard panel panel-default scrollable">
+                        <header class="box-typical-header panel-heading">
+                            <h3 class="panel-title">Recent tickets</h3>
+                        </header>
+                        <div class="box-typical-body panel-body">
+                            <iframe class="iframe" src="http://localhost:8000/ifram6" style="">
+                                <p>test</p>
+                            </iframe>
+                        </div><!--.box-typical-body-->
+                    </section><!--.box-typical-dashboard-->
+                </div>
+                <div class="col-xl-4 dahsboard-column">
 
-                    {{--<section class="box-typical box-typical-dashboard panel panel-default scrollable">--}}
-                        {{--<header class="box-typical-header panel-heading">--}}
-                            {{--<h3 class="panel-title">Recent tickets</h3>--}}
-                        {{--</header>--}}
+                    <section class="box-typical box-typical-dashboard panel panel-default scrollable">
+                        <header class="box-typical-header panel-heading">
+                            <h3 class="panel-title">Recent tickets</h3>
+                        </header>
 
-                        {{--<div class="box-typical-body panel-body">--}}
-                            {{--<iframe class="iframe" src="http://localhost:8000/jstreeload" style="">--}}
-                                {{--<p>test</p>--}}
-                            {{--</iframe>--}}
-                        {{--</div><!--.box-typical-body-->--}}
-                    {{--</section><!--.box-typical-dashboard-->--}}
+                        <div class="box-typical-body panel-body">
+                            <iframe class="iframe" src="http://localhost:8000/jstreeload" style="">
+                                <p>test</p>
+                            </iframe>
+                        </div><!--.box-typical-body-->
+                    </section><!--.box-typical-dashboard-->
 
-                {{--</div>--}}
-            {{--</div>--}}
+                </div>
+            </div>
             <div class="row">
                 <div class="col-xl-12 dahsboard-column">
 
@@ -178,7 +178,7 @@
                             </button>
 
                             <button id="edit" class="btn btn-default remove">
-                                 Edit
+                                Edit
                             </button>
 
                             <div class="modal fade" id="edit-item" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
@@ -262,7 +262,7 @@
                                             </div>
                                             <div class="modal-footer">
                                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                                <button type="submit" class="btn btn-primary crud-submit-edit">Edit changes</button>
+                                                <button type="submit" class="btn btn-primary crud-submit-edit edit-item">Edit changes</button>
                                             </div>
                                         </form>
                                     </div>
@@ -300,11 +300,11 @@
                     <div class="gridster">
                         <ul>
 
-                            {{--@foreach($settings as $setting)--}}
-                                {{--<li data-row="{{$setting->row}}" data-col="{{$setting->col}}"--}}
-                                    {{--data-id="{{$setting->id}}"--}}
-                                    {{--data-sizex="{{$setting->sizex}}" data-sizey="{{$setting->sizey}}"></li>--}}
-                            {{--@endforeach--}}
+                            @foreach($settings as $setting)
+                            <li data-row="{{$setting->row}}" data-col="{{$setting->col}}"
+                            data-id="{{$setting->id}}"
+                            data-sizex="{{$setting->sizex}}" data-sizey="{{$setting->sizey}}"></li>
+                            @endforeach
 
                         </ul>
                     </div>

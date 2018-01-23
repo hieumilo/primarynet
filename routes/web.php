@@ -16,9 +16,8 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
-
-Route::get('/dashboard', 'HomeController@index')->name('home');
+Route::get('/dashboard', 'HomeController@index');
+Route::get('/dashboard/new', 'HomeController@newDashboard');
 
 Route::get('/ifram1', function(){
     return view('iframeChart/iframeChart1');

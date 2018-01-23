@@ -1,8 +1,5 @@
 var gridster = null;
 $(document).ready(function () {
-
-
-
     gridster = $(".gridster ul").gridster({
         widget_base_dimensions: ['auto', 140],
         autogenerate_stylesheet: true,

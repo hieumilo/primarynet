@@ -179,19 +179,16 @@ $(document).ready(function(){
     $table.on('check.bs.table uncheck.bs.table ' +
         'check-all.bs.table uncheck-all.bs.table', function () {
         $remove.prop('disabled', !$table.bootstrapTable('getSelections').length);
-        //$edit.prop('disabled', !$table.bootstrapTable('getSelections').length);
-        // save your data, here just save the current page
+        if(selections.length < 2 ){
+            $edit.prop('disabled', !$table.bootstrapTable('getSelections').length);
+        }else {
+            $edit.prop('disabled', $table.bootstrapTable('getSelections').length);
+        }
         selections = getIdSelections();
         //console.log(selections);
         // push or splice the selections if you want to save all data selections
     });
 
-    $table.on('check.bs.table uncheck.bs.table ' , function () {
-        $edit.prop('disabled', !$table.bootstrapTable('getSelections').length);
-        selections = getIdSelections();
-        //console.log(selections);
-        // push or splice the selections if you want to save all data selections
-    });
 
     $remove.click(function () {
         var ids = getIdSelections();
