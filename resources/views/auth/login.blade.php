@@ -66,9 +66,9 @@
         </div>
         <div class="col-md-4">
             <select name="cars" id="lang" name="lang">
-                <option value="en">English</option>
-                <option value="vi">Vietnamese</option>
-                <option value="ko">Korean</option>
+                <option value="en" {{config('app.locale')=='en'?  'selected' : '' }}>English</option>
+                <option value="vi" {{config('app.locale')=='vi'?  'selected' : '' }}>Vietnamese</option>
+                <option value="ko" {{config('app.locale')=='ko'?  'selected' : '' }}>Korean</option>
             </select>
 
         </div>
@@ -78,7 +78,7 @@
 @section('scripts')
     <script>
         $(document).ready(function($){
-            $('#lang').change(function(){
+            $('#lang').on('change',function(){
                 window.location.href=('/'+$('#lang').val()+window.location.pathname.slice(3));
             });
         });

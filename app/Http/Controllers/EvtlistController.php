@@ -48,7 +48,9 @@ class EvtlistController extends Controller
      */
     public function show($id)
     {
-        //
+
+        $evtlist = DB::table('evtlists')->where('id',$id)->get()->toArray();
+        return $evtlist;
     }
 
     /**
@@ -59,8 +61,8 @@ class EvtlistController extends Controller
      */
     public function edit($id)
     {
-        $evtlist = Evtlist::find($id);
-        return view('home', compact(evtlist));
+        $evtlist = DB::table('evtlists')->where('id',$id)->get();
+        return $evtlist;
     }
 
     /**

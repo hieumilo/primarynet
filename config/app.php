@@ -182,6 +182,7 @@ return [
         Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class,
 //        Barryvdh\Debugbar\ServiceProvider::class,
         Prettus\Repository\Providers\RepositoryServiceProvider::class,
+        Laravel\Passport\PassportServiceProvider::class,
     ],
 
     /*

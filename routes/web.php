@@ -54,7 +54,7 @@ Route::post('/removeEvt', 'HomeController@Remove');
 Route::resource('evtitems', 'EvtlistController');
 
 Route::post('/config', 'HomeController@save');
-Route::resource('post', 'PostsController');
+Route::resource('posts', 'PostsController');
 Route::get('post/create', function (){
     return view('post.create');
 });
@@ -63,6 +63,17 @@ Route::get('welcome', function (){
    return view('welcome');
 });
 
+//vue route
+Route::get('vue/{vue?}', function(){
+    return view('app');
+})->where('vue', '^(?!.*api).*$[\/\w\.-]*');
+
+Route::get('vue/admin/{vue?}', function(){
+    return view('admin');
+})->where('vue', '^(?!.*api).*$[\/\w\.-]*');
+
+//lang setting
 Route::get('/{lang?}/','LanguageController@index');
 Route::get('/{lang?}/login','LanguageController@login');
+
 
