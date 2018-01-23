@@ -129,3 +129,8 @@ li {
 section.card{
     height: 100%;
 }
+
+#datatable-session{
+    height: 100%;
+    overflow: auto;
+}

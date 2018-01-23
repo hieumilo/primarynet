@@ -191,7 +191,7 @@
     };
     var chart3 = {
         init:function() {
-            var chart = AmCharts.makeChart("chart3", {
+            var chart = AmCharts.makeChart("chart32", {
                 "type": "serial",
                 "theme": "none",
                 "marginRight": 40,
@@ -265,7 +265,7 @@
                     "tickLength": 20
                 },
                 "export": {
-                    "enabled": true
+                    "enabled": false
                 },
                 "dataLoader": {
                     "url": "../dataJsonChart/chart3.json",
@@ -284,7 +284,7 @@
     };
     var chart4 = {
         init:function() {
-            var chart = AmCharts.makeChart("chartdiv4", {
+            var chart = AmCharts.makeChart("chart3", {
                 "type": "serial",
                 "theme": "none",
                 "marginRight": 40,
