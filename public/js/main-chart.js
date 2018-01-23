@@ -121,7 +121,7 @@
                         "adjustBorderColor":false,
                         "color":"#ffffff"
                     },
-                    "bullet": "round",
+                    "bullet": "square",
                     "bulletBorderAlpha": 1,
                     "bulletColor": "#FFFFFF",
                     "bulletSize": 5,
@@ -169,7 +169,12 @@
                     "parseDates": false,
                     "dashLength": 1,
                     "minorGridEnabled": true,
-                    "tickLength": 20
+                    "tickLength": 20,
+                    //"parseDates": true,
+                    "autoGridCount": false,
+                    "axisColor": "#555555",
+                    "gridAlpha": 0,
+                    "gridCount": 50
                 },
                 "export": {
                     "enabled": false
@@ -358,7 +363,8 @@
                     "parseDates": false,
                     "dashLength": 1,
                     "minorGridEnabled": true,
-                    "tickLength": 20
+                    "tickLength": 20,
+                    "axisColor": "#555555"
                 },
                 "export": {
                     "enabled": false
@@ -380,7 +386,7 @@
     };
     var chart5 = {
         init:function() {
-            var chart = AmCharts.makeChart("chartdiv5", {
+            var chart = AmCharts.makeChart("chart3", {
                 "type": "serial",
                 "theme": "light",
                 "marginRight": 70,

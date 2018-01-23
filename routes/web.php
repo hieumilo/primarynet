@@ -73,5 +73,6 @@ Route::get('vue/admin/{vue?}', function(){
 //lang setting
 Route::get('/{lang?}','LanguageController@index');
 Route::get('/{lang?}/login','LanguageController@login');
+Route::get('/{lang?}/dashboard/new','LanguageController@dashboard');
 
 
