@@ -1,7 +1,7 @@
 (function ($, window, document, undefined) {
     var chart1 = {
         init:function() {
-            var chart = AmCharts.makeChart("chartdiv1", {
+            var chart = AmCharts.makeChart("chart1", {
                 "type": "serial",
                 "theme": "none",
                 "marginRight": 40,
@@ -96,7 +96,7 @@
     };
     var chart2 = {
         init:function() {
-            var chart = AmCharts.makeChart("chartdiv2", {
+            var chart = AmCharts.makeChart("chart2", {
                 "type": "serial",
                 "theme": "none",
                 "marginRight": 40,
@@ -191,7 +191,7 @@
     };
     var chart3 = {
         init:function() {
-            var chart = AmCharts.makeChart("chartdiv3", {
+            var chart = AmCharts.makeChart("chart3", {
                 "type": "serial",
                 "theme": "none",
                 "marginRight": 40,
@@ -421,7 +421,7 @@
     };
     var chart6 = {
         init:function() {
-            var chart = AmCharts.makeChart("chartdiv6", {
+            var chart = AmCharts.makeChart("chart5", {
                 "theme": "none",
                 "type": "serial",
                     "dataLoader": {
@@ -501,7 +501,7 @@
     };
     var chart7 = {
         init:function() {
-            var chart = AmCharts.makeChart( "chartdiv7", {
+            var chart = AmCharts.makeChart( "chart4", {
                 "type": "pie",
                 "theme": "none",
                 "titles": [ {

@@ -16,61 +16,52 @@
                                     data-id="{{$setting->id}}"
                                     data-sizex="{{$setting->sizex}}" data-sizey="{{$setting->sizey}}">
                                     @if($key==0)
-                                        <section class="box-typical box-typical-dashboard panel panel-default scrollable">
-                                            <header class="box-typical-header panel-heading">
-                                                <h3 class="panel-title">Recent tickets</h3>
+                                        <section class="card card-blue-fill">
+                                            <header class="card-header">
+                                                Panel title
                                             </header>
-                                            <div class="box-typical-body panel-body">
-                                                <iframe class="iframe" src="http://localhost:8000/ifram7" style="">
-                                                    <p>test</p>
-                                                </iframe>
-                                            </div><!--.box-typical-body-->
-                                        </section><!--.box-typical-dashboard-->
+                                            <div class="card-block">
+                                                <div id="chart1" class="chartdiv"></div>
+                                            </div>
+                                        </section>
                                     @elseif($key==1)
-                                        <section class="box-typical box-typical-dashboard panel panel-default scrollable">
-                                            <header class="box-typical-header panel-heading">
-                                                <h3 class="panel-title">Recent orders</h3>
+                                        <section class="card card-blue-fill">
+                                            <header class="card-header">
+                                                Panel title
                                             </header>
-                                            <div class="box-typical-body panel-body">
-                                                <iframe class="iframe" src="http://localhost:8000/ifram8" style="">
-                                                    <p>test</p>
-                                                </iframe>
-                                            </div><!--.box-typical-body-->
-                                        </section><!--.box-typical-dashboard-->
+                                            <div class="card-block">
+                                                <div id="chart2" class="chartdiv"></div>
+                                            </div>
+                                        </section>
                                     @elseif($key==2)
-                                        <section class="box-typical box-typical-dashboard panel panel-default scrollable">
-                                            <header class="box-typical-header panel-heading">
-                                                <h3 class="panel-title">Recent tickets</h3>
+                                        <section class="card card-blue-fill">
+                                            <header class="card-header">
+                                                Panel title
                                             </header>
-
-                                            <div class="box-typical-body panel-body">
-                                                <iframe class="iframe" src="http://localhost:8000/jstreeload" style="">
-                                                    <p>test</p>
-                                                </iframe>
-                                            </div><!--.box-typical-body-->
-                                        </section><!--.box-typical-dashboard-->
+                                            <div class="card-block">
+                                                <div id="chart3" class="chartdiv"></div>
+                                            </div>
+                                        </section>
                                     @elseif($key==3)
-                                        <section class="box-typical box-typical-dashboard panel panel-default scrollable">
-                                            <header class="box-typical-header panel-heading">
-                                                <h3 class="panel-title">Recent tickets</h3>
+                                        <section class="card card-blue-fill">
+                                            <header class="card-header">
+                                                Panel title
                                             </header>
-                                            <div class="box-typical-body panel-body">
-                                                <iframe class="iframe" src="http://localhost:8000/ifram6" style="">
-                                                    <p>test</p>
-                                                </iframe>
-                                            </div><!--.box-typical-body-->
-                                        </section><!--.box-typical-dashboard-->
+                                            <div class="card-block">
+                                                <div id="chart4" class="chartdiv"></div>
+                                            </div>
+                                        </section>
                                     @elseif($key==4)
-                                        <section class="box-typical box-typical-dashboard panel panel-default scrollable">
-                                            <header class="box-typical-header panel-heading">
-                                                <h3 class="panel-title">Recent tickets</h3>
+                                        <section class="card card-blue-fill">
+                                            <header class="card-header">
+                                                Panel title
                                             </header>
-                                            <div class="box-typical-body panel-body">
-                                                <iframe class="iframe" src="http://localhost:8000/ifram5" style="">
-                                                    <p>test</p>
-                                                </iframe>
-                                            </div><!--.box-typical-body-->
-                                        </section><!--.box-typical-dashboard-->
+                                            <div class="card-block">
+                                                <div id="tree-container" >
+
+                                                </div>
+                                            </div>
+                                        </section>
                                     @elseif($key==5)
                                         <section class="box-typical">
                                             <div id="toolbar">
@@ -282,16 +273,14 @@
                                             </div>
                                         </section><!--.box-typical-dashboard-->
                                     @else
-                                        <section class="box-typical box-typical-dashboard panel panel-default scrollable">
-                                            <header class="box-typical-header panel-heading">
-                                                <h3 class="panel-title">Recent tickets</h3>
+                                        <section class="card card-blue-fill">
+                                            <header class="card-header">
+                                                Panel title
                                             </header>
-                                            <div class="box-typical-body panel-body">
-                                                <iframe class="iframe" src="http://localhost:8000/ifram6" style="">
-                                                    <p>test</p>
-                                                </iframe>
-                                            </div><!--.box-typical-body-->
-                                        </section><!--.box-typical-dashboard-->
+                                            <div class="card-block">
+                                                <div id="chart5" class="chartdiv"></div>
+                                            </div>
+                                        </section>
                                     @endif
                                 </li>
                             @endforeach
@@ -302,4 +291,19 @@
             </div>
         </div>
     </div><!--.container-fluid-->
+
+@endsection
+@section('scripts')
+    <script>
+        $('#tree-container').jstree({
+            'plugins': ["wholerow", "checkbox"],
+            'core' : {
+                'data' : {
+                    "url" : "http://localhost:8000/jstree",
+                    "plugins" : [ "wholerow", "checkbox" ],
+                    "dataType" : "json" // needed only if you do not supply JSON headers
+                }
+            }
+        })
+    </script>
 @endsection
