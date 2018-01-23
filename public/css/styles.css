@@ -121,3 +121,11 @@ li {
 #lang {
     margin: 30px 0;
 }
+
+.card {
+    margin-bottom: 0;
+}
+
+section.card{
+    height: 100%;
+}

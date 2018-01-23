@@ -16,53 +16,52 @@
                                     data-id="{{$setting->id}}"
                                     data-sizex="{{$setting->sizex}}" data-sizey="{{$setting->sizey}}">
                                     @if($key==0)
-                                        <section class="box-typical box-typical-dashboard panel panel-default scrollable">
-                                            <header class="box-typical-header panel-heading">
-                                                <h3 class="panel-title">Recent tickets</h3>
+                                        <section class="card card-blue-fill">
+                                            <header class="card-header">
+                                                Panel title
                                             </header>
-                                            <div class="box-typical-body panel-body">
-                                                <div id="chart1"></div>
-                                            </div><!--.box-typical-body-->
-                                        </section><!--.box-typical-dashboard-->
+                                            <div class="card-block">
+                                                <div id="chart1" class="chartdiv"></div>
+                                            </div>
+                                        </section>
                                     @elseif($key==1)
-                                        <section class="box-typical box-typical-dashboard panel panel-default scrollable">
-                                            <header class="box-typical-header panel-heading">
-                                                <h3 class="panel-title">Recent orders</h3>
+                                        <section class="card card-blue-fill">
+                                            <header class="card-header">
+                                                Panel title
                                             </header>
-                                            <div class="box-typical-body panel-body">
-                                                <div id="chart2"></div>
-                                            </div><!--.box-typical-body-->
-                                        </section><!--.box-typical-dashboard-->
+                                            <div class="card-block">
+                                                <div id="chart2" class="chartdiv"></div>
+                                            </div>
+                                        </section>
                                     @elseif($key==2)
-                                        <section class="box-typical box-typical-dashboard panel panel-default scrollable">
-                                            <header class="box-typical-header panel-heading">
-                                                <h3 class="panel-title">Recent tickets</h3>
+                                        <section class="card card-blue-fill">
+                                            <header class="card-header">
+                                                Panel title
                                             </header>
-
-                                            <div class="box-typical-body panel-body">
-                                                <div id="chart3"></div>
-                                            </div><!--.box-typical-body-->
-                                        </section><!--.box-typical-dashboard-->
+                                            <div class="card-block">
+                                                <div id="chart3" class="chartdiv"></div>
+                                            </div>
+                                        </section>
                                     @elseif($key==3)
-                                        <section class="box-typical box-typical-dashboard panel panel-default scrollable">
-                                            <header class="box-typical-header panel-heading">
-                                                <h3 class="panel-title">Recent tickets</h3>
+                                        <section class="card card-blue-fill">
+                                            <header class="card-header">
+                                                Panel title
                                             </header>
-                                            <div class="box-typical-body panel-body">
-                                                <div id="chart4"></div>
-                                            </div><!--.box-typical-body-->
-                                        </section><!--.box-typical-dashboard-->
+                                            <div class="card-block">
+                                                <div id="chart4" class="chartdiv"></div>
+                                            </div>
+                                        </section>
                                     @elseif($key==4)
-                                        <section class="box-typical box-typical-dashboard panel panel-default scrollable">
-                                            <header class="box-typical-header panel-heading">
-                                                <h3 class="panel-title">Recent tickets</h3>
+                                        <section class="card card-blue-fill">
+                                            <header class="card-header">
+                                                Panel title
                                             </header>
-                                            <div class="box-typical-body panel-body">
-                                                <div id="tree-container">
+                                            <div class="card-block">
+                                                <div id="tree-container" >
 
                                                 </div>
-                                            </div><!--.box-typical-body-->
-                                        </section><!--.box-typical-dashboard-->
+                                            </div>
+                                        </section>
                                     @elseif($key==5)
                                         <section class="box-typical">
                                             <div id="toolbar">
@@ -274,14 +273,14 @@
                                             </div>
                                         </section><!--.box-typical-dashboard-->
                                     @else
-                                        <section class="box-typical box-typical-dashboard panel panel-default scrollable">
-                                            <header class="box-typical-header panel-heading">
-                                                <h3 class="panel-title">Recent tickets</h3>
+                                        <section class="card card-blue-fill">
+                                            <header class="card-header">
+                                                Panel title
                                             </header>
-                                            <div class="box-typical-body panel-body">
-                                                <div id="chart5"></div>
-                                            </div><!--.box-typical-body-->
-                                        </section><!--.box-typical-dashboard-->
+                                            <div class="card-block">
+                                                <div id="chart5" class="chartdiv"></div>
+                                            </div>
+                                        </section>
                                     @endif
                                 </li>
                             @endforeach
