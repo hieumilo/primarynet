@@ -21,9 +21,7 @@
                                                 <h3 class="panel-title">Recent tickets</h3>
                                             </header>
                                             <div class="box-typical-body panel-body">
-                                                <iframe class="iframe" src="http://localhost:8000/ifram7" style="">
-                                                    <p>test</p>
-                                                </iframe>
+                                                <div id="chart1"></div>
                                             </div><!--.box-typical-body-->
                                         </section><!--.box-typical-dashboard-->
                                     @elseif($key==1)
@@ -32,9 +30,7 @@
                                                 <h3 class="panel-title">Recent orders</h3>
                                             </header>
                                             <div class="box-typical-body panel-body">
-                                                <iframe class="iframe" src="http://localhost:8000/ifram8" style="">
-                                                    <p>test</p>
-                                                </iframe>
+                                                <div id="chart2"></div>
                                             </div><!--.box-typical-body-->
                                         </section><!--.box-typical-dashboard-->
                                     @elseif($key==2)
@@ -44,9 +40,7 @@
                                             </header>
 
                                             <div class="box-typical-body panel-body">
-                                                <iframe class="iframe" src="http://localhost:8000/jstreeload" style="">
-                                                    <p>test</p>
-                                                </iframe>
+                                                <div id="chart3"></div>
                                             </div><!--.box-typical-body-->
                                         </section><!--.box-typical-dashboard-->
                                     @elseif($key==3)
@@ -55,9 +49,7 @@
                                                 <h3 class="panel-title">Recent tickets</h3>
                                             </header>
                                             <div class="box-typical-body panel-body">
-                                                <iframe class="iframe" src="http://localhost:8000/ifram6" style="">
-                                                    <p>test</p>
-                                                </iframe>
+                                                <div id="chart4"></div>
                                             </div><!--.box-typical-body-->
                                         </section><!--.box-typical-dashboard-->
                                     @elseif($key==4)
@@ -66,9 +58,7 @@
                                                 <h3 class="panel-title">Recent tickets</h3>
                                             </header>
                                             <div class="box-typical-body panel-body">
-                                                <iframe class="iframe" src="http://localhost:8000/ifram5" style="">
-                                                    <p>test</p>
-                                                </iframe>
+                                                <div id="chart5"></div>
                                             </div><!--.box-typical-body-->
                                         </section><!--.box-typical-dashboard-->
                                     @elseif($key==5)
@@ -287,9 +277,7 @@
                                                 <h3 class="panel-title">Recent tickets</h3>
                                             </header>
                                             <div class="box-typical-body panel-body">
-                                                <iframe class="iframe" src="http://localhost:8000/ifram6" style="">
-                                                    <p>test</p>
-                                                </iframe>
+                                                <div id="chart5"></div>
                                             </div><!--.box-typical-body-->
                                         </section><!--.box-typical-dashboard-->
                                     @endif
