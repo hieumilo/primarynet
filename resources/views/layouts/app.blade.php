@@ -241,7 +241,7 @@
                             <a class="dropdown-item" href="{{ route('logout') }}"
                                onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
-                                <span class="font-icon glyphicon glyphicon-log-out"></span> Logout
+                                <span class="font-icon glyphicon glyphicon-log-out"></span> {{trans('auth.logout')}}
                             </a>
 
                             <form id="logout-form" action="{{ route('logout') }}" method="POST"
@@ -278,7 +278,7 @@
                                href="/{{config('app.locale')}}/dashboard"
                                >
                                 <span class="font-icon font-icon-cogwheel" style="color: red"></span>
-                                <span class="lbl">Dashboard Old
+                                <span class="lbl">{{trans('auth.dashboard')}}
                                     </span>
                             </a>
                         </div>
@@ -287,7 +287,7 @@
                                href="/{{config('app.locale')}}/dashboard/new"
                             >
                                 <span class="font-icon font-icon-cogwheel"></span>
-                                <span class="lbl">Dashboard New
+                                <span class="lbl">{{trans('auth.dashboard-new')}}
                                     </span>
                             </a>
                         </div>
@@ -296,7 +296,7 @@
                                href="http://example.com/" data-toggle="dropdown" aria-haspopup="true"
                                aria-expanded="false">
                                 <span class="font-icon font-icon-share"></span>
-                                <span class="lbl">Social media</span>
+                                <span class="lbl">{{trans('auth.social-media')}}</span>
                             </a>
 
                             <div class="dropdown-menu" aria-labelledby="dd-header-social">
@@ -315,7 +315,7 @@
                         <div class="dropdown dropdown-typical">
                             <a href="#" class="dropdown-toggle no-arr">
                                 <span class="font-icon font-icon-page"></span>
-                                <span class="lbl">Projects</span>
+                                <span class="lbl">{{trans('auth.project')}}</span>
                                 <span class="label label-pill label-danger">35</span>
                             </a>
                         </div>
@@ -325,7 +325,7 @@
                                href="http://example.com/" data-toggle="dropdown" aria-haspopup="true"
                                aria-expanded="false">
                                 <span class="font-icon font-icon-pencil"></span>
-                                <span class="lbl">Form builder</span>
+                                <span class="lbl">{{trans('auth.form-builder')}}</span>
                             </a>
 
                             <div class="dropdown-menu" aria-labelledby="dd-header-form-builder">
@@ -344,7 +344,7 @@
                         <div class="dropdown">
                             <button class="btn btn-rounded dropdown-toggle" id="dd-header-add" type="button"
                                     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                Add
+                                {{trans('auth.add')}}
                             </button>
                             <div class="dropdown-menu" aria-labelledby="dd-header-add">
                                 <a class="dropdown-item" href="#">Quant and Verbal</a>
@@ -427,7 +427,7 @@
                         </div><!--.help-dropdown-->
                         <a class="btn btn-nav btn-rounded btn-inline btn-danger-outline"
                            href="/post">
-                            Create Posts
+                            {{trans('auth.create-post')}}
                         </a>
                         <div class="site-header-search-container">
                             <form class="site-header-search closed">

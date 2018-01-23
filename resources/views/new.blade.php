@@ -18,7 +18,7 @@
                                     @if($key==0)
                                         <section class="card card-blue-fill">
                                             <header class="card-header">
-                                                Panel title
+                                                {{trans('auth.panel-title')}}
                                             </header>
                                             <div class="card-block">
                                                 <div id="chart1" class="chartdiv"></div>
@@ -27,7 +27,7 @@
                                     @elseif($key==1)
                                         <section class="card card-blue-fill">
                                             <header class="card-header">
-                                                Panel title
+                                                {{trans('auth.panel-title')}}
                                             </header>
                                             <div class="card-block">
                                                 <div id="chart2" class="chartdiv"></div>
@@ -36,7 +36,7 @@
                                     @elseif($key==2)
                                         <section class="card card-blue-fill">
                                             <header class="card-header">
-                                                Panel title
+                                                {{trans('auth.panel-title')}}
                                             </header>
                                             <div class="card-block">
                                                 <div id="chart3" class="chartdiv"></div>
@@ -45,7 +45,7 @@
                                     @elseif($key==3)
                                         <section class="card card-blue-fill">
                                             <header class="card-header">
-                                                Panel title
+                                                {{trans('auth.panel-title')}}
                                             </header>
                                             <div class="card-block">
                                                 <div id="chart4" class="chartdiv"></div>
@@ -54,7 +54,7 @@
                                     @elseif($key==4)
                                         <section class="card card-blue-fill">
                                             <header class="card-header">
-                                                Panel title
+                                                {{trans('auth.panel-title')}}
                                             </header>
                                             <div class="card-block">
                                                 <div id="tree-container" >
@@ -65,7 +65,7 @@
                                     @elseif($key==5)
                                         <section class="card card-blue-fill">
                                             <header class="card-header">
-                                                Panel title
+                                                {{trans('auth.panel-title')}}
                                             </header>
                                             <div class="card-block">
                                                 <section class="box-typical" id="datatable-session">
@@ -283,7 +283,7 @@
                                     @else
                                         <section class="card card-blue-fill">
                                             <header class="card-header">
-                                                Panel title
+                                                {{trans('auth.panel-title')}}
                                             </header>
                                             <div class="card-block">
                                                 <div id="chart5" class="chartdiv"></div>

@@ -20,4 +20,13 @@ return [
     'remember' =>'Lưu mật khẩu tài khoản',
     'login' =>'Đăng nhập',
     'forgot-pass' =>'Quên mật khẩu ?',
+    'dashboard' =>'Phần điều khiễn cũ',
+    'dashboard-new' =>'Phần điều khiển mới',
+    'social-media' =>'Phương tiện truyền thông xã hội',
+    'project' =>'Các dự án',
+    'form-builder' =>'Dựng mẫu',
+    'create-post' =>'Tạo bài đăng',
+    'add' =>'Thêm',
+    'logout' =>' Đăng xuất',
+    'panel-title' =>' Tiêu đề bảng',
 ];

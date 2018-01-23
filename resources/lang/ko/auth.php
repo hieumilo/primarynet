@@ -20,4 +20,13 @@ return [
     'remember' =>'날 기억해',
     'login' =>'로그인',
     'forgot-pass' =>'비밀번호를 잊으 셨나요?',
+    'dashboard' =>'이전 대시 보드',
+    'dashboard-new' =>'새로운 대시 보드',
+    'social-media' =>'소셜 미디어',
+    'project' =>'소셜 미디어',
+    'form-builder' =>'양식 작성기',
+    'create-post' =>'게시물 만들기',
+    'add' =>'더하다',
+    'logout' =>'로그 아웃',
+    'panel-title' =>' 패널 제목',
 ];

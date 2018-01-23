@@ -67,7 +67,7 @@ class HomeController extends Controller
 
     }
 
-    public function newDashboard()
+    public function newDashboard($lang)
     {
         //get all Evtlist
         $evtlists = Evtlist::all();
@@ -133,7 +133,7 @@ class HomeController extends Controller
                 ->select('settings.*', 'items.name')
                 ->get();
         }
-        App::setLocale(config('app.locale'));
+        app()->setLocale($lang);
         return view('new', compact('settings','evtlists'));
 
     }
