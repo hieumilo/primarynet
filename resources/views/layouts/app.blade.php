@@ -290,6 +290,24 @@
                             </div>
                         </div>
                         <div class="dropdown dropdown-typical">
+                            <a class="dropdown-toggle no-arr"
+                               href="/dashboard"
+                               >
+                                <span class="font-icon font-icon-cogwheel"></span>
+                                <span class="lbl">Dashboard Old
+                                    </span>
+                            </a>
+                        </div>
+                        <div class="dropdown dropdown-typical">
+                            <a class="dropdown-toggle no-arr"
+                               href="/dashboard/new"
+                            >
+                                <span class="font-icon font-icon-cogwheel"></span>
+                                <span class="lbl">Dashboard New
+                                    </span>
+                            </a>
+                        </div>
+                        <div class="dropdown dropdown-typical">
                             <a class="dropdown-toggle" id="dd-header-marketing" data-target="#"
                                href="http://example.com/" data-toggle="dropdown" aria-haspopup="true"
                                aria-expanded="false">
