@@ -80,7 +80,7 @@
                     "enabled": false
                 },
                 "dataLoader": {
-                    "url": "../dataJsonChart/chart1.json",
+                    "url": "/dataJsonChart/chart1.json",
                     "format": "json"
                 }
             });
@@ -175,7 +175,7 @@
                     "enabled": false
                 },
                 "dataLoader": {
-                    "url": "../dataJsonChart/chart2.json",
+                    "url": "/dataJsonChart/chart2.json",
                     "format": "json"
                 }
             });
@@ -364,7 +364,7 @@
                     "enabled": false
                 },
                 "dataLoader": {
-                    "url": "../dataJsonChart/chart4.json",
+                    "url": "/dataJsonChart/chart4.json",
                     "format": "json"
                 }
             });
@@ -385,7 +385,7 @@
                 "theme": "light",
                 "marginRight": 70,
                 "dataLoader": {
-                    "url": "../dataJsonChart/chart5.json",
+                    "url": "/dataJsonChart/chart5.json",
                     "format": "json"
                 },
                 "valueAxes": [{
@@ -425,7 +425,7 @@
                 "theme": "none",
                 "type": "serial",
                     "dataLoader": {
-                        "url": "../dataJsonChart/chart6.json",
+                        "url": "/dataJsonChart/chart6.json",
                         "format": "json"
                     },
                 "valueAxes": [{

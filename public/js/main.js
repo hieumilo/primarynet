@@ -48,3 +48,7 @@ $(document).ready(function () {
     $('.gridster  ul').css({'padding': '0'});
 
 });
+
+function setLocate(data) {
+    window.location.href=('/'+data+window.location.pathname.slice(3));
+}

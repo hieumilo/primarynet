@@ -6,6 +6,7 @@ use App\Jstree;
 use Illuminate\Http\Request;
 
 use App\Evtlist;
+use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 
@@ -59,6 +60,8 @@ class HomeController extends Controller
                 ->select('settings.*', 'items.name')
                 ->get();
         }
+
+        App::setLocale(config('app.locale'));
 
         return view('home', compact('settings','evtlists'));
 
@@ -130,7 +133,7 @@ class HomeController extends Controller
                 ->select('settings.*', 'items.name')
                 ->get();
         }
-
+        App::setLocale(config('app.locale'));
         return view('new', compact('settings','evtlists'));
 
     }
