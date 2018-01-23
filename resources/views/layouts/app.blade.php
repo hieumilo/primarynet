@@ -28,7 +28,7 @@
     <link rel="stylesheet" href="/css/separate/vendor/lobipanel.min.css">
     <link rel="stylesheet" href="/css/lib/jqueryui/jquery-ui.min.css">
     <link rel="stylesheet" href="/css/separate/pages/widgets.min.css">
-    <link rel="stylesheet" href="css/lib/bootstrap-table/bootstrap-table.min.css">
+    <link rel="stylesheet" href="/css/lib/bootstrap-table/bootstrap-table.min.css">
     <link rel="stylesheet" href="/css/lib/font-awesome/font-awesome.min.css">
     <link rel="stylesheet" href="/css/lib/bootstrap/bootstrap.min.css">
     <link rel="stylesheet" href="https://www.amcharts.com/lib/3/plugins/export/export.css" type="text/css" media="all"/>
@@ -45,8 +45,8 @@
 <header class="site-header">
     <div class="container-fluid">
         <a href="#" class="site-logo">
-            <img class="hidden-md-down" src="img/logo-2.png" alt="">
-            <img class="hidden-lg-down" src="img/logo-2-mob.png" alt="">
+            <img class="hidden-md-down" src="/img/logo-2.png" alt="">
+            <img class="hidden-lg-down" src="/img/logo-2-mob.png" alt="">
         </a>
 
         <button id="show-hide-sidebar-toggle" class="show-hide-sidebar">
@@ -77,7 +77,7 @@
                             <div class="dropdown-menu-notif-list">
                                 <div class="dropdown-menu-notif-item">
                                     <div class="photo">
-                                        <img src="img/photo-64-1.jpg" alt="">
+                                        <img src="/img/photo-64-1.jpg" alt="">
                                     </div>
                                     <div class="dot"></div>
                                     <a href="#">Morgan</a> was bothering about something
@@ -85,7 +85,7 @@
                                 </div>
                                 <div class="dropdown-menu-notif-item">
                                     <div class="photo">
-                                        <img src="img/photo-64-2.jpg" alt="">
+                                        <img src="/img/photo-64-2.jpg" alt="">
                                     </div>
                                     <div class="dot"></div>
                                     <a href="#">Lioneli</a> had commented on this <a href="#">Super Important
@@ -94,7 +94,7 @@
                                 </div>
                                 <div class="dropdown-menu-notif-item">
                                     <div class="photo">
-                                        <img src="img/photo-64-3.jpg" alt="">
+                                        <img src="/img/photo-64-3.jpg" alt="">
                                     </div>
                                     <div class="dot"></div>
                                     <a href="#">Xavier</a> had commented on the <a href="#">Movie title</a>
@@ -102,7 +102,7 @@
                                 </div>
                                 <div class="dropdown-menu-notif-item">
                                     <div class="photo">
-                                        <img src="img/photo-64-4.jpg" alt="">
+                                        <img src="/img/photo-64-4.jpg" alt="">
                                     </div>
                                     <a href="#">Lionely</a> wants to go to <a href="#">Cinema</a> with you to see <a
                                             href="#">This Movie</a>
@@ -153,25 +153,25 @@
                                     <div class="dropdown-menu-messages-list">
                                         <a href="#" class="mess-item">
                                                 <span class="avatar-preview avatar-preview-32"><img
-                                                            src="img/photo-64-2.jpg" alt=""></span>
+                                                            src="/img/photo-64-2.jpg" alt=""></span>
                                             <span class="mess-item-name">Tim Collins</span>
                                             <span class="mess-item-txt">Morgan was bothering about something!</span>
                                         </a>
                                         <a href="#" class="mess-item">
                                                 <span class="avatar-preview avatar-preview-32"><img
-                                                            src="img/avatar-2-64.png" alt=""></span>
+                                                            src="/img/avatar-2-64.png" alt=""></span>
                                             <span class="mess-item-name">Christian Burton</span>
                                             <span class="mess-item-txt">Morgan was bothering about something! Morgan was bothering about something.</span>
                                         </a>
                                         <a href="#" class="mess-item">
                                                 <span class="avatar-preview avatar-preview-32"><img
-                                                            src="img/photo-64-2.jpg" alt=""></span>
+                                                            src="/img/photo-64-2.jpg" alt=""></span>
                                             <span class="mess-item-name">Tim Collins</span>
                                             <span class="mess-item-txt">Morgan was bothering about something!</span>
                                         </a>
                                         <a href="#" class="mess-item">
                                                 <span class="avatar-preview avatar-preview-32"><img
-                                                            src="img/avatar-2-64.png" alt=""></span>
+                                                            src="/img/avatar-2-64.png" alt=""></span>
                                             <span class="mess-item-name">Christian Burton</span>
                                             <span class="mess-item-txt">Morgan was bothering about something...</span>
                                         </a>
@@ -181,25 +181,25 @@
                                     <div class="dropdown-menu-messages-list">
                                         <a href="#" class="mess-item">
                                                 <span class="avatar-preview avatar-preview-32"><img
-                                                            src="img/avatar-2-64.png" alt=""></span>
+                                                            src="/img/avatar-2-64.png" alt=""></span>
                                             <span class="mess-item-name">Christian Burton</span>
                                             <span class="mess-item-txt">Morgan was bothering about something! Morgan was bothering about something...</span>
                                         </a>
                                         <a href="#" class="mess-item">
                                                 <span class="avatar-preview avatar-preview-32"><img
-                                                            src="img/photo-64-2.jpg" alt=""></span>
+                                                            src="/img/photo-64-2.jpg" alt=""></span>
                                             <span class="mess-item-name">Tim Collins</span>
                                             <span class="mess-item-txt">Morgan was bothering about something! Morgan was bothering about something.</span>
                                         </a>
                                         <a href="#" class="mess-item">
                                                 <span class="avatar-preview avatar-preview-32"><img
-                                                            src="img/avatar-2-64.png" alt=""></span>
+                                                            src="/img/avatar-2-64.png" alt=""></span>
                                             <span class="mess-item-name">Christian Burtons</span>
                                             <span class="mess-item-txt">Morgan was bothering about something!</span>
                                         </a>
                                         <a href="#" class="mess-item">
                                                 <span class="avatar-preview avatar-preview-32"><img
-                                                            src="img/photo-64-2.jpg" alt=""></span>
+                                                            src="/img/photo-64-2.jpg" alt=""></span>
                                             <span class="mess-item-name">Tim Collins</span>
                                             <span class="mess-item-txt">Morgan was bothering about something!</span>
                                         </a>
@@ -247,7 +247,7 @@
                     <div class="dropdown user-menu">
                         <button class="dropdown-toggle" id="dd-user-menu" type="button" data-toggle="dropdown"
                                 aria-haspopup="true" aria-expanded="false">
-                            <img src="img/avatar-2-64.png" alt="">
+                            <img src="/img/avatar-2-64.png" alt="">
                         </button>
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dd-user-menu">
 
@@ -517,15 +517,15 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/amcharts/3.21.12/plugins/dataloader/dataloader.min.js"></script>
 <script src="https://www.amcharts.com/lib/3/themes/light.js"></script>
 <script src="https://www.amcharts.com/lib/3/pie.js"></script>
-<script src="js/main-chart.js"></script>
-<script src="js/lib/jstree/jstree.min.js"></script>
+<script src="/js/main-chart.js"></script>
+<script src="/js/lib/jstree/jstree.min.js"></script>
 {{--DataTable JS --}}
 
-<script src="js/lib/bootstrap-table/bootstrap-table.js"></script>
-<script src="js/lib/bootstrap-table/bootstrap-table-export.min.js"></script>
-<script src="js/lib/bootstrap-table/tableExport.min.js"></script>
-<script src="js/lib/bootstrap-table/bootstrap-table-init-evtlist.js"></script>
-<script src="js/lib/bootstrap-table/table.js"></script>
+<script src="/js/lib/bootstrap-table/bootstrap-table.js"></script>
+<script src="/js/lib/bootstrap-table/bootstrap-table-export.min.js"></script>
+<script src="/js/lib/bootstrap-table/tableExport.min.js"></script>
+<script src="/js/lib/bootstrap-table/bootstrap-table-init-evtlist.js"></script>
+<script src="/js/lib/bootstrap-table/table.js"></script>
 
 
 <script src="/js/app-theme.js"></script>
