@@ -124,6 +124,15 @@ li {
 
 .bootstrap-table .fixed-table-toolbar .columns .dropdown-menu {
     min-width: 130px !important;
+}
+
+
+.modal-backdrop{
+    z-index: auto ;
+}
+.modal-content {
+    margin-top: 150px;
+}
 
 .card {
     margin-bottom: 0;
@@ -131,11 +140,16 @@ li {
 
 section.card{
     height: 100%;
-
 }
+
+
 .jstree-default .jstree-node {
     text-align: left !important;
 }
 .jstree-default>.jstree-container-ul>.jstree-node {
     text-align: left !important;
+}
+#datatable-session{
+    height: 100%;
+    overflow: auto;
 }

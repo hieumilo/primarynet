@@ -6,6 +6,7 @@ use App\Jstree;
 use Illuminate\Http\Request;
 
 use App\Evtlist;
+use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 
@@ -60,6 +61,8 @@ class HomeController extends Controller
                 ->get();
         }
 
+        App::setLocale(config('app.locale'));
+
         return view('home', compact('settings','evtlists'));
 
     }
@@ -84,10 +87,44 @@ class HomeController extends Controller
             $itemSettings = DB::table('items')->get();
 
             //insert default to database
-            foreach ($itemSettings as $itemSetting){
-                DB::table('settings')->insert([
-                    ['user_id'=>Auth::id(), 'item_id'=>$itemSetting->id, 'row' => 1,'col' => 1,'sizex' => 1, 'sizey' => 1]
-                ]);
+            foreach ($itemSettings as $key=>$itemSetting){
+                switch ($key) {
+                    case 0:
+                        DB::table('settings')->insert([
+                            ['user_id' => Auth::id(), 'item_id' => $itemSetting->id, 'row' => 1, 'col' => 1, 'sizex' => 3, 'sizey' => 2]
+                        ]);
+                        break;
+                    case 1:
+                        DB::table('settings')->insert([
+                            ['user_id' => Auth::id(), 'item_id' => $itemSetting->id, 'row' => 1, 'col' => 3, 'sizex' => 2, 'sizey' => 2]
+                        ]);
+                        break;
+                    case 2:
+                        DB::table('settings')->insert([
+                            ['user_id' => Auth::id(), 'item_id' => $itemSetting->id, 'row' => 3, 'col' => 3, 'sizex' => 2, 'sizey' => 2]
+                        ]);
+                        break;
+                    case 3:
+                        DB::table('settings')->insert([
+                            ['user_id' => Auth::id(), 'item_id' => $itemSetting->id, 'row' => 4, 'col' => 1, 'sizex' => 3, 'sizey' => 2]
+                        ]);
+                        break;
+                    case 4:
+                        DB::table('settings')->insert([
+                            ['user_id' => Auth::id(), 'item_id' => $itemSetting->id, 'row' => 5, 'col' => 3, 'sizex' => 2, 'sizey' => 2]
+                        ]);
+                        break;
+                    case 5:
+                        DB::table('settings')->insert([
+                            ['user_id' => Auth::id(), 'item_id' => $itemSetting->id, 'row' => 1, 'col' => 5, 'sizex' => 6, 'sizey' => 6]
+                        ]);
+                        break;
+                    default:
+                        DB::table('settings')->insert([
+                            ['user_id' => Auth::id(), 'item_id' => $itemSetting->id, 'row' => 4, 'col' => 1, 'sizex' => 3, 'sizey' => 2]
+                        ]);
+                }
+
             }
             $settings = DB::table('users')
                 ->join('settings', 'users.id', '=', 'settings.user_id')
@@ -96,7 +133,7 @@ class HomeController extends Controller
                 ->select('settings.*', 'items.name')
                 ->get();
         }
-
+        App::setLocale(config('app.locale'));
         return view('new', compact('settings','evtlists'));
 
     }

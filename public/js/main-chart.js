@@ -80,7 +80,7 @@
                     "enabled": false
                 },
                 "dataLoader": {
-                    "url": "../dataJsonChart/chart1.json",
+                    "url": "/dataJsonChart/chart1.json",
                     "format": "json"
                 }
             });
@@ -180,7 +180,7 @@
                     "enabled": false
                 },
                 "dataLoader": {
-                    "url": "../dataJsonChart/chart2.json",
+                    "url": "/dataJsonChart/chart2.json",
                     "format": "json"
                 }
             });
@@ -196,7 +196,7 @@
     };
     var chart3 = {
         init:function() {
-            var chart = AmCharts.makeChart("chart3", {
+            var chart = AmCharts.makeChart("chart32", {
                 "type": "serial",
                 "theme": "none",
                 "marginRight": 40,
@@ -270,7 +270,7 @@
                     "tickLength": 20
                 },
                 "export": {
-                    "enabled": true
+                    "enabled": false
                 },
                 "dataLoader": {
                     "url": "../dataJsonChart/chart3.json",
@@ -289,7 +289,7 @@
     };
     var chart4 = {
         init:function() {
-            var chart = AmCharts.makeChart("chartdiv4", {
+            var chart = AmCharts.makeChart("chart3", {
                 "type": "serial",
                 "theme": "none",
                 "marginRight": 40,
@@ -370,7 +370,7 @@
                     "enabled": false
                 },
                 "dataLoader": {
-                    "url": "../dataJsonChart/chart4.json",
+                    "url": "/dataJsonChart/chart4.json",
                     "format": "json"
                 }
             });
@@ -391,7 +391,7 @@
                 "theme": "light",
                 "marginRight": 70,
                 "dataLoader": {
-                    "url": "../dataJsonChart/chart5.json",
+                    "url": "/dataJsonChart/chart5.json",
                     "format": "json"
                 },
                 "valueAxes": [{
@@ -431,7 +431,7 @@
                 "theme": "none",
                 "type": "serial",
                     "dataLoader": {
-                        "url": "../dataJsonChart/chart6.json",
+                        "url": "/dataJsonChart/chart6.json",
                         "format": "json"
                     },
                 "valueAxes": [{

@@ -299,7 +299,7 @@ $(document).ready(function(){
             }
         }).done(function () {
             $(".modal").modal('hide');
-            //location.reload();
+            location.reload();
         })
     });
 

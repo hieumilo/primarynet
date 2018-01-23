@@ -219,27 +219,11 @@
                         </button>
                         <div class="dropdown-menu dropdown-menu-right">
                             <div class="dropdown-menu-col">
-                                <a class="dropdown-item" href="#"><span
-                                            class="flag-icon flag-icon-ru"></span>Русский</a>
-                                <a class="dropdown-item" href="#"><span
-                                            class="flag-icon flag-icon-de"></span>Deutsch</a>
-                                <a class="dropdown-item" href="#"><span
-                                            class="flag-icon flag-icon-it"></span>Italiano</a>
-                                <a class="dropdown-item" href="#"><span
-                                            class="flag-icon flag-icon-es"></span>Español</a>
-                                <a class="dropdown-item" href="#"><span class="flag-icon flag-icon-pl"></span>Polski</a>
-                                <a class="dropdown-item" href="#"><span
-                                            class="flag-icon flag-icon-li"></span>Lietuviu</a>
+                                <a class="dropdown-item" onclick="setLocate('ko')"><span class="flag-icon flag-icon-kr"></span>Korea</a>
                             </div>
                             <div class="dropdown-menu-col">
-                                <a class="dropdown-item current" href="#"><span
-                                            class="flag-icon flag-icon-us"></span>English</a>
-                                <a class="dropdown-item" href="#"><span
-                                            class="flag-icon flag-icon-fr"></span>Français</a>
-                                <a class="dropdown-item" href="#"><span class="flag-icon flag-icon-by"></span>Беларускi</a>
-                                <a class="dropdown-item" href="#"><span class="flag-icon flag-icon-ua"></span>Українська</a>
-                                <a class="dropdown-item" href="#"><span class="flag-icon flag-icon-cz"></span>Česky</a>
-                                <a class="dropdown-item" href="#"><span class="flag-icon flag-icon-ch"></span>中國</a>
+                                <a class="dropdown-item current" onclick="setLocate('en')"><span class="flag-icon flag-icon-us"></span>English</a>
+                                <a class="dropdown-item" href="#" onclick="setLocate('vi')"><span class="flag-icon flag-icon-vi"></span>Viet Nam</a>
                             </div>
                         </div>
                     </div>
@@ -290,77 +274,22 @@
                             </div>
                         </div>
                         <div class="dropdown dropdown-typical">
-                            <a class="dropdown-toggle no-arr"
-                               href="/dashboard"
+                            <a class="dropdown-toggle no-arr red" style="color: red"
+                               href="/{{config('app.locale')}}/dashboard"
                                >
-                                <span class="font-icon font-icon-cogwheel"></span>
+                                <span class="font-icon font-icon-cogwheel" style="color: red"></span>
                                 <span class="lbl">Dashboard Old
                                     </span>
                             </a>
                         </div>
                         <div class="dropdown dropdown-typical">
                             <a class="dropdown-toggle no-arr"
-                               href="/dashboard/new"
+                               href="/{{config('app.locale')}}/dashboard/new"
                             >
                                 <span class="font-icon font-icon-cogwheel"></span>
                                 <span class="lbl">Dashboard New
                                     </span>
                             </a>
-                        </div>
-                        <div class="dropdown dropdown-typical">
-                            <a class="dropdown-toggle" id="dd-header-marketing" data-target="#"
-                               href="http://example.com/" data-toggle="dropdown" aria-haspopup="true"
-                               aria-expanded="false">
-                                <span class="font-icon font-icon-cogwheel"></span>
-                                <span class="lbl">Marketing automation
-                                    </span>
-                            </a>
-
-                            <div class="dropdown-menu" aria-labelledby="dd-header-marketing">
-                                <a class="dropdown-item" href="#">Current Search</a>
-                                <a class="dropdown-item" href="#">Search for Issues</a>
-                                <div class="dropdown-divider"></div>
-                                <div class="dropdown-header">Recent issues</div>
-                                <a class="dropdown-item" href="#"><span class="font-icon font-icon-home"></span>Quant
-                                    and Verbal</a>
-                                <a class="dropdown-item" href="#"><span class="font-icon font-icon-cart"></span>Real
-                                    Gmat Test</a>
-                                <a class="dropdown-item" href="#"><span class="font-icon font-icon-speed"></span>Prep
-                                    Official App</a>
-                                <a class="dropdown-item" href="#"><span class="font-icon font-icon-users"></span>CATprer
-                                    Test</a>
-                                <a class="dropdown-item" href="#"><span class="font-icon font-icon-comments"></span>Third
-                                    Party Test</a>
-                                <div class="dropdown-more">
-                                    <div class="dropdown-more-caption padding">more...</div>
-                                    <div class="dropdown-more-sub">
-                                        <div class="dropdown-more-sub-in">
-                                            <a class="dropdown-item" href="#"><span
-                                                        class="font-icon font-icon-home"></span>Quant and Verbal</a>
-                                            <a class="dropdown-item" href="#"><span
-                                                        class="font-icon font-icon-cart"></span>Real Gmat Test</a>
-                                            <a class="dropdown-item" href="#"><span
-                                                        class="font-icon font-icon-speed"></span>Prep Official
-                                                App</a>
-                                            <a class="dropdown-item" href="#"><span
-                                                        class="font-icon font-icon-users"></span>CATprer Test</a>
-                                            <a class="dropdown-item" href="#"><span
-                                                        class="font-icon font-icon-comments"></span>Third Party Test</a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#">Import Issues from CSV</a>
-                                <div class="dropdown-divider"></div>
-                                <div class="dropdown-header">Filters</div>
-                                <a class="dropdown-item" href="#">My Open Issues</a>
-                                <a class="dropdown-item" href="#">Reported by Me</a>
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#">Manage filters</a>
-                                <div class="dropdown-divider"></div>
-                                <div class="dropdown-header">Timesheet</div>
-                                <a class="dropdown-item" href="#">Subscribtions</a>
-                            </div>
                         </div>
                         <div class="dropdown dropdown-typical">
                             <a class="dropdown-toggle" id="dd-header-social" data-target="#"

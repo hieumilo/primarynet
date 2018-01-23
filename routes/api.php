@@ -16,6 +16,6 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::middleware('auth:api')->get('/profile', 'Api\ProfileController@getUser');
-Route::middleware('auth:api')->resource('/articles', 'Api\ArticlesController');
-Route::middleware('auth:api')->post('/articles/preview', 'Api\ArticlesController@preview');
+//Route::middleware('auth:api')->get('/profile', 'Api\ProfileController@getUser');
+//Route::middleware('auth:api')->resource('/articles', 'Api\ArticlesController');
+//Route::middleware('auth:api')->post('/articles/preview', 'Api\ArticlesController@preview');
