@@ -133,3 +133,9 @@ section.card{
     height: 100%;
 
 }
+.jstree-default .jstree-node {
+    text-align: left !important;
+}
+.jstree-default>.jstree-container-ul>.jstree-node {
+    text-align: left !important;
+}
