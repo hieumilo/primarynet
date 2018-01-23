@@ -215,15 +215,15 @@
                     <div class="dropdown dropdown-lang">
                         <button class="dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true"
                                 aria-expanded="false">
-                            <span class="flag-icon flag-icon-us"></span>
+                            <span class="flag-icon flag-icon-{{config('app.locale')=='ko'? 'kr':(config('app.locale')=='en'? 'us':(config('app.locale')=='vi'?'vi':''))}}" id="flag-change"></span>
                         </button>
                         <div class="dropdown-menu dropdown-menu-right">
                             <div class="dropdown-menu-col">
-                                <a class="dropdown-item" onclick="setLocate('ko')"><span class="flag-icon flag-icon-kr"></span>Korea</a>
+                                <a class="dropdown-item {{config('app.locale')=='ko'?  'current' : '' }}" onclick="setLocate('ko')"><span class="flag-icon flag-icon-kr"></span>Korea</a>
                             </div>
                             <div class="dropdown-menu-col">
-                                <a class="dropdown-item current" onclick="setLocate('en')"><span class="flag-icon flag-icon-us"></span>English</a>
-                                <a class="dropdown-item" href="#" onclick="setLocate('vi')"><span class="flag-icon flag-icon-vi"></span>Viet Nam</a>
+                                <a class="dropdown-item {{config('app.locale')=='en'?  'current' : '' }}" onclick="setLocate('en')"><span class="flag-icon flag-icon-us"></span>English</a>
+                                <a class="dropdown-item {{config('app.locale')=='vi'?  'current' : '' }}" href="#" onclick="setLocate('vi')"><span class="flag-icon flag-icon-vi"></span>Viet Nam</a>
                             </div>
                         </div>
                     </div>
