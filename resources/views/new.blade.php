@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+    @role('Admin')
     <div class="mobile-menu-left-overlay"></div>
 
     <div class="page-content">
@@ -298,7 +299,10 @@
             </div>
         </div>
     </div><!--.container-fluid-->
-
+@endrole
+@role('User')
+    <p style="text-align: center; margin-top: 500px;font-size: 60px">Welcome User</p>
+@endrole
 @endsection
 @section('scripts')
     <script>

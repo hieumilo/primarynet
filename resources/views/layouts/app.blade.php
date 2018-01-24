@@ -272,6 +272,7 @@
                                 <a class="dropdown-item" href="#"><span class="font-icon font-icon-comments"></span>{{trans('auth.third-test')}}</a>
                             </div>
                         </div>
+                        @role('Admin')
                         <div class="dropdown dropdown-typical">
                             <a class="dropdown-toggle no-arr red" style="color: red"
                                href="/{{config('app.locale')}}/dashboard"
@@ -290,6 +291,7 @@
                                     </span>
                             </a>
                         </div>
+
                         <div class="dropdown dropdown-typical">
                             <a class="dropdown-toggle" id="dd-header-social" data-target="#"
                                href="http://example.com/" data-toggle="dropdown" aria-haspopup="true"
@@ -435,6 +437,7 @@
                                 <div class="overlay"></div>
                             </form>
                         </div>
+                        @endrole
                     </div><!--.site-header-collapsed-in-->
                 </div><!--.site-header-collapsed-->
             </div><!--site-header-content-in-->

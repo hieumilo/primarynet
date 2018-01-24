@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+    @role('Admin')
     <div class="mobile-menu-left-overlay"></div>
 
     <div class="page-content">
@@ -81,10 +82,12 @@
                     <section class="box-typical">
                         <div id="toolbar">
                             <div class="bootstrap-table-header">{{trans('auth.table-header')}}</div>
-                            <button id="add" class="btn btn-success remove" data-toggle="modal" data-target="#exampleModalLong">
+                            <button id="add" class="btn btn-success remove" data-toggle="modal"
+                                    data-target="#exampleModalLong">
                                 Add
                             </button>
-                            <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+                            <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog"
+                                 aria-labelledby="exampleModalLongTitle" aria-hidden="true">
                                 <div class="modal-dialog" role="document">
                                     <div class="modal-content">
                                         <div class="modal-header">
@@ -99,73 +102,93 @@
                                                 <div class="row">
                                                     <div class="col-md-6">
                                                         <div class="form-group">
-                                                            <input type="text" name="GID" class="form-control" placeholder="GID"  />
+                                                            <input type="text" name="GID" class="form-control"
+                                                                   placeholder="GID"/>
                                                         </div>
                                                         <div class="form-group">
-                                                            <input type="text" name="NODEID" class="form-control" placeholder="Node ID"  />
+                                                            <input type="text" name="NODEID" class="form-control"
+                                                                   placeholder="Node ID"/>
                                                         </div>
                                                         <div class="form-group">
-                                                            <input type="text" name="NODEIP" class="form-control" placeholder="Node IP"  />
+                                                            <input type="text" name="NODEIP" class="form-control"
+                                                                   placeholder="Node IP"/>
                                                         </div>
                                                         <div class="form-group">
-                                                            <input type="text" name="NODENAME" class="form-control" placeholder="Node Name"  />
+                                                            <input type="text" name="NODENAME" class="form-control"
+                                                                   placeholder="Node Name"/>
                                                         </div>
                                                         <div class="form-group">
-                                                            <input type="text" name="EVTSTART" class="form-control" placeholder="Node EVTSTART YYYY/MM/DD"  />
+                                                            <input type="text" name="EVTSTART" class="form-control"
+                                                                   placeholder="Node EVTSTART YYYY/MM/DD"/>
                                                         </div>
                                                         <div class="form-group">
-                                                            <input type="text" name="EVTEND" class="form-control" placeholder="Node EVTEND YYYY/MM/DD"  />
+                                                            <input type="text" name="EVTEND" class="form-control"
+                                                                   placeholder="Node EVTEND YYYY/MM/DD"/>
                                                         </div>
                                                         <div class="form-group">
-                                                            <input type="text" name="EVTOPEN" class="form-control" placeholder="EVTOPEN"  />
+                                                            <input type="text" name="EVTOPEN" class="form-control"
+                                                                   placeholder="EVTOPEN"/>
                                                         </div>
                                                         <div class="form-group">
-                                                            <input type="text" name="NODESTAT" class="form-control" placeholder="NODESTAT"  />
+                                                            <input type="text" name="NODESTAT" class="form-control"
+                                                                   placeholder="NODESTAT"/>
                                                         </div>
                                                         <div class="form-group">
-                                                            <input type="text" name="EVTDESCR" class="form-control" placeholder="EVTDESCR"  />
+                                                            <input type="text" name="EVTDESCR" class="form-control"
+                                                                   placeholder="EVTDESCR"/>
                                                         </div>
                                                         <div class="form-group">
-                                                            <input type="text" name="EVTCOMMENT" class="form-control" placeholder="EVTCOMMENT"  />
+                                                            <input type="text" name="EVTCOMMENT" class="form-control"
+                                                                   placeholder="EVTCOMMENT"/>
                                                         </div>
                                                     </div>
                                                     <div class="col-md-6">
 
                                                         <div class="form-group">
-                                                            <input type="text" name="EVTID" class="form-control" placeholder="EVTID"  />
+                                                            <input type="text" name="EVTID" class="form-control"
+                                                                   placeholder="EVTID"/>
                                                         </div>
                                                         <div class="form-group">
-                                                            <input type="text" name="EVTIGNORE" class="form-control" placeholder="EVTIGNORE"  />
+                                                            <input type="text" name="EVTIGNORE" class="form-control"
+                                                                   placeholder="EVTIGNORE"/>
                                                         </div>
                                                         <div class="form-group">
-                                                            <input type="text" name="EVTNOTIFY" class="form-control" placeholder="EVTNOTIFY"  />
+                                                            <input type="text" name="EVTNOTIFY" class="form-control"
+                                                                   placeholder="EVTNOTIFY"/>
                                                         </div>
                                                         <div class="form-group">
-                                                            <input type="text" name="CLSNOTIFY" class="form-control" placeholder="CLSNOTIFY"  />
+                                                            <input type="text" name="CLSNOTIFY" class="form-control"
+                                                                   placeholder="CLSNOTIFY"/>
                                                         </div>
                                                         <div class="form-group">
-                                                            <input type="text" name="EVTGROUP" class="form-control" placeholder="EVTGROUP"  />
+                                                            <input type="text" name="EVTGROUP" class="form-control"
+                                                                   placeholder="EVTGROUP"/>
                                                         </div>
                                                         <div class="form-group">
-                                                            <input type="text" name="WCHK" class="form-control" placeholder="WCHK"  />
+                                                            <input type="text" name="WCHK" class="form-control"
+                                                                   placeholder="WCHK"/>
                                                         </div>
                                                         <div class="form-group">
-                                                            <input type="text" name="CURWEIGHT" class="form-control" placeholder="CURWEIGHT"  />
+                                                            <input type="text" name="CURWEIGHT" class="form-control"
+                                                                   placeholder="CURWEIGHT"/>
                                                         </div>
                                                         <div class="form-group">
-                                                            <input type="text" name="EVTITEM" class="form-control" placeholder="EVTITEM"  />
+                                                            <input type="text" name="EVTITEM" class="form-control"
+                                                                   placeholder="EVTITEM"/>
                                                         </div>
                                                         <div class="form-group">
-                                                            <input type="text" name="CHKDATE" class="form-control" placeholder="CHKDATE"  />
+                                                            <input type="text" name="CHKDATE" class="form-control"
+                                                                   placeholder="CHKDATE"/>
                                                         </div>
                                                     </div>
                                                 </div>
 
 
-
                                             </div>
                                             <div class="modal-footer">
-                                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                                <button type="button" class="btn btn-secondary" data-dismiss="modal">
+                                                    Close
+                                                </button>
                                                 <button type="submit" class="btn btn-primary">Save changes</button>
                                             </div>
                                         </form>
@@ -177,12 +200,14 @@
                                 <i class="font-icon font-icon-close-2"></i> Delete
                             </button>
 
-                            <button id="edit" class="btn btn-default remove" data-toggle="modal" data-target="#edit-item">
+                            <button id="edit" class="btn btn-default remove" data-toggle="modal"
+                                    data-target="#edit-item">
                                 Edit
                             </button>
 
 
-                            <div class="modal fade" id="edit-item" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+                            <div class="modal fade" id="edit-item" tabindex="-1" role="dialog"
+                                 aria-labelledby="exampleModalLongTitle" aria-hidden="true">
                                 <div class="modal-dialog" role="document">
                                     <div class="modal-content">
                                         <div class="modal-header">
@@ -197,73 +222,95 @@
                                                 <div class="row">
                                                     <div class="col-md-6">
                                                         <div class="form-group">
-                                                            <input type="text" name="GID" class="form-control" placeholder="GID"  />
+                                                            <input type="text" name="GID" class="form-control"
+                                                                   placeholder="GID"/>
                                                         </div>
                                                         <div class="form-group">
-                                                            <input type="text" name="NODEID" class="form-control" placeholder="Node ID" />
+                                                            <input type="text" name="NODEID" class="form-control"
+                                                                   placeholder="Node ID"/>
                                                         </div>
                                                         <div class="form-group">
-                                                            <input type="text" name="NODEIP" class="form-control" placeholder="Node IP"  />
+                                                            <input type="text" name="NODEIP" class="form-control"
+                                                                   placeholder="Node IP"/>
                                                         </div>
                                                         <div class="form-group">
-                                                            <input type="text" name="NODENAME" class="form-control" placeholder="Node Name"  />
+                                                            <input type="text" name="NODENAME" class="form-control"
+                                                                   placeholder="Node Name"/>
                                                         </div>
                                                         <div class="form-group">
-                                                            <input type="text" name="EVTSTART" class="form-control" placeholder="Node EVTSTART YYYY/MM/DD"  />
+                                                            <input type="text" name="EVTSTART" class="form-control"
+                                                                   placeholder="Node EVTSTART YYYY/MM/DD"/>
                                                         </div>
                                                         <div class="form-group">
-                                                            <input type="text" name="EVTEND" class="form-control" placeholder="Node EVTEND YYYY/MM/DD"  />
+                                                            <input type="text" name="EVTEND" class="form-control"
+                                                                   placeholder="Node EVTEND YYYY/MM/DD"/>
                                                         </div>
                                                         <div class="form-group">
-                                                            <input type="text" name="EVTOPEN" class="form-control" placeholder="EVTOPEN"  />
+                                                            <input type="text" name="EVTOPEN" class="form-control"
+                                                                   placeholder="EVTOPEN"/>
                                                         </div>
                                                         <div class="form-group">
-                                                            <input type="text" name="NODESTAT" class="form-control" placeholder="NODESTAT"  />
+                                                            <input type="text" name="NODESTAT" class="form-control"
+                                                                   placeholder="NODESTAT"/>
                                                         </div>
                                                         <div class="form-group">
-                                                            <input type="text" name="EVTDESCR" class="form-control" placeholder="EVTDESCR"  />
+                                                            <input type="text" name="EVTDESCR" class="form-control"
+                                                                   placeholder="EVTDESCR"/>
                                                         </div>
                                                         <div class="form-group">
-                                                            <input type="text" name="EVTCOMMENT" class="form-control" placeholder="EVTCOMMENT"  />
+                                                            <input type="text" name="EVTCOMMENT" class="form-control"
+                                                                   placeholder="EVTCOMMENT"/>
                                                         </div>
                                                     </div>
                                                     <div class="col-md-6">
                                                         <div class="form-group">
-                                                            <input type="text" name="EVTID" class="form-control" placeholder="EVTID"  />
+                                                            <input type="text" name="EVTID" class="form-control"
+                                                                   placeholder="EVTID"/>
                                                         </div>
                                                         <div class="form-group">
-                                                            <input type="text" name="EVTIGNORE" class="form-control" placeholder="EVTIGNORE"  />
+                                                            <input type="text" name="EVTIGNORE" class="form-control"
+                                                                   placeholder="EVTIGNORE"/>
                                                         </div>
                                                         <div class="form-group">
-                                                            <input type="text" name="EVTNOTIFY" class="form-control" placeholder="EVTNOTIFY"  />
+                                                            <input type="text" name="EVTNOTIFY" class="form-control"
+                                                                   placeholder="EVTNOTIFY"/>
                                                         </div>
                                                         <div class="form-group">
-                                                            <input type="text" name="CLSNOTIFY" class="form-control" placeholder="CLSNOTIFY"  />
+                                                            <input type="text" name="CLSNOTIFY" class="form-control"
+                                                                   placeholder="CLSNOTIFY"/>
                                                         </div>
                                                         <div class="form-group">
-                                                            <input type="text" name="EVTGROUP" class="form-control" placeholder="EVTGROUP"  />
+                                                            <input type="text" name="EVTGROUP" class="form-control"
+                                                                   placeholder="EVTGROUP"/>
                                                         </div>
                                                         <div class="form-group">
-                                                            <input type="text" name="WCHK" class="form-control" placeholder="WCHK"  />
+                                                            <input type="text" name="WCHK" class="form-control"
+                                                                   placeholder="WCHK"/>
                                                         </div>
                                                         <div class="form-group">
-                                                            <input type="text" name="CURWEIGHT" class="form-control" placeholder="CURWEIGHT"  />
+                                                            <input type="text" name="CURWEIGHT" class="form-control"
+                                                                   placeholder="CURWEIGHT"/>
                                                         </div>
                                                         <div class="form-group">
-                                                            <input type="text" name="EVTITEM" class="form-control" placeholder="EVTITEM"  />
+                                                            <input type="text" name="EVTITEM" class="form-control"
+                                                                   placeholder="EVTITEM"/>
                                                         </div>
                                                         <div class="form-group">
-                                                            <input type="text" name="CHKDATE" class="form-control" placeholder="CHKDATE"  />
+                                                            <input type="text" name="CHKDATE" class="form-control"
+                                                                   placeholder="CHKDATE"/>
                                                         </div>
                                                     </div>
                                                 </div>
 
 
-
                                             </div>
                                             <div class="modal-footer">
-                                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                                <button type="submit" class="btn btn-primary crud-submit-edit edit-item">Edit changes</button>
+                                                <button type="button" class="btn btn-secondary" data-dismiss="modal">
+                                                    Close
+                                                </button>
+                                                <button type="submit"
+                                                        class="btn btn-primary crud-submit-edit edit-item">Edit changes
+                                                </button>
                                             </div>
                                         </form>
                                     </div>
@@ -271,24 +318,30 @@
                             </div>
 
 
-            {{--Son layout--}}
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="gridster">
-                        <ul>
+                            {{--Son layout--}}
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="gridster">
+                                        <ul>
 
-                            @foreach($settings as $setting)
-                                <li data-row="{{$setting->row}}" data-col="{{$setting->col}}"
-                                    data-id="{{$setting->id}}"
-                                    data-sizex="{{$setting->sizex}}" data-sizey="{{$setting->sizey}}"></li>
-                            @endforeach
+                                            @foreach($settings as $setting)
+                                                <li data-row="{{$setting->row}}" data-col="{{$setting->col}}"
+                                                    data-id="{{$setting->id}}"
+                                                    data-sizex="{{$setting->sizex}}"
+                                                    data-sizey="{{$setting->sizey}}"></li>
+                                            @endforeach
 
-                        </ul>
-                    </div>
-                </div><!--.col-->
+                                        </ul>
+                                    </div>
+                                </div><!--.col-->
+                            </div>
+
+                        </div>
+                    </section>
+                </div>
             </div>
-
         </div>
     </div>
-</div>
+   @endrole
+
 @endsection
