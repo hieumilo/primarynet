@@ -155,25 +155,25 @@
                                                 <span class="avatar-preview avatar-preview-32"><img
                                                             src="/img/photo-64-2.jpg" alt=""></span>
                                             <span class="mess-item-name">Tim Collins</span>
-                                            <span class="mess-item-txt">Morgan was bothering about something!</span>
+                                            <span class="mess-item-txt">{{trans('auth.mess-item')}}</span>
                                         </a>
                                         <a href="#" class="mess-item">
                                                 <span class="avatar-preview avatar-preview-32"><img
                                                             src="/img/avatar-2-64.png" alt=""></span>
                                             <span class="mess-item-name">Christian Burton</span>
-                                            <span class="mess-item-txt">Morgan was bothering about something! Morgan was bothering about something.</span>
+                                            <span class="mess-item-txt">{{trans('auth.mess-item')}}</span>
                                         </a>
                                         <a href="#" class="mess-item">
                                                 <span class="avatar-preview avatar-preview-32"><img
                                                             src="/img/photo-64-2.jpg" alt=""></span>
                                             <span class="mess-item-name">Tim Collins</span>
-                                            <span class="mess-item-txt">Morgan was bothering about something!</span>
+                                            <span class="mess-item-txt">{{trans('auth.mess-item')}}</span>
                                         </a>
                                         <a href="#" class="mess-item">
                                                 <span class="avatar-preview avatar-preview-32"><img
                                                             src="/img/avatar-2-64.png" alt=""></span>
                                             <span class="mess-item-name">Christian Burton</span>
-                                            <span class="mess-item-txt">Morgan was bothering about something...</span>
+                                            <span class="mess-item-txt">{{trans('auth.mess-item')}}</span>
                                         </a>
                                     </div>
                                 </div>
@@ -183,25 +183,25 @@
                                                 <span class="avatar-preview avatar-preview-32"><img
                                                             src="/img/avatar-2-64.png" alt=""></span>
                                             <span class="mess-item-name">Christian Burton</span>
-                                            <span class="mess-item-txt">Morgan was bothering about something! Morgan was bothering about something...</span>
+                                            <span class="mess-item-txt">{{trans('auth.mess-item')}}</span>
                                         </a>
                                         <a href="#" class="mess-item">
                                                 <span class="avatar-preview avatar-preview-32"><img
                                                             src="/img/photo-64-2.jpg" alt=""></span>
                                             <span class="mess-item-name">Tim Collins</span>
-                                            <span class="mess-item-txt">Morgan was bothering about something! Morgan was bothering about something.</span>
+                                            <span class="mess-item-txt">{{trans('auth.mess-item')}}</span>
                                         </a>
                                         <a href="#" class="mess-item">
                                                 <span class="avatar-preview avatar-preview-32"><img
                                                             src="/img/avatar-2-64.png" alt=""></span>
                                             <span class="mess-item-name">Christian Burtons</span>
-                                            <span class="mess-item-txt">Morgan was bothering about something!</span>
+                                            <span class="mess-item-txt">{{trans('auth.mess-item')}}</span>
                                         </a>
                                         <a href="#" class="mess-item">
                                                 <span class="avatar-preview avatar-preview-32"><img
                                                             src="/img/photo-64-2.jpg" alt=""></span>
                                             <span class="mess-item-name">Tim Collins</span>
-                                            <span class="mess-item-txt">Morgan was bothering about something!</span>
+                                            <span class="mess-item-txt">{{trans('auth.mess-item')}}</span>
                                         </a>
                                     </div>
                                 </div>
@@ -261,16 +261,15 @@
                     <div class="site-header-collapsed-in">
                         <div class="dropdown dropdown-typical">
                             <div class="dropdown-menu" aria-labelledby="dd-header-sales">
-                                <a class="dropdown-item" href="#"><span class="font-icon font-icon-home"></span>Quant
-                                    and Verbal</a>
-                                <a class="dropdown-item" href="#"><span class="font-icon font-icon-cart"></span>Real
-                                    Gmat Test</a>
-                                <a class="dropdown-item" href="#"><span class="font-icon font-icon-speed"></span>Prep
-                                    Official App</a>
-                                <a class="dropdown-item" href="#"><span class="font-icon font-icon-users"></span>CATprer
-                                    Test</a>
-                                <a class="dropdown-item" href="#"><span class="font-icon font-icon-comments"></span>Third
-                                    Party Test</a>
+                                {{--<a class="dropdown-item" href="#"><span class="font-icon font-icon-home"></span>Quant--}}
+                                    {{--and Verbal</a>--}}
+                                {{--<a class="dropdown-item" href="#"><span class="font-icon font-icon-cart"></span>Real--}}
+                                    {{--Gmat Test</a>--}}
+                                {{--<a class="dropdown-item" href="#"><span class="font-icon font-icon-speed"></span>Prep--}}
+                                    {{--Official App</a>--}}
+                                {{--<a class="dropdown-item" href="#"><span class="font-icon font-icon-users"></span>CATprer--}}
+                                    {{--Test</a>--}}
+                                <a class="dropdown-item" href="#"><span class="font-icon font-icon-comments"></span>{{trans('auth.third-test')}}</a>
                             </div>
                         </div>
                         <div class="dropdown dropdown-typical">
@@ -300,16 +299,15 @@
                             </a>
 
                             <div class="dropdown-menu" aria-labelledby="dd-header-social">
-                                <a class="dropdown-item" href="#"><span class="font-icon font-icon-home"></span>Quant
-                                    and Verbal</a>
-                                <a class="dropdown-item" href="#"><span class="font-icon font-icon-cart"></span>Real
-                                    Gmat Test</a>
-                                <a class="dropdown-item" href="#"><span class="font-icon font-icon-speed"></span>Prep
-                                    Official App</a>
-                                <a class="dropdown-item" href="#"><span class="font-icon font-icon-users"></span>CATprer
-                                    Test</a>
-                                <a class="dropdown-item" href="#"><span class="font-icon font-icon-comments"></span>Third
-                                    Party Test</a>
+                                {{--<a class="dropdown-item" href="#"><span class="font-icon font-icon-home"></span>Quant--}}
+                                    {{--and Verbal</a>--}}
+                                {{--<a class="dropdown-item" href="#"><span class="font-icon font-icon-cart"></span>Real--}}
+                                    {{--Gmat Test</a>--}}
+                                {{--<a class="dropdown-item" href="#"><span class="font-icon font-icon-speed"></span>Prep--}}
+                                    {{--Official App</a>--}}
+                                {{--<a class="dropdown-item" href="#"><span class="font-icon font-icon-users"></span>CATprer--}}
+                                    {{--Test</a>--}}
+                                <a class="dropdown-item" href="#"><span class="font-icon font-icon-comments"></span>{{trans('auth.third-test')}}</a>
                             </div>
                         </div>
                         <div class="dropdown dropdown-typical">
@@ -329,16 +327,15 @@
                             </a>
 
                             <div class="dropdown-menu" aria-labelledby="dd-header-form-builder">
-                                <a class="dropdown-item" href="#"><span class="font-icon font-icon-home"></span>Quant
-                                    and Verbal</a>
-                                <a class="dropdown-item" href="#"><span class="font-icon font-icon-cart"></span>Real
-                                    Gmat Test</a>
-                                <a class="dropdown-item" href="#"><span class="font-icon font-icon-speed"></span>Prep
-                                    Official App</a>
-                                <a class="dropdown-item" href="#"><span class="font-icon font-icon-users"></span>CATprer
-                                    Test</a>
-                                <a class="dropdown-item" href="#"><span class="font-icon font-icon-comments"></span>Third
-                                    Party Test</a>
+                                {{--<a class="dropdown-item" href="#"><span class="font-icon font-icon-home"></span>Quant--}}
+                                    {{--and Verbal</a>--}}
+                                {{--<a class="dropdown-item" href="#"><span class="font-icon font-icon-cart"></span>Real--}}
+                                    {{--Gmat Test</a>--}}
+                                {{--<a class="dropdown-item" href="#"><span class="font-icon font-icon-speed"></span>Prep--}}
+                                    {{--Official App</a>--}}
+                                {{--<a class="dropdown-item" href="#"><span class="font-icon font-icon-users"></span>CATprer--}}
+                                    {{--Test</a>--}}
+                                <a class="dropdown-item" href="#"><span class="font-icon font-icon-comments"></span>{{trans('auth.third-test')}}t</a>
                             </div>
                         </div>
                         <div class="dropdown">
@@ -347,11 +344,11 @@
                                 {{trans('auth.add')}}
                             </button>
                             <div class="dropdown-menu" aria-labelledby="dd-header-add">
-                                <a class="dropdown-item" href="#">Quant and Verbal</a>
-                                <a class="dropdown-item" href="#">Real Gmat Test</a>
-                                <a class="dropdown-item" href="#">Prep Official App</a>
-                                <a class="dropdown-item" href="#">CATprer Test</a>
-                                <a class="dropdown-item" href="#">Third Party Test</a>
+                                {{--<a class="dropdown-item" href="#">Quant and Verbal</a>--}}
+                                {{--<a class="dropdown-item" href="#">Real Gmat Test</a>--}}
+                                {{--<a class="dropdown-item" href="#">Prep Official App</a>--}}
+                                {{--<a class="dropdown-item" href="#">CATprer Test</a>--}}
+                                <a class="dropdown-item" href="#">{{trans('auth.third-test')}}</a>
                             </div>
                         </div>
                         <div class="help-dropdown">

@@ -1,2 +1,2 @@
-@extends('layouts.master')<div class="" id="chartdiv5">
+@extends('layouts.master')<div class="chartdiv" id="chart5">
 </div>

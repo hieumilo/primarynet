@@ -153,3 +153,15 @@ section.card{
     height: 100%;
     overflow: auto;
 }
+.position-static {
+    position: static;
+    padding: 8px 15px 0 0;
+    height: 60px;
+}
+.main-login {
+    margin-top: 20px;
+}
+.main-login .panel-heading {
+    padding-left: 15px;
+    font-size: 25px;
+}

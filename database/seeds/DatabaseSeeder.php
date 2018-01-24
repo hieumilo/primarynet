@@ -12,7 +12,9 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        Model::unguard();
+
+         $this->call(UsersTableSeeder::class);
+        //Model::unguard();
         $this->call(PermissionsTableSeeder::class);
         $this->call(RolesTableSeeder::class);
         $this->call(ConnectRelationshipsSeeder::class);
@@ -20,7 +22,6 @@ class DatabaseSeeder extends Seeder
         $this->call(SettingSeeder::class);
         $this->call(EvtlistSeeder::class);
         $this->call(ItemsTableSeeder::class);
-        Model::reguard();
-
+        $this->call(JstreeSeeder::class);
     }
 }

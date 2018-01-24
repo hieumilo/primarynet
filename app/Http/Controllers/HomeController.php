@@ -60,7 +60,9 @@ class HomeController extends Controller
                 ->select('settings.*', 'items.name')
                 ->get();
         }
+
         app()->setLocale($lang);
+
 
         return view('home', compact('settings','evtlists'));
 

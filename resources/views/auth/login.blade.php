@@ -1,11 +1,46 @@
 @extends('layouts.master')
 
 @section('content')
+        <header class="site-header position-static">
+            <div class="container-fluid">
+                <a href="#" class="site-logo">
+                    <img class="hidden-md-down" src="/img/logo-2.png" alt="">
+                    <img class="hidden-lg-down" src="/img/logo-2-mob.png" alt="">
+                </a>
+                <div class="site-header-content">
+                    <div class="site-header-content-in">
+                        <div class="site-header-shown">
+                            <div class="dropdown dropdown-lang">
+                                <button class="dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true"
+                                        aria-expanded="false">
+                                    <span class="flag-icon flag-icon-{{config('app.locale')=='ko'? 'kr':(config('app.locale')=='en'? 'us':(config('app.locale')=='vi'?'vi':''))}}" id="flag-change"></span>
+                                </button>
+                                <div class="dropdown-menu dropdown-menu-right">
+                                    <div class="dropdown-menu-col">
+                                        <a class="dropdown-item current" onclick="setLocate('ko')"><span class="flag-icon flag-icon-kr"></span>Korea</a>
+                                    </div>
+                                    <div class="dropdown-menu-col">
+                                        <a class="dropdown-item " onclick="setLocate('en')"><span class="flag-icon flag-icon-us"></span>English</a>
+                                        <a class="dropdown-item " href="#" onclick="setLocate('vi')"><span class="flag-icon flag-icon-vi"></span>Viet Nam</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <button type="button" class="burger-right">
+                                <i class="font-icon-menu-addl"></i>
+                            </button>
+                        </div><!--.site-header-shown-->
+
+                        <div class="mobile-menu-right-overlay"></div>
+                    </div><!--site-header-content-in-->
+                </div><!--.site-header-content-->
+            </div><!--.container-fluid-->
+        </header>
 <div class="container">
     <div class="row">
-        <div class="col-md-8 col-md-offset-2">
-            <div class="panel panel-default">
-                <div class="panel-heading">Login</div>
+
+        <div class="col-md-12">
+            <div class="panel panel-default main-login">
+                <div class="panel-heading">{{trans('auth.login')}}</div>
 
                 <div class="panel-body">
                     <form class="form-horizontal" method="POST" action="{{ route('login') }}">

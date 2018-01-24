@@ -15,8 +15,8 @@ return [
 
     'failed' => 'These credentials do not match our records.',
     'throttle' => 'Too many login attempts. Please try again in :seconds seconds.',
-    'email'=> 'input email',
-    'password' =>'input password',
+    'email'=> 'Input email',
+    'password' =>'Input password',
     'remember' =>'Remeber me',
     'login' =>'Login',
     'forgot-pass' =>'Forgot password ?',
@@ -30,4 +30,7 @@ return [
     'add' =>'Add',
     'logout' =>' Logout',
     'panel-title' =>' Panel title',
+    'table-header'=> 'Table header',
+    'mess-item'=> 'Morgan was bothering about something! Morgan was bothering about something...',
+    'third-test'=>'Third Party Test'
 ];

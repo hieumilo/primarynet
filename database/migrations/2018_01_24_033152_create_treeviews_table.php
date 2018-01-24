@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateTREEVIEWSTable extends Migration
+class CreateTreeviewsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,11 @@ class CreateTREEVIEWSTable extends Migration
      */
     public function up()
     {
-        Schema::create('TREEVIEWS', function (Blueprint $table) {
+        Schema::create('treeviews', function (Blueprint $table) {
             $table->increments('id');
             $table->string('NAME');
             $table->string('TEXT');
-            $table->integer('PARENT_ID')->unsigned();
+            $table->integer('PARENT_ID');
             $table->timestamps();
         });
     }
@@ -29,6 +29,6 @@ class CreateTREEVIEWSTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('TREEVIEWS');
+        Schema::dropIfExists('treeviews');
     }
 }

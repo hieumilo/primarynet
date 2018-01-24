@@ -69,7 +69,7 @@
                                             <div class="card-block">
                                                 <section class="box-typical" id="datatable-session">
                                                     <div id="toolbar">
-                                                        <div class="bootstrap-table-header">Table header</div>
+                                                        <div class="bootstrap-table-header">{{trans('auth.table-header')}}</div>
                                                         <button id="add" class="btn btn-success remove" data-toggle="modal" data-target="#exampleModalLong">
                                                             Add
                                                         </button>
