@@ -39,7 +39,7 @@ $(document).ready(function(){
             classDropup = 'dropup';
         }
 
-        return	'<div class="dropdown dropdown-status ' +
+        return  '<div class="dropdown dropdown-status ' +
             classDropup +
             ' ">' +
             '<button class="btn ' +
@@ -206,9 +206,9 @@ $(document).ready(function(){
             }
         });
         $.post( "/removeEvt", {data: ids})
-        .done(function( data ) {
-            //console.log( data );
-        });
+            .done(function( data ) {
+                //console.log( data );
+            });
         $table.bootstrapTable('remove', {
             field: 'NODEID',
             values: ids
@@ -258,29 +258,154 @@ $(document).ready(function(){
             return row.ID;
         });
     }
+    $(".crud-submit-add").click(function (e) {
+        e.preventDefault();
+        var GID         = $('#add-item').find("input[name='GID']").val();
+        var NODEID      = $('#add-item').find("input[name='NODEID']").val();
+        var NODEIP      = $('#add-item').find("input[name='NODEIP']").val();
+        var NODENAME    = $('#add-item').find("input[name='NODENAME']").val();
+        var EVTSTART    = $('#add-item').find("input[name='EVTSTART']").val();
+        var EVTEND      = $('#add-item').find("input[name='EVTEND']").val();
+        var EVTOPEN     = $('#add-item').find("input[name='EVTOPEN']").val();
+        var NODESTAT    = $('#add-item').find("input[name='NODESTAT']").val();
+        var EVTDESCR    = $('#add-item').find("input[name='EVTDESCR']").val();
+        var EVTCOMMENT  = $('#add-item').find("input[name='EVTCOMMENT']").val();
+        var EVTID       = $('#add-item').find("input[name='EVTID']").val();
+        var EVTIGNORE   = $('#add-item').find("input[name='EVTIGNORE']").val();
+        var EVTNOTIFY   = $('#add-item').find("input[name='EVTNOTIFY']").val();
+        var CLSNOTIFY   = $('#add-item').find("input[name='CLSNOTIFY']").val();
+        var EVTGROUP    = $('#add-item').find("input[name='EVTGROUP']").val();
+        var WCHK        = $('#add-item').find("input[name='WCHK']").val();
+        var CURWEIGHT   = $('#add-item').find("input[name='CURWEIGHT']").val();
+        var EVTITEM     = $('#add-item').find("input[name='EVTITEM']").val();
+        var CHKDATE     = $('#add-item').find("input[name='CHKDATE']").val();
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        });
+        $.ajax({
+            dataType: 'json',
+            type: 'POST',
+            url: '/evtitems',
+            data:{
+                GID: GID, NODEID: NODEID, NODEIP: NODEIP, NODENAME: NODENAME,
+                EVTSTART: EVTSTART, EVTEND: EVTEND, EVTOPEN: EVTOPEN, NODESTAT: NODESTAT,
+                EVTDESCR: EVTDESCR, EVTCOMMENT: EVTCOMMENT, EVTID: EVTID, EVTIGNORE: EVTIGNORE,
+                EVTNOTIFY: EVTNOTIFY, CLSNOTIFY: CLSNOTIFY, EVTGROUP: EVTGROUP, WCHK: WCHK,
+                CURWEIGHT: CURWEIGHT, EVTITEM: EVTITEM, CHKDATE: CHKDATE
+            },
+            error: function(data) {
+                var errors = data.responseJSON;
+                //console.log(errors.GID[0]);
+                if(errors) {
+                    if(errors.GID)
+                    {
+                        $('#GID-error').append(errors.GID[0]);
+                    }
+                    if(errors.NODEID)
+                    {
+                        $('#NODEID-error').append(errors.NODEID[0]);
+                    }
+                    if(errors.NODEIP)
+                    {
+                        $('#NODEIP-error').append(errors.NODEIP[0]);
+                    }
+                    if(errors.NODENAME)
+                    {
+                        $('#NODENAME-error').append(errors.NODENAME[0]);
+                    }
+                    if(errors.EVTSTART)
+                    {
+                        $('#EVTSTART-error').append(errors.EVTSTART[0]);
+                    }
+                    if(errors.EVTEND)
+                    {
+                        $('#EVTEND-error').append(errors.EVTEND[0]);
+                    }
+                    if(errors.EVTOPEN)
+                    {
+                        $('#EVTOPEN-error').append(errors.EVTOPEN[0]);
+                    }
+                    if(errors.NODESTAT)
+                    {
+                        $('#NODESTAT-error').append(errors.NODESTAT[0]);
+                    }
+                    if(errors.EVTDESCR)
+                    {
+                        $('#EVTDESCR-error').append(errors.EVTDESCR[0]);
+                    }
+                    if(errors.EVTCOMMENT)
+                    {
+                        $('#EVTCOMMENT-error').append(errors.EVTCOMMENT[0]);
+                    }
+                    if(errors.EVTID)
+                    {
+                        $('#EVTID-error').append(errors.EVTID[0]);
+                    }
+                    if(errors.EVTIGNORE)
+                    {
+                        $('#EVTIGNORE-error').append(errors.EVTIGNORE[0]);
+                    }
+                    if(errors.EVTNOTIFY)
+                    {
+                        $('#EVTNOTIFY-error').append(errors.EVTNOTIFY[0]);
+                    }
+                    if(errors.CLSNOTIFY)
+                    {
+                        $('#CLSNOTIFY-error').append(errors.CLSNOTIFY[0]);
+                    }
+                    if(errors.EVTGROUP)
+                    {
+                        $('#EVTGROUP-error').append(errors.EVTGROUP[0]);
+                    }
+                    if(errors.WCHK)
+                    {
+                        $('#WCHK-error').append(errors.WCHK[0]);
+                    }
+                    if(errors.CURWEIGHT)
+                    {
+                        $('#CURWEIGHT-error').append(errors.CURWEIGHT[0]);
+                    }
+                    if(errors.EVTITEM)
+                    {
+                        $('#EVTITEM-error').append(errors.EVTITEM[0]);
+                    }
+                    if(errors.CHKDATE)
+                    {
+                        $('#CHKDATE-error').append(errors.CHKDATE[0]);
+                    }
+                }
+            }
+        }).done(function () {
+            $("#add-item").modal('hide');
+            location.reload();
+        })
+    })
     $(".crud-submit-edit").click(function (e) {
         e.preventDefault();
-        var ids = getIdEdit();
+        var ids         = getIdEdit();
+        var editForm    = $("#editForm");
         var form_action = $('#edit-item').find("form").attr("action");
-        var GID = $('#edit-item').find("input[name='GID']").val();
-        var NODEID = $('#edit-item').find("input[name='NODEID']").val();
-        var NODEIP = $('#edit-item').find("input[name='NODEIP']").val();
-        var NODENAME = $('#edit-item').find("input[name='NODENAME']").val();
-        var EVTSTART = $('#edit-item').find("input[name='EVTSTART']").val();
-        var EVTEND = $('#edit-item').find("input[name='EVTEND']").val();
-        var EVTOPEN = $('#edit-item').find("input[name='EVTOPEN']").val();
-        var NODESTAT = $('#edit-item').find("input[name='NODESTAT']").val();
-        var EVTDESCR = $('#edit-item').find("input[name='EVTDESCR']").val();
-        var EVTCOMMENT = $('#edit-item').find("input[name='EVTCOMMENT']").val();
-        var EVTID = $('#edit-item').find("input[name='EVTID']").val();
-        var EVTIGNORE = $('#edit-item').find("input[name='EVTIGNORE']").val();
-        var EVTNOTIFY = $('#edit-item').find("input[name='EVTNOTIFY']").val();
-        var CLSNOTIFY = $('#edit-item').find("input[name='CLSNOTIFY']").val();
-        var EVTGROUP = $('#edit-item').find("input[name='EVTGROUP']").val();
-        var WCHK = $('#edit-item').find("input[name='WCHK']").val();
-        var CURWEIGHT = $('#edit-item').find("input[name='CURWEIGHT']").val();
-        var EVTITEM = $('#edit-item').find("input[name='EVTITEM']").val();
-        var CHKDATE = $('#edit-item').find("input[name='CHKDATE']").val();
+        var GID         = $('#edit-item').find("input[name='GID']").val();
+        var NODEID      = $('#edit-item').find("input[name='NODEID']").val();
+        var NODEIP      = $('#edit-item').find("input[name='NODEIP']").val();
+        var NODENAME    = $('#edit-item').find("input[name='NODENAME']").val();
+        var EVTSTART    = $('#edit-item').find("input[name='EVTSTART']").val();
+        var EVTEND      = $('#edit-item').find("input[name='EVTEND']").val();
+        var EVTOPEN     = $('#edit-item').find("input[name='EVTOPEN']").val();
+        var NODESTAT    = $('#edit-item').find("input[name='NODESTAT']").val();
+        var EVTDESCR    = $('#edit-item').find("input[name='EVTDESCR']").val();
+        var EVTCOMMENT  = $('#edit-item').find("input[name='EVTCOMMENT']").val();
+        var EVTID       = $('#edit-item').find("input[name='EVTID']").val();
+        var EVTIGNORE   = $('#edit-item').find("input[name='EVTIGNORE']").val();
+        var EVTNOTIFY   = $('#edit-item').find("input[name='EVTNOTIFY']").val();
+        var CLSNOTIFY   = $('#edit-item').find("input[name='CLSNOTIFY']").val();
+        var EVTGROUP    = $('#edit-item').find("input[name='EVTGROUP']").val();
+        var WCHK        = $('#edit-item').find("input[name='WCHK']").val();
+        var CURWEIGHT   = $('#edit-item').find("input[name='CURWEIGHT']").val();
+        var EVTITEM     = $('#edit-item').find("input[name='EVTITEM']").val();
+        var CHKDATE     = $('#edit-item').find("input[name='CHKDATE']").val();
         $.ajaxSetup({
             headers: {
                 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
@@ -296,9 +421,91 @@ $(document).ready(function(){
                 EVTDESCR: EVTDESCR, EVTCOMMENT: EVTCOMMENT, EVTID: EVTID, EVTIGNORE: EVTIGNORE,
                 EVTNOTIFY: EVTNOTIFY, CLSNOTIFY: CLSNOTIFY, EVTGROUP: EVTGROUP, WCHK: WCHK,
                 CURWEIGHT: CURWEIGHT, EVTITEM: EVTITEM, CHKDATE: CHKDATE
+            },
+            error: function(data) {
+                var errors = data.responseJSON;
+                //console.log(errors.GID[0]);
+                if(errors) {
+                    if(errors.GID)
+                    {
+                        $('#GIDe-error').append(errors.GID[0]);
+                    }
+                    if(errors.NODEID)
+                    {
+                        $('#NODEIDe-error').append(errors.NODEID[0]);
+                    }
+                    if(errors.NODEIP)
+                    {
+                        $('#NODEIPe-error').append(errors.NODEIP[0]);
+                    }
+                    if(errors.NODENAME)
+                    {
+                        $('#NODENAMEe-error').append(errors.NODENAME[0]);
+                    }
+                    if(errors.EVTSTART)
+                    {
+                        $('#EVTSTARTe-error').append(errors.EVTSTART[0]);
+                    }
+                    if(errors.EVTEND)
+                    {
+                        $('#EVTENDe-error').append(errors.EVTEND[0]);
+                    }
+                    if(errors.EVTOPEN)
+                    {
+                        $('#EVTOPENe-error').append(errors.EVTOPEN[0]);
+                    }
+                    if(errors.NODESTAT)
+                    {
+                        $('#NODESTATe-error').append(errors.NODESTAT[0]);
+                    }
+                    if(errors.EVTDESCR)
+                    {
+                        $('#EVTDESCRe-error').append(errors.EVTDESCR[0]);
+                    }
+                    if(errors.EVTCOMMENT)
+                    {
+                        $('#EVTCOMMENTe-error').append(errors.EVTCOMMENT[0]);
+                    }
+                    if(errors.EVTID)
+                    {
+                        $('#EVTIDe-error').append(errors.EVTID[0]);
+                    }
+                    if(errors.EVTIGNORE)
+                    {
+                        $('#EVTIGNOREe-error').append(errors.EVTIGNORE[0]);
+                    }
+                    if(errors.EVTNOTIFY)
+                    {
+                        $('#EVTNOTIFYe-error').append(errors.EVTNOTIFY[0]);
+                    }
+                    if(errors.CLSNOTIFY)
+                    {
+                        $('#CLSNOTIFYe-error').append(errors.CLSNOTIFY[0]);
+                    }
+                    if(errors.EVTGROUP)
+                    {
+                        $('#EVTGROUPe-error').append(errors.EVTGROUP[0]);
+                    }
+                    if(errors.WCHK)
+                    {
+                        $('#WCHKe-error').append(errors.WCHK[0]);
+                    }
+                    if(errors.CURWEIGHT)
+                    {
+                        $('#CURWEIGHTe-error').append(errors.CURWEIGHT[0]);
+                    }
+                    if(errors.EVTITEM)
+                    {
+                        $('#EVTITEMe-error').append(errors.EVTITEM[0]);
+                    }
+                    if(errors.CHKDATE)
+                    {
+                        $('#CHKDATEe-error').append(errors.CHKDATE[0]);
+                    }
+                }
             }
         }).done(function () {
-            $(".modal").modal('hide');
+            $("#edit-item").modal('hide');
             location.reload();
         })
     });

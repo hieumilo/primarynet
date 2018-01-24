@@ -36,6 +36,26 @@ class EvtlistController extends Controller
      */
     public function store(Request $request)
     {
+        $this->validate($request,
+            [
+                'GID' => 'required|numeric',
+                'NODEID' => 'required|numeric',
+                'NODEIP' => 'required',
+                'NODENAME' => 'required|min:3|max:35',
+                'EVTDESCR' => 'required',
+                'EVTCOMMENT' => 'required',
+                'EVTID' => 'required|numeric',
+                'EVTGROUP' => 'required|numeric',
+                'EVTITEM' => 'required',
+                'EVTOPEN' => 'required|boolean',
+                'NODESTAT' => 'required|boolean',
+                'EVTIGNORE' => 'required|boolean',
+                'EVTNOTIFY' => 'required|boolean',
+                'CLSNOTIFY' => 'required|boolean',
+                'WCHK' => 'required|boolean',
+                'CURWEIGHT' => 'required|boolean'
+            ]
+        );
         $item  =  Evtlist::create($request->all());
         return redirect()->back();
     }
@@ -74,6 +94,29 @@ class EvtlistController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $this->validate($request,
+            [
+                'GID' => 'required|numeric',
+                'NODEID' => 'required|numeric',
+                'NODEIP' => 'required',
+                'NODENAME' => 'required|min:3|max:35',
+                'EVTSTART' => 'required',
+                'EVTEND' => 'required',
+                'EVTDESCR' => 'required',
+                'EVTCOMMENT' => 'required',
+                'EVTID' => 'required|numeric',
+                'EVTGROUP' => 'required|numeric',
+                'EVTITEM' => 'required',
+                'CHKDATE' => 'required|date',
+                'EVTOPEN' => 'required|boolean',
+                'NODESTAT' => 'required|boolean',
+                'EVTIGNORE' => 'required|boolean',
+                'EVTNOTIFY' => 'required|boolean',
+                'CLSNOTIFY' => 'required|boolean',
+                'WCHK' => 'required|boolean',
+                'CURWEIGHT' => 'required|boolean'
+            ]
+        );
         $edit = DB::table('evtlists')
             ->where('id', $id)
             ->update([
@@ -96,9 +139,7 @@ class EvtlistController extends Controller
                 'NODENAME'=>$request->input('NODENAME'),
                 'NODESTAT'=>$request->input('NODESTAT'),
                 'WCHK'=>$request->input('WCHK')]);
-
-
-        return response()->json($edit);
+        return response()->json("ok");
     }
 
     /**
