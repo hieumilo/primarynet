@@ -276,7 +276,7 @@
                         <div class="dropdown dropdown-typical">
                             <a class="dropdown-toggle no-arr red" style="color: red"
                                href="/{{config('app.locale')}}/dashboard"
-                               >
+                            >
                                 <span class="font-icon font-icon-cogwheel" style="color: red"></span>
                                 <span class="lbl">{{trans('auth.dashboard')}}
                                     </span>

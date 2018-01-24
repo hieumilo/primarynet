@@ -28,7 +28,7 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index($lang)
     {
         //get all Evtlist
         $evtlists = Evtlist::all();
@@ -60,8 +60,7 @@ class HomeController extends Controller
                 ->select('settings.*', 'items.name')
                 ->get();
         }
-
-        App::setLocale(config('app.locale'));
+        app()->setLocale($lang);
 
         return view('home', compact('settings','evtlists'));
 
@@ -84,44 +83,44 @@ class HomeController extends Controller
         //check exist setting
         if ($settings->isEmpty()){
             //get all items
-            $itemSettings = DB::table('items')->get();
+            $itemSettings = DB::table('ITEMS')->get();
 
             //insert default to database
             foreach ($itemSettings as $key=>$itemSetting){
                 switch ($key) {
                     case 0:
                         DB::table('settings')->insert([
-                            ['user_id' => Auth::id(), 'item_id' => $itemSetting->id, 'row' => 1, 'col' => 1, 'sizex' => 3, 'sizey' => 2]
+                            ['user_id' => Auth::id(), 'item_id' => $itemSetting->ID, 'row' => 1, 'col' => 1, 'sizex' => 3, 'sizey' => 2]
                         ]);
                         break;
                     case 1:
                         DB::table('settings')->insert([
-                            ['user_id' => Auth::id(), 'item_id' => $itemSetting->id, 'row' => 1, 'col' => 3, 'sizex' => 2, 'sizey' => 2]
+                            ['user_id' => Auth::id(), 'item_id' => $itemSetting->ID, 'row' => 1, 'col' => 3, 'sizex' => 2, 'sizey' => 2]
                         ]);
                         break;
                     case 2:
                         DB::table('settings')->insert([
-                            ['user_id' => Auth::id(), 'item_id' => $itemSetting->id, 'row' => 3, 'col' => 3, 'sizex' => 2, 'sizey' => 2]
+                            ['user_id' => Auth::id(), 'item_id' => $itemSetting->ID, 'row' => 3, 'col' => 3, 'sizex' => 2, 'sizey' => 2]
                         ]);
                         break;
                     case 3:
                         DB::table('settings')->insert([
-                            ['user_id' => Auth::id(), 'item_id' => $itemSetting->id, 'row' => 4, 'col' => 1, 'sizex' => 3, 'sizey' => 2]
+                            ['user_id' => Auth::id(), 'item_id' => $itemSetting->ID, 'row' => 4, 'col' => 1, 'sizex' => 3, 'sizey' => 2]
                         ]);
                         break;
                     case 4:
                         DB::table('settings')->insert([
-                            ['user_id' => Auth::id(), 'item_id' => $itemSetting->id, 'row' => 5, 'col' => 3, 'sizex' => 2, 'sizey' => 2]
+                            ['user_id' => Auth::id(), 'item_id' => $itemSetting->ID, 'row' => 5, 'col' => 3, 'sizex' => 2, 'sizey' => 2]
                         ]);
                         break;
                     case 5:
                         DB::table('settings')->insert([
-                            ['user_id' => Auth::id(), 'item_id' => $itemSetting->id, 'row' => 1, 'col' => 5, 'sizex' => 6, 'sizey' => 6]
+                            ['user_id' => Auth::id(), 'item_id' => $itemSetting->ID, 'row' => 1, 'col' => 5, 'sizex' => 6, 'sizey' => 6]
                         ]);
                         break;
                     default:
                         DB::table('settings')->insert([
-                            ['user_id' => Auth::id(), 'item_id' => $itemSetting->id, 'row' => 4, 'col' => 1, 'sizex' => 3, 'sizey' => 2]
+                            ['user_id' => Auth::id(), 'item_id' => $itemSetting->ID, 'row' => 4, 'col' => 1, 'sizex' => 3, 'sizey' => 2]
                         ]);
                 }
 
@@ -173,11 +172,11 @@ class HomeController extends Controller
 
         foreach($treeviews as  $treeview)
             $childs[$treeview->parent_id][] = $treeview;
-            $childs[$treeview->name][] = $treeview;
-            unset($treeview);
+        $childs[$treeview->name][] = $treeview;
+        unset($treeview);
         foreach($treeviews as $treeview)
             if (isset($childs[$treeview->id]))
-            $treeview->children = $childs[$treeview->id];
+                $treeview->children = $childs[$treeview->id];
 
         return $childs[0];
 

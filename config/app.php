@@ -182,8 +182,8 @@ return [
         Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class,
 //        Barryvdh\Debugbar\ServiceProvider::class,
         Prettus\Repository\Providers\RepositoryServiceProvider::class,
-        Laravel\Passport\PassportServiceProvider::class,
-        Zizaco\Entrust\EntrustServiceProvider::class,
+//        Laravel\Passport\PassportServiceProvider::class,
+       Zizaco\Entrust\EntrustServiceProvider::class,
     ],
 
     /*
@@ -233,7 +233,6 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
         'Entrust'   => Zizaco\Entrust\EntrustFacade::class,
-
     ],
     'locales' => ['en' => 'English', 'vi' => 'vietnamese', 'ko' => 'korea'],
     'skip_locales' => ['admin','auth','etc'],

@@ -13,6 +13,8 @@
 
 Auth::routes();
 
+//Route::post('/authenticate','Auth\LoginController@authenticate');
+
 Route::get('/dashboard', 'HomeController@index');
 Route::get('/dashboard/new', 'HomeController@newDashboard');
 Route::get('/{lang}/dashboard', 'HomeController@index');
@@ -75,3 +77,7 @@ Route::get('/{lang?}','LanguageController@index');
 Route::get('/{lang?}/login','LanguageController@login');
 
 
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

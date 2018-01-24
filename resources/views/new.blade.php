@@ -10,11 +10,10 @@
                 <div class="col-md-12">
                     <div class="gridster">
                         <ul>
-
                             @foreach($settings as $key=>$setting)
-                                <li data-row="{{$setting->row}}" data-col="{{$setting->col}}"
-                                    data-id="{{$setting->id}}"
-                                    data-sizex="{{$setting->sizex}}" data-sizey="{{$setting->sizey}}">
+                                <li data-row="{{$setting->ROW}}" data-col="{{$setting->COL}}"
+                                    data-id="{{$setting->ID}}"
+                                    data-sizex="{{$setting->SIZEX}}" data-sizey="{{$setting->SIZEY}}">
                                     @if($key==0)
                                         <section class="card card-blue-fill">
                                             <header class="card-header">
