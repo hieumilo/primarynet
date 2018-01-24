@@ -11,9 +11,9 @@
                 <div class="col-xl-6 dahsboard-column">
                     <section class="box-typical box-typical-dashboard panel panel-default scrollable">
                         <header class="box-typical-header panel-heading">
-                            <h3 class="panel-title">Recent orders</h3>
+                            <h3 class="panel-title">{{trans('auth.panel-title')}}</h3>
                         </header>
-                        <div class="box-typical-body panel-body">
+                        <div class="box-typical-body panel-body ">
                             <iframe class="iframe" src="http://localhost:8000/ifram8" style="">
                                 <p>test</p>
                             </iframe>
@@ -23,9 +23,9 @@
                 <div class="col-xl-6 dahsboard-column">
                     <section class="box-typical box-typical-dashboard panel panel-default scrollable">
                         <header class="box-typical-header panel-heading">
-                            <h3 class="panel-title">Recent tickets</h3>
+                            <h3 class="panel-title">{{trans('auth.panel-title')}}</h3>
                         </header>
-                        <div class="box-typical-body panel-body">
+                        <div class="box-typical-body panel-body card-block">
                             <iframe class="iframe" src="http://localhost:8000/ifram7" style="">
                                 <p>test</p>
                             </iframe>
@@ -37,9 +37,9 @@
                 <div class="col-xl-4 dahsboard-column">
                     <section class="box-typical box-typical-dashboard panel panel-default scrollable">
                         <header class="box-typical-header panel-heading">
-                            <h3 class="panel-title">Recent tickets</h3>
+                            <h3 class="panel-title">{{trans('auth.panel-title')}}</h3>
                         </header>
-                        <div class="box-typical-body panel-body">
+                        <div class="box-typical-body panel-body card-block">
                             <iframe class="iframe" src="http://localhost:8000/ifram5" style="">
                                 <p>test</p>
                             </iframe>
@@ -49,9 +49,9 @@
                 <div class="col-xl-4 dahsboard-column">
                     <section class="box-typical box-typical-dashboard panel panel-default scrollable">
                         <header class="box-typical-header panel-heading">
-                            <h3 class="panel-title">Recent tickets</h3>
+                            <h3 class="panel-title">{{trans('auth.panel-title')}}</h3>
                         </header>
-                        <div class="box-typical-body panel-body">
+                        <div class="box-typical-body panel-body cart-block">
                             <iframe class="iframe" src="http://localhost:8000/ifram6" style="">
                                 <p>test</p>
                             </iframe>
@@ -62,7 +62,7 @@
 
                     <section class="box-typical box-typical-dashboard panel panel-default scrollable">
                         <header class="box-typical-header panel-heading">
-                            <h3 class="panel-title">Recent tickets</h3>
+                            <h3 class="panel-title">{{trans('auth.panel-title')}}</h3>
                         </header>
 
                         <div class="box-typical-body panel-body">
@@ -80,7 +80,7 @@
 
                     <section class="box-typical">
                         <div id="toolbar">
-                            <div class="bootstrap-table-header">Table header</div>
+                            <div class="bootstrap-table-header">{{trans('auth.table-header')}}</div>
                             <button id="add" class="btn btn-success remove" data-toggle="modal" data-target="#exampleModalLong">
                                 Add
                             </button>
@@ -302,9 +302,9 @@
                         <ul>
 
                             @foreach($settings as $setting)
-                            <li data-row="{{$setting->row}}" data-col="{{$setting->col}}"
-                            data-id="{{$setting->id}}"
-                            data-sizex="{{$setting->sizex}}" data-sizey="{{$setting->sizey}}"></li>
+                                <li data-row="{{$setting->row}}" data-col="{{$setting->col}}"
+                                    data-id="{{$setting->id}}"
+                                    data-sizex="{{$setting->sizex}}" data-sizey="{{$setting->sizey}}"></li>
                             @endforeach
 
                         </ul>

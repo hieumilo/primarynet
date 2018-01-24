@@ -28,7 +28,7 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index($lang)
     {
         //get all Evtlist
         $evtlists = Evtlist::all();
@@ -61,7 +61,8 @@ class HomeController extends Controller
                 ->get();
         }
 
-        App::setLocale(config('app.locale'));
+        //App::setLocale(config('app.locale'));
+        App::setLocale($lang);
 
         return view('home', compact('settings','evtlists'));
 

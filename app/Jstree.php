@@ -49,5 +49,5 @@ use Illuminate\Database\Eloquent\Model;
  */
 class Jstree extends Model
 {
-    protected $table = "treviews";
+    protected $table = "treeviews";
 }

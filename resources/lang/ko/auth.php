@@ -29,4 +29,7 @@ return [
     'add' =>'더하다',
     'logout' =>'로그 아웃',
     'panel-title' =>' 패널 제목',
+    'table-header' =>'표 머리글',
+    'mess-item'=> '모건이 뭔가 걱정하고 있었어! 모건이 뭔가 걱정하고 있었어.',
+    'third-test'=>'제 3 자 테스트'
 ];

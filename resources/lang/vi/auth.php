@@ -29,4 +29,7 @@ return [
     'add' =>'Thêm',
     'logout' =>' Đăng xuất',
     'panel-title' =>' Tiêu đề bảng',
+    'table-header'=> 'Tiêu đề dữ liệu bảng',
+    'mess-item'=> 'Morgan đã làm phiền một cái gì đó! Morgan đang làm phiền một cái gì đó ...',
+    'third-test'=>'Kiểm tra bên thứ ba'
 ];
