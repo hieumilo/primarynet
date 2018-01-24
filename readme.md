@@ -20,3 +20,6 @@ php artisan db:seed
 5. Run serve
 php artisan serve
 laravel start on: http://localhost:8000
+5. User account
+Admin: admin@admin.com/password
+User: user@user.com/password
