@@ -13,8 +13,13 @@
 https://github.com/levansonqs/primarynet
 2. run composer update to load dependency.
 composer update
-3. Run seeder create db
+3. create db
+php artisan migrate
+4. Run seeder create db
 php artisan db:seed
-4 Run serve
+5. Run serve
 php artisan serve
 laravel start on: http://localhost:8000
+5. User account
+Admin: admin@admin.com/password
+User: user@user.com/password
