@@ -1,6 +1,13 @@
 @extends('layouts.master')
 
 @section('content')
+    <div id="loader-wrapper">
+        <div id="loader"></div>
+
+        <div class="loader-section section-left"></div>
+        <div class="loader-section section-right"></div>
+
+    </div>
 <div class="container">
     <div class="row">
         <div class="col-md-8 col-md-offset-2">

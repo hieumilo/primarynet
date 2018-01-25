@@ -40,6 +40,10 @@
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/dsmorse-gridster@0.7.0/dist/jquery.gridster.css">
 
+    <!-- ReLoad  -->
+    <link rel="stylesheet" href="/css/mainreload.css">
+    <link rel="stylesheet" href="/css/normalize.css">
+
 </head>
 @yield('content')
 <!-- Scripts -->

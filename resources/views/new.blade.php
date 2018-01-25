@@ -4,6 +4,14 @@
     @role('Admin')
     <div class="mobile-menu-left-overlay"></div>
 
+    <div id="loader-wrapper">
+        <div id="loader"></div>
+
+        <div class="loader-section section-left"></div>
+        <div class="loader-section section-right"></div>
+
+    </div>
+
     <div class="page-content">
         <div class="container-fluid">
             {{--Son layout--}}

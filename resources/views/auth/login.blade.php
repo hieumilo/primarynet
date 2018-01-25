@@ -2,6 +2,13 @@
 
 @section('content')
         <header class="site-header position-static">
+            <div id="loader-wrapper">
+                <div id="loader"></div>
+
+                <div class="loader-section section-left"></div>
+                <div class="loader-section section-right"></div>
+
+            </div>
             <div class="container-fluid">
                 <a href="#" class="site-logo">
                     <img class="hidden-md-down" src="/img/logo-2.png" alt="">
