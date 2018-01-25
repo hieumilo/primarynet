@@ -41,7 +41,7 @@ return [
     'mess-item'=> 'Morgan was bothering about something! Morgan was bothering about something...',
     'third-test'=>'Third Party Test',
 
-    'add'=>'Add',
+    'add-to'=>'Add',
     'delete'=>'Delete'
 
 ];

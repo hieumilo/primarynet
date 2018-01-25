@@ -40,6 +40,6 @@ return [
     'mess-item'=> 'Morgan đã làm phiền một cái gì đó! Morgan đang làm phiền một cái gì đó ...',
     'third-test'=>'Kiểm tra bên thứ ba',
 
-    'add'=>'Thêm',
+    'add-to'=>'Thêm',
     'delete'=>'Xóa'
 ];
