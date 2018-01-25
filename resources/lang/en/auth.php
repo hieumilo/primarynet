@@ -34,7 +34,7 @@ return [
     'form-builder' =>'Form builder',
     'create-post' =>'Create Posts',
     'create-post' =>'Create Posts',
-    'add' =>'Add',
+    'add' =>'Share Account',
     'logout' =>' Logout',
     'panel-title' =>' Panel title',
     'table-header'=> 'Table header',

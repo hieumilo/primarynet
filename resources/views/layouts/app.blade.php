@@ -39,6 +39,7 @@
     <link rel="stylesheet" href="/css/styles.css">
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/dsmorse-gridster@0.7.0/dist/jquery.gridster.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.6.2/sweetalert2.min.css" />
 
     <!-- ReLoad  -->
     <link rel="stylesheet" href="/css/mainreload.css">
@@ -220,7 +221,7 @@
                     <div class="dropdown dropdown-lang">
                         <button class="dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true"
                                 aria-expanded="false">
-                            <span class="flag-icon flag-icon-{{config('app.locale')=='ko'? 'kr':(config('app.locale')=='en'? 'us':(config('app.locale')=='vi'?'vi':''))}}" id="flag-change"></span>
+                            <span class="flag-icon flag-icon-{{config('app.locale')=='ko'? 'kr':(config('app.locale')=='en'? 'us':(config('app.locale')=='vi'?'vn':''))}}" id="flag-change"></span>
                         </button>
                         <div class="dropdown-menu dropdown-menu-right">
                             <div class="dropdown-menu-col">
@@ -228,7 +229,7 @@
                             </div>
                             <div class="dropdown-menu-col">
                                 <a class="dropdown-item {{config('app.locale')=='en'?  'current' : '' }}" onclick="setLocate('en')"><span class="flag-icon flag-icon-us"></span>English</a>
-                                <a class="dropdown-item {{config('app.locale')=='vi'?  'current' : '' }}" href="#" onclick="setLocate('vi')"><span class="flag-icon flag-icon-vi"></span>Viet Nam</a>
+                                <a class="dropdown-item {{config('app.locale')=='vi'?  'current' : '' }}" href="#" onclick="setLocate('vi')"><span class="flag-icon flag-icon-vn"></span>Viet Nam</a>
                             </div>
                         </div>
                     </div>
@@ -346,17 +347,10 @@
                             </div>
                         </div>
                         <div class="dropdown">
-                            <button class="btn btn-rounded dropdown-toggle" id="dd-header-add" type="button"
-                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <a class="btn btn-nav btn-rounded btn-inline btn-primary-outline" href="/{{config('app.locale')}}/dashboard/user">
                                 {{trans('auth.add')}}
-                            </button>
-                            <div class="dropdown-menu" aria-labelledby="dd-header-add">
-                                {{--<a class="dropdown-item" href="#">Quant and Verbal</a>--}}
-                                {{--<a class="dropdown-item" href="#">Real Gmat Test</a>--}}
-                                {{--<a class="dropdown-item" href="#">Prep Official App</a>--}}
-                                {{--<a class="dropdown-item" href="#">CATprer Test</a>--}}
-                                <a class="dropdown-item" href="#">{{trans('auth.third-test')}}</a>
-                            </div>
+                            </a>
+
                         </div>
                         <div class="help-dropdown">
                             <button type="button">
@@ -485,7 +479,8 @@
 <script src="https://cdn.jsdelivr.net/npm/dsmorse-gridster@0.7.0/dist/jquery.gridster.with-extras.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/dsmorse-gridster@0.7.0/dist/jquery.gridster.with-extras.js"></script>
 <script src="/js/main.js"></script>
-
+<script src="/js/table-user.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.6.2/sweetalert2.min.js"></script>
 @yield('scripts')
 </body>
 </html>

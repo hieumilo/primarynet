@@ -13,12 +13,13 @@
 
 Auth::routes();
 
-//Route::post('/authenticate','Auth\LoginController@authenticate');
+Route::get('/admin/user','AdminController@alluser');
+Route::post('/admin/user/saveRole','AdminController@saveRole');
 
-Route::get('/dashboard', 'HomeController@index');
-Route::get('/dashboard/new', 'HomeController@newDashboard');
+
 Route::get('/{lang}/dashboard', 'HomeController@index');
 Route::get('/{lang}/dashboard/new', 'HomeController@newDashboard');
+Route::get('/{lang}/dashboard/user', 'AdminController@user');
 
 Route::get('/ifram1', function(){
     return view('iframeChart/iframeChart1');

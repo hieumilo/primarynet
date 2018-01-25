@@ -33,7 +33,7 @@ return [
     'project' =>'Các dự án',
     'form-builder' =>'Dựng mẫu',
     'create-post' =>'Tạo bài đăng',
-    'add' =>'Thêm',
+    'add' =>'Chia sẻ tài khoản',
     'logout' =>' Đăng xuất',
     'panel-title' =>' Tiêu đề bảng',
     'table-header'=> 'Tiêu đề dữ liệu bảng',
