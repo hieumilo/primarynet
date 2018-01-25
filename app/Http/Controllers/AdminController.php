@@ -15,8 +15,9 @@ class AdminController extends Controller
     }
 
     //
-    public function user()
+    public function user($lang)
     {
+        app()->setLocale($lang);
         return view('user');
     }
 
