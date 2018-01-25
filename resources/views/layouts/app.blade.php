@@ -423,8 +423,7 @@
                                 </div>
                             </div>
                         </div><!--.help-dropdown-->
-                        <a class="btn btn-nav btn-rounded btn-inline btn-danger-outline"
-                           href="/post">
+                        <a class="btn btn-nav btn-rounded btn-inline btn-danger-outline">
                             {{trans('auth.create-post')}}
                         </a>
                         <div class="site-header-search-container">
