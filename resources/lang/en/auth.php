@@ -20,6 +20,8 @@ return [
     'remember' =>'Remeber me',
     'login' =>'Login',
     'forgot-pass' =>'Forgot password ?',
+    'signup' => 'Sign Up',
+    'newAccount' => 'New to our website? ',
 
     'register'=>'Register',
     'name'=>'Name',

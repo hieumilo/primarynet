@@ -44,6 +44,7 @@
     <link rel="stylesheet" href="/css/mainreload.css">
     <link rel="stylesheet" href="/css/normalize.css">
 
+    <link rel="stylesheet" href="/css/separate/pages/login.min.css">
 </head>
 <body>
 <header class="site-header">

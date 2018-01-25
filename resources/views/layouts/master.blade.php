@@ -44,6 +44,8 @@
     <link rel="stylesheet" href="/css/mainreload.css">
     <link rel="stylesheet" href="/css/normalize.css">
 
+    <!-- Login & Register -->
+    <link rel="stylesheet" href="/css/separate/pages/login.min.css">
 </head>
 @yield('content')
 <!-- Scripts -->
@@ -78,6 +80,7 @@
 <script src="https://cdn.jsdelivr.net/npm/dsmorse-gridster@0.7.0/dist/jquery.gridster.with-extras.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/dsmorse-gridster@0.7.0/dist/jquery.gridster.with-extras.js"></script>
 <script src="/js/main.js"></script>
+<script src="/js/app.js"></script>
 
 @yield('scripts')
 </body>
