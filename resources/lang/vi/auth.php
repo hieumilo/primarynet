@@ -19,6 +19,11 @@ return [
     'password' =>'Nhập mật khẩu',
     'remember' =>'Lưu mật khẩu tài khoản',
     'login' =>'Đăng nhập',
+
+    'register'=>'Đăng ký',
+    'name'=>'Tên',
+    'confirm-pass' =>'Nhập lại mật khẩu',
+
     'forgot-pass' =>'Quên mật khẩu ?',
     'dashboard' =>'Phần điều khiễn cũ',
     'dashboard-new' =>'Phần điều khiển mới',

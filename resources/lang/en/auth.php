@@ -20,6 +20,11 @@ return [
     'remember' =>'Remeber me',
     'login' =>'Login',
     'forgot-pass' =>'Forgot password ?',
+
+    'register'=>'Register',
+    'name'=>'Name',
+    'confirm-pass' =>'Confirm Password',
+
     'dashboard' =>'Dashboard Old',
     'dashboard-new' =>'Dashboard New',
     'social-media' =>'Social media',
