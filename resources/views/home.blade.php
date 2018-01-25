@@ -15,7 +15,7 @@
                             <h3 class="panel-title">{{trans('auth.panel-title')}}</h3>
                         </header>
                         <div class="box-typical-body panel-body ">
-                            <iframe class="iframe" src="http://localhost:8000/ifram8" style="">
+                            <iframe class="iframe" src="/ifram8" style="">
                                 <p>test</p>
                             </iframe>
                         </div><!--.box-typical-body-->
@@ -27,7 +27,7 @@
                             <h3 class="panel-title">{{trans('auth.panel-title')}}</h3>
                         </header>
                         <div class="box-typical-body panel-body card-block">
-                            <iframe class="iframe" src="http://localhost:8000/ifram7" style="">
+                            <iframe class="iframe" src="/ifram7" style="">
                                 <p>test</p>
                             </iframe>
                         </div><!--.box-typical-body-->
@@ -41,7 +41,7 @@
                             <h3 class="panel-title">{{trans('auth.panel-title')}}</h3>
                         </header>
                         <div class="box-typical-body panel-body card-block">
-                            <iframe class="iframe" src="http://localhost:8000/ifram5" style="">
+                            <iframe class="iframe" src="/ifram5" style="">
                                 <p>test</p>
                             </iframe>
                         </div><!--.box-typical-body-->
@@ -53,7 +53,7 @@
                             <h3 class="panel-title">{{trans('auth.panel-title')}}</h3>
                         </header>
                         <div class="box-typical-body panel-body cart-block">
-                            <iframe class="iframe" src="http://localhost:8000/ifram6" style="">
+                            <iframe class="iframe" src="/ifram6" style="">
                                 <p>test</p>
                             </iframe>
                         </div><!--.box-typical-body-->
@@ -67,7 +67,7 @@
                         </header>
 
                         <div class="box-typical-body panel-body">
-                            <iframe class="iframe" src="http://localhost:8000/jstreeload" style="">
+                            <iframe class="iframe" src="/jstreeload" style="">
                                 <p>test</p>
                             </iframe>
                         </div><!--.box-typical-body-->
@@ -325,10 +325,10 @@
                                         <ul>
 
                                             @foreach($settings as $setting)
-                                                <li data-row="{{$setting->row}}" data-col="{{$setting->col}}"
-                                                    data-id="{{$setting->id}}"
-                                                    data-sizex="{{$setting->sizex}}"
-                                                    data-sizey="{{$setting->sizey}}"></li>
+                                                <li data-row="{{$setting->ROW}}" data-col="{{$setting->COL}}"
+                                                    data-id="{{$setting->ID}}"
+                                                    data-sizex="{{$setting->SIZEX}}"
+                                                    data-sizey="{{$setting->SIZEY}}"></li>
                                             @endforeach
 
                                         </ul>

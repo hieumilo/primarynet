@@ -50,7 +50,7 @@
 <body>
 <header class="site-header">
     <div class="container-fluid">
-        <a href="#" class="site-logo">
+        <a href="/" class="site-logo">
             <img class="hidden-md-down" src="/img/logo-2.png" alt="">
             <img class="hidden-lg-down" src="/img/logo-2-mob.png" alt="">
         </a>
@@ -423,8 +423,7 @@
                                 </div>
                             </div>
                         </div><!--.help-dropdown-->
-                        <a class="btn btn-nav btn-rounded btn-inline btn-danger-outline"
-                           href="/post">
+                        <a class="btn btn-nav btn-rounded btn-inline btn-danger-outline">
                             {{trans('auth.create-post')}}
                         </a>
                         <div class="site-header-search-container">
@@ -481,6 +480,7 @@
 <script src="/js/main.js"></script>
 <script src="/js/table-user.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.6.2/sweetalert2.min.js"></script>
+<script src="//rawgit.com/vitalets/x-editable/master/dist/bootstrap3-editable/js/bootstrap-editable.js"></script>
 @yield('scripts')
 </body>
 </html>

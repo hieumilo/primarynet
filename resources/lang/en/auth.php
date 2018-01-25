@@ -39,5 +39,9 @@ return [
     'panel-title' =>' Panel title',
     'table-header'=> 'Table header',
     'mess-item'=> 'Morgan was bothering about something! Morgan was bothering about something...',
-    'third-test'=>'Third Party Test'
+    'third-test'=>'Third Party Test',
+
+    'add-to'=>'Add',
+    'delete'=>'Delete'
+
 ];

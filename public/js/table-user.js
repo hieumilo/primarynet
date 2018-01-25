@@ -12,7 +12,8 @@ function changeRoute(role, id){
                 'Update complete!',
                 'success'
             ).then(function (value) {
-                location.reload();
+                var $table = $('#table-user')
+                $table.bootstrapTable('refresh');
             });
         }).
     fail(function(response) {
