@@ -19,11 +19,11 @@
                                 <div class="bootstrap-table-header">{{trans('auth.table-header')}}</div>
                                 <button id="add" class="btn btn-success remove" data-toggle="modal"
                                         data-target="#add-item">
-                                    Add
+                                    {{trans('auth.add')}}
                                 </button>
 
                                 <button id="remove" class="btn btn-danger remove" disabled>
-                                    <i class="font-icon font-icon-close-2"></i> Delete
+                                    <i class="font-icon font-icon-close-2"></i> {{trans('auth.delete')}}
                                 </button>
 
                             </div>
