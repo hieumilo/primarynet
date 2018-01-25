@@ -28,7 +28,7 @@
                                     </div>
                                     <div class="dropdown-menu-col">
                                         <a class="dropdown-item " onclick="setLocate('en')"><span class="flag-icon flag-icon-us"></span>English</a>
-                                        <a class="dropdown-item " href="#" onclick="setLocate('vi')"><span class="flag-icon flag-icon-vi"></span>Viet Nam</a>
+                                        <a class="dropdown-item " href="#" onclick="setLocate('vi')"><span class="flag-icon flag-icon-vn"></span>Viet Nam</a>
                                     </div>
                                 </div>
                             </div>
@@ -45,65 +45,51 @@
 <div class="container">
     <div class="row">
 
-        <div class="col-md-12">
-            <div class="panel panel-default main-login">
-                <div class="panel-heading">{{trans('auth.login')}}</div>
-
+        <div class="page-center">
+            <div class="panel panel-default main-login page-center-in">
                 <div class="panel-body">
-                    <form class="form-horizontal" method="POST" action="{{ route('login') }}">
+                    <form class="form-horizontal sign-box" method="POST" action="{{ route('login') }}">
                         {{ csrf_field() }}
-
+                        <div class="sign-avatar no-photo">&plus;</div>
+                        <header class="sign-title">{{trans('auth.login')}}</header>
                         <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
-                            <label for="email" class="col-md-4 control-label">{{trans('auth.email')}}</label>
-
-                            <div class="col-md-6">
-                                <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required autofocus>
-
+                                {{--<input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required autofocus>--}}
+                                <div class="form-group">
+                                    <input type="email" id="email" class="form-control" name="email" value="{{ old('email') }}" required autofocus placeholder="{{trans('auth.email')}}"/>
+                                </div>
                                 @if ($errors->has('email'))
                                     <span class="help-block">
                                         <strong>{{ $errors->first('email') }}</strong>
                                     </span>
                                 @endif
-                            </div>
                         </div>
 
                         <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
-                            <label for="password" class="col-md-4 control-label">{{trans('auth.password')}}</label>
+                                {{--<input id="password" type="password" class="form-control" name="password" required>--}}
 
-                            <div class="col-md-6">
-                                <input id="password" type="password" class="form-control" name="password" required>
-
+                                <div class="form-group">
+                                    <input id="password" type="password"  name="password" required class="form-control" placeholder="{{trans('auth.password')}}"/>
+                                </div>
                                 @if ($errors->has('password'))
                                     <span class="help-block">
                                         <strong>{{ $errors->first('password') }}</strong>
                                     </span>
                                 @endif
+                        </div>
+                        <div class="form-group">
+                            <div class="checkbox float-left">
+                                <input type="checkbox" id="signed-in" name="remember" {{ old('remember') ? 'checked' : '' }}/>
+                                <label for="signed-in">{{trans('auth.remember')}}</label>
+                            </div>
+                            <div class="float-right reset">
+                                <a href="{{ route('password.request') }}">{{trans('auth.forgot-pass')}}</a>
                             </div>
                         </div>
-
                         <div class="form-group">
-                            <div class="col-md-6 col-md-offset-4">
-                                <div class="checkbox">
-                                    <label>
-                                        <input type="checkbox" name="remember" {{ old('remember') ? 'checked' : '' }}> {{trans('auth.remember')}}
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <div class="col-md-8 col-md-offset-4">
-                                <button type="submit" class="btn btn-primary">
-                                    {{trans('auth.login')}}
-                                </button>
-
-                                <a class="btn btn-link" href="{{ route('password.request') }}">
-                                    {{trans('auth.forgot-pass')}}
-                                </a>
-                                <a class="btn btn-link" href="{{url(config('app.locale').'/register') }}">
-                                    {{trans('auth.register')}}
-                                </a>
-                            </div>
+                            <button type="submit" class="btn btn-primary btn-rounded">
+                                {{trans('auth.login')}}
+                            </button>
+                            <p class="sign-note">{{trans('auth.newAccount' )}}<a href="{{url(config('app.locale').'/register') }}">{{trans('auth.signup')}}</a></p>
                         </div>
                     </form>
                 </div>

@@ -19,6 +19,8 @@ return [
     'password' =>'Nhập mật khẩu',
     'remember' =>'Lưu mật khẩu tài khoản',
     'login' =>'Đăng nhập',
+    'signup' => 'Đăng ký',
+    'newAccount' => 'Bạn có muốn tạo tài khoản? ',
 
     'register'=>'Đăng ký',
     'name'=>'Tên',

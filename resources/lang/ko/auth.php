@@ -20,6 +20,8 @@ return [
     'remember' =>'날 기억해',
     'login' =>'로그인',
     'forgot-pass' =>'비밀번호를 잊으 셨나요?',
+    'signup' => '가입하기',
+    'newAccount' => '웹 사이트를 처음 보셨습니까? ',
 
     'register'=>'레지스터',
     'name'=>'이름',
