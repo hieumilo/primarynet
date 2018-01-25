@@ -20,6 +20,11 @@ return [
     'remember' =>'날 기억해',
     'login' =>'로그인',
     'forgot-pass' =>'비밀번호를 잊으 셨나요?',
+
+    'register'=>'레지스터',
+    'name'=>'이름',
+    'confirm-pass' =>'비밀번호 확인',
+
     'dashboard' =>'이전 대시 보드',
     'dashboard-new' =>'새로운 대시 보드',
     'social-media' =>'소셜 미디어',

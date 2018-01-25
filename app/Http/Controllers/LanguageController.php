@@ -27,6 +27,12 @@ class LanguageController extends Controller
         }
         return view('auth.login');
     }
+    public function register(Request $request){
+        if($request->lang <> ''){
+            app()->setLocale($request->lang);
+        }
+        return view('auth.register');
+    }
     public function dashboard(Request $request){
         if($request->lang <> ''){
             app()->setLocale($request->lang);

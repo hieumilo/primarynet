@@ -41,6 +41,10 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/dsmorse-gridster@0.7.0/dist/jquery.gridster.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.6.2/sweetalert2.min.css" />
 
+    <!-- ReLoad  -->
+    <link rel="stylesheet" href="/css/mainreload.css">
+    <link rel="stylesheet" href="/css/normalize.css">
+
 </head>
 <body>
 <header class="site-header">

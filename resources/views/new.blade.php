@@ -4,6 +4,14 @@
     @role('Admin')
     <div class="mobile-menu-left-overlay"></div>
 
+    <div id="loader-wrapper">
+        <div id="loader"></div>
+
+        <div class="loader-section section-left"></div>
+        <div class="loader-section section-right"></div>
+
+    </div>
+
     <div class="page-content">
         <div class="container-fluid">
             {{--Son layout--}}
@@ -401,7 +409,7 @@
             'plugins': ["wholerow", "checkbox"],
             'core' : {
                 'data' : {
-                    "url" : "http://localhost:8000/jstree",
+                    "url" : "/jstree",
                     "plugins" : [ "wholerow", "checkbox" ],
                     "dataType" : "json" // needed only if you do not supply JSON headers
                 }
