@@ -13,7 +13,7 @@
                             <div class="dropdown dropdown-lang">
                                 <button class="dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true"
                                         aria-expanded="false">
-                                    <span class="flag-icon flag-icon-{{config('app.locale')=='ko'? 'kr':(config('app.locale')=='en'? 'us':(config('app.locale')=='vi'?'vi':''))}}" id="flag-change"></span>
+                                    <span class="flag-icon flag-icon-{{config('app.locale')=='ko'? 'kr':(config('app.locale')=='en'? 'us':(config('app.locale')=='vi'?'vn':''))}}" id="flag-change"></span>
                                 </button>
                                 <div class="dropdown-menu dropdown-menu-right">
                                     <div class="dropdown-menu-col">
