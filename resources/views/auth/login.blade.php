@@ -93,6 +93,9 @@
                                 <a class="btn btn-link" href="{{ route('password.request') }}">
                                     {{trans('auth.forgot-pass')}}
                                 </a>
+                                <a class="btn btn-link" href="{{url(config('app.locale').'/register') }}">
+                                    {{trans('auth.register')}}
+                                </a>
                             </div>
                         </div>
                     </form>
