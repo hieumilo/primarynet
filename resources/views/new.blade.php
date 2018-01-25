@@ -401,7 +401,7 @@
             'plugins': ["wholerow", "checkbox"],
             'core' : {
                 'data' : {
-                    "url" : "http://localhost:8000/jstree",
+                    "url" : "/jstree",
                     "plugins" : [ "wholerow", "checkbox" ],
                     "dataType" : "json" // needed only if you do not supply JSON headers
                 }
