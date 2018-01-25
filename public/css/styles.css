@@ -172,3 +172,7 @@ section.card{
 .marginTop {
     margin-top: 200px;
 }
+
+.fix-error {
+    font-size: 13px; letter-spacing: -1px;
+}

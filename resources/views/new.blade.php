@@ -98,119 +98,81 @@
                                                                                 <div class="col-md-6">
                                                                                     <div class="form-group">
                                                                                         <input type="text" name="GID" class="form-control" placeholder="GID"  />
-                                                                                        <span class="text-danger">
-                                                                                            <strong id="GID-error"></strong>
-                                                                                        </span>
+                                                                                        <p class="text-danger fix-error" id="GID-error"></p>
                                                                                     </div>
                                                                                     <div class="form-group">
                                                                                         <input type="text" name="NODEID" class="form-control" placeholder="Node ID"  />
-                                                                                        <span class="text-danger">
-                                                                                            <strong id="NODEID-error"></strong>
-                                                                                        </span>
+                                                                                        <p class="text-danger fix-error" id="NODEID-error"></p>
                                                                                     </div>
                                                                                     <div class="form-group">
                                                                                         <input type="text" name="NODEIP" class="form-control" placeholder="Node IP"  />
-                                                                                        <span class="text-danger">
-                                                                                            <strong id="NODEIP-error"></strong>
-                                                                                        </span>
+                                                                                        <p class="text-danger fix-error" id="NODEIP-error"></p>
                                                                                     </div>
                                                                                     <div class="form-group">
                                                                                         <input type="text" name="NODENAME" class="form-control" placeholder="Node Name"  />
-                                                                                        <span class="text-danger">
-                                                                                            <strong id="NODENAME-error"></strong>
-                                                                                        </span>
+                                                                                        <p class="text-danger fix-error" id="NODENAME-error"></p>
                                                                                     </div>
                                                                                     <div class="form-group">
                                                                                         <input type="text" name="EVTSTART" class="form-control" placeholder="Node EVTSTART YYYY/MM/DD"  />
-                                                                                        <span class="text-danger">
-                                                                                            <strong id="EVTSTART-error"></strong>
-                                                                                        </span>
+                                                                                        <p class="text-danger fix-error" id="EVTSTART-error"></p>
                                                                                     </div>
                                                                                     <div class="form-group">
                                                                                         <input type="text" name="EVTEND" class="form-control" placeholder="Node EVTEND YYYY/MM/DD"  />
-                                                                                        <span class="text-danger">
-                                                                                            <strong id="EVTEND-error"></strong>
-                                                                                        </span>
+                                                                                        <p class="text-danger fix-error" id="EVTEND-error"></p>
                                                                                     </div>
                                                                                     <div class="form-group">
                                                                                         <input type="text" name="EVTOPEN" class="form-control" placeholder="EVTOPEN"  />
-                                                                                        <span class="text-danger">
-                                                                                            <strong id="EVTOPEN-error"></strong>
-                                                                                        </span>
+                                                                                        <p class="text-danger fix-error" id="EVTOPEN-error"></p>
                                                                                     </div>
                                                                                     <div class="form-group">
                                                                                         <input type="text" name="NODESTAT" class="form-control" placeholder="NODESTAT"  />
-                                                                                        <span class="text-danger">
-                                                                                            <strong id="NODESTAT-error"></strong>
-                                                                                        </span>
+                                                                                        <p class="text-danger fix-error" id="NODESTAT-error"></p>
                                                                                     </div>
                                                                                     <div class="form-group">
                                                                                         <input type="text" name="EVTDESCR" class="form-control" placeholder="EVTDESCR"  />
-                                                                                        <span class="text-danger">
-                                                                                            <strong id="EVTDESCR-error"></strong>
-                                                                                        </span>
+                                                                                        <p class="text-danger fix-error" id="EVTDESCR-error"></p>
                                                                                     </div>
                                                                                     <div class="form-group">
                                                                                         <input type="text" name="EVTCOMMENT" class="form-control" placeholder="EVTCOMMENT"  />
-                                                                                        <span class="text-danger">
-                                                                                            <strong id="EVTCOMMENT-error"></strong>
-                                                                                        </span>
+                                                                                        <p class="text-danger fix-error" id="EVTCOMMENT-error"></p>
                                                                                     </div>
                                                                                 </div>
                                                                                 <div class="col-md-6">
                                                                                     <div class="form-group">
                                                                                         <input type="text" name="EVTID" class="form-control" placeholder="EVTID"  />
-                                                                                        <span class="text-danger">
-                                                                                            <strong id="EVTID-error"></strong>
-                                                                                        </span>
+                                                                                        <p class="text-danger fix-error" id="EVTID-error"></p>
                                                                                     </div>
                                                                                     <div class="form-group">
                                                                                         <input type="text" name="EVTIGNORE" class="form-control" placeholder="EVTIGNORE"  />
-                                                                                        <span class="text-danger">
-                                                                                            <strong id="EVTIGNORE-error"></strong>
-                                                                                        </span>
+                                                                                        <p class="text-danger fix-error" id="EVTIGNORE-error"></p>
                                                                                     </div>
                                                                                     <div class="form-group">
                                                                                         <input type="text" name="EVTNOTIFY" class="form-control" placeholder="EVTNOTIFY"  />
-                                                                                        <span class="text-danger">
-                                                                                            <strong id="EVTNOTIFY-error"></strong>
-                                                                                        </span>
+                                                                                        <p class="text-danger fix-error" id="EVTNOTIFY-error"></p>
                                                                                     </div>
                                                                                     <div class="form-group">
                                                                                         <input type="text" name="CLSNOTIFY" class="form-control" placeholder="CLSNOTIFY"  />
-                                                                                        <span class="text-danger">
-                                                                                            <strong id="CLSNOTIFY-error"></strong>
-                                                                                        </span>
+                                                                                        <p class="text-danger fix-error" id="CLSNOTIFY-error"></p>
                                                                                     </div>
                                                                                     <div class="form-group">
                                                                                         <input type="text" name="EVTGROUP" class="form-control" placeholder="EVTGROUP"  />
-                                                                                        <span class="text-danger">
-                                                                                            <strong id="EVTGROUP-error"></strong>
-                                                                                        </span>
+                                                                                        <p class="text-danger fix-error" id="EVTGROUP-error"></p>
                                                                                     </div>
                                                                                     <div class="form-group">
                                                                                         <input type="text" name="WCHK" class="form-control" placeholder="WCHK"  />
-                                                                                        <span class="text-danger">
-                                                                                            <strong id="WCHK-error"></strong>
-                                                                                        </span>
+                                                                                        <p class="text-danger fix-error" id="WCHK-error"></p>
                                                                                     </div>
                                                                                     <div class="form-group">
                                                                                         <input type="text" name="CURWEIGHT" class="form-control" placeholder="CURWEIGHT"  />
-                                                                                        <span class="text-danger">
-                                                                                            <strong id="CURWEIGHT-error"></strong>
-                                                                                        </span>
+                                                                                        <p class="text-danger fix-error" id="CURWEIGHT-error"></p>
                                                                                     </div>
                                                                                     <div class="form-group">
                                                                                         <input type="text" name="EVTITEM" class="form-control" placeholder="EVTITEM"  />
-                                                                                        <span class="text-danger">
-                                                                                            <strong id="EVTITEM-error"></strong>
-                                                                                        </span>
+                                                                                        <p class="text-danger fix-error" id="EVTITEM-error"></p>
                                                                                     </div>
                                                                                     <div class="form-group">
                                                                                         <input type="text" name="CHKDATE" class="form-control" placeholder="CHKDATE"  />
-                                                                                        <span class="text-danger">
-                                                                                            <strong id="CHKDATE-error"></strong>
-                                                                                        </span>
+                                                                                        <p class="text-danger fix-error" id="CHKDATE-error"></p>
                                                                                     </div>
                                                                                 </div>
                                                                             </div>
@@ -248,100 +210,81 @@
                                                                                 <div class="col-md-6">
                                                                                     <div class="form-group">
                                                                                         <input type="text" name="GID" class="form-control" placeholder="GID"  />
-                                                                                        <span class="text-danger" id="GIDe-error">
-                                                                                        </span>
+                                                                                        <p class="text-danger fix-error" id="GIDe-error"></p>
                                                                                     </div>
                                                                                     <div class="form-group">
                                                                                         <input type="text" name="NODEID" class="form-control" placeholder="Node ID" />
-                                                                                         <span class="text-danger" id="NODEIDe-error">
-                                                                                        </span>
+                                                                                        <p class="text-danger fix-error" id="NODEIDe-error"></p>
                                                                                     </div>
                                                                                     <div class="form-group">
                                                                                         <input type="text" name="NODEIP" class="form-control" placeholder="Node IP"  />
-                                                                                         <span class="text-danger" id="NODEIPe-error">
-                                                                                        </span>
+                                                                                        <p class="text-danger fix-error" id="NODEIPe-error"></p>
                                                                                     </div>
                                                                                     <div class="form-group">
                                                                                         <input type="text" name="NODENAME" class="form-control" placeholder="Node Name"  />
-                                                                                         <span class="text-danger" id="NODENAMEe-error">
-                                                                                        </span>
+                                                                                        <p class="text-danger fix-error" id="NODENAMEe-error"></p>
                                                                                     </div>
                                                                                     <div class="form-group">
                                                                                         <input type="text" name="EVTSTART" class="form-control" placeholder="Node EVTSTART YYYY/MM/DD"  />
-                                                                                         <span class="text-danger" id="EVTSTARTe-error">
-                                                                                        </span>
+                                                                                        <p class="text-danger fix-error" id="EVTSTARTe-error"></p>
                                                                                     </div>
                                                                                     <div class="form-group">
                                                                                         <input type="text" name="EVTEND" class="form-control" placeholder="Node EVTEND YYYY/MM/DD"  />
-                                                                                         <span class="text-danger" id="EVTENDe-error">
-                                                                                        </span>
+                                                                                        <p class="text-danger fix-error" id="EVTENDe-error"></p>
                                                                                     </div>
                                                                                     <div class="form-group">
                                                                                         <input type="text" name="EVTOPEN" class="form-control" placeholder="EVTOPEN"  />
-                                                                                         <span class="text-danger" id="EVTOPENe-error">
-                                                                                        </span>
+                                                                                        <p class="text-danger fix-error" id="EVTOPENe-error"></p>
                                                                                     </div>
                                                                                     <div class="form-group">
                                                                                         <input type="text" name="NODESTAT" class="form-control" placeholder="NODESTAT"  />
-                                                                                         <span class="text-danger" id="NODESTATe-error">
-                                                                                        </span>
+                                                                                        <p class="text-danger fix-error" id="NODESTATe-error"></p>
                                                                                     </div>
                                                                                     <div class="form-group">
                                                                                         <input type="text" name="EVTDESCR" class="form-control" placeholder="EVTDESCR"  />
-                                                                                         <span class="text-danger" id="EVTDESCRe-error">
-                                                                                        </span>
+                                                                                        <p class="text-danger fix-error" id="EVTDESCRe-error"></p>
                                                                                     </div>
                                                                                     <div class="form-group">
                                                                                         <input type="text" name="EVTCOMMENT" class="form-control" placeholder="EVTCOMMENT"  />
-                                                                                         <span class="text-danger" id="EVTCOMMENTe-error">
-                                                                                        </span>
+                                                                                        <p class="text-danger fix-error" id="EVTCOMMENTe-error"></p>
                                                                                     </div>
                                                                                 </div>
                                                                                 <div class="col-md-6">
                                                                                     <div class="form-group">
                                                                                         <input type="text" name="EVTID" class="form-control" placeholder="EVTID"  />
-                                                                                         <span class="text-danger" id="EVTIDe-error">
-                                                                                        </span>
+                                                                                        <p class="text-danger fix-error" id="EVTIDe-error"></p>
                                                                                     </div>
                                                                                     <div class="form-group">
                                                                                         <input type="text" name="EVTIGNORE" class="form-control" placeholder="EVTIGNORE"  />
-                                                                                         <span class="text-danger" id="EVTIGNOREe-error">
-                                                                                        </span>
+                                                                                        <p class="text-danger fix-error" id="EVTIGNOREe-error"></p>
                                                                                     </div>
                                                                                     <div class="form-group">
                                                                                         <input type="text" name="EVTNOTIFY" class="form-control" placeholder="EVTNOTIFY"  />
-                                                                                         <span class="text-danger" id="EVTNOTIFYe-error">
-                                                                                        </span>
+                                                                                        <p class="text-danger fix-error" id="EVTNOTIFYe-error"></p>
                                                                                     </div>
                                                                                     <div class="form-group">
                                                                                         <input type="text" name="CLSNOTIFY" class="form-control" placeholder="CLSNOTIFY"  />
-                                                                                         <span class="text-danger" id="CLSNOTIFYe-error">
-                                                                                        </span>
+                                                                                        <p class="text-danger fix-error" id="CLSNOTIFYe-error"></p>
                                                                                     </div>
                                                                                     <div class="form-group">
                                                                                         <input type="text" name="EVTGROUP" class="form-control" placeholder="EVTGROUP"  />
-                                                                                         <span class="text-danger" id="EVTGROUPe-error">
-                                                                                        </span>
+                                                                                        <p class="text-danger fix-error" id="EVTGROUPe-error"></p>
                                                                                     </div>
                                                                                     <div class="form-group">
                                                                                         <input type="text" name="WCHK" class="form-control" placeholder="WCHK"  />
-                                                                                         <span class="text-danger" id="WCHKe-error">
-                                                                                        </span>
+                                                                                        <p class="text-danger fix-error" id="WCHKe-error"></p>
                                                                                     </div>
                                                                                     <div class="form-group">
                                                                                         <input type="text" name="CURWEIGHT" class="form-control" placeholder="CURWEIGHT"  />
-                                                                                         <span class="text-danger" id="CURWEIGHTe-error">
-                                                                                        </span>
+                                                                                        <p class="text-danger fix-error" id="CURWEIGHTe-error"></p>
                                                                                     </div>
                                                                                     <div class="form-group">
                                                                                         <input type="text" name="EVTITEM" class="form-control" placeholder="EVTITEM"  />
-                                                                                         <span class="text-danger" id="EVTITEMe-error">
-                                                                                        </span>
+                                                                                        <p class="text-danger fix-error" id="EVTITEMe-error"></p>
                                                                                     </div>
                                                                                     <div class="form-group">
                                                                                         <input type="text" name="CHKDATE" class="form-control" placeholder="CHKDATE"  />
-                                                                                         <span class="text-danger" id="CHKDATEe-error">
-                                                                                        </span>
+                                                                                        <p class="text-danger fix-error" id="CHKDATEe-error"></p>
                                                                                     </div>
                                                                                 </div>
                                                                             </div>

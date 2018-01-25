@@ -112,6 +112,14 @@ $(document).ready(function(){
                         valign: 'middle'
                     },
                     {
+                        title: 'ID',
+                        field: 'ID',
+                        rowspan: 1,
+                        align: 'center',
+                        valign: 'middle',
+                        sortable: true,
+                    },
+                    {
                         title: 'Node ID',
                         field: 'NODEID',
                         rowspan: 1,
@@ -217,7 +225,7 @@ $(document).ready(function(){
     });
 
     $('#edit').click(function () {
-        var ids = getIdSelections();
+        var ids = getIdEdit();
         $.ajaxSetup({
             headers: {
                 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
@@ -255,6 +263,7 @@ $(document).ready(function(){
 
     function getIdEdit() {
         return $.map($table.bootstrapTable('getSelections'), function (row) {
+            //console.log(row);
             return row.ID;
         });
     }
@@ -301,79 +310,79 @@ $(document).ready(function(){
                 if(errors) {
                     if(errors.GID)
                     {
-                        $('#GID-error').append(errors.GID[0]);
+                        $('#GID-error').empty().append(errors.GID[0]);
                     }
                     if(errors.NODEID)
                     {
-                        $('#NODEID-error').append(errors.NODEID[0]);
+                        $('#NODEID-error').empty().append(errors.NODEID[0]);
                     }
                     if(errors.NODEIP)
                     {
-                        $('#NODEIP-error').append(errors.NODEIP[0]);
+                        $('#NODEIP-error').empty().append(errors.NODEIP[0]);
                     }
                     if(errors.NODENAME)
                     {
-                        $('#NODENAME-error').append(errors.NODENAME[0]);
+                        $('#NODENAME-error').empty().append(errors.NODENAME[0]);
                     }
                     if(errors.EVTSTART)
                     {
-                        $('#EVTSTART-error').append(errors.EVTSTART[0]);
+                        $('#EVTSTART-error').empty().append(errors.EVTSTART[0]);
                     }
                     if(errors.EVTEND)
                     {
-                        $('#EVTEND-error').append(errors.EVTEND[0]);
+                        $('#EVTEND-error').empty().append(errors.EVTEND[0]);
                     }
                     if(errors.EVTOPEN)
                     {
-                        $('#EVTOPEN-error').append(errors.EVTOPEN[0]);
+                        $('#EVTOPEN-error').empty().append(errors.EVTOPEN[0]);
                     }
                     if(errors.NODESTAT)
                     {
-                        $('#NODESTAT-error').append(errors.NODESTAT[0]);
+                        $('#NODESTAT-error').empty().append(errors.NODESTAT[0]);
                     }
                     if(errors.EVTDESCR)
                     {
-                        $('#EVTDESCR-error').append(errors.EVTDESCR[0]);
+                        $('#EVTDESCR-error').empty().append(errors.EVTDESCR[0]);
                     }
                     if(errors.EVTCOMMENT)
                     {
-                        $('#EVTCOMMENT-error').append(errors.EVTCOMMENT[0]);
+                        $('#EVTCOMMENT-error').empty().append(errors.EVTCOMMENT[0]);
                     }
                     if(errors.EVTID)
                     {
-                        $('#EVTID-error').append(errors.EVTID[0]);
+                        $('#EVTID-error').empty().append(errors.EVTID[0]);
                     }
                     if(errors.EVTIGNORE)
                     {
-                        $('#EVTIGNORE-error').append(errors.EVTIGNORE[0]);
+                        $('#EVTIGNORE-error').empty().append(errors.EVTIGNORE[0]);
                     }
                     if(errors.EVTNOTIFY)
                     {
-                        $('#EVTNOTIFY-error').append(errors.EVTNOTIFY[0]);
+                        $('#EVTNOTIFY-error').empty().append(errors.EVTNOTIFY[0]);
                     }
                     if(errors.CLSNOTIFY)
                     {
-                        $('#CLSNOTIFY-error').append(errors.CLSNOTIFY[0]);
+                        $('#CLSNOTIFY-error').empty().append(errors.CLSNOTIFY[0]);
                     }
                     if(errors.EVTGROUP)
                     {
-                        $('#EVTGROUP-error').append(errors.EVTGROUP[0]);
+                        $('#EVTGROUP-error').empty().append(errors.EVTGROUP[0]);
                     }
                     if(errors.WCHK)
                     {
-                        $('#WCHK-error').append(errors.WCHK[0]);
+                        $('#WCHK-error').empty().append(errors.WCHK[0]);
                     }
                     if(errors.CURWEIGHT)
                     {
-                        $('#CURWEIGHT-error').append(errors.CURWEIGHT[0]);
+                        $('#CURWEIGHT-error').empty().append(errors.CURWEIGHT[0]);
                     }
                     if(errors.EVTITEM)
                     {
-                        $('#EVTITEM-error').append(errors.EVTITEM[0]);
+                        $('#EVTITEM-error').empty().append(errors.EVTITEM[0]);
                     }
                     if(errors.CHKDATE)
                     {
-                        $('#CHKDATE-error').append(errors.CHKDATE[0]);
+                        $('#CHKDATE-error').empty().append(errors.CHKDATE[0]);
                     }
                 }
             }
@@ -385,8 +394,8 @@ $(document).ready(function(){
     $(".crud-submit-edit").click(function (e) {
         e.preventDefault();
         var ids         = getIdEdit();
-        var editForm    = $("#editForm");
-        var form_action = $('#edit-item').find("form").attr("action");
+        // var editForm    = $("#editForm");
+        // var form_action = $('#edit-item').find("form").attr("action");
         var GID         = $('#edit-item').find("input[name='GID']").val();
         var NODEID      = $('#edit-item').find("input[name='NODEID']").val();
         var NODEIP      = $('#edit-item').find("input[name='NODEIP']").val();
@@ -411,6 +420,7 @@ $(document).ready(function(){
                 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
             }
         });
+        console.log(ids);
         $.ajax({
             dataType: 'json',
             type: 'PUT',
@@ -428,79 +438,80 @@ $(document).ready(function(){
                 if(errors) {
                     if(errors.GID)
                     {
-                        $('#GIDe-error').append(errors.GID[0]);
+                        $('#GIDe-error').empty().append(errors.GID[0]);
                     }
                     if(errors.NODEID)
                     {
-                        $('#NODEIDe-error').append(errors.NODEID[0]);
+                        $('#NODEIDe-error').empty().append(errors.NODEID[0]);
                     }
                     if(errors.NODEIP)
                     {
-                        $('#NODEIPe-error').append(errors.NODEIP[0]);
+                        $('#NODEIPe-error').empty().append(errors.NODEIP[0]);
                     }
                     if(errors.NODENAME)
                     {
-                        $('#NODENAMEe-error').append(errors.NODENAME[0]);
+                        $('#NODENAMEe-error').empty().append(errors.NODENAME[0]);
                     }
                     if(errors.EVTSTART)
                     {
-                        $('#EVTSTARTe-error').append(errors.EVTSTART[0]);
+
+                        $('#EVTSTARTe-error').empty().append(errors.EVTSTART[0]);
                     }
                     if(errors.EVTEND)
                     {
-                        $('#EVTENDe-error').append(errors.EVTEND[0]);
+                        $('#EVTENDe-error').empty().append(errors.EVTEND[0]);
                     }
                     if(errors.EVTOPEN)
                     {
-                        $('#EVTOPENe-error').append(errors.EVTOPEN[0]);
+                        $('#EVTOPENe-error').empty().append(errors.EVTOPEN[0]);
                     }
                     if(errors.NODESTAT)
                     {
-                        $('#NODESTATe-error').append(errors.NODESTAT[0]);
+                        $('#NODESTATe-error').empty().append(errors.NODESTAT[0]);
                     }
                     if(errors.EVTDESCR)
                     {
-                        $('#EVTDESCRe-error').append(errors.EVTDESCR[0]);
+                        $('#EVTDESCRe-error').empty().append(errors.EVTDESCR[0]);
                     }
                     if(errors.EVTCOMMENT)
                     {
-                        $('#EVTCOMMENTe-error').append(errors.EVTCOMMENT[0]);
+                        $('#EVTCOMMENTe-error').empty().append(errors.EVTCOMMENT[0]);
                     }
                     if(errors.EVTID)
                     {
-                        $('#EVTIDe-error').append(errors.EVTID[0]);
+                        $('#EVTIDe-error').empty().append(errors.EVTID[0]);
                     }
                     if(errors.EVTIGNORE)
                     {
-                        $('#EVTIGNOREe-error').append(errors.EVTIGNORE[0]);
+                        $('#EVTIGNOREe-error').empty().append(errors.EVTIGNORE[0]);
                     }
                     if(errors.EVTNOTIFY)
                     {
-                        $('#EVTNOTIFYe-error').append(errors.EVTNOTIFY[0]);
+                        $('#EVTNOTIFYe-error').empty().append(errors.EVTNOTIFY[0]);
                     }
                     if(errors.CLSNOTIFY)
                     {
-                        $('#CLSNOTIFYe-error').append(errors.CLSNOTIFY[0]);
+                        $('#CLSNOTIFYe-error').empty().append(errors.CLSNOTIFY[0]);
                     }
                     if(errors.EVTGROUP)
                     {
-                        $('#EVTGROUPe-error').append(errors.EVTGROUP[0]);
+                        $('#EVTGROUPe-error').empty().append(errors.EVTGROUP[0]);
                     }
                     if(errors.WCHK)
                     {
-                        $('#WCHKe-error').append(errors.WCHK[0]);
+                        $('#WCHKe-error').empty().append(errors.WCHK[0]);
                     }
                     if(errors.CURWEIGHT)
                     {
-                        $('#CURWEIGHTe-error').append(errors.CURWEIGHT[0]);
+                        $('#CURWEIGHTe-error').empty().append(errors.CURWEIGHT[0]);
                     }
                     if(errors.EVTITEM)
                     {
-                        $('#EVTITEMe-error').append(errors.EVTITEM[0]);
+                        $('#EVTITEMe-error').empty().append(errors.EVTITEM[0]);
                     }
                     if(errors.CHKDATE)
                     {
-                        $('#CHKDATEe-error').append(errors.CHKDATE[0]);
+                        $('#CHKDATEe-error').empty().append(errors.CHKDATE[0]);
                     }
                 }
             }
