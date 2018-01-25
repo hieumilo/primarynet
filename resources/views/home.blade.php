@@ -325,10 +325,10 @@
                                         <ul>
 
                                             @foreach($settings as $setting)
-                                                <li data-row="{{$setting->row}}" data-col="{{$setting->col}}"
-                                                    data-id="{{$setting->id}}"
-                                                    data-sizex="{{$setting->sizex}}"
-                                                    data-sizey="{{$setting->sizey}}"></li>
+                                                <li data-row="{{$setting->ROW}}" data-col="{{$setting->COL}}"
+                                                    data-id="{{$setting->ID}}"
+                                                    data-sizex="{{$setting->SIZEX}}"
+                                                    data-sizey="{{$setting->SIZEY}}"></li>
                                             @endforeach
 
                                         </ul>

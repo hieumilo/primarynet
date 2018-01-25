@@ -480,6 +480,7 @@
 <script src="/js/main.js"></script>
 <script src="/js/table-user.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.6.2/sweetalert2.min.js"></script>
+<script src="//rawgit.com/vitalets/x-editable/master/dist/bootstrap3-editable/js/bootstrap-editable.js"></script>
 @yield('scripts')
 </body>
 </html>
