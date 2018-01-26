@@ -16,8 +16,8 @@ class ItemsTableSeeder extends Seeder
 
         $faker = Faker\Factory::create();
         for($i = 0; $i <6; $i++){
-            DB::table('items')->insert([
-                'name'=> $faker->name
+            DB::table('ITEMS')->insert([
+                'NAME'=> $faker->name
             ]);
         }
     }
