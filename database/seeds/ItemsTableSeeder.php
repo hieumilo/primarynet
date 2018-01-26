@@ -12,7 +12,7 @@ class ItemsTableSeeder extends Seeder
     public function run()
     {
         //
-        DB::table('items')->truncate();
+        DB::table('ITEMS')->truncate();
 
         $faker = Faker\Factory::create();
         for($i = 0; $i <6; $i++){
