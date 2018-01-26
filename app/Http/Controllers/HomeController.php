@@ -49,15 +49,15 @@ class HomeController extends Controller
 
             //insert default to database
             foreach ($itemSettings as $itemSetting){
-                DB::table('settings')->insert([
+                DB::table('SETTINGS')->insert([
                     ['user_id'=>Auth::id(), 'item_id'=>$itemSetting->id, 'row' => 1,'col' => 1,'sizex' => 1, 'sizey' => 1]
                 ]);
             }
             $settings = DB::table('users')
-                ->join('settings', 'users.id', '=', 'settings.user_id')
-                ->join('items', 'settings.item_id', '=', 'items.id')
+                ->join('SETTINGS', 'users.id', '=', 'SETTINGS.USER_ID')
+                ->join('items', 'SETTINGS.ITEM_ID', '=', 'items.id')
                 ->where('user_id',Auth::id())
-                ->select('settings.*', 'items.name')
+                ->select('SETTINGS.*', 'items.name')
                 ->get();
         }
 
@@ -76,10 +76,10 @@ class HomeController extends Controller
         //get all setting
 
         $settings = DB::table('users')
-            ->join('settings', 'users.id', '=', 'settings.user_id')
-            ->join('items', 'settings.item_id', '=', 'items.id')
+            ->join('SETTINGS', 'users.id', '=', 'SETTINGS.USER_ID')
+            ->join('items', 'SETTINGS.ITEM_ID', '=', 'items.id')
             ->where('user_id',Auth::id())
-            ->select('settings.*', 'items.name')
+            ->select('SETTINGS.*', 'items.name')
             ->get();
 
         //check exist setting
