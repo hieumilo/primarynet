@@ -36,10 +36,10 @@ class HomeController extends Controller
         //get all setting
 
         $settings = DB::table('users')
-            ->join('settings', 'users.id', '=', 'settings.user_id')
-            ->join('items', 'settings.item_id', '=', 'items.id')
+            ->join('SETTINGS', 'users.id', '=', 'SETTINGS.USER_ID')
+            ->join('items', 'SETTINGS.ITEM_ID', '=', 'items.id')
             ->where('user_id',Auth::id())
-            ->select('settings.*', 'items.name')
+            ->select('SETTINGS.*', 'items.name')
             ->get();
 
         //check exist setting
@@ -91,47 +91,47 @@ class HomeController extends Controller
             foreach ($itemSettings as $key=>$itemSetting){
                 switch ($key) {
                     case 0:
-                        DB::table('settings')->insert([
-                            ['user_id' => Auth::id(), 'item_id' => $itemSetting->ID, 'row' => 1, 'col' => 1, 'sizex' => 3, 'sizey' => 2]
+                        DB::table('SETTINGS')->insert([
+                            ['USER_ID' => Auth::id(), 'ITEM_ID' => $itemSetting->ID, 'row' => 1, 'col' => 1, 'sizex' => 3, 'sizey' => 2]
                         ]);
                         break;
                     case 1:
-                        DB::table('settings')->insert([
-                            ['user_id' => Auth::id(), 'item_id' => $itemSetting->ID, 'row' => 1, 'col' => 3, 'sizex' => 2, 'sizey' => 2]
+                        DB::table('SETTINGS')->insert([
+                            ['USER_ID' => Auth::id(), 'ITEM_ID' => $itemSetting->ID, 'ROW' => 1, 'COL' => 3, 'sizex' => 2, 'sizey' => 2]
                         ]);
                         break;
                     case 2:
-                        DB::table('settings')->insert([
-                            ['user_id' => Auth::id(), 'item_id' => $itemSetting->ID, 'row' => 3, 'col' => 3, 'sizex' => 2, 'sizey' => 2]
+                        DB::table('SETTINGS')->insert([
+                            ['USER_ID' => Auth::id(), 'ITEM_ID' => $itemSetting->ID, 'ROW' => 3, 'COL' => 3, 'SIZEX' => 2, 'SIZEY' => 2]
                         ]);
                         break;
                     case 3:
-                        DB::table('settings')->insert([
-                            ['user_id' => Auth::id(), 'item_id' => $itemSetting->ID, 'row' => 4, 'col' => 1, 'sizex' => 3, 'sizey' => 2]
+                        DB::table('SETTINGS')->insert([
+                            ['USER_ID' => Auth::id(), 'ITEM_ID' => $itemSetting->ID, 'ROW' => 4, 'COL' => 1, 'SIZEX' => 3, 'SIZEY' => 2]
                         ]);
                         break;
                     case 4:
-                        DB::table('settings')->insert([
-                            ['user_id' => Auth::id(), 'item_id' => $itemSetting->ID, 'row' => 5, 'col' => 3, 'sizex' => 2, 'sizey' => 2]
+                        DB::table('SETTINGS')->insert([
+                            ['USER_ID' => Auth::id(), 'ITEM_ID' => $itemSetting->ID, 'ROW' => 5, 'COL' => 3, 'SIZEX' => 2, 'SIZEY' => 2]
                         ]);
                         break;
                     case 5:
-                        DB::table('settings')->insert([
-                            ['user_id' => Auth::id(), 'item_id' => $itemSetting->ID, 'row' => 1, 'col' => 5, 'sizex' => 6, 'sizey' => 6]
+                        DB::table('SETTINGS')->insert([
+                            ['USER_ID' => Auth::id(), 'ITEM_ID' => $itemSetting->ID, 'ROW' => 1, 'COL' => 5, 'SIZEX' => 6, 'SIZEY' => 6]
                         ]);
                         break;
                     default:
-                        DB::table('settings')->insert([
-                            ['user_id' => Auth::id(), 'item_id' => $itemSetting->ID, 'row' => 4, 'col' => 1, 'sizex' => 3, 'sizey' => 2]
+                        DB::table('SETTINGS')->insert([
+                            ['USER_ID' => Auth::id(), 'ITEM_ID' => $itemSetting->ID, 'ROW' => 4, 'COL' => 1, 'SIZEX' => 3, 'SIZEY' => 2]
                         ]);
                 }
 
             }
             $settings = DB::table('users')
-                ->join('settings', 'users.id', '=', 'settings.user_id')
-                ->join('items', 'settings.item_id', '=', 'items.id')
+                ->join('SETTINGS', 'users.id', '=', 'SETTINGS.USER_ID')
+                ->join('items', 'SETTINGS.ITEM_ID', '=', 'items.id')
                 ->where('user_id',Auth::id())
-                ->select('settings.*', 'items.name')
+                ->select('SETTINGS.*', 'items.name')
                 ->get();
         }
         app()->setLocale($lang);
@@ -144,13 +144,13 @@ class HomeController extends Controller
         $settings = $request->input('data');
         //get all setting
         foreach ($settings as $key => $setting) {
-            DB::table('settings')
+            DB::table('SETTINGS')
                 ->where('id', $setting['id'])
                 ->update([
-                    'row' => $setting['row'],
-                    'col' => $setting['col'],
-                    'sizex' => $setting['size_x'],
-                    'sizey' => $setting['size_y']
+                    'ROW' => $setting['row'],
+                    'COL' => $setting['col'],
+                    'SIZEX' => $setting['size_x'],
+                    'SIZEY' => $setting['size_y']
                 ]);
         }
 
