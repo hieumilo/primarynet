@@ -4,18 +4,20 @@ namespace App;
 
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Klaravel\Ntrust\Traits\NtrustUserTrait;
 use Laravel\Passport\HasApiTokens;
-use Zizaco\Entrust\Traits\EntrustUserTrait;
 
 class User extends Authenticatable
 {
-    use EntrustUserTrait, HasApiTokens, Notifiable;
+    use NtrustUserTrait, HasApiTokens, Notifiable;
 
     /**
      * The attributes that are mass assignable.
      *
      * @var array
      */
+    protected static $roleProfile = 'user';
+
     protected $fillable = [
         'name', 'email', 'password',
     ];
