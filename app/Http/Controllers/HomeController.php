@@ -77,9 +77,9 @@ class HomeController extends Controller
 
         $settings = DB::table('users')
             ->join('SETTINGS', 'users.id', '=', 'SETTINGS.USER_ID')
-            ->join('items', 'SETTINGS.ITEM_ID', '=', 'items.id')
+            ->join('ITEMS', 'SETTINGS.ITEM_ID', '=', 'ITEMS.ID')
             ->where('user_id',Auth::id())
-            ->select('SETTINGS.*', 'items.name')
+            ->select('SETTINGS.*', 'ITEMS.NAME')
             ->get();
 
         //check exist setting
@@ -129,9 +129,9 @@ class HomeController extends Controller
             }
             $settings = DB::table('users')
                 ->join('SETTINGS', 'users.id', '=', 'SETTINGS.USER_ID')
-                ->join('items', 'SETTINGS.ITEM_ID', '=', 'items.id')
+                ->join('ITEMS', 'SETTINGS.ITEM_ID', '=', 'ITEMS.ID')
                 ->where('user_id',Auth::id())
-                ->select('SETTINGS.*', 'items.name')
+                ->select('SETTINGS.*', 'ITEMS.NAME')
                 ->get();
         }
         app()->setLocale($lang);
