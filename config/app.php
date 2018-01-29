@@ -183,8 +183,7 @@ return [
 //        Barryvdh\Debugbar\ServiceProvider::class,
         Prettus\Repository\Providers\RepositoryServiceProvider::class,
 //        Laravel\Passport\PassportServiceProvider::class,
-       Zizaco\Entrust\EntrustServiceProvider::class,
-    ],
+        Klaravel\Ntrust\NtrustServiceProvider::class,    ],
 
     /*
     |--------------------------------------------------------------------------
@@ -232,7 +231,7 @@ return [
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
-        'Entrust'   => Zizaco\Entrust\EntrustFacade::class,
+        'Ntrust' => Klaravel\Ntrust\NtrustFacade::class,
     ],
     'locales' => ['en' => 'English', 'vi' => 'vietnamese', 'ko' => 'korea'],
     'skip_locales' => ['admin','auth','etc'],

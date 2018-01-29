@@ -2,10 +2,12 @@
 
 namespace App;
 
-use Zizaco\Entrust\EntrustPermission;
+use Illuminate\Database\Eloquent\Model;
+use Klaravel\Ntrust\Traits\NtrustPermissionTrait;
 
-class Permission extends EntrustPermission
+class Permission extends Model
 {
     //
+    use NtrustPermissionTrait;
 
 }

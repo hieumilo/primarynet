@@ -12,10 +12,8 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-
-         //$this->call(UsersTableSeeder::class);
-        //Model::unguard();
-        //->call(PermissionsTableSeeder::class);
+        DB::statement('SET FOREIGN_KEY_CHECKS = 0');
+        $this->call(PermissionsTableSeeder::class);
         $this->call(RolesTableSeeder::class);
         $this->call(ConnectRelationshipsSeeder::class);
         $this->call(UsersSeeder::class);
@@ -23,5 +21,6 @@ class DatabaseSeeder extends Seeder
         $this->call(EvtlistSeeder::class);
         $this->call(ItemsTableSeeder::class);
         $this->call(JstreeSeeder::class);
+        DB::statement('SET FOREIGN_KEY_CHECKS = 1');
     }
 }
