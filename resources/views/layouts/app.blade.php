@@ -305,7 +305,7 @@
                                     </span>
                             </a>
                             <div class="dropdown-menu dropdown-menu-left" aria-label="dd-header-social">
-                                <a class="dropdown-item" href="/{{config('app.locale')}}/dashboard/new" style="color: red"><span class="font-icon font-icon-server"></span>Dashboard New</a>
+                                <a class="dropdown-item" href="/{{config('app.locale')}}/dashboard/new" style="color: red"><span class="font-icon font-icon-server"></span>Failure</a>
                                 <a class="dropdown-item" href="/{{config('app.locale')}}/dashboard"><span class="font-icon font-icon-doc"></span>Dashboard Old</a>
                             </div>
                         </div>
@@ -327,7 +327,7 @@
                                     {{--Official App</a>--}}
                                 {{--<a class="dropdown-item" href="#"><span class="font-icon font-icon-users"></span>CATprer--}}
                                     {{--Test</a>--}}
-                                <a class="dropdown-item" href="/{{config('app.locale')}}/dashboard/Packet"><span class="font-icon font-icon-comments"></span>Packet</a>
+                                <a class="dropdown-item" href="/{{config('app.locale')}}/dashboard/packet"><span class="font-icon font-icon-comments"></span>Packet</a>
                             </div>
                         </div>
                         <div class="dropdown dropdown-typical">
