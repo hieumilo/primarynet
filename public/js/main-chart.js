@@ -1,7 +1,8 @@
 (function ($, window, document, undefined) {
+    var rememberToken =$('#remember-token').val();
     var chart1 = {
         init:function() {
-            var url = $.get("http://www.infra911.com/data.php?Act=data1_1&paramGID=0&GidList=", function () {
+            var url = $.get("http://www.infra911.com/data.php?Act=data1_1&paramGID="+rememberToken+"&GidList=", function () {
             }).done(function (data) {
                 var newdata = $.parseJSON(data.replace(/'/g, '"'));
                 [].forEach.call(newdata, function (inst, i) {
@@ -102,7 +103,7 @@
     };
     var chart2 = {
         init: function () {
-            var url = $.get("http://www.infra911.com/data.php?Act=data1_2&paramGID=0&GidList=", function () {
+            var url = $.get("http://www.infra911.com/data.php?Act=data1_2&paramGID="+rememberToken+"&GidList=", function () {
             }).done(function (data) {
                 var newdata = $.parseJSON(data.replace(/'/g, '"'));
                 [].forEach.call(newdata, function (inst, i) {
@@ -203,7 +204,7 @@
     };
     var chart3 = {
         init:function() {
-            var url = $.get("http://www.infra911.com/data.php?Act=data1_3&paramGID=0&GidList=", function () {
+            var url = $.get("http://www.infra911.com/data.php?Act=data1_3&paramGID="+rememberToken+"&GidList=", function () {
             }).done(function (data) {
                 var newdata = $.parseJSON(data.replace(/'/g, '"'));
                 [].forEach.call(newdata, function (inst, i) {
@@ -302,7 +303,7 @@
     };
     var chart4 = {
         init:function() {
-            var url = $.get("http://www.infra911.com/data.php?Act=data1_4&paramGID=0&GidList=", function () {
+            var url = $.get("http://www.infra911.com/data.php?Act=data1_4&paramGID="+rememberToken+"&GidList=", function () {
             }).done(function (data) {
                 var newdata = $.parseJSON(data.replace(/'/g, '"'));
                 [].forEach.call(newdata, function (inst, i) {
@@ -455,7 +456,7 @@
 
     var chart5 = {
         init:function() {
-            var url = $.get("http://www.infra911.com/data.php?Act=data1_5&paramGID=0&GidList=", function () {
+            var url = $.get("http://www.infra911.com/data.php?Act=data1_5&paramGID="+rememberToken+"&GidList=", function () {
             }).done(function (data) {
                 var newdata = $.parseJSON(data.replace(/'/g, '"'));
                 [].forEach.call(newdata, function (inst, i) {
@@ -507,7 +508,7 @@
     };
     var chart6 = {
         init:function() {
-            var url = $.get("http://www.infra911.com/data.php?Act=data1_6&paramGID=0&GidList=", function () {
+            var url = $.get("http://www.infra911.com/data.php?Act=data1_6&paramGID="+rememberToken+"&GidList=", function () {
             }).done(function (data) {
                 var newdata = $.parseJSON(data.replace(/'/g, '"'));
                 [].forEach.call(newdata, function (inst, i) {
@@ -598,7 +599,7 @@
     };
     var chart7 = {
         init:function() {
-            var url = $.get("http://www.infra911.com/data.php?Act=data1_7&paramGID=0&GidList=", function () {
+            var url = $.get("http://www.infra911.com/data.php?Act=data1_7&paramGID="+rememberToken+"&GidList=", function () {
             }).done(function (data) {
                 var newdata = $.parseJSON(data.replace(/'/g, '"'));
                 [].forEach.call(newdata, function (inst, i) {
