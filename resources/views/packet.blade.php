@@ -29,7 +29,7 @@
                                                 {{trans('auth.panel-title')}}
                                             </header>
                                             <div class="card-block">
-                                                <div id="chart1" class="chartdiv"></div>
+                                                <div id="chart1-packet" class="chartdiv"></div>
                                             </div>
                                         </section>
                                     @elseif($key==1)
@@ -38,7 +38,7 @@
                                                 {{trans('auth.panel-title')}}
                                             </header>
                                             <div class="card-block">
-                                                <div id="chart2" class="chartdiv"></div>
+                                                <div id="chart2-packet" class="chartdiv"></div>
                                             </div>
                                         </section>
                                     @elseif($key==2)
@@ -47,7 +47,7 @@
                                                 {{trans('auth.panel-title')}}
                                             </header>
                                             <div class="card-block">
-                                                <div id="chart3" class="chartdiv"></div>
+                                                <div id="chart3-packet" class="chartdiv"></div>
                                             </div>
                                         </section>
                                     @elseif($key==3)
@@ -56,7 +56,7 @@
                                                 {{trans('auth.panel-title')}}
                                             </header>
                                             <div class="card-block">
-                                                <div id="chart4" class="chartdiv"></div>
+                                                <div id="chart4-packet" class="chartdiv"></div>
                                             </div>
                                         </section>
                                     @elseif($key==4)
@@ -65,7 +65,7 @@
                                                 {{trans('auth.panel-title')}}
                                             </header>
                                             <div class="card-block">
-                                                <div id="chart5" class="chartdiv"></div>
+                                                <div id="chart5-packet" class="chartdiv"></div>
                                             </div>
                                         </section>
                                     @elseif($key==5)
@@ -74,7 +74,7 @@
                                                 {{trans('auth.panel-title')}}
                                             </header>
                                             <div class="card-block">
-                                                <div id="chart6" class="chartdiv"></div>
+                                                <div id="chart6-packet" class="chartdiv"></div>
                                             </div>
                                         </section>
                                     @elseif($key==6)
@@ -83,7 +83,7 @@
                                                 {{trans('auth.panel-title')}}
                                             </header>
                                             <div class="card-block">
-                                                <div id="chart7" class="chartdiv"></div>
+                                                <div id="chart7-packet" class="chartdiv"></div>
                                             </div>
                                         </section>
                                     @elseif($key==7)
