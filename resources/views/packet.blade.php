@@ -83,7 +83,7 @@
                                                 {{trans('auth.panel-title')}}
                                             </header>
                                             <div class="card-block">
-                                                <div id="chart7-packet" class="chartdiv"></div>
+                                                <div id="" class="chartdiv"></div>
                                             </div>
                                         </section>
                                     @elseif($key==7)

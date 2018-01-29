@@ -917,7 +917,7 @@
             });
         }
     };
-    var chart7Packet = {
+    /*var chart7Packet = {
         init:function() {
             var url = $.get("http://www.infra911.com/pkt_data.php?Act=pkt_dash6_2&prefix=p7", function () {
             }).done(function (data) {
@@ -962,7 +962,7 @@
 
             });
         }
-    };
+    };*/
     $(document).ready(function () {
         chart1.init();
         chart2.init();
@@ -970,13 +970,14 @@
         chart4.init();
         chart5.init();
         chart6.init();
+        chart7.init();
         chart1Packet.init();
         chart2Packet.init();
         chart3Packet.init();
         chart4Packet.init();
         chart5Packet.init();
         chart6Packet.init();
-        chart7Packet.init();
+        //chart7Packet.init();
         setInterval(function(){
             chart1.init();
             chart2.init();
@@ -984,13 +985,14 @@
             chart4.init();
             chart5.init();
             chart6.init();
+            chart7.init();
             chart1Packet.init();
             chart2Packet.init();
             chart3Packet.init();
             chart4Packet.init();
             chart5Packet.init();
             chart6Packet.init();
-            chart7Packet.init();
+            //chart7Packet.init();
         }, 60000);
     });
 })(jQuery, window, document);
