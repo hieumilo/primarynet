@@ -94,104 +94,56 @@
             }
         }
     };
-    var chart2 = {
+    var chart9 = {
         init:function() {
-            var chart = AmCharts.makeChart("chart2", {
-                "type": "serial",
-                "theme": "none",
-                "marginRight": 40,
-                "marginLeft": 40,
-                "autoMarginOffset": 20,
-                "mouseWheelZoomEnabled":true,
-                "dataDateFormat": "YYYY-MM-DD",
-                "valueAxes": [{
-                    "id": "v1",
-                    "axisAlpha": 0,
-                    "position": "left",
-                    "ignoreAxisWidth":true
-                }],
-                "balloon": {
-                    "borderThickness": 1,
-                    "shadowAlpha": 0
-                },
-                "graphs": [{
-                    "id": "g1",
-                    "balloon":{
-                        "drop":true,
-                        "adjustBorderColor":false,
-                        "color":"#ffffff"
+            AmCharts.makeChart("chart9",
+                {
+                    "type": "serial",
+                    "categoryField": "polltime",
+                    "autoMarginOffset": 40,
+                    "marginRight": 70,
+                    "marginTop": 70,
+                    "startDuration": 1,
+                    "fontSize": 13,
+                    "theme": "patterns",
+                    "categoryAxis": {
+                        "gridPosition": "start"
                     },
-                    "bullet": "square",
-                    "bulletBorderAlpha": 1,
-                    "bulletColor": "#FFFFFF",
-                    "bulletSize": 5,
-                    "hideBulletsCount": 50,
-                    "lineThickness": 2,
-                    "title": "red line",
-                    "useLineColorForBulletBorder": true,
-                    "valueField": "value",
-                    "balloonText": "<span style='font-size:18px;'>[[value]]</span>"
-                }],
-                "chartScrollbar": {
-                    "graph": "g1",
-                    "oppositeAxis":false,
-                    "offset":30,
-                    "scrollbarHeight": 80,
-                    "backgroundAlpha": 0,
-                    "selectedBackgroundAlpha": 0.1,
-                    "selectedBackgroundColor": "#888888",
-                    "graphFillAlpha": 0,
-                    "graphLineAlpha": 0.5,
-                    "selectedGraphFillAlpha": 0,
-                    "selectedGraphLineAlpha": 1,
-                    "autoGridCount":true,
-                    "color":"#AAAAAA",
-                    "enabled":false
-                },
-                "chartCursor": {
-                    "pan": true,
-                    "valueLineEnabled": true,
-                    "valueLineBalloonEnabled": true,
-                    "cursorAlpha":1,
-                    "cursorColor":"#258cbb",
-                    "limitToGraph":"g1",
-                    "valueLineAlpha":0.2,
-                    "valueZoomable":true,
-                    "enabled":false
-                },
-                "valueScrollbar":{
-                    "oppositeAxis":false,
-                    "offset":50,
-                    "scrollbarHeight":10
-                },
-                "categoryField": "polltime",
-                "categoryAxis": {
-                    "parseDates": false,
-                    "dashLength": 1,
-                    "minorGridEnabled": true,
-                    "tickLength": 20,
-                    //"parseDates": true,
-                    "autoGridCount": false,
-                    "axisColor": "#555555",
-                    "gridAlpha": 0,
-                    "gridCount": 50
-                },
-                "export": {
-                    "enabled": false
-                },
-                "dataLoader": {
-                    "url": "/dataJsonChart/chart2.json",
-                    "format": "json"
+                    "trendLines": [],
+                    "graphs": [
+                        {
+                            "balloonText": "[[title]] of [[value1]]:[[value]]",
+                            "fillAlphas": 0.9,
+                            "id": "AmGraph-1",
+                            "title": "graph 1",
+                            "type": "column",
+                            "valueField": "value1"
+                        },
+                        {
+                            "balloonText": "[[title]] of [[value2]]:[[value]]",
+                            "fillAlphas": 0.9,
+                            "id": "AmGraph-2",
+                            "title": "graph 2",
+                            "type": "column",
+                            "valueField": "value2"
+                        }
+                    ],
+                    "guides": [],
+                    "valueAxes": [
+                        {
+                            "id": "ValueAxis-1",
+                            "title": "Axis title"
+                        }
+                    ],
+                    "allLabels": [],
+                    "balloon": {},
+                    "titles": [],
+                    "dataLoader": {
+                        "url": "/dataJsonChart/chart9.json",
+                        "format": "json"
+                    }
                 }
-            });
-
-            chart.addListener("rendered", zoomChart);
-
-            zoomChart();
-
-            function zoomChart() {
-                chart.zoomToIndexes(chart.dataLoader.length - 40, chart.dataLoader.length - 1);
-            }
+            );
         }
     };
 
@@ -241,10 +193,10 @@
             var chart = AmCharts.makeChart("chart6", {
                 "theme": "none",
                 "type": "serial",
-                    "dataLoader": {
-                        "url": "/dataJsonChart/chart6.json",
-                        "format": "json"
-                    },
+                "dataLoader": {
+                    "url": "/dataJsonChart/chart6.json",
+                    "format": "json"
+                },
                 "valueAxes": [{
                     "stackType": "3d",
                     "unit": "%",
@@ -652,6 +604,106 @@
             });
         }
     };
+    var chart2 = {
+        init: function () {
+            var chart = AmCharts.makeChart("chart2", {
+                "type": "serial",
+                "theme": "none",
+                "marginRight": 40,
+                "marginLeft": 40,
+                "autoMarginOffset": 20,
+                "mouseWheelZoomEnabled":true,
+                "dataDateFormat": "YYYY-MM-DD",
+                "valueAxes": [{
+                    "id": "v1",
+                    "axisAlpha": 0,
+                    "position": "left",
+                    "ignoreAxisWidth":true
+                }],
+                "balloon": {
+                    "borderThickness": 1,
+                    "shadowAlpha": 0
+                },
+                "graphs": [{
+                    "id": "g1",
+                    "balloon":{
+                        "drop":true,
+                        "adjustBorderColor":false,
+                        "color":"#ffffff"
+                    },
+                    "bullet": "square",
+                    "bulletBorderAlpha": 1,
+                    "bulletColor": "#FFFFFF",
+                    "bulletSize": 5,
+                    "hideBulletsCount": 50,
+                    "lineThickness": 2,
+                    "title": "red line",
+                    "useLineColorForBulletBorder": true,
+                    "valueField": "value",
+                    "balloonText": "<span style='font-size:18px;'>[[value]]</span>"
+                }],
+                "chartScrollbar": {
+                    "graph": "g1",
+                    "oppositeAxis":false,
+                    "offset":30,
+                    "scrollbarHeight": 80,
+                    "backgroundAlpha": 0,
+                    "selectedBackgroundAlpha": 0.1,
+                    "selectedBackgroundColor": "#888888",
+                    "graphFillAlpha": 0,
+                    "graphLineAlpha": 0.5,
+                    "selectedGraphFillAlpha": 0,
+                    "selectedGraphLineAlpha": 1,
+                    "autoGridCount":true,
+                    "color":"#AAAAAA",
+                    "enabled":false
+                },
+                "chartCursor": {
+                    "pan": true,
+                    "valueLineEnabled": true,
+                    "valueLineBalloonEnabled": true,
+                    "cursorAlpha":1,
+                    "cursorColor":"#258cbb",
+                    "limitToGraph":"g1",
+                    "valueLineAlpha":0.2,
+                    "valueZoomable":true,
+                    "enabled":false
+                },
+                "valueScrollbar":{
+                    "oppositeAxis":false,
+                    "offset":50,
+                    "scrollbarHeight":10
+                },
+                "categoryField": "polltime",
+                "categoryAxis": {
+                    "parseDates": false,
+                    "dashLength": 1,
+                    "minorGridEnabled": true,
+                    "tickLength": 20,
+                    //"parseDates": true,
+                    "autoGridCount": false,
+                    "axisColor": "#555555",
+                    "gridAlpha": 0,
+                    "gridCount": 50
+                },
+                "export": {
+                    "enabled": false
+                },
+                "dataLoader": {
+                    "url": "/dataJsonChart/chart2.json",
+                    "format": "json"
+                }
+            });
+
+            chart.addListener("rendered", zoomChart);
+
+            zoomChart();
+
+            function zoomChart() {
+                chart.zoomToIndexes(chart.dataLoader.length - 40, chart.dataLoader.length - 1);
+            }
+        }
+    };
     $(document).ready(function () {
         chart1.init();
         chart2.init();
@@ -661,5 +713,6 @@
         chart6.init();
         chart7.init();
         chart8.init();
+        chart9.init();
     });
 })(jQuery, window, document);

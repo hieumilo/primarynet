@@ -38,7 +38,7 @@
                                                 {{trans('auth.panel-title')}}
                                             </header>
                                             <div class="card-block">
-                                                <div id="chart2" class="chartdiv"></div>
+                                                <div id="chart2" style="width: 640px; height: 400px;" class="chartdiv"></div>
                                             </div>
                                         </section>
                                     @elseif($key==2)
