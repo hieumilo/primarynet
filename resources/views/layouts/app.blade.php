@@ -234,12 +234,12 @@
                         </div>
                     </div>
 
-                    <div class="dropdown user-menu">
+                    <div class="dropdown user-menu ">
                         <button class="dropdown-toggle" id="dd-user-menu" type="button" data-toggle="dropdown"
                                 aria-haspopup="true" aria-expanded="false">
                             <img src="/img/avatar-2-64.png" alt="">
                         </button>
-                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dd-user-menu">
+                        <div class="dropdown-menu" style="margin-right: 5px;" aria-labelledby="dd-user-menu">
 
                             <div class="dropdown-divider">
 
@@ -279,23 +279,36 @@
                             </div>
                         </div>
                         @role('Admin')
+                        {{--<div class="dropdown dropdown-typical">--}}
+                            {{--<a class="dropdown-toggle no-arr red" style="color: red"--}}
+                               {{--href="/{{config('app.locale')}}/dashboard"--}}
+                            {{-->--}}
+                                {{--<span class="font-icon font-icon-cogwheel" style="color: red"></span>--}}
+                                {{--<span class="lbl">{{trans('auth.dashboard')}}--}}
+                                    {{--</span>--}}
+                            {{--</a>--}}
+                        {{--</div>--}}
+                        {{--<div class="dropdown dropdown-typical">--}}
+                            {{--<a class="dropdown-toggle no-arr"--}}
+                               {{--href="/{{config('app.locale')}}/dashboard/new"--}}
+                            {{-->--}}
+                                {{--<span class="font-icon font-icon-cogwheel"></span>--}}
+                                {{--<span class="lbl">{{trans('auth.dashboard-new')}}--}}
+                                    {{--</span>--}}
+                            {{--</a>--}}
+                        {{--</div>--}}
                         <div class="dropdown dropdown-typical">
-                            <a class="dropdown-toggle no-arr red" style="color: red"
-                               href="/{{config('app.locale')}}/dashboard"
-                            >
-                                <span class="font-icon font-icon-cogwheel" style="color: red"></span>
-                                <span class="lbl">{{trans('auth.dashboard')}}
-                                    </span>
-                            </a>
-                        </div>
-                        <div class="dropdown dropdown-typical">
-                            <a class="dropdown-toggle no-arr"
-                               href="/{{config('app.locale')}}/dashboard/new"
+                            <a class="dropdown-toggle" id="dd-header-social" data-target="#"
+                               href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
                             >
                                 <span class="font-icon font-icon-cogwheel"></span>
-                                <span class="lbl">{{trans('auth.dashboard-new')}}
+                                <span class="lbl">Dashboard
                                     </span>
                             </a>
+                            <div class="dropdown-menu dropdown-menu-left" aria-label="dd-header-social">
+                                <a class="dropdown-item" href="/{{config('app.locale')}}/dashboard/new" style="color: red"><span class="font-icon font-icon-server"></span>Dashboard New</a>
+                                <a class="dropdown-item" href="/{{config('app.locale')}}/dashboard"><span class="font-icon font-icon-doc"></span>Dashboard Old</a>
+                            </div>
                         </div>
 
                         <div class="dropdown dropdown-typical">
@@ -471,6 +484,7 @@
 <script src="/js/lib/bootstrap-table/tableExport.min.js"></script>
 <script src="/js/lib/bootstrap-table/bootstrap-table-init-evtlist.js"></script>
 <script src="/js/lib/bootstrap-table/table.js"></script>
+<script src="/js/lib/bootstrap-table/bootstrap-table-init-progress.js"></script>
 
 
 <script src="/js/app-theme.js"></script>
