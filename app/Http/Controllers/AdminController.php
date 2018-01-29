@@ -6,6 +6,13 @@ use App\Role;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use App\Jstree;
+
+
+use App\Evtlist;
+use Illuminate\Support\Facades\App;
+use Illuminate\Support\Facades\Auth;
+
 
 class AdminController extends Controller
 {
@@ -44,5 +51,93 @@ class AdminController extends Controller
                 ]);
 
         return response()->json($user);
+    }
+
+    public function packet($lang){
+
+        //get all Evtlist
+        $evtlists = Evtlist::all();
+
+        //get all setting
+
+        $settings = DB::table('users')
+            ->join('SETTINGS', 'users.id', '=', 'SETTINGS.USER_ID')
+            ->join('ITEMS', 'SETTINGS.ITEM_ID', '=', 'ITEMS.ID')
+            ->where('user_id',Auth::id())
+            ->where('SETTINGS.PAGE','packet')
+            ->select('SETTINGS.*', 'ITEMS.NAME')
+            ->get();
+
+        //check exist setting
+        if ($settings->isEmpty()){
+            //get all items
+            $itemSettings = DB::table('ITEMS')->skip(8)->take(9)->get();
+
+            //insert default to database
+            foreach ($itemSettings as $key=>$itemSetting){
+                switch ($key) {
+                    case 0:
+                        DB::table('SETTINGS')->insert([
+                            ['USER_ID' => Auth::id(), 'ITEM_ID' => $itemSetting->ID, 'ROW' => 1, 'COL' => 1, 'SIZEX' => 1, 'SIZEY' => 1, 'PAGE'=>'packet']
+                        ]);
+                        break;
+                    case 1:
+                        DB::table('SETTINGS')->insert([
+                            ['USER_ID' => Auth::id(), 'ITEM_ID' => $itemSetting->ID, 'ROW' => 1, 'COL' => 1, 'SIZEX' => 1, 'SIZEY' => 1, 'PAGE'=>'packet']
+                        ]);
+                        break;
+                    case 2:
+                        DB::table('SETTINGS')->insert([
+                            ['USER_ID' => Auth::id(), 'ITEM_ID' => $itemSetting->ID, 'ROW' => 1, 'COL' => 1, 'SIZEX' => 1, 'SIZEY' => 1, 'PAGE'=>'packet']
+                        ]);
+                        break;
+                    case 3:
+                        DB::table('SETTINGS')->insert([
+                            ['USER_ID' => Auth::id(), 'ITEM_ID' => $itemSetting->ID, 'ROW' => 1, 'COL' => 1, 'SIZEX' => 1, 'SIZEY' => 1, 'PAGE'=>'packet']
+                        ]);
+                        break;
+                    case 4:
+                        DB::table('SETTINGS')->insert([
+                            ['USER_ID' => Auth::id(), 'ITEM_ID' => $itemSetting->ID, 'ROW' => 1, 'COL' => 1, 'SIZEX' => 1, 'SIZEY' => 1, 'PAGE'=>'packet']
+                        ]);
+                        break;
+                    case 5:
+                        DB::table('SETTINGS')->insert([
+                            ['USER_ID' => Auth::id(), 'ITEM_ID' => $itemSetting->ID, 'ROW' => 1, 'COL' => 1, 'SIZEX' => 1, 'SIZEY' => 1, 'PAGE'=>'packet']
+                        ]);
+                        break;
+                    case 6:
+                        DB::table('SETTINGS')->insert([
+                            ['USER_ID' => Auth::id(), 'ITEM_ID' => $itemSetting->ID, 'ROW' => 1, 'COL' => 1, 'SIZEX' => 1, 'SIZEY' => 1, 'PAGE'=>'packet']
+                        ]);
+                        break;
+                    case 7:
+                        DB::table('SETTINGS')->insert([
+                            ['USER_ID' => Auth::id(), 'ITEM_ID' => $itemSetting->ID, 'ROW' => 1, 'COL' => 1, 'SIZEX' => 1, 'SIZEY' => 1, 'PAGE'=>'packet']
+                        ]);
+                        break;
+                    case 8:
+                        DB::table('SETTINGS')->insert([
+                            ['USER_ID' => Auth::id(), 'ITEM_ID' => $itemSetting->ID, 'ROW' => 1, 'COL' => 1, 'SIZEX' => 1, 'SIZEY' => 1, 'PAGE'=>'packet']
+                        ]);
+                        break;
+                    default:
+                        DB::table('SETTINGS')->insert([
+                            ['USER_ID' => Auth::id(), 'ITEM_ID' => $itemSetting->ID, 'ROW' => 1, 'COL' => 1, 'SIZEX' => 1, 'SIZEY' => 1, 'PAGE'=>'packet']
+                        ]);
+                }
+
+            }
+            $settings = DB::table('users')
+                ->join('SETTINGS', 'users.id', '=', 'SETTINGS.USER_ID')
+                ->join('ITEMS', 'SETTINGS.ITEM_ID', '=', 'ITEMS.ID')
+                ->where('user_id',Auth::id())
+                ->where('SETTINGS.PAGE','packet')
+                ->select('SETTINGS.*', 'ITEMS.NAME')
+                ->get();
+        }
+        app()->setLocale($lang);
+        return view('packet', compact('settings','evtlists'));
+
     }
 }
