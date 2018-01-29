@@ -93,32 +93,47 @@ class HomeController extends Controller
                 switch ($key) {
                     case 0:
                         DB::table('SETTINGS')->insert([
-                            ['USER_ID' => Auth::id(), 'ITEM_ID' => $itemSetting->ID, 'ROW' => 1, 'COL' => 1, 'SIZEX' => 1, 'SIZEY' => 1, 'PAGE'=>'failure']
+                            ['USER_ID' => Auth::id(), 'ITEM_ID' => $itemSetting->ID, 'ROW' => 1, 'COL' => 1, 'SIZEX' => 2, 'SIZEY' => 1, 'PAGE'=>'failure']
                         ]);
                         break;
                     case 1:
                         DB::table('SETTINGS')->insert([
-                            ['USER_ID' => Auth::id(), 'ITEM_ID' => $itemSetting->ID, 'ROW' => 1, 'COL' => 1, 'SIZEX' => 1, 'SIZEY' => 1, 'PAGE'=>'failure']
+                            ['USER_ID' => Auth::id(), 'ITEM_ID' => $itemSetting->ID, 'ROW' => 3, 'COL' => 1, 'SIZEX' => 1, 'SIZEY' => 1, 'PAGE'=>'failure']
                         ]);
                         break;
                     case 2:
                         DB::table('SETTINGS')->insert([
-                            ['USER_ID' => Auth::id(), 'ITEM_ID' => $itemSetting->ID, 'ROW' => 1, 'COL' => 1, 'SIZEX' => 1, 'SIZEY' => 1, 'PAGE'=>'failure']
+                            ['USER_ID' => Auth::id(), 'ITEM_ID' => $itemSetting->ID, 'ROW' => 3, 'COL' => 2, 'SIZEX' => 2, 'SIZEY' => 1, 'PAGE'=>'failure']
                         ]);
                         break;
                     case 3:
                         DB::table('SETTINGS')->insert([
-                            ['USER_ID' => Auth::id(), 'ITEM_ID' => $itemSetting->ID, 'ROW' => 1, 'COL' => 1, 'SIZEX' => 1, 'SIZEY' => 1, 'PAGE'=>'failure']
+                            ['USER_ID' => Auth::id(), 'ITEM_ID' => $itemSetting->ID, 'ROW' => 1, 'COL' => 2, 'SIZEX' => 2, 'SIZEY' => 2, 'PAGE'=>'failure']
                         ]);
                         break;
                     case 4:
                         DB::table('SETTINGS')->insert([
-                            ['USER_ID' => Auth::id(), 'ITEM_ID' => $itemSetting->ID, 'ROW' => 1, 'COL' => 1, 'SIZEX' => 1, 'SIZEY' => 1, 'PAGE'=>'failure']
+                            ['USER_ID' => Auth::id(), 'ITEM_ID' => $itemSetting->ID, 'ROW' => 1, 'COL' => 4, 'SIZEX' => 1, 'SIZEY' => 1, 'PAGE'=>'failure']
                         ]);
                         break;
                     case 5:
                         DB::table('SETTINGS')->insert([
-                            ['USER_ID' => Auth::id(), 'ITEM_ID' => $itemSetting->ID, 'ROW' => 1, 'COL' => 1, 'SIZEX' => 1, 'SIZEY' => 1, 'PAGE'=>'failure']
+                            ['USER_ID' => Auth::id(), 'ITEM_ID' => $itemSetting->ID, 'ROW' => 2, 'COL' => 4, 'SIZEX' => 2, 'SIZEY' => 1, 'PAGE'=>'failure']
+                        ]);
+                        break;
+                    case 6:
+                        DB::table('SETTINGS')->insert([
+                            ['USER_ID' => Auth::id(), 'ITEM_ID' => $itemSetting->ID, 'ROW' => 3, 'COL' => 4, 'SIZEX' => 1, 'SIZEY' => 1, 'PAGE'=>'failure']
+                        ]);
+                        break;
+                    case 7:
+                        DB::table('SETTINGS')->insert([
+                            ['USER_ID' => Auth::id(), 'ITEM_ID' => $itemSetting->ID, 'ROW' => 4, 'COL' => 1, 'SIZEX' => 3, 'SIZEY' => 4, 'PAGE'=>'failure']
+                        ]);
+                        break;
+                    case 8:
+                        DB::table('SETTINGS')->insert([
+                            ['USER_ID' => Auth::id(), 'ITEM_ID' => $itemSetting->ID, 'ROW' => 1, 'COL' => 5, 'SIZEX' => 1, 'SIZEY' => 1, 'PAGE'=>'failure']
                         ]);
                         break;
                     default:
