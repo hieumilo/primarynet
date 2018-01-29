@@ -15,10 +15,12 @@ class ItemsTableSeeder extends Seeder
         DB::table('ITEMS')->truncate();
 
         $faker = Faker\Factory::create();
-        for($i = 0; $i <6; $i++){
-            DB::table('ITEMS')->insert([
-                'NAME'=> $faker->name
+
+        for($i = 0; $i <10; $i++){
+            DB::table('items')->insert([
+                'name'=> $faker->name
             ]);
+
         }
     }
 }

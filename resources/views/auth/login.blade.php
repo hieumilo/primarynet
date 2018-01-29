@@ -16,7 +16,7 @@
                 </a>
                 <div class="site-header-content">
                     <div class="site-header-content-in">
-                        <div class="site-header-shown">
+                        <div class="site-header-shown">s
                             <div class="dropdown dropdown-lang">
                                 <button class="dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true"
                                         aria-expanded="false">

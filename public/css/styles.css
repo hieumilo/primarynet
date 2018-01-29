@@ -176,3 +176,7 @@ section.card{
 .fix-error {
     font-size: 13px; letter-spacing: -1px;
 }
+.dropdown:hover>.dropdown-menu {
+    display: block;
+}
+
