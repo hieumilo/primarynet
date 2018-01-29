@@ -79,50 +79,51 @@ class HomeController extends Controller
             ->join('SETTINGS', 'users.id', '=', 'SETTINGS.USER_ID')
             ->join('ITEMS', 'SETTINGS.ITEM_ID', '=', 'ITEMS.ID')
             ->where('user_id',Auth::id())
+            ->where('SETTINGS.PAGE','failure')
             ->select('SETTINGS.*', 'ITEMS.NAME')
             ->get();
 
         //check exist setting
         if ($settings->isEmpty()){
             //get all items
-            $itemSettings = DB::table('ITEMS')->get();
+            $itemSettings = DB::table('ITEMS')->take(8)->get();
 
             //insert default to database
             foreach ($itemSettings as $key=>$itemSetting){
                 switch ($key) {
                     case 0:
                         DB::table('SETTINGS')->insert([
-                            ['USER_ID' => Auth::id(), 'ITEM_ID' => $itemSetting->ID, 'row' => 1, 'col' => 1, 'sizex' => 3, 'sizey' => 2]
+                            ['USER_ID' => Auth::id(), 'ITEM_ID' => $itemSetting->ID, 'ROW' => 1, 'COL' => 1, 'SIZEX' => 1, 'SIZEY' => 1, 'PAGE'=>'failure']
                         ]);
                         break;
                     case 1:
                         DB::table('SETTINGS')->insert([
-                            ['USER_ID' => Auth::id(), 'ITEM_ID' => $itemSetting->ID, 'ROW' => 1, 'COL' => 3, 'sizex' => 2, 'sizey' => 2]
+                            ['USER_ID' => Auth::id(), 'ITEM_ID' => $itemSetting->ID, 'ROW' => 1, 'COL' => 1, 'SIZEX' => 1, 'SIZEY' => 1, 'PAGE'=>'failure']
                         ]);
                         break;
                     case 2:
                         DB::table('SETTINGS')->insert([
-                            ['USER_ID' => Auth::id(), 'ITEM_ID' => $itemSetting->ID, 'ROW' => 3, 'COL' => 3, 'SIZEX' => 2, 'SIZEY' => 2]
+                            ['USER_ID' => Auth::id(), 'ITEM_ID' => $itemSetting->ID, 'ROW' => 1, 'COL' => 1, 'SIZEX' => 1, 'SIZEY' => 1, 'PAGE'=>'failure']
                         ]);
                         break;
                     case 3:
                         DB::table('SETTINGS')->insert([
-                            ['USER_ID' => Auth::id(), 'ITEM_ID' => $itemSetting->ID, 'ROW' => 4, 'COL' => 1, 'SIZEX' => 3, 'SIZEY' => 2]
+                            ['USER_ID' => Auth::id(), 'ITEM_ID' => $itemSetting->ID, 'ROW' => 1, 'COL' => 1, 'SIZEX' => 1, 'SIZEY' => 1, 'PAGE'=>'failure']
                         ]);
                         break;
                     case 4:
                         DB::table('SETTINGS')->insert([
-                            ['USER_ID' => Auth::id(), 'ITEM_ID' => $itemSetting->ID, 'ROW' => 5, 'COL' => 3, 'SIZEX' => 2, 'SIZEY' => 2]
+                            ['USER_ID' => Auth::id(), 'ITEM_ID' => $itemSetting->ID, 'ROW' => 1, 'COL' => 1, 'SIZEX' => 1, 'SIZEY' => 1, 'PAGE'=>'failure']
                         ]);
                         break;
                     case 5:
                         DB::table('SETTINGS')->insert([
-                            ['USER_ID' => Auth::id(), 'ITEM_ID' => $itemSetting->ID, 'ROW' => 1, 'COL' => 5, 'SIZEX' => 6, 'SIZEY' => 6]
+                            ['USER_ID' => Auth::id(), 'ITEM_ID' => $itemSetting->ID, 'ROW' => 1, 'COL' => 1, 'SIZEX' => 1, 'SIZEY' => 1, 'PAGE'=>'failure']
                         ]);
                         break;
                     default:
                         DB::table('SETTINGS')->insert([
-                            ['USER_ID' => Auth::id(), 'ITEM_ID' => $itemSetting->ID, 'ROW' => 4, 'COL' => 1, 'SIZEX' => 3, 'SIZEY' => 2]
+                            ['USER_ID' => Auth::id(), 'ITEM_ID' => $itemSetting->ID, 'ROW' => 1, 'COL' => 1, 'SIZEX' => 1, 'SIZEY' => 1, 'PAGE'=>'failure']
                         ]);
                 }
 
@@ -131,6 +132,7 @@ class HomeController extends Controller
                 ->join('SETTINGS', 'users.id', '=', 'SETTINGS.USER_ID')
                 ->join('ITEMS', 'SETTINGS.ITEM_ID', '=', 'ITEMS.ID')
                 ->where('user_id',Auth::id())
+                ->where('SETTINGS.PAGE','failure')
                 ->select('SETTINGS.*', 'ITEMS.NAME')
                 ->get();
         }
