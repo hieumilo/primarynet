@@ -1,7 +1,8 @@
 (function ($, window, document, undefined) {
+    var rememberToken =$('#remember-token').val();
     var chart1 = {
         init:function() {
-            var url = $.get("http://www.infra911.com/data.php?Act=data1_1&paramGID=0&GidList=", function () {
+            var url = $.get("http://www.infra911.com/data.php?Act=data1_1&paramGID="+rememberToken+"&GidList=", function () {
             }).done(function (data) {
                 var newdata = $.parseJSON(data.replace(/'/g, '"'));
                 [].forEach.call(newdata, function (inst, i) {
@@ -102,7 +103,7 @@
     };
     var chart2 = {
         init: function () {
-            var url = $.get("http://www.infra911.com/data.php?Act=data1_2&paramGID=0&GidList=", function () {
+            var url = $.get("http://www.infra911.com/data.php?Act=data1_2&paramGID="+rememberToken+"&GidList=", function () {
             }).done(function (data) {
                 var newdata = $.parseJSON(data.replace(/'/g, '"'));
                 [].forEach.call(newdata, function (inst, i) {
@@ -203,7 +204,7 @@
     };
     var chart3 = {
         init:function() {
-            var url = $.get("http://www.infra911.com/data.php?Act=data1_3&paramGID=0&GidList=", function () {
+            var url = $.get("http://www.infra911.com/data.php?Act=data1_3&paramGID="+rememberToken+"&GidList=", function () {
             }).done(function (data) {
                 var newdata = $.parseJSON(data.replace(/'/g, '"'));
                 [].forEach.call(newdata, function (inst, i) {
@@ -302,7 +303,7 @@
     };
     var chart4 = {
         init:function() {
-            var url = $.get("http://www.infra911.com/data.php?Act=data1_4&paramGID=0&GidList=", function () {
+            var url = $.get("http://www.infra911.com/data.php?Act=data1_4&paramGID="+rememberToken+"&GidList=", function () {
             }).done(function (data) {
                 var newdata = $.parseJSON(data.replace(/'/g, '"'));
                 [].forEach.call(newdata, function (inst, i) {
@@ -455,7 +456,7 @@
 
     var chart5 = {
         init:function() {
-            var url = $.get("http://www.infra911.com/data.php?Act=data1_5&paramGID=0&GidList=", function () {
+            var url = $.get("http://www.infra911.com/data.php?Act=data1_5&paramGID="+rememberToken+"&GidList=", function () {
             }).done(function (data) {
                 var newdata = $.parseJSON(data.replace(/'/g, '"'));
                 [].forEach.call(newdata, function (inst, i) {
@@ -507,7 +508,7 @@
     };
     var chart6 = {
         init:function() {
-            var url = $.get("http://www.infra911.com/data.php?Act=data1_6&paramGID=0&GidList=", function () {
+            var url = $.get("http://www.infra911.com/data.php?Act=data1_6&paramGID="+rememberToken+"&GidList=", function () {
             }).done(function (data) {
                 var newdata = $.parseJSON(data.replace(/'/g, '"'));
                 [].forEach.call(newdata, function (inst, i) {
@@ -598,7 +599,7 @@
     };
     var chart7 = {
         init:function() {
-            var url = $.get("http://www.infra911.com/data.php?Act=data1_7&paramGID=0&GidList=", function () {
+            var url = $.get("http://www.infra911.com/data.php?Act=data1_7&paramGID="+rememberToken+"&GidList=", function () {
             }).done(function (data) {
                 var newdata = $.parseJSON(data.replace(/'/g, '"'));
                 [].forEach.call(newdata, function (inst, i) {
@@ -646,210 +647,323 @@
         }
     };
 
-    /*var chart7 = {
+    var chart1Packet = {
         init:function() {
-            var chart = AmCharts.makeChart("chart7", {
-                "type": "serial",
-                "theme": "none",
-                "marginRight": 40,
-                "marginLeft": 40,
-                "autoMarginOffset": 20,
-                "mouseWheelZoomEnabled":true,
-                "dataDateFormat": "YYYY-MM-DD",
-                "valueAxes": [{
-                    "id": "v1",
-                    "axisAlpha": 0,
-                    "position": "left",
-                    "ignoreAxisWidth":true
-                }],
-                "balloon": {
-                    "borderThickness": 1,
-                    "shadowAlpha": 0
-                },
-                "graphs": [{
-                    "id": "g1",
-                    "balloon":{
-                        "drop":true,
-                        "adjustBorderColor":false,
-                        "color":"#ffffff"
+            var url = $.get("http://www.infra911.com/pkt_data.php?Act=pkt_dash1_1&prefix=p1", function () {
+            }).done(function (data) {
+                var newdata = $.parseJSON(data.replace(/'/g, '"'));
+                console.log(newdata);
+
+                var chart = AmCharts.makeChart("chart1-packet", {
+                    "theme": "light",
+                    "type": "serial",
+                    "startDuration": 2,
+                    "dataProvider": newdata,
+                    "valueAxes": [{
+                        "position": "left",
+                        "title": ""
+                    }],
+                    "graphs": [{
+                        "balloonText": "[[category]]: <b>[[value]]</b>",
+                        "fillColorsField": "lineColor",
+                        "fillAlphas": 1,
+                        "lineAlpha": 0.1,
+                        "type": "column",
+                        "valueField": "value"
+                    }],
+                    "depth3D": 20,
+                    "angle": 30,
+                    "chartCursor": {
+                        "categoryBalloonEnabled": false,
+                        "cursorAlpha": 0,
+                        "zoomable": false
                     },
-                    "bullet": "round",
-                    "bulletBorderAlpha": 1,
-                    "bulletColor": "#FFFFFF",
-                    "bulletSize": 5,
-                    "hideBulletsCount": 50,
-                    "lineThickness": 2,
-                    "title": "red line",
-                    "useLineColorForBulletBorder": true,
-                    "valueField": "value",
-                    "balloonText": "<span style='font-size:18px;'>[[value]]</span>"
-                }],
-                "chartScrollbar": {
-                    "graph": "g1",
-                    "oppositeAxis":false,
-                    "offset":30,
-                    "autoHide": true,
-                    "scrollbarHeight": 80,
-                    "backgroundAlpha": 0,
-                    "selectedBackgroundAlpha": 0.1,
-                    "selectedBackgroundColor": "#888888",
-                    "graphFillAlpha": 0,
-                    "graphLineAlpha": 0.5,
-                    "selectedGraphFillAlpha": 0,
-                    "selectedGraphLineAlpha": 1,
-                    "autoGridCount":true,
-                    "color":"#AAAAAA",
-                    "enabled" :false
-                },
-                "chartCursor": {
-                    "pan": true,
-                    "valueLineEnabled": true,
-                    "valueLineBalloonEnabled": true,
-                    "cursorAlpha":1,
-                    "cursorColor":"#258cbb",
-                    "limitToGraph":"g1",
-                    "valueLineAlpha":0.2,
-                    "valueZoomable":true,
-                    "enabled" :false
-                },
-                "valueScrollbar":{
-                    "oppositeAxis":false,
-                    "offset":50,
-                    "scrollbarHeight":10
-                },
-                "categoryField": "polltime",
-                "categoryAxis": {
-                    "parseDates": false,
-                    "dashLength": 1,
-                    "minorGridEnabled": true,
-                    "tickLength": 20,
-                    "axisColor": "#555555"
-                },
-                "export": {
-                    "enabled": false
-                },
-                "dataLoader": {
-                    "url": "/dataJsonChart/chart7.json",
-                    "format": "json"
-                }
+                    "categoryField": "label",
+                    "categoryAxis": {
+                        "gridPosition": "start",
+                        "labelRotation": 90
+                    },
+                    "export": {
+                        "enabled": false
+                    }
+
+                });
             });
-
-            chart.addListener("rendered", zoomChart);
-
-            zoomChart();
-
-            function zoomChart() {
-                chart.zoomToIndexes(chart.dataLoader.length - 40, chart.dataLoader.length - 1);
-            }
-        }
-    };*/
-    var chart8 = {
-        init:function() {
-            /*var gaugeChart = AmCharts.makeChart("chartdiv8", {
-                "type": "gauge",
-                "theme": "light",
-                "axes": [{
-                    "axisAlpha": 0,
-                    "tickAlpha": 0,
-                    "labelsEnabled": false,
-                    "startValue": 0,
-                    "endValue": 100,
-                    "startAngle": 0,
-                    "endAngle": 270,
-                    "bands": [{
-                        "color": "#eee",
-                        "startValue": 0,
-                        "endValue": 100,
-                        "radius": "100%",
-                        "innerRadius": "85%"
-                    }, {
-                        "color": "#84b761",
-                        "startValue": 0,
-                        "endValue": 80,
-                        "radius": "100%",
-                        "innerRadius": "85%",
-                        "balloonText": "90%"
-                    }, {
-                        "color": "#eee",
-                        "startValue": 0,
-                        "endValue": 100,
-                        "radius": "80%",
-                        "innerRadius": "65%"
-                    }, {
-                        "color": "#fdd400",
-                        "startValue": 0,
-                        "endValue": 35,
-                        "radius": "80%",
-                        "innerRadius": "65%",
-                        "balloonText": "35%"
-                    }, {
-                        "color": "#eee",
-                        "startValue": 0,
-                        "endValue": 100,
-                        "radius": "60%",
-                        "innerRadius": "45%"
-                    }, {
-                        "color": "#cc4748",
-                        "startValue": 0,
-                        "endValue": 92,
-                        "radius": "60%",
-                        "innerRadius": "45%",
-                        "balloonText": "92%"
-                    }, {
-                        "color": "#eee",
-                        "startValue": 0,
-                        "endValue": 100,
-                        "radius": "40%",
-                        "innerRadius": "25%"
-                    }, {
-                        "color": "#67b7dc",
-                        "startValue": 0,
-                        "endValue": 68,
-                        "radius": "40%",
-                        "innerRadius": "25%",
-                        "balloonText": "68%"
-                    }]
-                }],
-                "allLabels": [{
-                    "text": "First option",
-                    "x": "49%",
-                    "y": "5%",
-                    "size": 15,
-                    "bold": true,
-                    "color": "#84b761",
-                    "align": "right"
-                }, {
-                    "text": "Second option",
-                    "x": "49%",
-                    "y": "15%",
-                    "size": 15,
-                    "bold": true,
-                    "color": "#fdd400",
-                    "align": "right"
-                }, {
-                    "text": "Third option",
-                    "x": "49%",
-                    "y": "24%",
-                    "size": 15,
-                    "bold": true,
-                    "color": "#cc4748",
-                    "align": "right"
-                }, {
-                    "text": "Fourth option",
-                    "x": "49%",
-                    "y": "33%",
-                    "size": 15,
-                    "bold": true,
-                    "color": "#67b7dc",
-                    "align": "right"
-                }],
-                "export": {
-                    "enabled": false
-                }
-            });*/
         }
     };
+    var chart2Packet = {
+        init:function() {
+            var url = $.get("http://www.infra911.com/pkt_data.php?Act=pkt_dash2_1&prefix=p2", function () {
+            }).done(function (data) {
+                var newdata = $.parseJSON(data.replace(/'/g, '"'));
+                console.log(newdata);
 
+                var chart = AmCharts.makeChart("chart2-packet", {
+                    "theme": "light",
+                    "type": "serial",
+                    "startDuration": 2,
+                    "dataProvider": newdata,
+                    "valueAxes": [{
+                        "position": "left",
+                        "title": ""
+                    }],
+                    "graphs": [{
+                        "balloonText": "[[category]]: <b>[[value]]</b>",
+                        "fillColorsField": "lineColor",
+                        "fillAlphas": 1,
+                        "lineAlpha": 0.1,
+                        "type": "column",
+                        "valueField": "value"
+                    }],
+                    "depth3D": 20,
+                    "angle": 30,
+                    "chartCursor": {
+                        "categoryBalloonEnabled": false,
+                        "cursorAlpha": 0,
+                        "zoomable": false
+                    },
+                    "categoryField": "label",
+                    "categoryAxis": {
+                        "gridPosition": "start",
+                        "labelRotation": 90
+                    },
+                    "export": {
+                        "enabled": false
+                    }
+
+                });
+            });
+        }
+    };
+    var chart3Packet = {
+        init:function() {
+            var url = $.get("http://www.infra911.com/pkt_data.php?Act=pkt_dash3_1&prefix=p3", function () {
+            }).done(function (data) {
+                var newdata = $.parseJSON(data.replace(/'/g, '"'));
+                console.log(newdata);
+
+                var chart = AmCharts.makeChart("chart3-packet", {
+                    "theme": "light",
+                    "type": "serial",
+                    "startDuration": 2,
+                    "dataProvider": newdata,
+                    "valueAxes": [{
+                        "position": "left",
+                        "title": ""
+                    }],
+                    "graphs": [{
+                        "balloonText": "[[category]]: <b>[[value]]</b>",
+                        "fillColorsField": "lineColor",
+                        "fillAlphas": 1,
+                        "lineAlpha": 0.1,
+                        "type": "column",
+                        "valueField": "value"
+                    }],
+                    "depth3D": 20,
+                    "angle": 30,
+                    "chartCursor": {
+                        "categoryBalloonEnabled": false,
+                        "cursorAlpha": 0,
+                        "zoomable": false
+                    },
+                    "categoryField": "label",
+                    "categoryAxis": {
+                        "gridPosition": "start",
+                        "labelRotation": 90
+                    },
+                    "export": {
+                        "enabled": false
+                    }
+
+                });
+            });
+        }
+    };
+    var chart4Packet = {
+        init:function() {
+            var url = $.get("http://www.infra911.com/pkt_data.php?Act=pkt_dash4_1&prefix=p4", function () {
+            }).done(function (data) {
+                var newdata = $.parseJSON(data.replace(/'/g, '"'));
+               // console.log(newdata);
+
+                var chart = AmCharts.makeChart("chart4-packet", {
+                    "theme": "light",
+                    "type": "serial",
+                    "startDuration": 2,
+                    "dataProvider": newdata,
+                    "valueAxes": [{
+                        "position": "left",
+                        "title": ""
+                    }],
+                    "graphs": [{
+                        "balloonText": "[[category]]: <b>[[value]]</b>",
+                        "fillColorsField": "lineColor",
+                        "fillAlphas": 1,
+                        "lineAlpha": 0.1,
+                        "type": "column",
+                        "valueField": "value"
+                    }],
+                    "depth3D": 20,
+                    "angle": 30,
+                    "chartCursor": {
+                        "categoryBalloonEnabled": false,
+                        "cursorAlpha": 0,
+                        "zoomable": false
+                    },
+                    "categoryField": "label",
+                    "categoryAxis": {
+                        "gridPosition": "start",
+                        "labelRotation": 90
+                    },
+                    "export": {
+                        "enabled": false
+                    }
+
+                });
+            });
+        }
+    };
+    var chart5Packet = {
+        init:function() {
+            var url = $.get("http://www.infra911.com/pkt_data.php?Act=pkt_dash5_1&prefix=p5", function () {
+            }).done(function (data) {
+                var newdata = $.parseJSON(data.replace(/'/g, '"'));
+                //console.log(newdata);
+
+                var chart = AmCharts.makeChart("chart5-packet", {
+                    "theme": "light",
+                    "type": "serial",
+                    "startDuration": 2,
+                    "dataProvider": newdata,
+                    "valueAxes": [{
+                        "position": "left",
+                        "title": ""
+                    }],
+                    "graphs": [{
+                        "balloonText": "[[category]]: <b>[[value]]</b>",
+                        "fillColorsField": "color",
+                        "fillAlphas": 1,
+                        "lineAlpha": 0.1,
+                        "type": "column",
+                        "valueField": "value1"
+                    },{
+                        "balloonText": "[[category]]: <b>[[value]]</b>",
+                        "fillColorsField": "color",
+                        "fillAlphas": 1,
+                        "lineAlpha": 0.1,
+                        "type": "column",
+                        "valueField": "value2"
+                    }],
+                    "depth3D": 20,
+                    "angle": 30,
+                    "chartCursor": {
+                        "categoryBalloonEnabled": false,
+                        "cursorAlpha": 0,
+                        "zoomable": false
+                    },
+                    "categoryField": "label",
+                    "categoryAxis": {
+                        "gridPosition": "start",
+                        "labelRotation": 90
+                    },
+                    "export": {
+                        "enabled": false
+                    }
+
+                });
+            });
+        }
+    };
+    var chart6Packet = {
+        init:function() {
+            var url = $.get("http://www.infra911.com/pkt_data.php?Act=pkt_dash6_1&prefix=p6", function () {
+            }).done(function (data) {
+                var newdata = $.parseJSON(data.replace(/'/g, '"'));
+                //console.log(newdata);
+
+                var chart = AmCharts.makeChart("chart6-packet", {
+                    "theme": "light",
+                    "type": "serial",
+                    "startDuration": 2,
+                    "dataProvider": newdata,
+                    "valueAxes": [{
+                        "position": "left",
+                        "title": ""
+                    }],
+                    "graphs": [{
+                        "balloonText": "[[category]]: <b>[[value]]</b>",
+                        "fillColorsField": "lineColor",
+                        "fillAlphas": 1,
+                        "lineAlpha": 0.1,
+                        "type": "column",
+                        "valueField": "value"
+                    }],
+                    "depth3D": 20,
+                    "angle": 30,
+                    "chartCursor": {
+                        "categoryBalloonEnabled": false,
+                        "cursorAlpha": 0,
+                        "zoomable": false
+                    },
+                    "categoryField": "label",
+                    "categoryAxis": {
+                        "gridPosition": "start",
+                        "labelRotation": 90
+                    },
+                    "export": {
+                        "enabled": false
+                    }
+
+                });
+            });
+        }
+    };
+    /*var chart7Packet = {
+        init:function() {
+            var url = $.get("http://www.infra911.com/pkt_data.php?Act=pkt_dash6_2&prefix=p7", function () {
+            }).done(function (data) {
+                var newdata = $.parseJSON(data.replace(/'/g, '"'));
+                console.log(newdata);
+
+                var gaugeChart = AmCharts.makeChart( "chart7-packet", {
+                    "type": "gauge",
+                    "theme": "light",
+                    "axes": [ {
+                        "axisThickness": 1,
+                        "axisAlpha": 0.2,
+                        "tickAlpha": 0.2,
+                        "valueInterval": 20,
+                        "bands": [newdata],
+                        //"bottomText": "0 km/h",
+                        //"bottomTextYOffset": -20,
+                        //"endValue": 220
+                    } ],
+                    "arrows": [ {} ],
+                    "export": {
+                        "enabled": false
+                    }
+                } );
+
+                setInterval( randomValue, 2000 );
+
+// set random value
+                function randomValue() {
+                    var value = Math.round( Math.random() * 200 );
+                    if ( gaugeChart ) {
+                        if ( gaugeChart.arrows ) {
+                            if ( gaugeChart.arrows[ 0 ] ) {
+                                if ( gaugeChart.arrows[ 0 ].setValue ) {
+                                    gaugeChart.arrows[ 0 ].setValue( value );
+                                    gaugeChart.axes[ 0 ].setBottomText( value + " km/h" );
+                                }
+                            }
+                        }
+                    }
+                }
+
+            });
+        }
+    };*/
     $(document).ready(function () {
         chart1.init();
         chart2.init();
@@ -858,8 +972,13 @@
         chart5.init();
         chart6.init();
         chart7.init();
-        chart8.init();
-        chart9.init();
+        chart1Packet.init();
+        chart2Packet.init();
+        chart3Packet.init();
+        chart4Packet.init();
+        chart5Packet.init();
+        chart6Packet.init();
+        //chart7Packet.init();
         setInterval(function(){
             chart1.init();
             chart2.init();
@@ -868,8 +987,13 @@
             chart5.init();
             chart6.init();
             chart7.init();
-            chart8.init();
-            chart9.init();
+            chart1Packet.init();
+            chart2Packet.init();
+            chart3Packet.init();
+            chart4Packet.init();
+            chart5Packet.init();
+            chart6Packet.init();
+            //chart7Packet.init();
         }, 60000);
     });
 })(jQuery, window, document);

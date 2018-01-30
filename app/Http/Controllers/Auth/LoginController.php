@@ -47,16 +47,14 @@ class LoginController extends Controller
 
     public function login(Request $request)
     {
-
+        //dd($request->session()->getId());
         if (Auth::attempt(['email' => $request->input('email'), 'password' => $request->input('password')])) {
             // Authentication passed...
             DB::table('users')
-                ->where('email',$request->input('email'))
-                ->update([
-                'session'=>$request->session()->getId()
-            ]);
+                ->where('email', $request->input('email'))
+                ->update(['session' => $request->session()->getId()]);
+            return redirect(config('app.locale').'/dashboard/new');
 
-            return config('app.locale').'/dashboard/new';
         }
     }
 
