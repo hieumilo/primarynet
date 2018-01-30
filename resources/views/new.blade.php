@@ -93,24 +93,36 @@
                                             </header>
                                             <div class="card-block">
                                                 <div class="table-responsive">
-                                                    <table id="table-progress"
-                                                           class="table table-striped"
-                                                           data-toolbar="#toolbar"
-                                                           data-search="true"
-                                                           data-show-refresh="true"
-                                                           data-show-toggle="true"
-                                                           data-show-columns="true"
-                                                           data-show-export="true"
-                                                           data-detail-view="true"
-                                                           data-detail-formatter="detailFormatter"
-                                                           data-minimum-count-columns="2"
-                                                           data-show-pagination-switch="true"
-                                                           data-pagination="true"
-                                                           data-id-field="id"
-                                                           data-page-list="[10, 25, 50, 100, ALL]"
-                                                           data-show-footer="false"
-                                                           data-response-handler="responseHandler">
-                                                    </table>
+                                                    {{--<table id="table-sm" class="table table-bordered table-hover table-sm">--}}
+                                                        {{--<thead>--}}
+                                                        {{--<tr>--}}
+                                                            {{--<th width="1">--}}
+                                                                {{--#--}}
+                                                            {{--</th>--}}
+                                                            {{--<th>Name</th>--}}
+                                                            {{--<th>Description</th>--}}
+                                                            {{--<th class="table-icon-cell">--}}
+                                                                {{--<i class="font-icon font-icon-heart"></i>--}}
+                                                            {{--</th>--}}
+                                                            {{--<th class="table-icon-cell">--}}
+                                                                {{--<i class="font-icon font-icon-comment"></i>--}}
+                                                            {{--</th>--}}
+                                                            {{--<th width="120">Date Created</th>--}}
+                                                        {{--</tr>--}}
+                                                        {{--</thead>--}}
+                                                        {{--<tbody>--}}
+                                                        {{--<tr>--}}
+                                                            {{--<td>1</td>--}}
+                                                            {{--<td>Last quarter revene</td>--}}
+                                                            {{--<td class="color-blue-grey-lighter">Revene for last quarter in state America for year 2013, whith...</td>--}}
+                                                            {{--<td class="table-icon-cell">5</td>--}}
+                                                            {{--<td class="table-icon-cell">24</td>--}}
+                                                            {{--<td>6 minutes ago</td>--}}
+                                                        {{--</tr>--}}
+                                                    {{--</table>--}}
+                                                    <?php
+
+                                                    ?>
                                                 </div>
                                             </div>
                                         </section>

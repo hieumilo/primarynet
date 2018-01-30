@@ -28,6 +28,16 @@ class AdminController extends Controller
         return view('user');
     }
 
+//    public function tableProgress(){
+//        $html = file_get_html("http://www.infra911.com/pkt_data.php?Act=pkt_dash7_1&prefix=p1");
+//
+//        $result = $html->find('div.gauge_square');
+//        //$count =  count($result);
+////        foreach ($result as $r){
+////            echo $r;
+////        }
+//        return view('packet', compact('result'));
+//    }
     public function alluser()
     {
         $data = DB::table('users')
@@ -54,6 +64,23 @@ class AdminController extends Controller
     }
 
     public function packet($lang){
+
+        //Get Table From http://www.infra911.com/pkt_data.php?Act=pkt_dash7_1&prefix=p1
+
+        $html = file_get_html("http://www.infra911.com/pkt_data.php?Act=pkt_dash7_1&prefix=p1");
+
+        $percents = $html->find('div.gauge_square');
+
+        $ids = $html->find('td.ip_td');
+
+        $results = [];
+        foreach ($ids as $key=>$id){
+            $results[] = $id;
+            $results[] = $percents[$key];
+        }
+
+        //dd($results);
+        //$results = $percents + $ips;
 
         //get all Evtlist
         $evtlists = Evtlist::all();
@@ -137,7 +164,7 @@ class AdminController extends Controller
                 ->get();
         }
         app()->setLocale($lang);
-        return view('packet', compact('settings','evtlists'));
+        return view('packet', compact('settings','evtlists', 'results'));
 
     }
 }

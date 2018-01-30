@@ -48,6 +48,7 @@ Route::get('/jstreeload', 'HomeController@controljstree');
 
 
 
+
 //Route::post('/removeEvt', 'HomeController@Remove');
 
 //Route EvtControler
