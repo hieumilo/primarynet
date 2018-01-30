@@ -335,7 +335,7 @@
                             </div>
                         </div>
                         <div class="dropdown dropdown-typical">
-                            <a href="#" class="dropdown-toggle no-arr">
+                            <a href="/{{config('app.locale')}}/dashboard/jstree" class="dropdown-toggle no-arr">
                                 <span class="font-icon font-icon-page"></span>
                                 <span class="lbl">{{trans('auth.project')}}</span>
                                 <span class="label label-pill label-danger">35</span>
@@ -487,7 +487,6 @@
 <script src="/js/lib/bootstrap-table/tableExport.min.js"></script>
 <script src="/js/lib/bootstrap-table/bootstrap-table-init-evtlist.js"></script>
 <script src="/js/lib/bootstrap-table/table.js"></script>
-<script src="/js/lib/bootstrap-table/bootstrap-table-init-progress.js"></script>
 
 
 <script src="/js/app-theme.js"></script>

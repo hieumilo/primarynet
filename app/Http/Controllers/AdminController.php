@@ -72,7 +72,6 @@ class AdminController extends Controller
         $percents = $html->find('div.gauge_square');
 
         $ids = $html->find('td.ip_td');
-
         $results = [];
         foreach ($ids as $key=>$id){
             $results[] = $id;
@@ -165,6 +164,57 @@ class AdminController extends Controller
         }
         app()->setLocale($lang);
         return view('packet', compact('settings','evtlists', 'results'));
+
+    }
+
+    public function jsTree($lang){
+        $evtlists = Evtlist::all();
+
+        //get all setting
+
+        $settings = DB::table('users')
+            ->join('SETTINGS', 'users.id', '=', 'SETTINGS.USER_ID')
+            ->join('ITEMS', 'SETTINGS.ITEM_ID', '=', 'ITEMS.ID')
+            ->where('user_id',Auth::id())
+            ->where('SETTINGS.PAGE','packet')
+            ->select('SETTINGS.*', 'ITEMS.NAME')
+            ->get();
+
+        //check exist setting
+        if ($settings->isEmpty()){
+            //get all items
+            $itemSettings = DB::table('ITEMS')->skip(2)->take(3)->get();
+
+            //insert default to database
+            foreach ($itemSettings as $key=>$itemSetting){
+                switch ($key) {
+                    case 0:
+                        DB::table('SETTINGS')->insert([
+                            ['USER_ID' => Auth::id(), 'ITEM_ID' => $itemSetting->ID, 'ROW' => 1, 'COL' => 1, 'SIZEX' => 1, 'SIZEY' => 1, 'PAGE'=>'packet']
+                        ]);
+                        break;
+                    case 1:
+                        DB::table('SETTINGS')->insert([
+                            ['USER_ID' => Auth::id(), 'ITEM_ID' => $itemSetting->ID, 'ROW' => 1, 'COL' => 1, 'SIZEX' => 1, 'SIZEY' => 1, 'PAGE'=>'packet']
+                        ]);
+                        break;
+                    default:
+                        DB::table('SETTINGS')->insert([
+                            ['USER_ID' => Auth::id(), 'ITEM_ID' => $itemSetting->ID, 'ROW' => 1, 'COL' => 1, 'SIZEX' => 1, 'SIZEY' => 1, 'PAGE'=>'packet']
+                        ]);
+                }
+
+            }
+            $settings = DB::table('users')
+                ->join('SETTINGS', 'users.id', '=', 'SETTINGS.USER_ID')
+                ->join('ITEMS', 'SETTINGS.ITEM_ID', '=', 'ITEMS.ID')
+                ->where('user_id',Auth::id())
+                ->where('SETTINGS.PAGE','packet')
+                ->select('SETTINGS.*', 'ITEMS.NAME')
+                ->get();
+        }
+        app()->setLocale($lang);
+        return view('jstree', compact('settings','evtlists'));
 
     }
 }

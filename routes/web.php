@@ -20,6 +20,7 @@ Route::post('/admin/user/saveRole','AdminController@saveRole');
 Route::get('/{lang}/dashboard', 'HomeController@index');
 Route::get('/{lang}/dashboard/new', 'HomeController@newDashboard');
 Route::get('/{lang}/dashboard/packet', 'AdminController@packet');
+Route::get('/{lang}/dashboard/jstree', 'AdminController@jstree');
 Route::get('/{lang}/dashboard/user', 'AdminController@user');
 
 Route::get('/ifram1', function(){
