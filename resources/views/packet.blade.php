@@ -99,7 +99,7 @@
                                                             <td>{{$key + 1}}</td>
                                                             @foreach($result as $k =>$item)
                                                                 @if($k == 1)
-                                                                    <td width="150">
+                                                                    <td>
                                                                         <div class="progress-with-amount">
                                                                             <div class="progress progress-xs">
                                                                                 <div class="progress-bar progress-success" role="progressbar" style="width: {{$item->innertext}};" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
@@ -108,7 +108,7 @@
                                                                         </div>
                                                                     </td>
                                                                 @else
-                                                                <td>{!! $item->innertext  !!}</td>
+                                                                <td width="150">{!! $item->innertext  !!}</td>
                                                                 @endif
                                                             @endforeach
                                                         </tr>
