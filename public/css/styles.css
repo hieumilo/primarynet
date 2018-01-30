@@ -176,7 +176,31 @@ section.card{
 .fix-error {
     font-size: 13px; letter-spacing: -1px;
 }
-.dropdown:hover>.dropdown-menu {
+.dropdown:hover .dropdown-menu {
+    display: block;
+    transition(all 5s);
+    top: 80%;
+}
+.dropdown-logout {
+    min-width: 7rem;
+    left: -55px;
+}
+.dropdown-menu-lang {
+    min-width: 8rem;
+    width: 8rem !important;
+}
+.display-block {
     display: block;
 }
-
+.site-header .dropdown-menu-messages {
+    width: 215px !important;
+}
+.dropdown-menu-messages {
+    left: -160px;
+}
+.site-header .dropdown-menu-notif {
+    width: 215px !important;
+}
+.dropdown-menu-notif {
+    left: -160px;
+}

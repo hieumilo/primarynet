@@ -226,12 +226,13 @@
                                 aria-expanded="false">
                             <span class="flag-icon flag-icon-{{config('app.locale')=='ko'? 'kr':(config('app.locale')=='en'? 'us':(config('app.locale')=='vi'?'vn':''))}}" id="flag-change"></span>
                         </button>
-                        <div class="dropdown-menu dropdown-menu-right">
+                        <div class="dropdown-menu dropdown-menu-left dropdown-menu-lang">
+                            {{--<div class="dropdown-menu-col">--}}
+                                {{--<a class="dropdown-item {{config('app.locale')=='ko'?  'current' : '' }}" onclick="setLocate('ko')"><span class="flag-icon flag-icon-kr"></span>Korea</a>--}}
+                            {{--</div>--}}
                             <div class="dropdown-menu-col">
-                                <a class="dropdown-item {{config('app.locale')=='ko'?  'current' : '' }}" onclick="setLocate('ko')"><span class="flag-icon flag-icon-kr"></span>Korea</a>
-                            </div>
-                            <div class="dropdown-menu-col">
-                                <a class="dropdown-item {{config('app.locale')=='en'?  'current' : '' }}" onclick="setLocate('en')"><span class="flag-icon flag-icon-us"></span>English</a>
+                                <a class="dropdown-item {{config('app.locale')=='en'?  'current' : '' }}" href="#" onclick="setLocate('en')"><span class="flag-icon flag-icon-us"></span>English</a>
+                                <a class="dropdown-item {{config('app.locale')=='ko'?  'current' : '' }}" href="#" onclick="setLocate('ko')"><span class="flag-icon flag-icon-kr"></span>Korea</a>
                                 <a class="dropdown-item {{config('app.locale')=='vi'?  'current' : '' }}" href="#" onclick="setLocate('vi')"><span class="flag-icon flag-icon-vn"></span>Viet Nam</a>
                             </div>
                         </div>
@@ -242,7 +243,7 @@
                                 aria-haspopup="true" aria-expanded="false">
                             <img src="/img/avatar-2-64.png" alt="">
                         </button>
-                        <div class="dropdown-menu" style="margin-right: 5px;" aria-labelledby="dd-user-menu">
+                        <div class="dropdown-menu dropdown-logout" style="margin-right: 5px;" aria-labelledby="dd-user-menu">
 
                             <div class="dropdown-divider">
 
