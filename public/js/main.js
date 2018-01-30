@@ -78,6 +78,10 @@ $(document).ready(function() {
         $('h1').css('color','#222222');
     }, 500);
 
+    $('td.change-link a').click(function (e) {
+        e.preventDefault();
+        window.location.href= 'http://www.infra911.com/'+$(this).attr('href');
+    });
 });
 
 
