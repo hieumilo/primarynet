@@ -4,13 +4,13 @@
     @role('Admin')
     <div class="mobile-menu-left-overlay"></div>
 
-    {{--<div id="loader-wrapper">--}}
-        {{--<div id="loader"></div>--}}
+    <div id="loader-wrapper">
+        <div id="loader"></div>
 
-        {{--<div class="loader-section section-left"></div>--}}
-        {{--<div class="loader-section section-right"></div>--}}
+        <div class="loader-section section-left"></div>
+        <div class="loader-section section-right"></div>
 
-    {{--</div>--}}
+    </div>
 
     <div class="page-content">
         <div class="container-fluid">
@@ -123,8 +123,38 @@
                                                 {{trans('auth.panel-title')}}
                                             </header>
                                             <div class="card-block">
-                                                <div id="chart8" class="chartdiv"></div>
+                                                <table id="table-sm" class="table table-bordered table-hover table-sm">
+                                                    <thead>
+                                                    <tr>
+                                                        <th>#</th>
+                                                        <th>IP</th>
+                                                        <th>Percent</th>
 
+                                                    </tr>
+                                                    </thead>
+                                                    <tbody>
+
+                                                    @foreach(array_chunk($results, 2) as $key => $result)
+                                                        <tr>
+                                                            <td>{{$key + 1}}</td>
+                                                            @foreach($result as $k =>$item)
+                                                                @if($k == 1)
+                                                                    <td width="150">
+                                                                        <div class="progress-with-amount">
+                                                                            <div class="progress progress-xs">
+                                                                                <div class="progress-bar progress-success" role="progressbar" style="width: {{$item->innertext}};" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                                                                            </div>
+                                                                            <div class="progress-with-amount-number">{!! $item->innertext !!}</div>
+                                                                        </div>
+                                                                    </td>
+                                                                @else
+                                                                    <td>{!! $item->innertext  !!}</td>
+                                                                @endif
+                                                            @endforeach
+                                                        </tr>
+                                                    @endforeach
+                                                    </tbody>
+                                                </table>
                                             </div>
                                         </section>
                                     @elseif($key==8)
@@ -133,7 +163,38 @@
                                                 {{trans('auth.panel-title')}}
                                             </header>
                                             <div class="card-block">
-                                                <div id="chart8" class="chartdiv"></div>
+                                                <table id="table-sm" class="table table-bordered table-hover table-sm">
+                                                    <thead>
+                                                    <tr>
+                                                        <th>#</th>
+                                                        <th>IP</th>
+                                                        <th>Percent</th>
+
+                                                    </tr>
+                                                    </thead>
+                                                    <tbody>
+
+                                                    @foreach(array_chunk($results, 2) as $key => $result)
+                                                        <tr>
+                                                            <td>{{$key + 1}}</td>
+                                                            @foreach($result as $k =>$item)
+                                                                @if($k == 1)
+                                                                    <td width="150">
+                                                                        <div class="progress-with-amount">
+                                                                            <div class="progress progress-xs">
+                                                                                <div class="progress-bar progress-success" role="progressbar" style="width: {{$item->innertext}};" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                                                                            </div>
+                                                                            <div class="progress-with-amount-number">{!! $item->innertext !!}</div>
+                                                                        </div>
+                                                                    </td>
+                                                                @else
+                                                                    <td>{!! $item->innertext  !!}</td>
+                                                                @endif
+                                                            @endforeach
+                                                        </tr>
+                                                    @endforeach
+                                                    </tbody>
+                                                </table>
                                             </div>
                                         </section>
                                     @else
