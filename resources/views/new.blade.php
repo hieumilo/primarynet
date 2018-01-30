@@ -92,6 +92,7 @@
                                                 {{trans('auth.panel-title')}}
                                             </header>
                                             <div class="card-block">
+<<<<<<< HEAD
                                                 <section class="box-typical" id="datatable-session">
                                                     <div id="toolbar">
                                                         <div class="bootstrap-table-header">{{trans('auth.table-header')}}</div>
@@ -201,7 +202,6 @@
                                                                 </div>
                                                             </div>
                                                         </div>
-
                                                         <button id="remove" class="btn btn-danger remove" disabled>
                                                             <i class="font-icon font-icon-close-2"></i> Delete
                                                         </button>
