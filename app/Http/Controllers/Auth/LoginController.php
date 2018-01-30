@@ -54,6 +54,7 @@ class LoginController extends Controller
                 ->where('email', $request->input('email'))
                 ->update(['session' => $request->session()->getId()]);
             return redirect(config('app.locale').'/dashboard/new');
+
         }
     }
 
