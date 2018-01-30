@@ -7,6 +7,7 @@ use App\User;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 
 class LoginController extends Controller
@@ -44,5 +45,16 @@ class LoginController extends Controller
         $this->middleware('guest', ['except' => 'logout']);
     }
 
+    public function login(Request $request)
+    {
+        //dd($request->session()->getId());
+        if (Auth::attempt(['email' => $request->input('email'), 'password' => $request->input('password')])) {
+            // Authentication passed...
+            DB::table('users')
+                ->where('email', $request->input('email'))
+                ->update(['session' => $request->session()->getId()]);
+            return redirect(config('app.locale').'/dashboard/new');
+        }
+    }
 
 }

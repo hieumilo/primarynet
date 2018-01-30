@@ -48,6 +48,7 @@
     <link rel="stylesheet" href="/css/separate/pages/login.min.css">
 </head>
 <body>
+<input type="hidden" id="remember-token" value="{{Auth::getUser()->getRememberToken()}}">
 <header class="site-header">
     <div class="container-fluid">
         <a href="/" class="site-logo">
@@ -299,14 +300,13 @@
                         {{--</div>--}}
                         <div class="dropdown dropdown-typical">
                             <a class="dropdown-toggle" id="dd-header-social" data-target="#"
-                               href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
-                            >
+                               href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <span class="font-icon font-icon-cogwheel"></span>
-                                <span class="lbl">Dashboard
+                                <span class="lbl">Failure
                                     </span>
                             </a>
                             <div class="dropdown-menu dropdown-menu-left" aria-label="dd-header-social">
-                                <a class="dropdown-item" href="/{{config('app.locale')}}/dashboard/new" style="color: red"><span class="font-icon font-icon-server"></span>Dashboard New</a>
+                                <a class="dropdown-item" href="/{{config('app.locale')}}/dashboard/new" style="color: red"><span class="font-icon font-icon-server"></span>Failure</a>
                                 <a class="dropdown-item" href="/{{config('app.locale')}}/dashboard"><span class="font-icon font-icon-doc"></span>Dashboard Old</a>
                             </div>
                         </div>
@@ -316,7 +316,7 @@
                                href="http://example.com/" data-toggle="dropdown" aria-haspopup="true"
                                aria-expanded="false">
                                 <span class="font-icon font-icon-share"></span>
-                                <span class="lbl">{{trans('auth.social-media')}}</span>
+                                <span class="lbl">Packet</span>
                             </a>
 
                             <div class="dropdown-menu" aria-labelledby="dd-header-social">
@@ -328,7 +328,7 @@
                                     {{--Official App</a>--}}
                                 {{--<a class="dropdown-item" href="#"><span class="font-icon font-icon-users"></span>CATprer--}}
                                     {{--Test</a>--}}
-                                <a class="dropdown-item" href="#"><span class="font-icon font-icon-comments"></span>{{trans('auth.third-test')}}</a>
+                                <a class="dropdown-item" href="/{{config('app.locale')}}/dashboard/packet"><span class="font-icon font-icon-comments"></span>Packet</a>
                             </div>
                         </div>
                         <div class="dropdown dropdown-typical">

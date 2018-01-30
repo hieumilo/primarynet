@@ -4,13 +4,13 @@
     @role('Admin')
     <div class="mobile-menu-left-overlay"></div>
 
-    <div id="loader-wrapper">
-        <div id="loader"></div>
+    {{--<div id="loader-wrapper">--}}
+        {{--<div id="loader"></div>--}}
 
-        <div class="loader-section section-left"></div>
-        <div class="loader-section section-right"></div>
+        {{--<div class="loader-section section-left"></div>--}}
+        {{--<div class="loader-section section-right"></div>--}}
 
-    </div>
+    {{--</div>--}}
 
     <div class="page-content">
         <div class="container-fluid">
@@ -29,7 +29,7 @@
                                                 {{trans('auth.panel-title')}}
                                             </header>
                                             <div class="card-block">
-                                                <div id="chart1" class="chartdiv"></div>
+                                                <div id="chart1-packet" class="chartdiv"></div>
                                             </div>
                                         </section>
                                     @elseif($key==1)
@@ -38,7 +38,7 @@
                                                 {{trans('auth.panel-title')}}
                                             </header>
                                             <div class="card-block">
-                                                <div id="chart2" class="chartdiv"></div>
+                                                <div id="chart2-packet" class="chartdiv"></div>
                                             </div>
                                         </section>
                                     @elseif($key==2)
@@ -47,7 +47,7 @@
                                                 {{trans('auth.panel-title')}}
                                             </header>
                                             <div class="card-block">
-                                                <div id="chart3" class="chartdiv"></div>
+                                                <div id="chart3-packet" class="chartdiv"></div>
                                             </div>
                                         </section>
                                     @elseif($key==3)
@@ -56,7 +56,7 @@
                                                 {{trans('auth.panel-title')}}
                                             </header>
                                             <div class="card-block">
-                                                <div id="chart4" class="chartdiv"></div>
+                                                <div id="chart4-packet" class="chartdiv"></div>
                                             </div>
                                         </section>
                                     @elseif($key==4)
@@ -65,7 +65,7 @@
                                                 {{trans('auth.panel-title')}}
                                             </header>
                                             <div class="card-block">
-                                                <div id="chart5" class="chartdiv"></div>
+                                                <div id="chart5-packet" class="chartdiv"></div>
                                             </div>
                                         </section>
                                     @elseif($key==5)
@@ -74,7 +74,7 @@
                                                 {{trans('auth.panel-title')}}
                                             </header>
                                             <div class="card-block">
-                                                <div id="chart6" class="chartdiv"></div>
+                                                <div id="chart6-packet" class="chartdiv"></div>
                                             </div>
                                         </section>
                                     @elseif($key==6)
@@ -83,7 +83,38 @@
                                                 {{trans('auth.panel-title')}}
                                             </header>
                                             <div class="card-block">
-                                                <div id="chart7" class="chartdiv"></div>
+                                                <table id="table-sm" class="table table-bordered table-hover table-sm">
+                                                    <thead>
+                                                    <tr>
+                                                        <th>#</th>
+                                                        <th>IP</th>
+                                                        <th>Percent</th>
+
+                                                    </tr>
+                                                    </thead>
+                                                    <tbody>
+
+                                                    @foreach(array_chunk($results, 2) as $key => $result)
+                                                        <tr>
+                                                            <td>{{$key + 1}}</td>
+                                                            @foreach($result as $k =>$item)
+                                                                @if($k == 1)
+                                                                    <td width="150">
+                                                                        <div class="progress-with-amount">
+                                                                            <div class="progress progress-xs">
+                                                                                <div class="progress-bar progress-success" role="progressbar" style="width: {{$item->innertext}};" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                                                                            </div>
+                                                                            <div class="progress-with-amount-number">{!! $item->innertext !!}</div>
+                                                                        </div>
+                                                                    </td>
+                                                                @else
+                                                                <td>{!! $item->innertext  !!}</td>
+                                                                @endif
+                                                            @endforeach
+                                                        </tr>
+                                                    @endforeach
+                                                    </tbody>
+                                                </table>
                                             </div>
                                         </section>
                                     @elseif($key==7)
@@ -92,38 +123,17 @@
                                                 {{trans('auth.panel-title')}}
                                             </header>
                                             <div class="card-block">
-                                                <div class="table-responsive">
-                                                    {{--<table id="table-sm" class="table table-bordered table-hover table-sm">--}}
-                                                        {{--<thead>--}}
-                                                        {{--<tr>--}}
-                                                            {{--<th width="1">--}}
-                                                                {{--#--}}
-                                                            {{--</th>--}}
-                                                            {{--<th>Name</th>--}}
-                                                            {{--<th>Description</th>--}}
-                                                            {{--<th class="table-icon-cell">--}}
-                                                                {{--<i class="font-icon font-icon-heart"></i>--}}
-                                                            {{--</th>--}}
-                                                            {{--<th class="table-icon-cell">--}}
-                                                                {{--<i class="font-icon font-icon-comment"></i>--}}
-                                                            {{--</th>--}}
-                                                            {{--<th width="120">Date Created</th>--}}
-                                                        {{--</tr>--}}
-                                                        {{--</thead>--}}
-                                                        {{--<tbody>--}}
-                                                        {{--<tr>--}}
-                                                            {{--<td>1</td>--}}
-                                                            {{--<td>Last quarter revene</td>--}}
-                                                            {{--<td class="color-blue-grey-lighter">Revene for last quarter in state America for year 2013, whith...</td>--}}
-                                                            {{--<td class="table-icon-cell">5</td>--}}
-                                                            {{--<td class="table-icon-cell">24</td>--}}
-                                                            {{--<td>6 minutes ago</td>--}}
-                                                        {{--</tr>--}}
-                                                    {{--</table>--}}
-                                                    <?php
+                                                <div id="chart8" class="chartdiv"></div>
 
-                                                    ?>
-                                                </div>
+                                            </div>
+                                        </section>
+                                    @elseif($key==8)
+                                        <section class="card card-blue-fill">
+                                            <header class="card-header">
+                                                {{trans('auth.panel-title')}}
+                                            </header>
+                                            <div class="card-block">
+                                                <div id="chart8" class="chartdiv"></div>
                                             </div>
                                         </section>
                                     @else
@@ -132,7 +142,7 @@
                                                 {{trans('auth.panel-title')}}
                                             </header>
                                             <div class="card-block">
-                                                <div id="chart5" class="chartdiv"></div>
+                                                <div id="chart10" class="chartdiv"></div>
                                             </div>
                                         </section>
                                     @endif
@@ -145,10 +155,10 @@
             </div>
         </div>
     </div><!--.container-fluid-->
-@endrole
-@role('User')
+    @endrole
+    @role('User')
     <p style="text-align: center; margin-top: 500px;font-size: 60px">Welcome User</p>
-@endrole
+    @endrole
 @endsection
 @section('scripts')
     <script>
