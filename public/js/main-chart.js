@@ -652,7 +652,6 @@
             var url = $.get("http://www.infra911.com/pkt_data.php?Act=pkt_dash1_1&prefix=p1", function () {
             }).done(function (data) {
                 var newdata = $.parseJSON(data.replace(/'/g, '"'));
-                console.log(newdata);
 
                 var chart = AmCharts.makeChart("chart1-packet", {
                     "theme": "light",
@@ -696,7 +695,6 @@
             var url = $.get("http://www.infra911.com/pkt_data.php?Act=pkt_dash2_1&prefix=p2", function () {
             }).done(function (data) {
                 var newdata = $.parseJSON(data.replace(/'/g, '"'));
-                console.log(newdata);
 
                 var chart = AmCharts.makeChart("chart2-packet", {
                     "theme": "light",
@@ -740,7 +738,6 @@
             var url = $.get("http://www.infra911.com/pkt_data.php?Act=pkt_dash3_1&prefix=p3", function () {
             }).done(function (data) {
                 var newdata = $.parseJSON(data.replace(/'/g, '"'));
-                console.log(newdata);
 
                 var chart = AmCharts.makeChart("chart3-packet", {
                     "theme": "light",
@@ -784,7 +781,6 @@
             var url = $.get("http://www.infra911.com/pkt_data.php?Act=pkt_dash4_1&prefix=p4", function () {
             }).done(function (data) {
                 var newdata = $.parseJSON(data.replace(/'/g, '"'));
-               // console.log(newdata);
 
                 var chart = AmCharts.makeChart("chart4-packet", {
                     "theme": "light",
@@ -828,7 +824,6 @@
             var url = $.get("http://www.infra911.com/pkt_data.php?Act=pkt_dash5_1&prefix=p5", function () {
             }).done(function (data) {
                 var newdata = $.parseJSON(data.replace(/'/g, '"'));
-                //console.log(newdata);
 
                 var chart = AmCharts.makeChart("chart5-packet", {
                     "theme": "light",
@@ -879,7 +874,6 @@
             var url = $.get("http://www.infra911.com/pkt_data.php?Act=pkt_dash6_1&prefix=p6", function () {
             }).done(function (data) {
                 var newdata = $.parseJSON(data.replace(/'/g, '"'));
-                //console.log(newdata);
 
                 var chart = AmCharts.makeChart("chart6-packet", {
                     "theme": "light",
@@ -923,7 +917,6 @@
             var url = $.get("http://www.infra911.com/pkt_data.php?Act=pkt_dash6_2&prefix=p7", function () {
             }).done(function (data) {
                 var newdata = $.parseJSON(data.replace(/'/g, '"'));
-                console.log(newdata);
 
                 var gaugeChart = AmCharts.makeChart( "chart7-packet", {
                     "type": "gauge",

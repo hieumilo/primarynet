@@ -491,13 +491,11 @@
 
 
 <script src="/js/app-theme.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/dsmorse-gridster@0.7.0/dist/jquery.gridster.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/dsmorse-gridster@0.7.0/dist/jquery.gridster.with-extras.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/dsmorse-gridster@0.7.0/dist/jquery.gridster.with-extras.js"></script>
+<script type="text/javascript" src="/js/gridster.js"></script>
+{{--<script src="https://cdn.jsdelivr.net/npm/dsmorse-gridster@0.7.0/dist/jquery.gridster.with-extras.js"></script>--}}
 <script src="/js/main.js"></script>
 <script src="/js/table-user.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.6.2/sweetalert2.min.js"></script>
-<script src="//rawgit.com/vitalets/x-editable/master/dist/bootstrap3-editable/js/bootstrap-editable.js"></script>
 @yield('scripts')
 </body>
 </html>
