@@ -19,7 +19,7 @@ class User extends Authenticatable
     protected static $roleProfile = 'user';
 
     protected $fillable = [
-        'name', 'email', 'password',
+        'name', 'email', 'password', 'session',
     ];
 
     /**

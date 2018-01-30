@@ -48,6 +48,7 @@
     <link rel="stylesheet" href="/css/separate/pages/login.min.css">
 </head>
 <body>
+<input type="hidden" id="data-session" value="{{dd(Auth::user())}}">
 <header class="site-header">
     <div class="container-fluid">
         <a href="/" class="site-logo">
