@@ -92,38 +92,249 @@
                                                 {{trans('auth.panel-title')}}
                                             </header>
                                             <div class="card-block">
-                                                <div class="table-responsive">
-                                                    {{--<table id="table-sm" class="table table-bordered table-hover table-sm">--}}
-                                                        {{--<thead>--}}
-                                                        {{--<tr>--}}
-                                                            {{--<th width="1">--}}
-                                                                {{--#--}}
-                                                            {{--</th>--}}
-                                                            {{--<th>Name</th>--}}
-                                                            {{--<th>Description</th>--}}
-                                                            {{--<th class="table-icon-cell">--}}
-                                                                {{--<i class="font-icon font-icon-heart"></i>--}}
-                                                            {{--</th>--}}
-                                                            {{--<th class="table-icon-cell">--}}
-                                                                {{--<i class="font-icon font-icon-comment"></i>--}}
-                                                            {{--</th>--}}
-                                                            {{--<th width="120">Date Created</th>--}}
-                                                        {{--</tr>--}}
-                                                        {{--</thead>--}}
-                                                        {{--<tbody>--}}
-                                                        {{--<tr>--}}
-                                                            {{--<td>1</td>--}}
-                                                            {{--<td>Last quarter revene</td>--}}
-                                                            {{--<td class="color-blue-grey-lighter">Revene for last quarter in state America for year 2013, whith...</td>--}}
-                                                            {{--<td class="table-icon-cell">5</td>--}}
-                                                            {{--<td class="table-icon-cell">24</td>--}}
-                                                            {{--<td>6 minutes ago</td>--}}
-                                                        {{--</tr>--}}
-                                                    {{--</table>--}}
-                                                    <?php
+                                                <section class="box-typical" id="datatable-session">
+                                                    <div id="toolbar">
+                                                        <div class="bootstrap-table-header">{{trans('auth.table-header')}}</div>
+                                                        <button id="add" class="btn btn-success remove" data-toggle="modal" data-target="#add-item">
+                                                            Add
+                                                        </button>
+                                                        <div class="modal fade" id="add-item" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+                                                            <div class="modal-dialog" role="document">
+                                                                <div class="modal-content">
+                                                                    <div class="modal-header">
+                                                                        <h5 class="modal-title" id="exampleModalLongTitle">Add Item</h5>
+                                                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                                            <span aria-hidden="true">&times;</span>
+                                                                        </button>
+                                                                    </div>
+                                                                    <form data-toggle="validator" id="addForm">
+                                                                        {{ csrf_field() }}
+                                                                        <div class="modal-body">
+                                                                            <div class="row">
+                                                                                <div class="col-md-6">
+                                                                                    <div class="form-group">
+                                                                                        <input type="text" name="GID" class="form-control" placeholder="GID"  />
+                                                                                        <p class="text-danger fix-error" id="GID-error"></p>
+                                                                                    </div>
+                                                                                    <div class="form-group">
+                                                                                        <input type="text" name="NODEID" class="form-control" placeholder="Node ID"  />
+                                                                                        <p class="text-danger fix-error" id="NODEID-error"></p>
+                                                                                    </div>
+                                                                                    <div class="form-group">
+                                                                                        <input type="text" name="NODEIP" class="form-control" placeholder="Node IP"  />
+                                                                                        <p class="text-danger fix-error" id="NODEIP-error"></p>
+                                                                                    </div>
+                                                                                    <div class="form-group">
+                                                                                        <input type="text" name="NODENAME" class="form-control" placeholder="Node Name"  />
+                                                                                        <p class="text-danger fix-error" id="NODENAME-error"></p>
+                                                                                    </div>
+                                                                                    <div class="form-group">
+                                                                                        <input type="text" name="EVTSTART" class="form-control" placeholder="Node EVTSTART YYYY/MM/DD"  />
+                                                                                        <p class="text-danger fix-error" id="EVTSTART-error"></p>
+                                                                                    </div>
+                                                                                    <div class="form-group">
+                                                                                        <input type="text" name="EVTEND" class="form-control" placeholder="Node EVTEND YYYY/MM/DD"  />
+                                                                                        <p class="text-danger fix-error" id="EVTEND-error"></p>
+                                                                                    </div>
+                                                                                    <div class="form-group">
+                                                                                        <input type="text" name="EVTOPEN" class="form-control" placeholder="EVTOPEN"  />
+                                                                                        <p class="text-danger fix-error" id="EVTOPEN-error"></p>
+                                                                                    </div>
+                                                                                    <div class="form-group">
+                                                                                        <input type="text" name="NODESTAT" class="form-control" placeholder="NODESTAT"  />
+                                                                                        <p class="text-danger fix-error" id="NODESTAT-error"></p>
+                                                                                    </div>
+                                                                                    <div class="form-group">
+                                                                                        <input type="text" name="EVTDESCR" class="form-control" placeholder="EVTDESCR"  />
+                                                                                        <p class="text-danger fix-error" id="EVTDESCR-error"></p>
+                                                                                    </div>
+                                                                                    <div class="form-group">
+                                                                                        <input type="text" name="EVTCOMMENT" class="form-control" placeholder="EVTCOMMENT"  />
+                                                                                        <p class="text-danger fix-error" id="EVTCOMMENT-error"></p>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="col-md-6">
+                                                                                    <div class="form-group">
+                                                                                        <input type="text" name="EVTID" class="form-control" placeholder="EVTID"  />
+                                                                                        <p class="text-danger fix-error" id="EVTID-error"></p>
+                                                                                    </div>
+                                                                                    <div class="form-group">
+                                                                                        <input type="text" name="EVTIGNORE" class="form-control" placeholder="EVTIGNORE"  />
+                                                                                        <p class="text-danger fix-error" id="EVTIGNORE-error"></p>
+                                                                                    </div>
+                                                                                    <div class="form-group">
+                                                                                        <input type="text" name="EVTNOTIFY" class="form-control" placeholder="EVTNOTIFY"  />
+                                                                                        <p class="text-danger fix-error" id="EVTNOTIFY-error"></p>
+                                                                                    </div>
+                                                                                    <div class="form-group">
+                                                                                        <input type="text" name="CLSNOTIFY" class="form-control" placeholder="CLSNOTIFY"  />
+                                                                                        <p class="text-danger fix-error" id="CLSNOTIFY-error"></p>
+                                                                                    </div>
+                                                                                    <div class="form-group">
+                                                                                        <input type="text" name="EVTGROUP" class="form-control" placeholder="EVTGROUP"  />
+                                                                                        <p class="text-danger fix-error" id="EVTGROUP-error"></p>
+                                                                                    </div>
+                                                                                    <div class="form-group">
+                                                                                        <input type="text" name="WCHK" class="form-control" placeholder="WCHK"  />
+                                                                                        <p class="text-danger fix-error" id="WCHK-error"></p>
+                                                                                    </div>
+                                                                                    <div class="form-group">
+                                                                                        <input type="text" name="CURWEIGHT" class="form-control" placeholder="CURWEIGHT"  />
+                                                                                        <p class="text-danger fix-error" id="CURWEIGHT-error"></p>
+                                                                                    </div>
+                                                                                    <div class="form-group">
+                                                                                        <input type="text" name="EVTITEM" class="form-control" placeholder="EVTITEM"  />
+                                                                                        <p class="text-danger fix-error" id="EVTITEM-error"></p>
+                                                                                    </div>
+                                                                                    <div class="form-group">
+                                                                                        <input type="text" name="CHKDATE" class="form-control" placeholder="CHKDATE"  />
+                                                                                        <p class="text-danger fix-error" id="CHKDATE-error"></p>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="modal-footer">
+                                                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                                                            <button type="submit" id="submitForm" class="btn btn-primary crud-submit-add">Save changes</button>
+                                                                        </div>
+                                                                    </form>
+                                                                </div>
+                                                            </div>
+                                                        </div>
 
-                                                    ?>
-                                                </div>
+                                                        <button id="remove" class="btn btn-danger remove" disabled>
+                                                            <i class="font-icon font-icon-close-2"></i> Delete
+                                                        </button>
+
+                                                        <button id="edit" class="btn btn-default remove">
+                                                            Edit
+                                                        </button>
+
+                                                        <div class="modal fade" id="edit-item" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+                                                            <div class="modal-dialog" role="document">
+                                                                <div class="modal-content">
+                                                                    <div class="modal-header">
+                                                                        <h5 class="modal-title" id="exampleModalLongTitle">Edit Item</h5>
+                                                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                                            <span aria-hidden="true">&times;</span>
+                                                                        </button>
+                                                                    </div>
+                                                                    <form>
+                                                                        {{ csrf_field() }}
+                                                                        <div class="modal-body">
+                                                                            <div class="row">
+                                                                                <div class="col-md-6">
+                                                                                    <div class="form-group">
+                                                                                        <input type="text" name="GID" class="form-control" placeholder="GID"  />
+                                                                                        <p class="text-danger fix-error" id="GIDe-error"></p>
+                                                                                    </div>
+                                                                                    <div class="form-group">
+                                                                                        <input type="text" name="NODEID" class="form-control" placeholder="Node ID" />
+                                                                                        <p class="text-danger fix-error" id="NODEIDe-error"></p>
+                                                                                    </div>
+                                                                                    <div class="form-group">
+                                                                                        <input type="text" name="NODEIP" class="form-control" placeholder="Node IP"  />
+                                                                                        <p class="text-danger fix-error" id="NODEIPe-error"></p>
+                                                                                    </div>
+                                                                                    <div class="form-group">
+                                                                                        <input type="text" name="NODENAME" class="form-control" placeholder="Node Name"  />
+                                                                                        <p class="text-danger fix-error" id="NODENAMEe-error"></p>
+                                                                                    </div>
+                                                                                    <div class="form-group">
+                                                                                        <input type="text" name="EVTSTART" class="form-control" placeholder="Node EVTSTART YYYY/MM/DD"  />
+                                                                                        <p class="text-danger fix-error" id="EVTSTARTe-error"></p>
+                                                                                    </div>
+                                                                                    <div class="form-group">
+                                                                                        <input type="text" name="EVTEND" class="form-control" placeholder="Node EVTEND YYYY/MM/DD"  />
+                                                                                        <p class="text-danger fix-error" id="EVTENDe-error"></p>
+                                                                                    </div>
+                                                                                    <div class="form-group">
+                                                                                        <input type="text" name="EVTOPEN" class="form-control" placeholder="EVTOPEN"  />
+                                                                                        <p class="text-danger fix-error" id="EVTOPENe-error"></p>
+                                                                                    </div>
+                                                                                    <div class="form-group">
+                                                                                        <input type="text" name="NODESTAT" class="form-control" placeholder="NODESTAT"  />
+                                                                                        <p class="text-danger fix-error" id="NODESTATe-error"></p>
+                                                                                    </div>
+                                                                                    <div class="form-group">
+                                                                                        <input type="text" name="EVTDESCR" class="form-control" placeholder="EVTDESCR"  />
+                                                                                        <p class="text-danger fix-error" id="EVTDESCRe-error"></p>
+                                                                                    </div>
+                                                                                    <div class="form-group">
+                                                                                        <input type="text" name="EVTCOMMENT" class="form-control" placeholder="EVTCOMMENT"  />
+                                                                                        <p class="text-danger fix-error" id="EVTCOMMENTe-error"></p>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="col-md-6">
+                                                                                    <div class="form-group">
+                                                                                        <input type="text" name="EVTID" class="form-control" placeholder="EVTID"  />
+                                                                                        <p class="text-danger fix-error" id="EVTIDe-error"></p>
+                                                                                    </div>
+                                                                                    <div class="form-group">
+                                                                                        <input type="text" name="EVTIGNORE" class="form-control" placeholder="EVTIGNORE"  />
+                                                                                        <p class="text-danger fix-error" id="EVTIGNOREe-error"></p>
+                                                                                    </div>
+                                                                                    <div class="form-group">
+                                                                                        <input type="text" name="EVTNOTIFY" class="form-control" placeholder="EVTNOTIFY"  />
+                                                                                        <p class="text-danger fix-error" id="EVTNOTIFYe-error"></p>
+                                                                                    </div>
+                                                                                    <div class="form-group">
+                                                                                        <input type="text" name="CLSNOTIFY" class="form-control" placeholder="CLSNOTIFY"  />
+                                                                                        <p class="text-danger fix-error" id="CLSNOTIFYe-error"></p>
+                                                                                    </div>
+                                                                                    <div class="form-group">
+                                                                                        <input type="text" name="EVTGROUP" class="form-control" placeholder="EVTGROUP"  />
+                                                                                        <p class="text-danger fix-error" id="EVTGROUPe-error"></p>
+                                                                                    </div>
+                                                                                    <div class="form-group">
+                                                                                        <input type="text" name="WCHK" class="form-control" placeholder="WCHK"  />
+                                                                                        <p class="text-danger fix-error" id="WCHKe-error"></p>
+                                                                                    </div>
+                                                                                    <div class="form-group">
+                                                                                        <input type="text" name="CURWEIGHT" class="form-control" placeholder="CURWEIGHT"  />
+                                                                                        <p class="text-danger fix-error" id="CURWEIGHTe-error"></p>
+                                                                                    </div>
+                                                                                    <div class="form-group">
+                                                                                        <input type="text" name="EVTITEM" class="form-control" placeholder="EVTITEM"  />
+                                                                                        <p class="text-danger fix-error" id="EVTITEMe-error"></p>
+                                                                                    </div>
+                                                                                    <div class="form-group">
+                                                                                        <input type="text" name="CHKDATE" class="form-control" placeholder="CHKDATE"  />
+                                                                                        <p class="text-danger fix-error" id="CHKDATEe-error"></p>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="modal-footer">
+                                                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                                                            <button type="submit" class="btn btn-primary crud-submit-edit">Edit changes</button>
+                                                                        </div>
+                                                                    </form>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="table-responsive">
+                                                        <table id="table"
+                                                               class="table table-striped"
+                                                               data-toolbar="#toolbar"
+                                                               data-search="true"
+                                                               data-show-refresh="true"
+                                                               data-show-toggle="true"
+                                                               data-show-columns="true"
+                                                               data-show-export="true"
+                                                               data-detail-view="true"
+                                                               data-detail-formatter="detailFormatter"
+                                                               data-minimum-count-columns="2"
+                                                               data-show-pagination-switch="true"
+                                                               data-pagination="true"
+                                                               data-id-field="id"
+                                                               data-page-list="[10, 25, 50, 100, ALL]"
+                                                               data-show-footer="false"
+                                                               data-response-handler="responseHandler">
+                                                        </table>
+                                                    </div>
+                                                </section><!--.box-typical-dashboard-->
                                             </div>
                                         </section>
                                     @else
