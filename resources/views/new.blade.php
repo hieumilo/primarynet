@@ -92,7 +92,6 @@
                                                 {{trans('auth.panel-title')}}
                                             </header>
                                             <div class="card-block">
-<<<<<<< HEAD
                                                 <section class="box-typical" id="datatable-session">
                                                     <div id="toolbar">
                                                         <div class="bootstrap-table-header">{{trans('auth.table-header')}}</div>

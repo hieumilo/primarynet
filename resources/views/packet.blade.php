@@ -86,9 +86,9 @@
                                                 <table id="table-sm" class="table table-bordered table-hover table-sm">
                                                     <thead>
                                                     <tr>
-                                                        <th>#</th>
-                                                        <th>IP</th>
-                                                        <th>Percent</th>
+                                                        <th class="text-center">#</th>
+                                                        <th class="text-center">IP</th>
+                                                        <th class="text-center">Percent</th>
 
                                                     </tr>
                                                     </thead>
@@ -126,9 +126,9 @@
                                                 <table id="table-sm" class="table table-bordered table-hover table-sm">
                                                     <thead>
                                                     <tr>
-                                                        <th>#</th>
-                                                        <th>IP</th>
-                                                        <th>Percent</th>
+                                                        <th class="text-center">#</th>
+                                                        <th class="text-center">IP</th>
+                                                        <th class="text-center">Percent</th>
 
                                                     </tr>
                                                     </thead>
@@ -166,9 +166,9 @@
                                                 <table id="table-sm" class="table table-bordered table-hover table-sm">
                                                     <thead>
                                                     <tr>
-                                                        <th>#</th>
-                                                        <th>IP</th>
-                                                        <th>Percent</th>
+                                                        <th class="text-center">#</th>
+                                                        <th class="text-center">IP</th>
+                                                        <th class="text-center">Percent</th>
 
                                                     </tr>
                                                     </thead>
