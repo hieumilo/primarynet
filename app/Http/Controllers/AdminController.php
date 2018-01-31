@@ -167,4 +167,8 @@ class AdminController extends Controller
         return view('packet', compact('settings','evtlists', 'results'));
 
     }
+
+    public function test(){
+        return view('test');
+    }
 }
