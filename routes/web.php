@@ -14,6 +14,7 @@
 Auth::routes();
 
 Route::get('/admin/user','AdminController@alluser');
+Route::get('/test','AdminController@test');
 Route::post('/admin/user/saveRole','AdminController@saveRole');
 
 
