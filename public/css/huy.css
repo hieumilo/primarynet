@@ -1,0 +1,20 @@
+.table-showInf{
+    border: 1px solid #b7b0b0;
+}
+th{
+    background-color: #516b84;
+    padding: 20px 100px 20px 20px;
+    border-bottom: 1px solid #b7b0b0;
+    border-right: 1px solid #b7b0b0;
+}
+td{
+    padding: 5px;
+    border-bottom: 1px solid #b7b0b0;
+    border-left: 1px solid #b7b0b0;
+}
+textarea.form-control{
+    width: 300px;
+}
+.tabs-section>.tab-content:not(.no-styled){
+
+}
