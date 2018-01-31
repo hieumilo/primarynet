@@ -912,6 +912,7 @@
             });
         }
     };
+
     /*var chart7Packet = {
         init:function() {
             var url = $.get("http://www.infra911.com/pkt_data.php?Act=pkt_dash6_2&prefix=p7", function () {
