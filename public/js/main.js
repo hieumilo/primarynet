@@ -84,6 +84,32 @@ $(document).ready(function() {
     });
 });
 
+// $.getJSON('http://192.168.0.5:5005/tree.php', function (data) {
+//     $.each(data, function (key, value) {
+//         if (data[key]['parent']=='g_') data[key]['parent']='#';
+//     });
+//     $('#tree-container')
+//         .jstree({
+//             "core" : {
+//                 "data" : data
+//                 /*"themes": {
+//                     "url": true,
+//                     "icons": true,
+//                     "dots": true
+//                 },
+//                 "check_callback": true*/
+//             },
+//             "plugins": [ "dnd","search" ]
+//         });
+//
+// });
+
+
+setInterval(function(){
+
+},1000);
+
+
 
 
 /*$('body').on('mouseenter mouseleave','.dropdown',function(e){
@@ -99,3 +125,35 @@ $(document).ready(function() {
 //         _d[_d.is(':hover')] ? 'addClass':'removeClass']('show');
 //     },100);
 // });
+(function ($, window, document, undefined) {
+    var jstree = {
+        init: function () {
+            $.getJSON('http://192.168.0.5:5005/tree.php', function (data) {
+                $.each(data, function (key, value) {
+                    if (data[key]['parent']=='g_') data[key]['parent']='#';
+                });
+                $('#tree-container').jstree({
+                        "core": {
+                            "data":data
+                        },
+                        "checkbox": {
+                            "keep_selected_style": false
+                        },
+                        "plugins": ["dnd","search" ]
+                    }
+                );
+            });
+        }
+    };
+    $(document).ready(function () {
+        jstree.init();
+
+        setInterval(function(){
+            jstree.init();
+        },5000);
+
+        // setTimeout(function(){
+        //     jstree.init();
+        // }, 5000);
+    });
+})(jQuery, window, document);

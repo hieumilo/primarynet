@@ -38,25 +38,25 @@ class HomeController extends Controller
         $settings = DB::table('users')
             ->join('SETTINGS', 'users.id', '=', 'SETTINGS.USER_ID')
             ->join('ITEMS', 'SETTINGS.ITEM_ID', '=', 'ITEMS.ID')
-            ->where('user_id',Auth::id())
+            ->where('user_id', Auth::id())
             ->select('SETTINGS.*', 'ITEMS.NAME')
             ->get();
 
         //check exist setting
-        if ($settings->isEmpty()){
+        if ($settings->isEmpty()) {
             //get all items
             $itemSettings = DB::table('ITEMS')->get();
 
             //insert default to database
-            foreach ($itemSettings as $itemSetting){
+            foreach ($itemSettings as $itemSetting) {
                 DB::table('SETTINGS')->insert([
-                    ['USER_ID'=>Auth::id(), 'ITEM_ID'=>$itemSetting->id, 'ROW' => 1,'COL' => 1,'SIZEX' => 1, 'SIZEY' => 1]
+                    ['USER_ID' => Auth::id(), 'ITEM_ID' => $itemSetting->id, 'ROW' => 1, 'COL' => 1, 'SIZEX' => 1, 'SIZEY' => 1]
                 ]);
             }
             $settings = DB::table('users')
                 ->join('SETTINGS', 'users.id', '=', 'SETTINGS.USER_ID')
                 ->join('ITEMS', 'SETTINGS.ITEM_ID', '=', 'ITEMS.ID')
-                ->where('user_id',Auth::id())
+                ->where('user_id', Auth::id())
                 ->select('SETTINGS.*', 'ITEMS.NAME')
                 ->get();
         }
@@ -64,7 +64,7 @@ class HomeController extends Controller
         app()->setLocale($lang);
 
 
-        return view('home', compact('settings','evtlists'));
+        return view('home', compact('settings', 'evtlists'));
 
     }
 
@@ -78,67 +78,67 @@ class HomeController extends Controller
         $settings = DB::table('users')
             ->join('SETTINGS', 'users.id', '=', 'SETTINGS.USER_ID')
             ->join('ITEMS', 'SETTINGS.ITEM_ID', '=', 'ITEMS.ID')
-            ->where('user_id',Auth::id())
-            ->where('SETTINGS.PAGE','failure')
+            ->where('user_id', Auth::id())
+            ->where('SETTINGS.PAGE', 'failure')
             ->select('SETTINGS.*', 'ITEMS.NAME')
             ->get();
 
         //check exist setting
-        if ($settings->isEmpty()){
+        if ($settings->isEmpty()) {
             //get all items
             $itemSettings = DB::table('ITEMS')->take(8)->get();
 
             //insert default to database
-            foreach ($itemSettings as $key=>$itemSetting){
+            foreach ($itemSettings as $key => $itemSetting) {
                 switch ($key) {
                     case 0:
                         DB::table('SETTINGS')->insert([
-                            ['USER_ID' => Auth::id(), 'ITEM_ID' => $itemSetting->ID, 'ROW' => 1, 'COL' => 1, 'SIZEX' => 1, 'SIZEY' => 2, 'PAGE'=>'failure']
+                            ['USER_ID' => Auth::id(), 'ITEM_ID' => $itemSetting->ID, 'ROW' => 1, 'COL' => 1, 'SIZEX' => 1, 'SIZEY' => 2, 'PAGE' => 'failure']
                         ]);
                         break;
                     case 1:
                         DB::table('SETTINGS')->insert([
-                            ['USER_ID' => Auth::id(), 'ITEM_ID' => $itemSetting->ID, 'ROW' => 5, 'COL' => 1, 'SIZEX' => 2, 'SIZEY' => 2, 'PAGE'=>'failure']
+                            ['USER_ID' => Auth::id(), 'ITEM_ID' => $itemSetting->ID, 'ROW' => 5, 'COL' => 1, 'SIZEX' => 2, 'SIZEY' => 2, 'PAGE' => 'failure']
                         ]);
                         break;
                     case 2:
                         DB::table('SETTINGS')->insert([
-                            ['USER_ID' => Auth::id(), 'ITEM_ID' => $itemSetting->ID, 'ROW' => 3, 'COL' => 1, 'SIZEX' => 2, 'SIZEY' => 2, 'PAGE'=>'failure']
+                            ['USER_ID' => Auth::id(), 'ITEM_ID' => $itemSetting->ID, 'ROW' => 3, 'COL' => 1, 'SIZEX' => 2, 'SIZEY' => 2, 'PAGE' => 'failure']
                         ]);
                         break;
                     case 3:
                         DB::table('SETTINGS')->insert([
-                            ['USER_ID' => Auth::id(), 'ITEM_ID' => $itemSetting->ID, 'ROW' => 1, 'COL' => 2, 'SIZEX' => 1, 'SIZEY' => 2, 'PAGE'=>'failure']
+                            ['USER_ID' => Auth::id(), 'ITEM_ID' => $itemSetting->ID, 'ROW' => 1, 'COL' => 2, 'SIZEX' => 1, 'SIZEY' => 2, 'PAGE' => 'failure']
                         ]);
                         break;
                     case 4:
                         DB::table('SETTINGS')->insert([
-                            ['USER_ID' => Auth::id(), 'ITEM_ID' => $itemSetting->ID, 'ROW' => 1, 'COL' => 3, 'SIZEX' => 1, 'SIZEY' => 2, 'PAGE'=>'failure']
+                            ['USER_ID' => Auth::id(), 'ITEM_ID' => $itemSetting->ID, 'ROW' => 1, 'COL' => 3, 'SIZEX' => 1, 'SIZEY' => 2, 'PAGE' => 'failure']
                         ]);
                         break;
                     case 5:
                         DB::table('SETTINGS')->insert([
-                            ['USER_ID' => Auth::id(), 'ITEM_ID' => $itemSetting->ID, 'ROW' => 1, 'COL' => 5, 'SIZEX' => 6, 'SIZEY' => 2, 'PAGE'=>'failure']
+                            ['USER_ID' => Auth::id(), 'ITEM_ID' => $itemSetting->ID, 'ROW' => 1, 'COL' => 5, 'SIZEX' => 6, 'SIZEY' => 2, 'PAGE' => 'failure']
                         ]);
                         break;
                     case 6:
                         DB::table('SETTINGS')->insert([
-                            ['USER_ID' => Auth::id(), 'ITEM_ID' => $itemSetting->ID, 'ROW' => 1, 'COL' => 4, 'SIZEX' => 1, 'SIZEY' => 2, 'PAGE'=>'failure']
+                            ['USER_ID' => Auth::id(), 'ITEM_ID' => $itemSetting->ID, 'ROW' => 1, 'COL' => 4, 'SIZEX' => 1, 'SIZEY' => 2, 'PAGE' => 'failure']
                         ]);
                         break;
                     case 7:
                         DB::table('SETTINGS')->insert([
-                            ['USER_ID' => Auth::id(), 'ITEM_ID' => $itemSetting->ID, 'ROW' => 3, 'COL' => 3, 'SIZEX' => 4, 'SIZEY' => 4, 'PAGE'=>'failure']
+                            ['USER_ID' => Auth::id(), 'ITEM_ID' => $itemSetting->ID, 'ROW' => 3, 'COL' => 3, 'SIZEX' => 4, 'SIZEY' => 4, 'PAGE' => 'failure']
                         ]);
                         break;
                     case 8:
                         DB::table('SETTINGS')->insert([
-                            ['USER_ID' => Auth::id(), 'ITEM_ID' => $itemSetting->ID, 'ROW' => 1, 'COL' => 5, 'SIZEX' => 1, 'SIZEY' => 1, 'PAGE'=>'failure']
+                            ['USER_ID' => Auth::id(), 'ITEM_ID' => $itemSetting->ID, 'ROW' => 1, 'COL' => 5, 'SIZEX' => 1, 'SIZEY' => 1, 'PAGE' => 'failure']
                         ]);
                         break;
                     default:
                         DB::table('SETTINGS')->insert([
-                            ['USER_ID' => Auth::id(), 'ITEM_ID' => $itemSetting->ID, 'ROW' => 3, 'COL' => 3, 'SIZEX' => 4, 'SIZEY' => 4, 'PAGE'=>'failure']
+                            ['USER_ID' => Auth::id(), 'ITEM_ID' => $itemSetting->ID, 'ROW' => 3, 'COL' => 3, 'SIZEX' => 4, 'SIZEY' => 4, 'PAGE' => 'failure']
                         ]);
                 }
 
@@ -146,13 +146,13 @@ class HomeController extends Controller
             $settings = DB::table('users')
                 ->join('SETTINGS', 'users.id', '=', 'SETTINGS.USER_ID')
                 ->join('ITEMS', 'SETTINGS.ITEM_ID', '=', 'ITEMS.ID')
-                ->where('user_id',Auth::id())
-                ->where('SETTINGS.PAGE','failure')
+                ->where('user_id', Auth::id())
+                ->where('SETTINGS.PAGE', 'failure')
                 ->select('SETTINGS.*', 'ITEMS.NAME')
                 ->get();
         }
         app()->setLocale($lang);
-        return view('new', compact('settings','evtlists'));
+        return view('new', compact('settings', 'evtlists'));
 
     }
 
@@ -189,11 +189,11 @@ class HomeController extends Controller
 
         $childs = array();
 
-        foreach($treeviews as  $treeview)
+        foreach ($treeviews as $treeview)
             $childs[$treeview->parent_id][] = $treeview;
         $childs[$treeview->name][] = $treeview;
         unset($treeview);
-        foreach($treeviews as $treeview)
+        foreach ($treeviews as $treeview)
             if (isset($childs[$treeview->id]))
                 $treeview->children = $childs[$treeview->id];
 
@@ -201,14 +201,44 @@ class HomeController extends Controller
 
 
     }
-    public function loadjstree() {
+
+    public function loadjstree()
+    {
         $treeviews = DB::table('treeviews')->get();
         //$this->showjstree();
         $tree = $this->showjstree();
+//        $data = [
+//            "text" => "i-SAM",
+//            "attr" => [
+//                "id" => "g_0",
+//                "rel" => "Root",
+//                "href" => "",
+//                "type" => 0,
+//                "icon" => "fa fa-lg fa-server status-",
+//                "gid" => "0",
+//                "nodeid" => ""
+//
+//            ],
+//            "children"=>[
+//                "text" => "Vietnam",
+//                "attr" => [
+//                    "id" => "g_1",
+//                    "rel" => "Root",
+//                    "href" => "",
+//                    "type" => 0,
+//                    "icon" => "fa fa-lg fa-server status-",
+//                    "gid" => "0",
+//                    "nodeid" => "g_0"
+//
+//                ]
+//            ]
+//        ];
+
 
         //dd($tree);
         return response()->json($tree);
     }
+
     public function controljstree()
     {
         return view('jstree/treeview');

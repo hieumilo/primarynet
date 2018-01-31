@@ -17,32 +17,34 @@
             {{--Son layout--}}
             <div class="row">
                 <div class="col-md-12">
+                    <div id="tree-container"></div>
                     <div class="gridster">
                         <ul>
                             {{--@foreach($settings as $key=>$setting)--}}
-                                <li data-row="1" data-col="1"
-                                    data-id="1"
-                                    data-sizex="1" data-sizey="6">
-                                    <section class="card card-blue-fill">
-                                        <header class="card-header">
-                                            {{trans('auth.panel-title')}}
-                                        </header>
-                                        <div class="card-block">
-                                            á
-                                        </div>
-                                    </section>
-                                </li><li data-row="1" data-col="1"
-                                    data-id="1"
-                                    data-sizex="5" data-sizey="6">
-                                    <section class="card card-blue-fill">
-                                        <header class="card-header">
-                                            {{trans('auth.panel-title')}}
-                                        </header>
-                                        <div class="card-block">
-                                            á
-                                        </div>
-                                    </section>
-                                </li>
+                            <li data-row="1" data-col="1"
+                                data-id="1"
+                                data-sizex="1" data-sizey="6">
+                                <section class="card card-blue-fill">
+                                    <header class="card-header">
+                                        {{trans('auth.panel-title')}}
+                                    </header>
+                                    <div class="card-block jstree-main">
+
+                                    </div>
+                                </section>
+                            </li>
+                            <li data-row="1" data-col="1"
+                                data-id="1"
+                                data-sizex="5" data-sizey="6">
+                                <section class="card card-blue-fill">
+                                    <header class="card-header">
+                                        {{trans('auth.panel-title')}}
+                                    </header>
+                                    <div class="card-block">
+                                        á
+                                    </div>
+                                </section>
+                            </li>
 
 
                         </ul>
@@ -58,15 +60,26 @@
 @endsection
 @section('scripts')
     <script>
-        $('#tree-container').jstree({
-            'plugins': ["wholerow", "checkbox"],
-            'core' : {
-                'data' : {
-                    "url" : "/jstree",
-                    "plugins" : [ "wholerow", "checkbox" ],
-                    "dataType" : "json" // needed only if you do not supply JSON headers
-                }
-            }
-        })
+
+        /*$.getJSON('http://192.168.0.5:5005/tree.php', function (data) {
+            $.each(data, function (key, value) {
+                if (data[key]['parent']=='g_') data[key]['parent']='#';
+            });
+            $('#tree-container')
+                    .jstree({
+                        "core" : {
+                            "data" : data,
+                            "themes": {
+                                "url": true,
+                                "icons": true,
+                                "dots": true
+                            },
+                            "check_callback": true
+                        },
+                        "plugins": [ "dnd" ]
+                    });
+
+        });*/
+
     </script>
 @endsection
