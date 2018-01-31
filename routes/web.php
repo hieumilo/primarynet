@@ -82,7 +82,3 @@ Route::get('/{lang?}','LanguageController@index');
 Route::get('/{lang?}/login','LanguageController@login');
 Route::get('/{lang?}/register','LanguageController@register');
 
-
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
