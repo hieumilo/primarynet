@@ -19,103 +19,31 @@
                 <div class="col-md-12">
                     <div class="gridster">
                         <ul>
-                            @foreach($settings as $key=>$setting)
-                                <li data-row="{{$setting->ROW}}" data-col="{{$setting->COL}}"
-                                    data-id="{{$setting->ID}}"
-                                    data-sizex="{{$setting->SIZEX}}" data-sizey="{{$setting->SIZEY}}">
-                                    @if($key==0)
-                                        <section class="card card-blue-fill">
-                                            <header class="card-header">
-                                                {{trans('auth.panel-title')}}
-                                            </header>
-                                            <div class="card-block">
-                                                <div id="chart1-packet" class="chartdiv"></div>
-                                            </div>
-                                        </section>
-                                    @elseif($key==1)
-                                        <section class="card card-blue-fill">
-                                            <header class="card-header">
-                                                {{trans('auth.panel-title')}}
-                                            </header>
-                                            <div class="card-block">
-                                                <div id="chart2-packet" class="chartdiv"></div>
-                                            </div>
-                                        </section>
-                                    @elseif($key==2)
-                                        <section class="card card-blue-fill">
-                                            <header class="card-header">
-                                                {{trans('auth.panel-title')}}
-                                            </header>
-                                            <div class="card-block">
-                                                <div id="chart3-packet" class="chartdiv"></div>
-                                            </div>
-                                        </section>
-                                    @elseif($key==3)
-                                        <section class="card card-blue-fill">
-                                            <header class="card-header">
-                                                {{trans('auth.panel-title')}}
-                                            </header>
-                                            <div class="card-block">
-                                                <div id="chart4-packet" class="chartdiv"></div>
-                                            </div>
-                                        </section>
-                                    @elseif($key==4)
-                                        <section class="card card-blue-fill">
-                                            <header class="card-header">
-                                                {{trans('auth.panel-title')}}
-                                            </header>
-                                            <div class="card-block">
-                                                <div id="chart5-packet" class="chartdiv"></div>
-                                            </div>
-                                        </section>
-                                    @elseif($key==5)
-                                        <section class="card card-blue-fill">
-                                            <header class="card-header">
-                                                {{trans('auth.panel-title')}}
-                                            </header>
-                                            <div class="card-block">
-                                                <div id="chart6-packet" class="chartdiv"></div>
-                                            </div>
-                                        </section>
-                                    @elseif($key==6)
-                                        <section class="card card-blue-fill">
-                                            <header class="card-header">
-                                                {{trans('auth.panel-title')}}
-                                            </header>
-                                            <div class="card-block">
-                                                á
-                                            </div>
-                                        </section>
-                                    @elseif($key==7)
-                                        <section class="card card-blue-fill">
-                                            <header class="card-header">
-                                                {{trans('auth.panel-title')}}
-                                            </header>
-                                            <div class="card-block">
-                                                á
-                                            </div>
-                                        </section>
-                                    @elseif($key==8)
-                                        <section class="card card-blue-fill">
-                                            <header class="card-header">
-                                                {{trans('auth.panel-title')}}
-                                            </header>
-                                            <div class="card-block">
-                                                á
-                                            </div>
-                                        </section>
-                                    @else
-                                        <section class="card card-blue-fill">
-                                            <header class="card-header">
-                                                {{trans('auth.panel-title')}}
-                                            </header>
-                                            <div class="card-block">
-                                                <div id="chart10" class="chartdiv"></div>
-                                            </div>
-                                        </section>
-                                    @endif
+                            {{--@foreach($settings as $key=>$setting)--}}
+                                <li data-row="1" data-col="1"
+                                    data-id="1"
+                                    data-sizex="1" data-sizey="6">
+                                    <section class="card card-blue-fill">
+                                        <header class="card-header">
+                                            {{trans('auth.panel-title')}}
+                                        </header>
+                                        <div class="card-block">
+                                            á
+                                        </div>
+                                    </section>
+                                </li><li data-row="1" data-col="1"
+                                    data-id="1"
+                                    data-sizex="5" data-sizey="6">
+                                    <section class="card card-blue-fill">
+                                        <header class="card-header">
+                                            {{trans('auth.panel-title')}}
+                                        </header>
+                                        <div class="card-block">
+                                            á
+                                        </div>
+                                    </section>
                                 </li>
-                            @endforeach
+
 
                         </ul>
                     </div>
