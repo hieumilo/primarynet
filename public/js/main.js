@@ -82,20 +82,7 @@ $(document).ready(function() {
         e.preventDefault();
         window.location.href= 'http://www.infra911.com/'+$(this).attr('href');
     });
+
+
 });
 
-
-
-/*$('body').on('mouseenter mouseleave','.dropdown',function(e){
-    var _d=$(e.target).closest('.dropdown-menu');_d.addClass('display-block');
-    setTimeout(function(){
-        _d[_d.is(':hover')?'addClass':'removeClass']('display-block');
-    },800);
-});*/
-
-// $('body').on('mouseenter mouseleave', '.dropdown', function (e) {
-//     var _d = $(e.target).close('.dropdown'); _d.addClass('show');
-//     setTimeout(function () {
-//         _d[_d.is(':hover')] ? 'addClass':'removeClass']('show');
-//     },100);
-// });
