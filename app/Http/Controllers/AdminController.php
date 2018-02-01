@@ -73,7 +73,6 @@ class AdminController extends Controller
         $evtlists = Evtlist::all();
 
         //get all setting
-
         $settings = DB::table('users')
             ->join('SETTINGS', 'users.id', '=', 'SETTINGS.USER_ID')
             ->join('ITEMS', 'SETTINGS.ITEM_ID', '=', 'ITEMS.ID')
@@ -161,7 +160,6 @@ class AdminController extends Controller
         return view('test');
     }
     public function jsTree($lang){
-        $evtlists = Evtlist::all();
 
         //get all setting
 
@@ -169,31 +167,30 @@ class AdminController extends Controller
             ->join('SETTINGS', 'users.id', '=', 'SETTINGS.USER_ID')
             ->join('ITEMS', 'SETTINGS.ITEM_ID', '=', 'ITEMS.ID')
             ->where('user_id',Auth::id())
-            ->where('SETTINGS.PAGE','packet')
+            ->where('SETTINGS.PAGE','jstree')
             ->select('SETTINGS.*', 'ITEMS.NAME')
             ->get();
-
         //check exist setting
         if ($settings->isEmpty()){
             //get all items
-            $itemSettings = DB::table('ITEMS')->skip(2)->take(3)->get();
+            $itemSettings = DB::table('ITEMS')->skip(17)->take(2)->get();
 
             //insert default to database
             foreach ($itemSettings as $key=>$itemSetting){
                 switch ($key) {
                     case 0:
                         DB::table('SETTINGS')->insert([
-                            ['USER_ID' => Auth::id(), 'ITEM_ID' => $itemSetting->ID, 'ROW' => 1, 'COL' => 1, 'SIZEX' => 1, 'SIZEY' => 1, 'PAGE'=>'packet']
+                            ['USER_ID' => Auth::id(), 'ITEM_ID' => $itemSetting->ID, 'ROW' => 1, 'COL' => 1, 'SIZEX' => 1, 'SIZEY' => 1, 'PAGE'=>'jstree']
                         ]);
                         break;
                     case 1:
                         DB::table('SETTINGS')->insert([
-                            ['USER_ID' => Auth::id(), 'ITEM_ID' => $itemSetting->ID, 'ROW' => 1, 'COL' => 1, 'SIZEX' => 1, 'SIZEY' => 1, 'PAGE'=>'packet']
+                            ['USER_ID' => Auth::id(), 'ITEM_ID' => $itemSetting->ID, 'ROW' => 1, 'COL' => 1, 'SIZEX' => 1, 'SIZEY' => 1, 'PAGE'=>'jstree']
                         ]);
                         break;
                     default:
                         DB::table('SETTINGS')->insert([
-                            ['USER_ID' => Auth::id(), 'ITEM_ID' => $itemSetting->ID, 'ROW' => 1, 'COL' => 1, 'SIZEX' => 1, 'SIZEY' => 1, 'PAGE'=>'packet']
+                            ['USER_ID' => Auth::id(), 'ITEM_ID' => $itemSetting->ID, 'ROW' => 1, 'COL' => 1, 'SIZEX' => 1, 'SIZEY' => 1, 'PAGE'=>'jstree']
                         ]);
                 }
 
@@ -202,12 +199,12 @@ class AdminController extends Controller
                 ->join('SETTINGS', 'users.id', '=', 'SETTINGS.USER_ID')
                 ->join('ITEMS', 'SETTINGS.ITEM_ID', '=', 'ITEMS.ID')
                 ->where('user_id',Auth::id())
-                ->where('SETTINGS.PAGE','packet')
+                ->where('SETTINGS.PAGE','jstree')
                 ->select('SETTINGS.*', 'ITEMS.NAME')
                 ->get();
         }
         app()->setLocale($lang);
-        return view('jstree', compact('settings','evtlists'));
+        return view('jstree', compact('settings'));
 
     }
 }
