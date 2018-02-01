@@ -79,6 +79,11 @@ $(document).ready(function() {
             $.getJSON('http://192.168.0.5:5005/tree.php', function (data) {
                 $.each(data, function (key, value) {
                     if (data[key]['parent']=='g_') data[key]['parent']='#';
+                    //add a properies
+                    data[key]["a_attr"]=({
+                        "gid":data[key]['gid'],
+                        "nodeid":data[key]['nodeid']
+                    });
                 });
                 $('#tree-container').jstree({
                         "core": {
