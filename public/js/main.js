@@ -49,20 +49,6 @@ $(document).ready(function () {
 
     $('.dropdown-toggle').prop('disabled', true);
 
-    /*$('.site-header-collapsed .dropdown').each(function() {
-        $('.dropdown-toggle').hover(
-            function () {
-                setTimeout(function () {
-                    $('.dropdown-menu').addClass('display-block')
-                }, 3000);
-            },
-            function () {
-                setTimeout(function () {
-                    $('.dropdown-menu').removeClass('display-block')
-                }, 3000);
-            }
-        )
-    });*/
 
 
 });
@@ -84,25 +70,6 @@ $(document).ready(function() {
     });
 });
 
-// $.getJSON('http://192.168.0.5:5005/tree.php', function (data) {
-//     $.each(data, function (key, value) {
-//         if (data[key]['parent']=='g_') data[key]['parent']='#';
-//     });
-//     $('#tree-container')
-//         .jstree({
-//             "core" : {
-//                 "data" : data
-//                 /*"themes": {
-//                     "url": true,
-//                     "icons": true,
-//                     "dots": true
-//                 },
-//                 "check_callback": true*/
-//             },
-//             "plugins": [ "dnd","search" ]
-//         });
-//
-// });
 
 
 setInterval(function(){
@@ -146,14 +113,15 @@ setInterval(function(){
         }
     };
     $(document).ready(function () {
+        $('#g_0').removeClass('jstree-open');
+        $('#g_0').attr("aria-expanded", "false");
         jstree.init();
 
         setInterval(function(){
+            $('#tree-container').removeAttr('aria-multiselectable','aria-activedescendant','aria-busy','tabindex','role');
+            $('#tree-container').removeClass('jstree','jstree-1','jstree-default');
             jstree.init();
-        },5000);
+        },60000);
 
-        // setTimeout(function(){
-        //     jstree.init();
-        // }, 5000);
     });
 })(jQuery, window, document);

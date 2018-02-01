@@ -17,7 +17,7 @@
             {{--Son layout--}}
             <div class="row">
                 <div class="col-md-12">
-                    <div id="tree-container"></div>
+                    {{--<div id="tree-container"></div>--}}
                     <div class="gridster">
                         <ul>
                             {{--@foreach($settings as $key=>$setting)--}}
@@ -31,7 +31,7 @@
 
                                     <div class="card-block jstree-main">
 
-
+                                        <div id="tree-container"></div>
                                     </div>
                                 </section>
                             </li>
