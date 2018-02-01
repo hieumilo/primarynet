@@ -180,17 +180,17 @@ class AdminController extends Controller
                 switch ($key) {
                     case 0:
                         DB::table('SETTINGS')->insert([
-                            ['USER_ID' => Auth::id(), 'ITEM_ID' => $itemSetting->ID, 'ROW' => 1, 'COL' => 1, 'SIZEX' => 1, 'SIZEY' => 1, 'PAGE'=>'jstree']
+                            ['USER_ID' => Auth::id(), 'ITEM_ID' => $itemSetting->ID, 'ROW' => 1, 'COL' => 1, 'SIZEX' => 1, 'SIZEY' => 6, 'PAGE'=>'jstree']
                         ]);
                         break;
                     case 1:
                         DB::table('SETTINGS')->insert([
-                            ['USER_ID' => Auth::id(), 'ITEM_ID' => $itemSetting->ID, 'ROW' => 1, 'COL' => 1, 'SIZEX' => 1, 'SIZEY' => 1, 'PAGE'=>'jstree']
+                            ['USER_ID' => Auth::id(), 'ITEM_ID' => $itemSetting->ID, 'ROW' => 1, 'COL' => 2, 'SIZEX' => 5, 'SIZEY' => 6, 'PAGE'=>'jstree']
                         ]);
                         break;
                     default:
                         DB::table('SETTINGS')->insert([
-                            ['USER_ID' => Auth::id(), 'ITEM_ID' => $itemSetting->ID, 'ROW' => 1, 'COL' => 1, 'SIZEX' => 1, 'SIZEY' => 1, 'PAGE'=>'jstree']
+                            ['USER_ID' => Auth::id(), 'ITEM_ID' => $itemSetting->ID, 'ROW' => 1, 'COL' => 2, 'SIZEX' => 5, 'SIZEY' => 6, 'PAGE'=>'jstree']
                         ]);
                 }
 

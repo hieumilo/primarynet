@@ -9,7 +9,7 @@
 </head>
 
 <body>
-<div id="tree-container">
+<div id="tree">
 
 </div>
 
@@ -31,30 +31,11 @@
             });
 
         });
-        $('#tree-container').jstree({
-                "core": {
-                    "data": data
-                }
-            }
-        );
+
     });
     $(document).ready(function () {
-        $('#jstree')
-        // listen for event
-            .on('changed.jstree', function (e, data) {
-                var i, j, r = [];
-                for(i = 0, j = data.selected.length; i < j; i++) {
-                    r.push(data.instance.get_node(data.selected[i]).text);
-                }
-                $('#event_result').html('Selected: ' + r.join(', '));
-            })
-            // create the instance
-            .jstree();
-        $("#tree-container li .jstree-anchor").click(function (e) {
 
-            e.preventDefault();
-            console.log("http://www.infra911.com/data.php?Act=data1_2&paramGID="+$(this).attr('gid')+"&nodeid="+$(this).attr('nodeid'))
-        })
+
     });
 </script>
 </body>
