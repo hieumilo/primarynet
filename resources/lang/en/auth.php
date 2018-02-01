@@ -55,7 +55,20 @@ return [
     'system-description'=>'System Description',
     'system-name'=>'System Name',
     'snmp-status'=>'SNMP Status',
-    'affiliated-group'=>'Affiliated Group'
+    'affiliated-group'=>'Affiliated Group',
+    'promise'=>'Promise',
+    'collection'=>'Collection',
+    'synchronous'=>'Synchronous',
+    'asynchronous'=>'Asynchronous',
+    'snmp-community'=>'SNMP Community',
+    'snmp-timeout'=>'SNMP Timeout',
+    'system-type'=>'System Type',
+    'explanation'=>'Explanation',
+    'system-history'=>'System History',
+
+    'data'=>'Data',
+    'hkt-timeout'=>'HKT Timeout'
+
 
 
 ];
