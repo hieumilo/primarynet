@@ -21,12 +21,13 @@ textarea.form-control{
 
 .table-showInf th{
     background-color: #516b84;
-    padding: 20px 100px 20px 20px;
+    padding: 2px 90px 3px 5px;
     border-bottom: 1px solid #b7b0b0;
     border-right: 1px solid #b7b0b0;
 }
 .table-showInf td{
-    padding: 5px 50px 5px 50px;
+    text-align: left;
+    padding: 0px 10px 0px 10px;
     border-bottom: 1px solid #b7b0b0;
     border-left: 1px solid #b7b0b0;
 }
