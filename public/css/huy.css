@@ -11,6 +11,7 @@
     padding: 5px;
     border-bottom: 1px solid #b7b0b0;
     border-left: 1px solid #b7b0b0;
+    font-weight: 400;
 }
 textarea.form-control{
     width: 300px;
@@ -30,6 +31,7 @@ textarea.form-control{
     padding: 0px 10px 0px 10px;
     border-bottom: 1px solid #b7b0b0;
     border-left: 1px solid #b7b0b0;
+    font-weight: 400;
 }
 .tab-pane {
     min-height: 330px;

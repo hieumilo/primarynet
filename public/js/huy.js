@@ -2,7 +2,7 @@ $.get('http://www.infra911.com/data.php?Act=data1_6&paramGID=0&GidList=', functi
 
 }).done(function(data){
     var result = $.parseJSON(data.replace(/'/g, '"'));
-    var html = '<table class="table-showInf">' +
+    var html = '<table class="table-editInf">' +
                     '<tr>' +
                         '<th>' +
                         '<i class="fa fa-arrow-circle-right fa-1"></i>'+ 'Polltime' +
