@@ -40,6 +40,12 @@
                             >
                         </v-avatar>
                     </v-btn>
+                    <v-btn icon
+                           dark
+                           large
+                           href="/admin/login">
+                        <v-icon>account_circle</v-icon>
+                    </v-btn>
                 </div>
             </v-toolbar>
             <v-btn
@@ -134,7 +140,7 @@
                                 class="blue lighten-2 mt-5"
                                 dark
                                 large
-                                href="/pre-made-themes"
+                                href="#"
                         >
                             Get Started
                         </v-btn>
@@ -220,7 +226,7 @@
                                 class="blue lighten-2 mt-5"
                                 dark
                                 large
-                                href="/pre-made-themes"
+                                href="#"
                         >
                             Get Started
                         </v-btn>
@@ -289,8 +295,8 @@
                         <div class="white--text ml-3">
                             Made with
                             <v-icon class="red--text">favorite</v-icon>
-                            by <a class="white--text" href="https://vuetifyjs.com" target="_blank">Vuetify</a>
-                            and <a class="white--text" href="https://github.com/vwxyzjn">Costa Huang</a>
+                            by <a class="white--text" href="#" target="_blank">Vuetify</a>
+                            and <a class="white--text" href="#">Costa Huang</a>
                         </div>
                     </v-flex>
                 </v-layout>
@@ -304,40 +310,10 @@
 
 export default {
     data: () => ({
+
         dialog: false,
         drawer: null,
-        items: [
-            { icon: 'contacts', text: 'Contacts' },
-            { icon: 'history', text: 'Frequently contacted' },
-            { icon: 'content_copy', text: 'Duplicates' },
-            {
-                icon: 'keyboard_arrow_up',
-                'icon-alt': 'keyboard_arrow_down',
-                text: 'Labels',
-                model: true,
-                children: [
-                    { icon: 'add', text: 'Create label' }
-                ]
-            },
-            {
-                icon: 'keyboard_arrow_up',
-                'icon-alt': 'keyboard_arrow_down',
-                text: 'More',
-                model: false,
-                children: [
-                    { text: 'Import' },
-                    { text: 'Export' },
-                    { text: 'Print' },
-                    { text: 'Undo changes' },
-                    { text: 'Other contacts' }
-                ]
-            },
-            { icon: 'settings', text: 'Settings' },
-            { icon: 'chat_bubble', text: 'Send feedback' },
-            { icon: 'help', text: 'Help' },
-            { icon: 'phonelink', text: 'App downloads' },
-            { icon: 'keyboard', text: 'Go to the old version' }
-        ]
+
     }),
     props: {
         source: String
