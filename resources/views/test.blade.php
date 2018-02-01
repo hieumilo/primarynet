@@ -3,22 +3,60 @@
 <head>
     <meta charset="UTF-8">
     <title>Title of the document</title>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script>
-        $(document).ready(function () {
-            $.get('http://192.168.0.5:5005/tree.php',function () {
-
-            }).done(function (data) {
-                var json = eval( "(" + data.toString() + ")" );
-                console.log(json);
-            })
-        });
-    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jstree/3.2.1/themes/default/style.min.css"/>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 </head>
 
 <body>
+<div id="tree-container">
 
+</div>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jstree/3.3.5/jstree.min.js"></script>
+<script>
+    $.getJSON('http://192.168.0.5:5005/tree.php', function (data) {
+        $.each(data, function (key, value) {
+            //root  must be value=#
+            if (data[key]['parent'] == 'g_') data[key]['parent'] = '#';
+
+            //add a properies
+            data[key]["a_attr"]=({
+                "gid":data[key]['gid'],
+                "nodeid":data[key]['nodeid']
+            });
+
+        });
+        $('#tree-container').jstree({
+                "core": {
+                    "data": data
+                }
+            }
+        );
+    });
+    $(document).ready(function () {
+        $('#jstree')
+        // listen for event
+            .on('changed.jstree', function (e, data) {
+                var i, j, r = [];
+                for(i = 0, j = data.selected.length; i < j; i++) {
+                    r.push(data.instance.get_node(data.selected[i]).text);
+                }
+                $('#event_result').html('Selected: ' + r.join(', '));
+            })
+            // create the instance
+            .jstree();
+        $("#tree-container li .jstree-anchor").click(function (e) {
+
+            e.preventDefault();
+            console.log("http://www.infra911.com/data.php?Act=data1_2&paramGID="+$(this).attr('gid')+"&nodeid="+$(this).attr('nodeid'))
+        })
+    });
+</script>
 </body>
 
 </html>

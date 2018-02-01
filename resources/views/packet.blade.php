@@ -227,7 +227,7 @@
             'plugins': ["wholerow", "checkbox"],
             'core' : {
                 'data' : {
-                    "url" : "/jstree",
+                    "url" : "http://192.168.0.5:5005/tree.php",
                     "plugins" : [ "wholerow", "checkbox" ],
                     "dataType" : "json" // needed only if you do not supply JSON headers
                 }
