@@ -222,16 +222,16 @@
     @endrole
 @endsection
 @section('scripts')
-    <script>
-        $('#tree-container').jstree({
-            'plugins': ["wholerow", "checkbox"],
-            'core' : {
-                'data' : {
-                    "url" : "http://192.168.0.5:5005/tree.php",
-                    "plugins" : [ "wholerow", "checkbox" ],
-                    "dataType" : "json" // needed only if you do not supply JSON headers
-                }
-            }
-        })
-    </script>
+    {{--<script>--}}
+        {{--$('#tree-container').jstree({--}}
+            {{--'plugins': ["wholerow", "checkbox"],--}}
+            {{--'core' : {--}}
+                {{--'data' : {--}}
+                    {{--"url" : "http://192.168.0.5:5005/tree.php",--}}
+                    {{--"plugins" : [ "wholerow", "checkbox" ],--}}
+                    {{--"dataType" : "json" // needed only if you do not supply JSON headers--}}
+                {{--}--}}
+            {{--}--}}
+        {{--})--}}
+    {{--</script>--}}
 @endsection
