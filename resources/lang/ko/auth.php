@@ -41,5 +41,9 @@ return [
     'third-test'=>'제 3 자 테스트',
 
     'add-to'=>'추가',
-    'delete'=>'삭제'
+    'delete'=>'삭제',
+
+    'node'=>'마디',
+    'failure'=>'실패',
+    'packet'=>'패킷'
 ];

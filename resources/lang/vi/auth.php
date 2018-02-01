@@ -41,5 +41,9 @@ return [
     'third-test'=>'Kiểm tra bên thứ ba',
 
     'add-to'=>'Thêm',
-    'delete'=>'Xóa'
+    'delete'=>'Xóa',
+
+    'node'=>'Nút',
+    'failure'=>'Thất bại',
+    'packet'=>'Gói'
 ];

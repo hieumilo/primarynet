@@ -46,22 +46,21 @@
                                                         <div class="col-md-5">
                                                             <table class="table-showInf" id="table-head-1">
                                                                 <tr>
-                                                                    <th><i class="fa fa-arrow-circle-right fa-1"></i> Group Name
+                                                                    <th><i class="fa fa-arrow-circle-right fa-1"></i> {{trans('auth.group-name')}}
                                                                     </th>
                                                                     <td>
                                                                         Head Office
                                                                     </td>
                                                                 </tr>
                                                                 <tr>
-                                                                    <th><i class="fa fa-arrow-circle-right fa-1"></i> Ip Adress
+                                                                    <th><i class="fa fa-arrow-circle-right fa-1"></i> {{trans('auth.ip-address')}}
                                                                     </th>
                                                                     <td>
                                                                         160.154.0.87
                                                                     </td>
                                                                 </tr>
                                                                 <tr>
-                                                                    <th><i class="fa fa-arrow-circle-right fa-1"></i> System
-                                                                        Description
+                                                                    <th><i class="fa fa-arrow-circle-right fa-1"></i> {{trans('auth.system-description')}}
                                                                     </th>
                                                                     <td>
                                                                         Cisco IOS Software, C3560 Software
@@ -75,15 +74,14 @@
                                                         <div class="col-md-5">
                                                             <table class="table-showInf" id="table-head-2">
                                                                 <tr>
-                                                                    <th><i class="fa fa-arrow-circle-right fa-1"></i> Host Name
+                                                                    <th><i class="fa fa-arrow-circle-right fa-1"></i> {{trans('auth.host-name')}}
                                                                     </th>
                                                                     <td>
                                                                         http://www.infra911.com
                                                                     </td>
                                                                 </tr>
                                                                 <tr>
-                                                                    <th><i class="fa fa-arrow-circle-right fa-1"></i> System
-                                                                        Name
+                                                                    <th><i class="fa fa-arrow-circle-right fa-1"></i> {{trans('auth.system-name')}}
                                                                     </th>
                                                                     <td>
                                                                         http://www.infra911.com
@@ -102,7 +100,7 @@
                                                                         <a class="nav-link" href="#tabs-2-tab-1" role="tab"
                                                                            data-toggle="tab" aria-expanded="false">
                                                                 <span class="nav-link-in">
-                                                                    SNMP Status
+                                                                    {{trans('auth.snmp-status')}}
                                                                 </span>
                                                                         </a>
                                                                     </ol>
@@ -140,7 +138,7 @@
                                                                             <tr>
                                                                                 <th>
                                                                                     <i class="fa fa-arrow-circle-right fa-1"></i>
-                                                                                    Affiliated Group
+                                                                                    {{trans('auth.affiliated-group')}}
                                                                                 </th>
                                                                                 <td>
                                                                                     <select class="form-control" id="sel1">

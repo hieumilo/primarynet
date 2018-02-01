@@ -303,12 +303,12 @@
                             <a class="dropdown-toggle" id="dd-header-social" data-target="#"
                                href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <span class="font-icon font-icon-cogwheel"></span>
-                                <span class="lbl">Failure
+                                <span class="lbl">{{trans('auth.failure')}}
                                     </span>
                             </a>
                             <div class="dropdown-menu dropdown-menu-left" aria-label="dd-header-social">
-                                <a class="dropdown-item" href="/{{config('app.locale')}}/dashboard/new" style="color: red"><span class="font-icon font-icon-server"></span>Failure</a>
-                                <a class="dropdown-item" href="/{{config('app.locale')}}/dashboard"><span class="font-icon font-icon-doc"></span>Dashboard Old</a>
+                                <a class="dropdown-item" href="/{{config('app.locale')}}/dashboard/new" style="color: red"><span class="font-icon font-icon-server"></span>{{trans('auth.failure')}}</a>
+                                <a class="dropdown-item" href="/{{config('app.locale')}}/dashboard"><span class="font-icon font-icon-doc"></span>{{trans('auth.dashboard')}}</a>
                             </div>
                         </div>
 
@@ -317,7 +317,7 @@
                                href="http://example.com/" data-toggle="dropdown" aria-haspopup="true"
                                aria-expanded="false">
                                 <span class="font-icon font-icon-share"></span>
-                                <span class="lbl">Packet</span>
+                                <span class="lbl">{{trans('auth.packet')}}</span>
                             </a>
 
                             <div class="dropdown-menu" aria-labelledby="dd-header-social">
@@ -329,13 +329,13 @@
                                     {{--Official App</a>--}}
                                 {{--<a class="dropdown-item" href="#"><span class="font-icon font-icon-users"></span>CATprer--}}
                                     {{--Test</a>--}}
-                                <a class="dropdown-item" href="/{{config('app.locale')}}/dashboard/packet"><span class="font-icon font-icon-comments"></span>Packet</a>
+                                <a class="dropdown-item" href="/{{config('app.locale')}}/dashboard/packet"><span class="font-icon font-icon-comments"></span>{{trans('auth.packet')}}</a>
                             </div>
                         </div>
                         <div class="dropdown dropdown-typical">
                             <a href="/{{config('app.locale')}}/dashboard/jstree" class="dropdown-toggle no-arr">
                                 <span class="font-icon font-icon-page"></span>
-                                <span class="lbl">{{trans('auth.project')}}</span>
+                                <span class="lbl">{{trans('auth.node')}}</span>
                                 <span class="label label-pill label-danger">35</span>
                             </a>
                         </div>
