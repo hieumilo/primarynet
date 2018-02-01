@@ -34,4 +34,6 @@ textarea.form-control{
 .tab-pane {
     min-height: 330px;
 }
-
+.border-all-content {
+    overflow: auto;
+}

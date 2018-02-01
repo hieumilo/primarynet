@@ -38,7 +38,7 @@
                             <li data-row="1" data-col="1"
                                 data-id="1"
                                 data-sizex="5" data-sizey="6">
-                                <section class="card card-blue-fill">
+                                <section class="card card-blue-fill border-all-content">
                                     <header class="card-header">
                                         {{trans('auth.panel-title')}}
                                     </header>
