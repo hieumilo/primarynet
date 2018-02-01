@@ -1,6 +1,5 @@
 //get data serve
 function dataGrid(gid, nodeid) {
-
     $.get('http://www.infra911.com/data.php?Act=data1_6&paramGID='+gid+'&GidList='+nodeid, function (data) {
         var result = $.parseJSON(data.replace(/'/g, '"'));
         var html = '<table class="table-showInf">' +
@@ -40,6 +39,8 @@ function dataGrid(gid, nodeid) {
         $('#tabs-2-tab-1').empty().append(html);
     });
 }
+
+
 $(document).ready(function() {
     //load default data
     dataGrid(0,6);
