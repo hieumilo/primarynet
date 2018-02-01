@@ -87,14 +87,63 @@ $(document).ready(function() {
                 });
                 $('#tree-container').jstree({
                         "core": {
-                            "data":data
+                            "data":data,
+                            "check_callback" : true,
+                            "multiple" : false,
+                            'themes' : {
+                                'responsive' : false,
+                                "dots" : false
+                            }
                         },
                         "checkbox": {
                             "keep_selected_style": false
                         },
-                        "plugins": ["dnd","search" ]
+
+                        "plugins": ["state","contextmenu"]
+                        //"dnd","search" ,
+                }).on('create_node.jstree', function (e, data) {
+
+
+                    if(!(localStorage.getItem('tree') === null)){
+                        console.log(JSON.parse(localStorage.getItem('tree')));
+                        localStorage.setItem('tree',JSON.parse(localStorage.getItem('tree')).push({
+                            "id": guid(),
+                            'parent': data.node.parent,
+                            'position': data.position,
+                            'text': data.node.text,
+                            'a_attr': {'gid': "1", 'nodeid': "1"},
+                            'state': {'opened': "false", 'disabled': "false", 'selected': "false"}
+                        }));
+                    }else{
+                        localStorage.setItem('tree', JSON.stringify([{
+                            "id": guid(),
+                            'parent': data.node.parent,
+                            'position': data.position,
+                            'text': data.node.text,
+                            'a_attr': {'gid': "1", 'nodeid': "1"},
+                            'state': {'opened': "false", 'disabled': "false", 'selected': "false"}
+                        }]));
                     }
-                );
+
+                }).on('rename_node.jstree', function (e, data) {
+
+                    console.log( [{
+                        "id": guid(),
+                        'parent': data.node.parent,
+                        'position': data.position,
+                        'text': data.node.text,
+                        'a_attr': {'gid': "1", 'nodeid': "1"},
+                        'state': {'opened': "false", 'disabled': "false", 'selected': "false"}
+                    }]);
+                }).on('delete_node.jstree', function (e, data) {
+                    $.get('response.php?operation=delete_node', {'id': data.node.id})
+                        .fail(function () {
+                            data.instance.refresh();
+                        });
+                });
+
+
+
             });
         }
     };
@@ -112,3 +161,12 @@ $(document).ready(function() {
     });
 })(jQuery, window, document);
 
+function guid() {
+    function s4() {
+        return Math.floor((1 + Math.random()) * 0x10000)
+            .toString(16)
+            .substring(1);
+    }
+    return s4() + s4() + '-' + s4() + '-' + s4() + '-' +
+        s4() + '-' + s4() + s4() + s4();
+}
