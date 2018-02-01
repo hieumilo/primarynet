@@ -7,8 +7,6 @@ use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Jstree;
-
-
 use App\Evtlist;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Auth;
@@ -28,16 +26,6 @@ class AdminController extends Controller
         return view('user');
     }
 
-//    public function tableProgress(){
-//        $html = file_get_html("http://www.infra911.com/pkt_data.php?Act=pkt_dash7_1&prefix=p1");
-//
-//        $result = $html->find('div.gauge_square');
-//        //$count =  count($result);
-////        foreach ($result as $r){
-////            echo $r;
-////        }
-//        return view('packet', compact('result'));
-//    }
     public function alluser()
     {
         $data = DB::table('users')
