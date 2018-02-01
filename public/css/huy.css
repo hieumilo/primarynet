@@ -1,13 +1,13 @@
-.table-showInf{
+.table-editInf, .table-showInf{
     border: 1px solid #b7b0b0;
 }
-th{
+.table-editInf  th{
     background-color: #516b84;
-    padding: 20px 100px 20px 20px;
+    padding: 20px 70px 20px 20px;
     border-bottom: 1px solid #b7b0b0;
     border-right: 1px solid #b7b0b0;
 }
-td{
+.table-editInf td{
     padding: 5px;
     border-bottom: 1px solid #b7b0b0;
     border-left: 1px solid #b7b0b0;
@@ -18,3 +18,17 @@ textarea.form-control{
 .tabs-section>.tab-content:not(.no-styled){
 
 }
+
+.table-showInf th{
+    background-color: #516b84;
+    padding: 2px 90px 3px 5px;
+    border-bottom: 1px solid #b7b0b0;
+    border-right: 1px solid #b7b0b0;
+}
+.table-showInf td{
+    text-align: left;
+    padding: 0px 10px 0px 10px;
+    border-bottom: 1px solid #b7b0b0;
+    border-left: 1px solid #b7b0b0;
+}
+
