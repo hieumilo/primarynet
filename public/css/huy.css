@@ -3,8 +3,9 @@
 }
 .table-editInf  th{
     background-color: #516b84;
-    padding: 20px 70px 20px 20px;
+    padding: 10px;
     border-bottom: 1px solid #b7b0b0;
+    width: 300px;
     border-right: 1px solid #b7b0b0;
 }
 .table-editInf td{
@@ -21,7 +22,8 @@ textarea.form-control{
 
 .table-showInf th{
     background-color: #516b84;
-    padding: 2px 90px 3px 5px;
+    padding: 10px;
+    width: 300px;
     border-bottom: 1px solid #b7b0b0;
     border-right: 1px solid #b7b0b0;
 }

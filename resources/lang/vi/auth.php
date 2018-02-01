@@ -45,5 +45,27 @@ return [
 
     'node'=>'Nút',
     'failure'=>'Thất bại',
-    'packet'=>'Gói'
+    'packet'=>'Gói',
+
+    /*jstree route*/
+    'group-name'=>'Tên nhóm',
+    'ip-address'=>'Địa chỉ Ip',
+    'host-name'=>'Tên máy chủ',
+    'system-description'=>'Mô tả hệ thống',
+    'system-name'=>'Tên hệ thống',
+    'snmp-status'=>'Trạng thái SNMP',
+    'affiliated-group'=>'Nhóm liên kết',
+    'promise'=>'Lời hứa',
+    'collection'=>'Bộ sưu tập',
+    'synchronous'=>'Đồng bộ',
+    'asynchronous'=>'Bất đồng bộ',
+    'snmp-community'=>'SNMP Chung',
+    'snmp-timeout'=>'Thời gian kết thúc SNMP',
+    'system-type'=>'Loại hệ thống',
+    'explanation'=>'Giải thích',
+    'system-history'=>'Lịch sử hệ thống',
+
+    'data'=>'Dữ liệu',
+    'hkt-timeout'=>'Thời gian kết thúc HKT'
+
 ];
