@@ -41,7 +41,7 @@ table {
     background: red !important;
 }
 .gridster ul {
-    background-color: #EFEFEF;
+    /*background-color: #EFEFEF;*/
 }
 .gridster li {
     font-size: 1em;
@@ -206,4 +206,11 @@ section.card{
 }
 .jstree-main {
     overflow: hidden;
+}
+/*#tree-container ul {*/
+    /*background-color: white;*/
+/*}*/
+.jstree-default .jstree-disabled.jstree-clicked {
+    background: white;
+    box-shadow: inset 0 0 1px #ffffff;
 }
