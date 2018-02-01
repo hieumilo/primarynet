@@ -39,3 +39,7 @@ textarea.form-control{
 .border-all-content {
     overflow: auto;
 }
+.style-btnSave {
+    text-align: left;
+    margin-top: 20px;
+}
