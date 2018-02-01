@@ -2,16 +2,6 @@ $.get('http://www.infra911.com/data.php?Act=data1_6&paramGID=0&GidList=', functi
 
 }).done(function(data){
     var result = $.parseJSON(data.replace(/'/g, '"'));
-    // var polltime = result[1].polltime;
-    // var warning = result[1].warning;
-    // var alarm = result[1].alarm;
-    // var critical = result[1].critical;
-    // var down = result[1].down;
-    // $('#tab-2-polltime').empty().append(polltime);
-    // $('#tab-2-warning').empty().append(warning);
-    // $('#tab-2-alarm').empty().append(alarm);
-    // $('#tab-2-critical').empty().append(critical);
-    // $('#tab-2-down').empty().append(down);
     var html = '<table class="table-showInf">' +
                     '<tr>' +
                         '<th>' +

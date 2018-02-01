@@ -108,16 +108,9 @@
                                                             </a>
                                                         </ol>
                                                         <ol class="nav-item">
-                                                            <a class="nav-link" href="#tabs-2-tab-3" role="tab" data-toggle="tab" aria-expanded="true">
+                                                            <a class ="nav-link" href="#tabs-2-tab-3" role="tab" data-toggle="tab" aria-expanded="true">
                                                                 <span class="nav-link-in">
                                                                     ICMP/CPU/Memory
-                                                                </span>
-                                                            </a>
-                                                        </ol>
-                                                        <ol class="nav-item">
-                                                            <a class="nav-link" href="#tabs-2-tab-4" role="tab" data-toggle="tab" aria-expanded="true">
-                                                                <span class="nav-link-in">
-                                                                    Map Icon
                                                                 </span>
                                                             </a>
                                                         </ol>
@@ -332,9 +325,6 @@
                                                             </table>
                                                         </div>
                                                     </div>
-                                                </div><!--.tab-pane-->
-                                                <div role="tabpanel" class="tab-pane fade" id="tabs-2-tab-4" aria-expanded="false">
-                                                    Tab4
                                                 </div><!--.tab-pane-->
                                             </div>
 

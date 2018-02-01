@@ -31,4 +31,7 @@ textarea.form-control{
     border-bottom: 1px solid #b7b0b0;
     border-left: 1px solid #b7b0b0;
 }
+.tab-pane {
+    min-height: 330px;
+}
 
