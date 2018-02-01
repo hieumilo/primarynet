@@ -204,3 +204,6 @@ section.card{
 .dropdown-menu-notif {
     left: -160px;
 }
+.jstree-main {
+    overflow: hidden;
+}

@@ -37,7 +37,7 @@
 
     <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="/css/styles.css">
-
+    <link rel="stylesheet" href="/css/huy.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/dsmorse-gridster@0.7.0/dist/jquery.gridster.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.6.2/sweetalert2.min.css" />
 
@@ -47,7 +47,6 @@
 
     <link rel="stylesheet" href="/css/separate/pages/login.min.css">
 </head>
-<body>
 
 <input type="hidden" id="remember-token" value="{{Auth::getUser()->getRememberToken()}}">
 
@@ -57,7 +56,6 @@
             <img class="hidden-md-down" src="/img/logo-2.png" alt="">
             <img class="hidden-lg-down" src="/img/logo-2-mob.png" alt="">
         </a>
-
         <button id="show-hide-sidebar-toggle" class="show-hide-sidebar">
             <span>toggle menu</span>
         </button>
@@ -480,6 +478,8 @@
 <script src="https://www.amcharts.com/lib/3/pie.js"></script>
 <script src="/js/main-chart.js"></script>
 <script src="/js/lib/jstree/jstree.min.js"></script>
+<script src="/js/lib/input-mask/jquery.mask.min.js"></script>
+<script src = "/js/huy.js"></script>
 {{--DataTable JS --}}
 
 <script src="/js/lib/bootstrap-table/bootstrap-table.js"></script>

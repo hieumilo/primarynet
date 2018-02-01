@@ -83,6 +83,39 @@ $(document).ready(function() {
         window.location.href= 'http://www.infra911.com/'+$(this).attr('href');
     });
 
-
 });
+
+
+(function ($, window, document, undefined) {
+    var jstree = {
+        init: function () {
+            $.getJSON('http://192.168.0.5:5005/tree.php', function (data) {
+                $.each(data, function (key, value) {
+                    if (data[key]['parent']=='g_') data[key]['parent']='#';
+                });
+                $('#tree-container').jstree({
+                        "core": {
+                            "data":data
+                        },
+                        "checkbox": {
+                            "keep_selected_style": false
+                        },
+                        "plugins": ["dnd","search" ]
+                    }
+                );
+            });
+        }
+    };
+    $(document).ready(function () {
+        jstree.init();
+
+        setInterval(function(){
+            jstree.init();
+        },5000);
+
+        // setTimeout(function(){
+        //     jstree.init();
+        // }, 5000);
+    });
+})(jQuery, window, document);
 
