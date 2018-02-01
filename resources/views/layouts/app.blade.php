@@ -301,7 +301,7 @@
                         {{--</div>--}}
                         <div class="dropdown dropdown-typical">
                             <a class="dropdown-toggle" id="dd-header-social" data-target="#"
-                               href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                               href="/{{config('app.locale')}}/dashboard/new" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <span class="font-icon font-icon-cogwheel"></span>
                                 <span class="lbl">{{trans('auth.failure')}}
                                     </span>
@@ -314,7 +314,7 @@
 
                         <div class="dropdown dropdown-typical">
                             <a class="dropdown-toggle" id="dd-header-social" data-target="#"
-                               href="http://example.com/" data-toggle="dropdown" aria-haspopup="true"
+                               href="/{{config('app.locale')}}/dashboard/packet" data-toggle="dropdown" aria-haspopup="true"
                                aria-expanded="false">
                                 <span class="font-icon font-icon-share"></span>
                                 <span class="lbl">{{trans('auth.packet')}}</span>
