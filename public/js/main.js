@@ -120,6 +120,32 @@ $(document).ready(function () {
                         "items": function ($node) {
                             var tree = $("#tree-container").jstree(true);
                             return {
+
+                                "Create": {
+                                    "separator_before": false,
+                                    "separator_after": false,
+                                    "label": "Create",
+                                    "action": function (obj) {
+                                        $node = tree.create_node($node);
+                                        tree.edit($node);
+                                    }
+                                },
+                                "Rename": {
+                                    "separator_before": false,
+                                    "separator_after": false,
+                                    "label": "Rename",
+                                    "action": function (obj) {
+                                        tree.edit($node);
+                                    }
+                                },
+                                "Remove": {
+                                    "separator_before": false,
+                                    "separator_after": false,
+                                    "label": "Remove",
+                                    "action": function (obj) {
+                                        tree.delete_node($node);
+                                    }
+                                },
                                 "ViewGrid": {
                                     "separator_before": false,
                                     "separator_after": false,
@@ -132,6 +158,7 @@ $(document).ready(function () {
                             }
                         }
                      }
+
                     //"dnd","search" ,
                 }).on('ready.jstree click', function (e, data) {
                     $('').removeClass('').addClass('fa fa-lg fa-server status-critical');
@@ -167,7 +194,7 @@ $(document).ready(function () {
                     //console.log(jsonParseData);
                     for (var i = 0; i < jsonParseData.length; i++) {
                         if (jsonParseData[i]['id'] == data.node.id) {
-                            jsonParseData[i]['text']=data.text;
+                            jsonParseData[i]['text'] = data.text;
                             insertData = localStorage.setItem('data', JSON.stringify(jsonParseData));
                         }
                     }

@@ -1411,6 +1411,7 @@
                 $('#table-tree').empty().append(table).hide().fadeIn('slow');
             });
         }
+
         function viewGrid(data) {
             $.get('http://www.infra911.com/data.php?Act=data1_6&paramGID=' + 'gid' + '&GidList=' + 'nodeid', function (data) {
                 var viewGrid = `
@@ -1442,7 +1443,59 @@
                         </tbody>
                     </table>
                     `;
-                $('#table-tree').empty().append(viewGrid);
+                $('#table-tree').empty().append(viewGrid).hide().fadeIn('slow');
+            });
+        }
+
+        function viewChart(data) {
+            $.get('http://www.infra911.com/data.php?Act=data1_6&paramGID=' + 'gid' + '&GidList=' + 'nodeid', function (data) {
+                var viewChart = `
+                    <div class="card-block">
+                         <div id="chart6-packet" style="height: 400px;" class="chartdiv"></div>
+                    </div>
+                `;
+                $('#table-tree').empty().append(viewChart).hide().fadeIn('slow');
+
+                var url = $.get("http://www.infra911.com/pkt_data.php?Act=pkt_dash6_1&prefix=p6", function () {
+                }).done(function (data) {
+                    var newdata = $.parseJSON(data.replace(/'/g, '"'));
+
+                    var chart = AmCharts.makeChart("chart6-packet", {
+                        "theme": "light",
+                        "type": "serial",
+                        "startDuration": 2,
+                        "dataProvider": newdata,
+                        "valueAxes": [{
+                            "position": "left",
+                            "title": ""
+                        }],
+                        "graphs": [{
+                            "balloonText": "[[category]]: <b>[[value]]</b>",
+                            "fillColorsField": "lineColor",
+                            "fillAlphas": 1,
+                            "lineAlpha": 0.1,
+                            "type": "column",
+                            "valueField": "value"
+                        }],
+                        "depth3D": 20,
+                        "angle": 30,
+                        "chartCursor": {
+                            "categoryBalloonEnabled": false,
+                            "cursorAlpha": 0,
+                            "zoomable": false
+                        },
+                        "categoryField": "label",
+                        "categoryAxis": {
+                            "gridPosition": "start",
+                            "labelRotation": 90
+                        },
+                        "export": {
+                            "enabled": false
+                        }
+
+                    });
+                });
+
             });
         }
     </script>
