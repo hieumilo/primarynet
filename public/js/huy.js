@@ -4,6 +4,7 @@ $(document).ready(function() {
     //click tree event
     $(document).on('click', '.jstree-anchor', function(e) {
         e.preventDefault();
+        delete $.ajaxSettings.headers['X-CSRF-TOKEN'];
         //get data Grid
         dataGrid($(this).attr('gid'),$(this).attr('nodeid'));
     });
