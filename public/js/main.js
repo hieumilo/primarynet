@@ -86,20 +86,56 @@ $(document).ready(function() {
                     });
                     delete data[key]['state'];
                 });
-                console.log(data);
+                datanew=JSON.parse(localStorage.getItem('data')).concat(data);
                 $('#tree-container').jstree({
+
                         "core": {
-                            "animation" : 0,
+
+                            "data":datanew,
                             "check_callback" : true,
-                            "data":data
+                            "multiple" : false,
+                            'themes' : {
+                                'responsive' : false,
+                                "dots" : false
+                            }
                         },
                         "state": { "key": "myTree" },
                         "checkbox": {
                             "keep_selected_style": false
                         },
-                        "plugins": ["state"]
+                        "plugins": ["state","contextmenu"]
+                        //"dnd","search" ,
+                })
+                    .on('create_node.jstree', function (e, data) {
+                    if (localStorage.getItem('data')===null) {
+                        localStorage.setItem('data', JSON.stringify([{
+                            "id": guid(),
+                            'parent': data.node.parent,
+                            'position': data.position,
+                            'text': data.node.text,
+                            'a_attr': {'gid': "1", 'nodeid': "1"},
+                        }]));
+
+                    }else {
+                        localStorage.setItem('data', JSON.stringify(JSON.parse(localStorage.getItem('data')).concat(
+                            {
+                                "id": guid(),
+                                'parent': data.node.parent,
+                                'position': data.position,
+                                'text': data.node.text,
+                                'a_attr': {'gid': "1", 'nodeid': "1"},
+                            }
+                        )));
                     }
-                );
+                    console.log(JSON.parse(localStorage.getItem('data')));
+                }).on('rename_node.jstree', function (e, data) {
+
+                }).on('delete_node.jstree', function (e, data) {
+
+                });
+
+
+
             });
         }
     };
@@ -118,4 +154,13 @@ $(document).ready(function() {
     });
 })(jQuery, window, document);
 
+function guid() {
+    function s4() {
+        return Math.floor((1 + Math.random()) * 0x10000)
+            .toString(16)
+            .substring(1);
+    }
+    return s4() + s4() + '-' + s4() + '-' + s4() + '-' +
+        s4() + '-' + s4() + s4() + s4();
+}
 
