@@ -6,7 +6,7 @@ $(document).ready(function () {
         min_cols: 1,
         max_cols: 6,
         widget_margins: [5, 5],
-        serialize_params: function ($w, wgd) {
+        serialize_params: function($w, wgd) {
             return {
                 id: $w.attr('data-id'),
                 col: wgd.col,
@@ -24,9 +24,9 @@ $(document).ready(function () {
                         'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                     }
                 });
-                $.post("/config", {data: gridster.serialize()})
-                    .done(function (data) {
-                        console.log(data);
+                $.post( "/config", {data: gridster.serialize()})
+                    .done(function( data ) {
+                        console.log( data );
                     });
             }
         },
@@ -37,9 +37,9 @@ $(document).ready(function () {
                         'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                     }
                 });
-                $.post("/config", {data: gridster.serialize()})
-                    .done(function (data) {
-                        console.log(data);
+                $.post( "/config", {data: gridster.serialize()})
+                    .done(function( data ) {
+                        console.log( data );
                     });
             }
         }
@@ -50,25 +50,27 @@ $(document).ready(function () {
     $('.dropdown-toggle').prop('disabled', true);
 
 
+
 });
 
 function setLocate(data) {
-    window.location.href = ('/' + data + window.location.pathname.slice(3));
+    window.location.href=('/'+data+window.location.pathname.slice(3));
 }
 
-$(document).ready(function () {
+$(document).ready(function() {
 
-    setTimeout(function () {
+    setTimeout(function(){
         $('body').addClass('loaded');
-        $('h1').css('color', '#222222');
+        $('h1').css('color','#222222');
     }, 500);
 
     $('td.change-link a').click(function (e) {
         e.preventDefault();
-        window.location.href = 'http://www.infra911.com/' + $(this).attr('href');
+        window.location.href= 'http://www.infra911.com/'+$(this).attr('href');
     });
 
 });
+
 
 
 (function ($, window, document, undefined) {
@@ -76,48 +78,69 @@ $(document).ready(function () {
         init: function () {
             $.getJSON('http://192.168.0.5:5005/tree.php', function (data) {
                 $.each(data, function (key, value) {
-                    if (data[key]['parent'] == 'g_') data[key]['parent'] = '#';
+                    if (data[key]['parent']=='g_') data[key]['parent']='#';
                     //add a properies
-                    data[key]["a_attr"] = ({
-                        "gid": data[key]['gid'],
-                        "nodeid": data[key]['nodeid']
+                    data[key]["a_attr"]=({
+                        "gid":data[key]['gid'],
+                        "nodeid":data[key]['nodeid']
                     });
+                    delete data[key]['state'];
                 });
-                datanew = JSON.parse(localStorage.getItem('data')).concat(data);
+                if (localStorage.getItem('data')===null) {
+                    datanew=data;
+                }else{
+                    datanew=JSON.parse(localStorage.getItem('data')).concat(data);
+                }
+
                 $('#tree-container').jstree({
+
                     "core": {
-                        "data": data
+
+                        "data":datanew,
+                        "check_callback" : true,
+                        "multiple" : false,
+                        'themes' : {
+                            'responsive' : false,
+                            "dots" : false
+                        }
                     },
+                    "state": { "key": "myTree" },
                     "checkbox": {
                         "keep_selected_style": false
                     },
-                    'plugins': ['state', 'contextmenu', 'wholerow']
-                }).on('create_node.jstree', function (e, data) {
-                    if (localStorage.getItem('data') === null) {
-                        localStorage.setItem('data', JSON.stringify([{
-                            "id": guid(),
-                            'parent': data.node.parent,
-                            'position': data.position,
-                            'text': data.node.text,
-                            'a_attr': {'gid': "1", 'nodeid': "1"},
-                        }]));
-
-                    } else {
-                        localStorage.setItem('data', JSON.stringify(JSON.parse(localStorage.getItem('data')).concat(
-                            {
+                    "plugins": ["state","contextmenu"]
+                    //"dnd","search" ,
+                })
+                    .on('create_node.jstree', function (e, data) {
+                        if (localStorage.getItem('data')===null) {
+                            localStorage.setItem('data', JSON.stringify([{
                                 "id": guid(),
                                 'parent': data.node.parent,
                                 'position': data.position,
                                 'text': data.node.text,
                                 'a_attr': {'gid': "1", 'nodeid': "1"},
-                            }
-                        )));
-                    }
-                    console.log(JSON.parse(localStorage.getItem('data')));
-                }).on('rename_node.jstree', function (e, data) {
+                            }]));
+
+                        }else {
+                            localStorage.setItem('data', JSON.stringify(JSON.parse(localStorage.getItem('data')).concat(
+                                {
+                                    "id": guid(),
+                                    'parent': data.node.parent,
+                                    'position': data.position,
+                                    'text': data.node.text,
+                                    'a_attr': {'gid': "1", 'nodeid': "1"},
+                                }
+                            )));
+                        }
+                        console.log(JSON.parse(localStorage.getItem('data')));
+                    }).on('rename_node.jstree', function (e, data) {
 
                 }).on('delete_node.jstree', function (e, data) {
+
                 });
+
+
+
             });
         }
     };
@@ -126,11 +149,12 @@ $(document).ready(function () {
         $('#g_0').attr("aria-expanded", "false");
         jstree.init();
 
-        setInterval(function () {
-            $('#tree-container').removeAttr('aria-multiselectable', 'aria-activedescendant', 'aria-busy', 'tabindex', 'role');
-            $('#tree-container').removeClass('jstree', 'jstree-1', 'jstree-default');
+
+        setInterval(function(){
+            $('#tree-container').removeAttr('aria-multiselectable','aria-activedescendant','aria-busy','tabindex','role');
+            $('#tree-container').removeClass('jstree','jstree-1','jstree-default');
             jstree.init();
-        }, 60000);
+        },3000);
 
     });
 })(jQuery, window, document);
@@ -141,7 +165,6 @@ function guid() {
             .toString(16)
             .substring(1);
     }
-
     return s4() + s4() + '-' + s4() + '-' + s4() + '-' +
         s4() + '-' + s4() + s4() + s4();
 }
