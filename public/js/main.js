@@ -93,6 +93,7 @@ $(document).ready(function () {
                 }
 
                 $('#tree-container').jstree({
+
                     "core": {
                         "data": dataMerge,
                         "check_callback": true,
@@ -121,6 +122,7 @@ $(document).ready(function () {
                 })
                     .on('create_node.jstree', function (e, data) {
                         if (localStorage.getItem('data') === null) {
+
                             localStorage.setItem('data', JSON.stringify([{
                                 "id": guid(),
                                 'parent': data.node.parent,
@@ -128,7 +130,9 @@ $(document).ready(function () {
                                 'text': data.node.text,
                                 'a_attr': {'gid': "1", 'nodeid': "1"},
                             }]));
+
                         } else {
+
                             localStorage.setItem('data', JSON.stringify(JSON.parse(localStorage.getItem('data')).concat(
                                 {
                                     "id": guid(),
@@ -139,6 +143,7 @@ $(document).ready(function () {
                                 }
                             )));
                         }
+
                         //console.log(JSON.parse(localStorage.getItem('data')));
                     }).on('rename_node.jstree', function (e, data) {
 
@@ -150,6 +155,7 @@ $(document).ready(function () {
                             insertData = localStorage.setItem('data', JSON.stringify(jsonParseData));
                         }
                     }
+
                 }).on('delete_node.jstree', function (e, data) {
 
 
@@ -183,4 +189,8 @@ function guid() {
 
     return s4() + s4() + '-' + s4() + '-' + s4() + '-' +
         s4() + '-' + s4() + s4() + s4();
+
 }
+
+
+
