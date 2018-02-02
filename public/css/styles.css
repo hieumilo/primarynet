@@ -214,3 +214,6 @@ section.card{
     background: white;
     box-shadow: inset 0 0 1px #ffffff;
 }
+.vakata-context {
+    z-index: 99;
+}

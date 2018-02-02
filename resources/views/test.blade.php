@@ -29,6 +29,7 @@
                 "gid": data[key]['gid'],
                 "nodeid": data[key]['nodeid']
             });
+
             $('#tree-container').jstree({
                 "core": {
                     "data": data,
@@ -37,7 +38,27 @@
                         'responsive' : false
                     }
                 },
-                'plugins': ['state', 'contextmenu', 'wholerow']
+                'plugins': ['state', 'contextmenu'],
+                "contextmenu":{
+                    "items": function($node) {
+                        var tree = $("#tree-container").jstree(true);
+                        return {
+
+                            "Grid": {
+                                "separator_before": false,
+                                "separator_after": false,
+                                "label": "Grid",
+                                "icon"				: "glyphicon glyphicon-leaf",
+                                "action": function (obj) {
+                                    $node = tree.copy_node($node);
+                                    console.log(obj.reference[0].id);
+
+                                }
+                            },
+
+                        };
+                    }
+                }
             }).on('create_node.jstree', function (e, data) {
                 if (localStorage.getItem('data')===null) {
                     localStorage.setItem('data', JSON.stringify([{

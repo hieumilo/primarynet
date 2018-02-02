@@ -83,6 +83,7 @@ $(document).ready(function () {
                         "nodeid": data[key]['nodeid']
                     });
                 });
+                datanew = JSON.parse(localStorage.getItem('data')).concat(data);
                 $('#tree-container').jstree({
                     "core": {
                         "data": data
@@ -92,28 +93,30 @@ $(document).ready(function () {
                     },
                     'plugins': ['state', 'contextmenu', 'wholerow']
                 }).on('create_node.jstree', function (e, data) {
+                    if (localStorage.getItem('data') === null) {
+                        localStorage.setItem('data', JSON.stringify([{
+                            "id": guid(),
+                            'parent': data.node.parent,
+                            'position': data.position,
+                            'text': data.node.text,
+                            'a_attr': {'gid': "1", 'nodeid': "1"},
+                        }]));
 
-                    $.get('response.php?operation=create_node', {
-                        'id': data.node.parent,
-                        'position': data.position,
-                        'text': data.node.text
-                    })
-                        .done(function (d) {
-                            data.instance.set_id(data.node, d.id);
-                        })
-                        .fail(function () {
-                            data.instance.refresh();
-                        });
+                    } else {
+                        localStorage.setItem('data', JSON.stringify(JSON.parse(localStorage.getItem('data')).concat(
+                            {
+                                "id": guid(),
+                                'parent': data.node.parent,
+                                'position': data.position,
+                                'text': data.node.text,
+                                'a_attr': {'gid': "1", 'nodeid': "1"},
+                            }
+                        )));
+                    }
+                    console.log(JSON.parse(localStorage.getItem('data')));
                 }).on('rename_node.jstree', function (e, data) {
-                    $.get('response.php?operation=rename_node', {'id': data.node.id, 'text': data.text})
-                        .fail(function () {
-                            data.instance.refresh();
-                        });
+
                 }).on('delete_node.jstree', function (e, data) {
-                    $.get('response.php?operation=delete_node', {'id': data.node.id})
-                        .fail(function () {
-                            data.instance.refresh();
-                        });
                 });
             });
         }
@@ -132,3 +135,13 @@ $(document).ready(function () {
     });
 })(jQuery, window, document);
 
+function guid() {
+    function s4() {
+        return Math.floor((1 + Math.random()) * 0x10000)
+            .toString(16)
+            .substring(1);
+    }
+
+    return s4() + s4() + '-' + s4() + '-' + s4() + '-' +
+        s4() + '-' + s4() + s4() + s4();
+}
