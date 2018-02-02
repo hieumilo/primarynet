@@ -913,51 +913,6 @@
         }
     };
 
-    /*var chart7Packet = {
-        init:function() {
-            var url = $.get("http://www.infra911.com/pkt_data.php?Act=pkt_dash6_2&prefix=p7", function () {
-            }).done(function (data) {
-                var newdata = $.parseJSON(data.replace(/'/g, '"'));
-
-                var gaugeChart = AmCharts.makeChart( "chart7-packet", {
-                    "type": "gauge",
-                    "theme": "light",
-                    "axes": [ {
-                        "axisThickness": 1,
-                        "axisAlpha": 0.2,
-                        "tickAlpha": 0.2,
-                        "valueInterval": 20,
-                        "bands": [newdata],
-                        //"bottomText": "0 km/h",
-                        //"bottomTextYOffset": -20,
-                        //"endValue": 220
-                    } ],
-                    "arrows": [ {} ],
-                    "export": {
-                        "enabled": false
-                    }
-                } );
-
-                setInterval( randomValue, 2000 );
-
-// set random value
-                function randomValue() {
-                    var value = Math.round( Math.random() * 200 );
-                    if ( gaugeChart ) {
-                        if ( gaugeChart.arrows ) {
-                            if ( gaugeChart.arrows[ 0 ] ) {
-                                if ( gaugeChart.arrows[ 0 ].setValue ) {
-                                    gaugeChart.arrows[ 0 ].setValue( value );
-                                    gaugeChart.axes[ 0 ].setBottomText( value + " km/h" );
-                                }
-                            }
-                        }
-                    }
-                }
-
-            });
-        }
-    };*/
     $(document).ready(function () {
         chart1.init();
         chart2.init();
