@@ -85,7 +85,9 @@ $(document).ready(function() {
                         "nodeid":data[key]['nodeid']
                     });
                 });
+
                 $('#tree-container').jstree({
+
                         "core": {
                             "data":data,
                             "check_callback" : true,
@@ -101,45 +103,44 @@ $(document).ready(function() {
 
                         "plugins": ["state","contextmenu"]
                         //"dnd","search" ,
-                }).on('create_node.jstree', function (e, data) {
-
-
-                    if(!(localStorage.getItem('tree') === null)){
-                        console.log(JSON.parse(localStorage.getItem('tree')));
-                        localStorage.setItem('tree',JSON.parse(localStorage.getItem('tree')).push({
+                })
+                    .on('create_node.jstree', function (e, data) {
+                    if (localStorage.getItem('data')===null) {
+                        localStorage.setItem('data', JSON.stringify([{
                             "id": guid(),
                             'parent': data.node.parent,
                             'position': data.position,
                             'text': data.node.text,
                             'a_attr': {'gid': "1", 'nodeid': "1"},
-                            'state': {'opened': "false", 'disabled': "false", 'selected': "false"}
-                        }));
-                    }else{
-                        localStorage.setItem('tree', JSON.stringify([{
-                            "id": guid(),
-                            'parent': data.node.parent,
-                            'position': data.position,
-                            'text': data.node.text,
-                            'a_attr': {'gid': "1", 'nodeid': "1"},
-                            'state': {'opened': "false", 'disabled': "false", 'selected': "false"}
                         }]));
-                    }
 
+                    }else {
+                        localStorage.setItem('data', JSON.stringify(JSON.parse(localStorage.getItem('data')).concat(
+                            {
+                                "id": guid(),
+                                'parent': data.node.parent,
+                                'position': data.position,
+                                'text': data.node.text,
+                                'a_attr': {'gid': "1", 'nodeid': "1"},
+                            }
+                        )));
+                    }
+                    console.log(JSON.parse(localStorage.getItem('data')));
                 }).on('rename_node.jstree', function (e, data) {
 
-                    console.log( [{
-                        "id": guid(),
-                        'parent': data.node.parent,
-                        'position': data.position,
-                        'text': data.node.text,
-                        'a_attr': {'gid': "1", 'nodeid': "1"},
-                        'state': {'opened': "false", 'disabled': "false", 'selected': "false"}
-                    }]);
+                    // console.log( [{
+                    //     "id": guid(),
+                    //     'parent': data.node.parent,
+                    //     'position': data.position,
+                    //     'text': data.node.text,
+                    //     'a_attr': {'gid': "1", 'nodeid': "1"},
+                    //     'state': {'opened': "false", 'disabled': "false", 'selected': "false"}
+                    // }]);
                 }).on('delete_node.jstree', function (e, data) {
-                    $.get('response.php?operation=delete_node', {'id': data.node.id})
+                    /*$.get('response.php?operation=delete_node', {'id': data.node.id})
                         .fail(function () {
                             data.instance.refresh();
-                        });
+                        });*/
                 });
 
 
