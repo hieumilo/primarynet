@@ -85,11 +85,11 @@ $(document).ready(function() {
                         "nodeid":data[key]['nodeid']
                     });
                 });
-
+                datanew=JSON.parse(localStorage.getItem('data')).concat(data);
                 $('#tree-container').jstree({
 
                         "core": {
-                            "data":data,
+                            "data":datanew,
                             "check_callback" : true,
                             "multiple" : false,
                             'themes' : {
