@@ -86,7 +86,12 @@ $(document).ready(function() {
                     });
                     delete data[key]['state'];
                 });
-                datanew=JSON.parse(localStorage.getItem('data')).concat(data);
+                if (localStorage.getItem('data')===null) {
+                    datanew=data;
+                }else{
+                    datanew=JSON.parse(localStorage.getItem('data')).concat(data);
+                }
+
                 $('#tree-container').jstree({
 
                         "core": {
