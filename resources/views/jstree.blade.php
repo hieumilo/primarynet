@@ -1028,34 +1028,34 @@
                         <a class="nav-link" href="#tabs-2-tab-1"
                            role="tab"
                            data-toggle="tab" aria-expanded="false">
-                <span class="nav-link-in">
-{{trans('auth.snmp-status')}}
-                    </span>
-                            </a>
-                        </ol>
-                        <ol class="nav-item">
-                            <a class="nav-link active" href="#tabs-2-tab-2"
+                                <span class="nav-link-in">
+                                    {{trans('auth.snmp-status')}}
+                                </span>
+                        </a>
+                    </ol>
+                    <ol class="nav-item">
+                        <a class="nav-link active" href="#tabs-2-tab-2"
+                           role="tab"
+                           data-toggle="tab" aria-expanded="true">
+                            <span class="nav-link-in">
+                                Temperature/Fan/Power/Session
+                                <span class="label label-pill label-danger">2</span>
+                            </span>
+                        </a>
+                    </ol>
+                    <ol class="nav-item">
+                        <a class="nav-link" href="#tabs-2-tab-3"
                                role="tab"
                                data-toggle="tab" aria-expanded="true">
-                    <span class="nav-link-in">
-                        Temperature/Fan/Power/Session
-                        <span class="label label-pill label-danger">2</span>
-                    </span>
-                            </a>
-                        </ol>
-                        <ol class="nav-item">
-                            <a class="nav-link" href="#tabs-2-tab-3"
-                               role="tab"
-                               data-toggle="tab" aria-expanded="true">
-                    <span class="nav-link-in">
-                        ICMP/CPU/Memory
-                    </span>
-                            </a>
-                        </ol>
-                    </ul>
-                </div>
+                            <span class="nav-link-in">
+                                ICMP/CPU/Memory
+                            </span>
+                        </a>
+                    </ol>
+                </ul>
             </div>
-                    <div class="tab-content">
+        </div>
+            <div class="tab-content">
                     <div role="tabpanel" class="tab-pane fade in"
                     id="tabs-2-tab-1"
                     aria-expanded="true">
@@ -1415,34 +1415,178 @@
         function viewGrid(data) {
             $.get('http://www.infra911.com/data.php?Act=data1_6&paramGID=' + 'gid' + '&GidList=' + 'nodeid', function (data) {
                 var viewGrid = `
-                    <table id="table-sm" class="table table-bordered table-hover table-sm">
-                        <thead>
-                            <tr>
-                                <th>Name</th>
-                                <th>Description</th>
-                                <th width="120">Date Created</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>Last quarter revene</td>
-                                <td class="color-blue-grey-lighter">Revene for last quarter
-                                in state
-                                America for year 2013
-                                </td>
-                                <td>6 minutes ago</td>
-                            </tr>
-                            <tr>
-                                <td>Last quarter revene</td>
-                                <td class="color-blue-grey-lighter">Copyright (c) 1986-2007
-                                by Cisco
-                                Systems, Inc.
-                                </td>
-                                <td>25 minutes ago</td>
-                            </tr>
-                        </tbody>
+                    <div class="card-block">
+                                                    <div class="row">
+                                                        <div class="col-md-5">
+                                                            <table class="table-showInf" id="table-head-1">
+                                                                <tr>
+                                                                    <th>
+                                                                        <i class="fa fa-arrow-circle-right fa-1"></i> {{trans('auth.group-name')}}
+                    </th>
+                    <td>
+                        Head Officeádsad
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        <i class="fa fa-arrow-circle-right fa-1"></i> {{trans('auth.ip-address')}}
+                    </th>
+                    <td>
+                        160.154.0.87
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        <i class="fa fa-arrow-circle-right fa-1"></i> {{trans('auth.system-description')}}
+                    </th>
+                    <td>
+                        Cisco IOS Software, C3560 Software
+                        (C3560-ADVIPSERVICESK9-M), Version 12.2(35)SE5,
+                        RELEASE
+                        SOFTWARE (fc1)
+                        Copyright (c) 1986-2007 by Cisco Systems, Inc.
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="col-md-5">
+            <table class="table-showInf" id="table-head-2">
+                <tr>
+                    <th>
+                        <i class="fa fa-arrow-circle-right fa-1"></i> {{trans('auth.host-name')}}
+                    </th>
+                    <td>
+                        http://www.infra911.com
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        <i class="fa fa-arrow-circle-right fa-1"></i> {{trans('auth.system-name')}}
+                    </th>
+                    <td>
+                        http://www.infra911.com
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
+<div class="card-block">
+    <div class="tabs-section">
+        <div class="tabs-section-nav">
+            <div class="tbl">
+                <ul class="nav" role="tablist">
+                    <ol class="nav-item">
+                        <a class="nav-link active" href="#tabs-2-tab-1"
+                           role="tab"
+                           data-toggle="tab" aria-expanded="false">
+                                <span class="nav-link-in">
+                                    Grid
+                    </span>
+            </a>
+        </ol>
+        <ol class="nav-item">
+            <a class="nav-link" href="#tabs-2-tab-2"
+               role="tab"
+               data-toggle="tab" aria-expanded="true">
+                <span class="nav-link-in">
+                    Chart
+                    <span class="label label-pill label-danger">2</span>
+                </span>
+            </a>
+        </ol>
+        <ol class="nav-item">
+            <a class="nav-link" href="#tabs-2-tab-3"
+                   role="tab"
+                   data-toggle="tab" aria-expanded="true">
+                <span class="nav-link-in">
+                    Gauge
+                </span>
+            </a>
+        </ol>
+    </ul>
+</div>
+</div>
+<div class="tab-content">
+        <div role="tabpanel" class="tab-pane fade active show"
+        id="tabs-2-tab-1"
+        aria-expanded="true">
+        <table id="table-sm"
+                    class="table table-bordered table-hover table-sm">
+                    <thead>
+                    <tr>
+                    <th>Name</th>
+                    <th>Description</th>
+                    <th width="120">Date Created</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                    <td>Last quarter revene</td>
+                    <td class="color-blue-grey-lighter">Revene for last quarter
+                    in state
+                    America for year 2013
+                    </td>
+                    <td>6 minutes ago</td>
+                    </tr>
+                    <tr>
+                    <td>Last quarter revene</td>
+                    <td class="color-blue-grey-lighter">Copyright (c) 1986-2007
+                    by Cisco
+                    Systems, Inc.
+                    </td>
+                    <td>25 minutes ago</td>
+                    </tr>
+                    </tbody>
                     </table>
+        </div>
+        <div role="tabpanel" class="tab-pane fade"
+        id="tabs-2-tab-2" aria-expanded="false">
+        <div class="card-block">
+             <div id="chart6-packet" style="height: 400px;" class="chartdiv"></div>
+        </div>
+        </div>
+
                     `;
+                var url = $.get("http://www.infra911.com/pkt_data.php?Act=pkt_dash6_1&prefix=p6", function () {
+                }).done(function (data) {
+                    var newdata = $.parseJSON(data.replace(/'/g, '"'));
+
+                    var chart = AmCharts.makeChart("chart6-packet", {
+                        "theme": "light",
+                        "type": "serial",
+                        "startDuration": 2,
+                        "dataProvider": newdata,
+                        "valueAxes": [{
+                            "position": "left",
+                            "title": ""
+                        }],
+                        "graphs": [{
+                            "balloonText": "[[category]]: <b>[[value]]</b>",
+                            "fillColorsField": "lineColor",
+                            "fillAlphas": 1,
+                            "lineAlpha": 0.1,
+                            "type": "column",
+                            "valueField": "value"
+                        }],
+                        "depth3D": 20,
+                        "angle": 30,
+                        "chartCursor": {
+                            "categoryBalloonEnabled": false,
+                            "cursorAlpha": 0,
+                            "zoomable": false
+                        },
+                        "categoryField": "label",
+                        "categoryAxis": {
+                            "gridPosition": "start",
+                            "labelRotation": 90
+                        },
+                        "export": {
+                            "enabled": false
+                        }
+
+                    });
+                });
                 $('#table-tree').empty().append(viewGrid).hide().fadeIn('slow');
             });
         }
@@ -1451,8 +1595,136 @@
             $.get('http://www.infra911.com/data.php?Act=data1_6&paramGID=' + 'gid' + '&GidList=' + 'nodeid', function (data) {
                 var viewChart = `
                     <div class="card-block">
-                         <div id="chart6-packet" style="height: 400px;" class="chartdiv"></div>
-                    </div>
+                                                    <div class="row">
+                                                        <div class="col-md-5">
+                                                            <table class="table-showInf" id="table-head-1">
+                                                                <tr>
+                                                                    <th>
+                                                                        <i class="fa fa-arrow-circle-right fa-1"></i> {{trans('auth.group-name')}}
+                    </th>
+                    <td>
+                        Head Officeádsad
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        <i class="fa fa-arrow-circle-right fa-1"></i> {{trans('auth.ip-address')}}
+                    </th>
+                    <td>
+                        160.154.0.87
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        <i class="fa fa-arrow-circle-right fa-1"></i> {{trans('auth.system-description')}}
+                    </th>
+                    <td>
+                        Cisco IOS Software, C3560 Software
+                        (C3560-ADVIPSERVICESK9-M), Version 12.2(35)SE5,
+                        RELEASE
+                        SOFTWARE (fc1)
+                        Copyright (c) 1986-2007 by Cisco Systems, Inc.
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="col-md-5">
+            <table class="table-showInf" id="table-head-2">
+                <tr>
+                    <th>
+                        <i class="fa fa-arrow-circle-right fa-1"></i> {{trans('auth.host-name')}}
+                    </th>
+                    <td>
+                        http://www.infra911.com
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        <i class="fa fa-arrow-circle-right fa-1"></i> {{trans('auth.system-name')}}
+                    </th>
+                    <td>
+                        http://www.infra911.com
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
+<div class="card-block">
+    <div class="tabs-section">
+        <div class="tabs-section-nav">
+            <div class="tbl">
+                <ul class="nav" role="tablist">
+                    <ol class="nav-item">
+                        <a class="nav-link " href="#tabs-2-tab-1"
+                           role="tab"
+                           data-toggle="tab" aria-expanded="false">
+                                <span class="nav-link-in">
+                                    Grid
+                    </span>
+            </a>
+        </ol>
+        <ol class="nav-item">
+            <a class="nav-link active" href="#tabs-2-tab-2"
+               role="tab"
+               data-toggle="tab" aria-expanded="true">
+                <span class="nav-link-in">
+                    Chart
+                    <span class="label label-pill label-danger">2</span>
+                </span>
+            </a>
+        </ol>
+        <ol class="nav-item">
+            <a class="nav-link" href="#tabs-2-tab-3"
+                   role="tab"
+                   data-toggle="tab" aria-expanded="true">
+                <span class="nav-link-in">
+                    Gauge
+                </span>
+            </a>
+        </ol>
+    </ul>
+</div>
+</div>
+<div class="tab-content">
+        <div role="tabpanel" class="tab-pane fade"
+        id="tabs-2-tab-1"
+        aria-expanded="true">
+        <table id="table-sm"
+                    class="table table-bordered table-hover table-sm">
+                    <thead>
+                    <tr>
+                    <th>Name</th>
+                    <th>Description</th>
+                    <th width="120">Date Created</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                    <td>Last quarter revene</td>
+                    <td class="color-blue-grey-lighter">Revene for last quarter
+                    in state
+                    America for year 2013
+                    </td>
+                    <td>6 minutes ago</td>
+                    </tr>
+                    <tr>
+                    <td>Last quarter revene</td>
+                    <td class="color-blue-grey-lighter">Copyright (c) 1986-2007
+                    by Cisco
+                    Systems, Inc.
+                    </td>
+                    <td>25 minutes ago</td>
+                    </tr>
+                    </tbody>
+                    </table>
+        </div>
+        <div role="tabpanel" class="tab-pane fade active show"
+        id="tabs-2-tab-2" aria-expanded="false">
+        <div class="card-block">
+             <div id="chart6-packet" style="height: 400px;" class="chartdiv"></div>
+        </div>
+        </div>
                 `;
                 $('#table-tree').empty().append(viewChart).hide().fadeIn('slow');
 

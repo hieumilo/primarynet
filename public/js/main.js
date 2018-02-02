@@ -154,8 +154,16 @@ $(document).ready(function () {
                                         //console.log(obj.reference[0].id);
                                         viewGrid(obj.reference[0].id)
                                     }
-                                }
+                                },
 
+                                "ViewChart": {
+                                    "separator_before": false,
+                                    "separator_after": false,
+                                    "label": "View Chart",
+                                    "action": function (obj) {
+                                        viewChart(obj.reference[0].id)
+                                    }
+                                }
                             }
                         }
                      }
