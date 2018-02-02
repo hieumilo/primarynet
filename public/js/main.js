@@ -84,15 +84,20 @@ $(document).ready(function() {
                         "gid":data[key]['gid'],
                         "nodeid":data[key]['nodeid']
                     });
+                    delete data[key]['state'];
                 });
+                console.log(data);
                 $('#tree-container').jstree({
                         "core": {
+                            "animation" : 0,
+                            "check_callback" : true,
                             "data":data
                         },
+                        "state": { "key": "myTree" },
                         "checkbox": {
                             "keep_selected_style": false
                         },
-                        "plugins": ["dnd","search" ]
+                        "plugins": ["state"]
                     }
                 );
             });
@@ -103,12 +108,14 @@ $(document).ready(function() {
         $('#g_0').attr("aria-expanded", "false");
         jstree.init();
 
+
         setInterval(function(){
             $('#tree-container').removeAttr('aria-multiselectable','aria-activedescendant','aria-busy','tabindex','role');
             $('#tree-container').removeClass('jstree','jstree-1','jstree-default');
             jstree.init();
-        },60000);
+        },3000);
 
     });
 })(jQuery, window, document);
+
 
