@@ -108,8 +108,24 @@ $(document).ready(function() {
                         "checkbox": {
                             "keep_selected_style": false
                         },
-                        "plugins": ["state","contextmenu"]
-                        //"dnd","search" ,
+                        "plugins": ["state","contextmenu"],
+                        "contextmenu": {
+                            "items": function ($node) {
+                                var tree = $("#tree-container").jstree(true);
+                                return {
+                                    "ViewGrid": {
+                                        "separator_before": false,
+                                        "separator_after": false,
+                                        "label": "View Grid",
+                                        "action": function (obj) {
+                                           //console.log(obj.reference[0].id);
+                                            viewGrid(obj.reference[0].id)
+                                        }
+                                    },
+                                }
+                            }
+                        }
+
                 })
                     .on('create_node.jstree', function (e, data) {
                     if (localStorage.getItem('data')===null) {
@@ -154,7 +170,7 @@ $(document).ready(function() {
             $('#tree-container').removeAttr('aria-multiselectable','aria-activedescendant','aria-busy','tabindex','role');
             $('#tree-container').removeClass('jstree','jstree-1','jstree-default');
             jstree.init();
-        },3000);
+        },60000);
 
     });
 })(jQuery, window, document);

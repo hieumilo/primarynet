@@ -938,7 +938,6 @@
                                                         </tr>
                                                         </tbody>
                                                     </table>
-
                                                 </div>
                                             </div>
                                         </section>
@@ -1406,13 +1405,45 @@
                     </tr>
                     </tbody>
                     </table>
-
                     </div>
                     `;
 
                 $('#table-tree').empty().append(table).hide().fadeIn('slow');
             });
         }
-
+        function viewGrid(data) {
+            $.get('http://www.infra911.com/data.php?Act=data1_6&paramGID=' + 'gid' + '&GidList=' + 'nodeid', function (data) {
+                var viewGrid = `
+                    <table id="table-sm" class="table table-bordered table-hover table-sm">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Description</th>
+                                <th width="120">Date Created</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Last quarter revene</td>
+                                <td class="color-blue-grey-lighter">Revene for last quarter
+                                in state
+                                America for year 2013
+                                </td>
+                                <td>6 minutes ago</td>
+                            </tr>
+                            <tr>
+                                <td>Last quarter revene</td>
+                                <td class="color-blue-grey-lighter">Copyright (c) 1986-2007
+                                by Cisco
+                                Systems, Inc.
+                                </td>
+                                <td>25 minutes ago</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    `;
+                $('#table-tree').empty().append(viewGrid);
+            });
+        }
     </script>
 @endsection
