@@ -154,7 +154,8 @@ $(document).ready(function () {
                                         //console.log(obj.reference[0].id);
                                         viewGrid(obj.reference[0].id)
                                     }
-                                },
+                                }
+
                             }
                         }
                      }
