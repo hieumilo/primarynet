@@ -117,21 +117,55 @@ $(document).ready(function () {
                     },
                     "plugins": ["state", "contextmenu", "types"],
                     "contextmenu": {
-                "items": function ($node) {
-                    var tree = $("#tree-container").jstree(true);
-                    return {
-                        "ViewGrid": {
-                            "separator_before": false,
-                            "separator_after": false,
-                            "label": "View Grid",
-                            "action": function (obj) {
-                                //console.log(obj.reference[0].id);
-                                viewGrid(obj.reference[0].id)
+                        "items": function ($node) {
+                            var tree = $("#tree-container").jstree(true);
+                            return {
+                                "Create": {
+                                    "separator_before": false,
+                                    "separator_after": false,
+                                    "label": "Create",
+                                    "action": function (obj) {
+                                        $node = tree.create_node($node);
+                                        tree.edit($node);
+                                    }
+                                },
+                                "Rename": {
+                                    "separator_before": false,
+                                    "separator_after": false,
+                                    "label": "Rename",
+                                    "action": function (obj) {
+                                        tree.edit($node);
+                                    }
+                                },
+                                "Remove": {
+                                    "separator_before": false,
+                                    "separator_after": false,
+                                    "label": "Remove",
+                                    "action": function (obj) {
+                                        tree.delete_node($node);
+                                    }
+                                },
+                                "ViewGrid": {
+                                    "separator_before": false,
+                                    "separator_after": false,
+                                    "label": "View Grid",
+                                    "action": function (obj) {
+                                        //console.log(obj.reference[0].id);
+                                        viewGrid(obj.reference[0].id)
+                                    }
+                                },
+                                "ViewChart": {
+                                    "separator_before": false,
+                                    "separator_after": false,
+                                    "label": "View Chart",
+                                    "action": function (obj) {
+                                        //console.log(obj.reference[0].id);
+                                        viewChart(obj.reference[0].id)
+                                    }
+                                },
                             }
-                        },
+                        }
                     }
-                }
-            }
                     //"dnd","search" ,
                 }).on('ready.jstree click', function (e, data) {
                     $('').removeClass('').addClass('fa fa-lg fa-server status-critical');
@@ -167,7 +201,7 @@ $(document).ready(function () {
                     //console.log(jsonParseData);
                     for (var i = 0; i < jsonParseData.length; i++) {
                         if (jsonParseData[i]['id'] == data.node.id) {
-                            jsonParseData[i]['text']=data.text;
+                            jsonParseData[i]['text'] = data.text;
                             insertData = localStorage.setItem('data', JSON.stringify(jsonParseData));
                         }
                     }
