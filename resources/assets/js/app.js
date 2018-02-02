@@ -1,3 +1,4 @@
+require('./bootstrap');
 import Vue from 'vue'
 import helper from './helper'
 global.helper = helper

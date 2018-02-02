@@ -57,7 +57,6 @@
     "vue-template-compiler": "^2.3.3",
     "vuetify": "^0.14",
     "vuex": "^2.3.1",
-    "webpack": "^2.6.1",
     "webpack-bundle-analyzer": "^2.2.1",
     "webpack-dev-middleware": "^1.10.0",
     "webpack-hot-middleware": "^2.18.0",
@@ -71,7 +70,8 @@
     "vue": "^2.1.10",
     "vue-router": "^3.0.1",
     "vueify": "^9.4.0",
-    "yargs": "^10.1.1"
+    "yargs": "^10.1.1",
+    "webpack": "^2.6.1"
   },
   "dependencies": {
     "vuetify": "^0.17.6",
