@@ -128,28 +128,28 @@ $(document).ready(function() {
 
                 })
                     .on('create_node.jstree', function (e, data) {
-                    if (localStorage.getItem('data')===null) {
-                        localStorage.setItem('data', JSON.stringify([{
-                            "id": guid(),
-                            'parent': data.node.parent,
-                            'position': data.position,
-                            'text': data.node.text,
-                            'a_attr': {'gid': "1", 'nodeid': "1"},
-                        }]));
-
-                    }else {
-                        localStorage.setItem('data', JSON.stringify(JSON.parse(localStorage.getItem('data')).concat(
-                            {
+                        if (localStorage.getItem('data')===null) {
+                            localStorage.setItem('data', JSON.stringify([{
                                 "id": guid(),
                                 'parent': data.node.parent,
                                 'position': data.position,
                                 'text': data.node.text,
                                 'a_attr': {'gid': "1", 'nodeid': "1"},
-                            }
-                        )));
-                    }
-                    console.log(JSON.parse(localStorage.getItem('data')));
-                }).on('rename_node.jstree', function (e, data) {
+                            }]));
+
+                        }else {
+                            localStorage.setItem('data', JSON.stringify(JSON.parse(localStorage.getItem('data')).concat(
+                                {
+                                    "id": guid(),
+                                    'parent': data.node.parent,
+                                    'position': data.position,
+                                    'text': data.node.text,
+                                    'a_attr': {'gid': "1", 'nodeid': "1"},
+                                }
+                            )));
+                        }
+                        console.log(JSON.parse(localStorage.getItem('data')));
+                    }).on('rename_node.jstree', function (e, data) {
 
                 }).on('delete_node.jstree', function (e, data) {
 
@@ -184,4 +184,3 @@ function guid() {
     return s4() + s4() + '-' + s4() + '-' + s4() + '-' +
         s4() + '-' + s4() + s4() + s4();
 }
-
