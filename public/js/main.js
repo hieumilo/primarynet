@@ -117,21 +117,21 @@ $(document).ready(function () {
                     },
                     "plugins": ["state", "contextmenu", "types"],
                     "contextmenu": {
-                "items": function ($node) {
-                    var tree = $("#tree-container").jstree(true);
-                    return {
-                        "ViewGrid": {
-                            "separator_before": false,
-                            "separator_after": false,
-                            "label": "View Grid",
-                            "action": function (obj) {
-                                //console.log(obj.reference[0].id);
-                                viewGrid(obj.reference[0].id)
+                        "items": function ($node) {
+                            var tree = $("#tree-container").jstree(true);
+                            return {
+                                "ViewGrid": {
+                                    "separator_before": false,
+                                    "separator_after": false,
+                                    "label": "View Grid",
+                                    "action": function (obj) {
+                                        //console.log(obj.reference[0].id);
+                                        viewGrid(obj.reference[0].id)
+                                    }
+                                },
                             }
-                        },
-                    }
-                }
-            }
+                        }
+                     }
                     //"dnd","search" ,
                 }).on('ready.jstree click', function (e, data) {
                     $('').removeClass('').addClass('fa fa-lg fa-server status-critical');
