@@ -7,9 +7,8 @@
 
         <title>Vuetify Parallax Starter</title>
         <link href='https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons' rel="stylesheet">
+        <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
         <link href="/css/app.css" rel="stylesheet" type="text/css" />
-
-
     </head>
     <body>
        <div id="app">
