@@ -1,62 +1,22 @@
-$.get('http://www.infra911.com/data.php?Act=data1_6&paramGID=0&GidList=', function () {
-
-}).done(function(data){
-    var result = $.parseJSON(data.replace(/'/g, '"'));
-    // var polltime = result[1].polltime;
-    // var warning = result[1].warning;
-    // var alarm = result[1].alarm;
-    // var critical = result[1].critical;
-    // var down = result[1].down;
-    // $('#tab-2-polltime').empty().append(polltime);
-    // $('#tab-2-warning').empty().append(warning);
-    // $('#tab-2-alarm').empty().append(alarm);
-    // $('#tab-2-critical').empty().append(critical);
-    // $('#tab-2-down').empty().append(down);
-    var html = '<table class="table-showInf">' +
-                    '<tr>' +
-                        '<th>' +
-                        '<i class="fa fa-arrow-circle-right fa-1"></i>'+ 'Polltime' +
-                        '</th>' +
-                        '<td>' + result[1].polltime +
-                        '</td> '+
-                    '</tr>' +
-                    '<tr>' +
-                        '<th>' +
-                        '<i class="fa fa-arrow-circle-right fa-1"></i>'+ 'Warning' +
-                        '</th>' +
-                        '<td>' + result[1].warning +
-                        '</td> '+
-                    '</tr>' +'<tr>' +
-                        '<th>' +
-                        '<i class="fa fa-arrow-circle-right fa-1"></i>'+ 'Alarm' +
-                        '</th>' +
-                        '<td>' + result[1].alarm +
-                        '</td> '+
-                    '</tr>' +'<tr>' +
-                        '<th>' +
-                        '<i class="fa fa-arrow-circle-right fa-1"></i>'+ 'Critical' +
-                        '</th>' +
-                        '<td>' + result[1].critical +
-                        '</td> '+
-                    '</tr>' +'<tr>' +
-                        '<th>' +
-                        '<i class="fa fa-arrow-circle-right fa-1"></i>'+ 'Down' +
-                        '</th>' +
-                        '<td>' + result[1].down +
-                        '</td> '+
-                    '</tr>' +
-                '</table>'
-    $('#tabs-2-tab-1').empty().append(html);
-});
 $(document).ready(function() {
+    //load default data
+    dataGrid(0,6);
+    //click tree event
+    $(document).on('click', '.jstree-anchor', function(e) {
+        e.preventDefault();
+        delete $.ajaxSettings.headers['X-CSRF-TOKEN'];
+        //get data Grid
+        dataGrid($(this).attr('gid'),$(this).attr('nodeid'));
+    });
+
     $('#date-mask-input').mask("00/00/0000", {placeholder: "__/__/____"});
     $('#time-mask-input').mask('00:00:00');
-    $('#date-and-time-mask-input').mask('00/00/0000 00:00:00', {placeholder: "__/__/____ __:__:__"});
+    $('#date-and-time-mask-input').mask('00/00/0000 00:00:00', {placeholder: "__/__/___ _:__:__"});
     $('#zip-code-mask-input').mask('00000-000', {placeholder: "_____-___"});
     $('#money-mask-input').mask('000.000.000.000.000,00', {reverse: true});
     $('#phone-mask-input').mask('0000-0000', {placeholder: "____-____"});
-    $('#phone-with-code-area-mask-input').mask('(00) 0000-0000', {placeholder: "(__) ____-____"});
-    $('#us-phone-mask-input').mask('(000) 000-0000', {placeholder: "(___) ___-____"});
+    $('#phone-with-code-area-mask-input').mask('(00) 0000-0000', {placeholder: "(_) ___-____"});
+    $('#us-phone-mask-input').mask('(000) 000-0000', {placeholder: "(__) __-____"});
     $('#ip-address-mask-input').mask('099.099.099.099');
     $('#mixed-mask-input').mask('AAA 000-S0S');
 });

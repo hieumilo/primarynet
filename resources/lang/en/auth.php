@@ -42,6 +42,33 @@ return [
     'third-test'=>'Third Party Test',
 
     'add-to'=>'Add',
-    'delete'=>'Delete'
+    'delete'=>'Delete',
+
+    'node'=>'Note',
+    'failure'=>'Failure',
+    'packet'=>'Packet',
+
+    /*jstree route*/
+    'group-name'=>'Group Name',
+    'ip-address'=>'Ip address',
+    'host-name'=>'Host Name',
+    'system-description'=>'System Description',
+    'system-name'=>'System Name',
+    'snmp-status'=>'SNMP Status',
+    'affiliated-group'=>'Affiliated Group',
+    'promise'=>'Promise',
+    'collection'=>'Collection',
+    'synchronous'=>'Synchronous',
+    'asynchronous'=>'Asynchronous',
+    'snmp-community'=>'SNMP Community',
+    'snmp-timeout'=>'SNMP Timeout',
+    'system-type'=>'System Type',
+    'explanation'=>'Explanation',
+    'system-history'=>'System History',
+
+    'data'=>'Data',
+    'hkt-timeout'=>'HKT Timeout'
+
+
 
 ];

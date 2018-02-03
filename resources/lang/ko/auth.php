@@ -41,5 +41,31 @@ return [
     'third-test'=>'제 3 자 테스트',
 
     'add-to'=>'추가',
-    'delete'=>'삭제'
+    'delete'=>'삭제',
+
+    'node'=>'마디',
+    'failure'=>'실패',
+    'packet'=>'패킷',
+
+    /*jstree route*/
+    'group-name'=>'그룹 이름',
+    'ip-address'=>'IP 주소',
+    'host-name'=>'호스트 이름',
+    'system-description'=>'시스템 설명',
+    'system-name'=>'시스템 이름',
+    'snmp-status'=>'SNMP 상태',
+    'affiliated-group'=>'SNMP 상태',
+    'promise'=>'약속',
+    'collection'=>'수집',
+    'synchronous'=>'동기식',
+    'asynchronous'=>'비동기식',
+    'snmp-community'=>'SNMP 커뮤니티',
+    'snmp-timeout'=>'SNMP 시간 초과',
+    'system-type'=>'시스템 유형',
+    'explanation'=>'설명',
+    'system-history'=>'시스템 히스토리',
+
+    'data'=>'데이터',
+    'hkt-timeout'=>'HKT 제한 시간'
+
 ];
